@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Stories of Evolution – YourOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://www.youros.app/what-does-youros-do/stories-and-testimony" />
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #1c1c1e;
+      --bg-alt: #2a2a2a;
+      --primary: #0077ff;
+      --primary-light: #00afff;
+      --text: #e6e8ec;
+      --muted: #9ca3af;
+      --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
+      --white: #fff;
+      --black: #111;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary-light);
+    }
+
+    /* === NAVBAR === */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--white);
+      height: 64px;
+      padding: 0 2rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-left img {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-left span {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--black);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 2.5rem;
+      left: 0;
+      background: var(--white);
+      min-width: 200px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 999;
+      border-radius: 4px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--black);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f2f2f2;
+      color: var(--primary);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .search-icon {
+      font-size: 1.25rem;
+      cursor: pointer;
+      color: var(--black);
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    p + p {
+      margin-top: 1rem;
+    }
+
+    .hero {
+      background: radial-gradient(circle at center, rgba(0,119,255,.15) 0%, transparent 70%);
+      text-align: center;
+      padding: 7rem 1.5rem 6rem;
+    }
+
+    .hero h1 {
+      background: var(--chrome);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      color: var(--muted);
+    }
+
+    .logo-hero {
+      height: 120px;
+      width: auto;
+      margin: 1.25rem auto 1.75rem;
+      display: block;
+    }
+
+    .testimonial-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      max-width: 800px;
+      background: var(--bg-alt);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .testimonial-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-card .cta {
+      display: block;
+      margin: 0 auto;
+      max-width: 30%;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .testimonial-card .cta:hover {
+      background-color: var(--primary-light);
+    }
+
+    .cta {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2.25rem;
+      border-radius: 8px;
+      box-shadow: inset 0 0 4px rgba(255,255,255,.15), 0 0 10px var(--primary-light);
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: inset 0 0 4px rgba(255,255,255,.2), 0 0 18px var(--primary-light);
+    }
+
+    footer {
+      background: var(--bg-alt);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .favicon-footer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @media(max-width: 768px) {
+      .testimonial-card .cta {
+        max-width: 60%;
+      }
+    }
+
+    @media(max-width: 480px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      .testimonial-card {
+        padding: 1.5rem;
+      }
+
+      .testimonial-card .cta {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
+      <span>YOUR Operating System</span>
+    </div>
+    <div class="nav-links">
+      <a href="https://www.youros.app/youros-home">YourOS Home</a>
+      <div class="dropdown">
+        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content">
+          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+        </div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security & Trust</a>
+      <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
+      <a href="https://www.youros.app/pricing-competitors" style="font-weight:700;">Pricing & Competitors</a>
+      <a href="/search" class="search-icon">🔍</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Stories of Evolution Using <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo" class="logo-hero"></h1>
+    <p>Every one of these is a real-world transformation—from burnout to breakthrough, from chaos to clarity. These are testimonies of people who felt stuck, then built their own revolution with YourOS.</p>
+  </section>
+
+  <!-- TESTIMONIAL SECTION -->
+  <section class="section wrapper" style="text-align: center;">
+    <div class="testimonial-list">
+      <div class="testimonial-card">
+        <h3>“WHAT IF TRACKING BONUSES DIDN’T REQUIRE PAPERWORK—OR OVERTIME?”</h3>
+        <p>One rental ops manager tried to reward high performers. What he built instead—by accident—was the seed that became YourOS. A manual monster, a late-night spreadsheet, and the spark that turned into a platform.</p>
+        <a href="#" class="cta">Read Where It Started</a>
+      </div>
+
+      <div class="testimonial-card">
+        <h3>“HOW CAN I TRACK WHO'S USING OUR COMPANY VEHICLES WITHOUT SPREADSHEETS?”</h3>
+        <p>Brad asked for a better way to track keys and fuel-ups. What he got was a live operations system that reshaped field logistics and sample tracking across an entire biotech firm.</p>
+        <a href="#" class="cta">Read Brad’s Transformation</a>
+      </div>
+
+      <div class="testimonial-card">
+        <h3>“HOW CAN OUR TECHS STOP TEXTING PHOTOS OF PAPER FORMS TO THE OFFICE?”</h3>
+        <p>One HVAC team turned that question into action. With YourOS, they went from manual chaos to real-time logs and instant service records.</p>
+        <a href="#" class="cta">Read the HVAC Transformation</a>
+      </div>
+
+      <div class="testimonial-card">
+        <h3>“HOW DO WE GO FROM WHITEBOARDS TO SEEING ACROSS EVERY LOCATION?”</h3>
+        <p>This sales organization had no visibility. YourOS replaced the wall scribbles with a live asset command center.</p>
+        <a href="#" class="cta">Read the Whiteboard Transformation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section wrapper" style="text-align:center">
+    <h3>Ready to leave the First Version behind?</h3>
+    <p>Book a call and get on the schedule.</p>
+    <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSepU-CxHQApxlmq3cckESXH0DtQp4TiejhjkHPtL9aV31rkSA/viewform?usp=dialog" target="_blank" rel="noopener">Start Building with YourOS</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
+  <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon" class="favicon-footer">
+
+</body>
+</html>

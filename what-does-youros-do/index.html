@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="canonical" href="https://www.youros.app/what-does-youros-do" />
+  <title>What Does YourOS Do? – YourOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1c1c1e;
+      --bg-alt: #2a2a2a;
+      --primary: #0077ff;
+      --primary-light: #00afff;
+      --text: #e6e8ec;
+      --muted: #9ca3af;
+      --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    a:hover { color: var(--primary-light); }
+
+    /* Navbar Styles */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      color: black;
+      padding: 1rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      border-bottom: 1px solid #ccc;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-left img {
+      width: 32px;
+      height: 32px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      background: white;
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: black;
+      white-space: nowrap;
+    }
+    .dropdown-content a:hover {
+      background: #f0f0f0;
+    }
+    .search-icon {
+      font-size: 1.2rem;
+    }
+
+    .wrapper { max-width: 1100px; margin-inline: auto; padding-inline: 1.5rem; }
+    .section { padding-block: 4rem; }
+    h1, h2, h3 { font-weight: 700; margin-bottom: 1rem; }
+    h1 {
+      font-size: 2.75rem;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    p + p { margin-top: 1rem; }
+
+    .hero {
+      background: radial-gradient(circle at center, rgba(0,119,255,.15) 0%, transparent 70%);
+      text-align: center;
+      padding: 7rem 1.5rem 6rem;
+    }
+    .hero h1 {
+      background: var(--chrome);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      color: var(--muted);
+    }
+    .logo-hero {
+      height: 120px;
+      width: auto;
+      margin: 1.25rem auto 1.75rem;
+      display: block;
+    }
+
+    .cta {
+      position: relative;
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2.25rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      box-shadow: inset 0 0 4px rgba(255,255,255,.15), 0 0 10px var(--primary-light);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: inset 0 0 4px rgba(255,255,255,.2), 0 0 18px var(--primary-light);
+    }
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: translateX(-100%);
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) }
+      50% { transform: translateX(100%) }
+      100% { transform: translateX(100%) }
+    }
+
+    footer {
+      background: var(--bg-alt);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: .9rem;
+      color: var(--muted);
+      position: relative;
+    }
+    .favicon-footer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    @media(max-width: 1024px) { .wrapper, .hero { padding-inline: 1.5rem } }
+    @media(max-width: 640px) {
+      .wrapper, .hero { padding-inline: 1.25rem }
+      h1 { font-size: 2.25rem }
+      h2 { font-size: 1.6rem }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-left">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
+      <span>YOUR Operating System</span>
+    </div>
+    <div class="nav-links">
+      <a href="https://www.youros.app/youros-home">YourOS Home</a>
+      <div class="dropdown">
+        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content">
+          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+        </div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security & Trust</a>
+      <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
+      <a href="https://www.youros.app/pricing-competitors" style="font-weight:700;">Pricing & Competitors</a>
+      <a href="/search" class="search-icon">🔍</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>What Does <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo" class="logo-hero"> Do?</h1>
+    <p>We don't sell software. We build systems—with you—that work exactly the way you already work. Faster. Sharper. Better.</p>
+  </section>
+
+  <!-- Content Sections -->
+  <section class="section wrapper">
+    <p>We map your flow. We listen to your ops leads. Then we build what fits—clean, lean, and customized to your real work.</p>
+  </section>
+
+  <section class="section wrapper">
+    <h2>Software Isn't Finished. It's Iterated.</h2>
+    <h3>The first version? Always the worst version. That's the point.</h3>
+    <p>YourOS is built to evolve. Every time your team sees something to improve, we do it. Fast. That’s why we say iteration isn’t risky—it’s the advantage.</p>
+    <p><strong>Fast wins aren't sloppy—they're strategic.</strong> YourOS ships quickly so your ops get sharper week by week.</p>
+  </section>
+
+  <section class="section wrapper">
+    <h2>The Pottery Class Parable</h2>
+    <p>On day one, a ceramics teacher split the class in two. Group&nbsp;A would be graded on <em>quantity</em>: fifty pounds of pots earned an A. Group&nbsp;B had all semester to produce <em>one perfect pot</em> and would be graded on quality.</p>
+    <p>By semester’s end, the finest pots came from Group&nbsp;A. Their cycle of making, evaluating, and improving beat the perfection-seeking theorizing of Group&nbsp;B.</p>
+    <p><strong>YourOS works like Group&nbsp;A.</strong> Ship fast, learn faster, iterate endlessly. Progress trumps perfection.</p>
+  </section>
+
+  <section class="section wrapper">
+    <p>Think about your own work: that speech that took five drafts, the whiteboard sketch you erased eight times, the report that sparked ten more questions. Iteration sharpens ideas.</p>
+    <p>What others call the <strong>“Final Product”</strong> is our <strong>“Starting Point.”</strong></p>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="contact" class="section wrapper" style="text-align:center">
+    <h3>Ready to leave the First Version behind?</h3>
+    <p>Book a call and get on the schedule.</p>
+    <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSepU-CxHQApxlmq3cckESXH0DtQp4TiejhjkHPtL9aV31rkSA/viewform?usp=dialog" target="_blank" rel="noopener">Start Building with YourOS</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
+  <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon" class="favicon-footer">
+</body>
+</html>
