@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="canonical" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/hvac" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HVAC Transformation — YourOS</title>
+  <meta name="description" content="See how YourOS transformed HVAC operations with real-time data, digital workflows, and zero paper chaos.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <style>
+    :root {
+      --bg: #1c1c1e;
+      --bg-alt: #2a2a2a;
+      --primary: #0077ff;
+      --primary-light: #00afff;
+      --text: #e6e8ec;
+      --muted: #9ca3af;
+      --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    a:hover { color: var(--primary-light); }
+
+    /* --- Navbar Styles --- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      color: black;
+      padding: 1rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      border-bottom: 1px solid #ccc;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-left img {
+      width: 32px;
+      height: 32px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      background: white;
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: black;
+      white-space: nowrap;
+    }
+    .dropdown-content a:hover {
+      background: #f0f0f0;
+    }
+    .search-icon {
+      font-size: 1.2rem;
+    }
+
+    /* --- Page Content Styles --- */
+    .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 4rem 0; }
+    h1, h2, h3 { font-weight: 700; margin-bottom: 1rem; }
+    h1 {
+      font-size: 2.75rem;
+      letter-spacing: -0.01em;
+      background: var(--chrome);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.25rem; font-weight: 600; }
+    p + p { margin-top: 1rem; }
+    .hero {
+      background: radial-gradient(circle at center, rgba(0,119,255,.15) 0%, transparent 70%);
+      text-align: center;
+      padding: 7rem 1.5rem 6rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 680px;
+      margin: 1.5rem auto 0;
+      color: var(--muted);
+    }
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2.25rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      box-shadow: inset 0 0 4px rgba(255,255,255,.15), 0 0 10px var(--primary-light);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+      position: relative;
+      font-weight: 600;
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: inset 0 0 4px rgba(255,255,255,.2), 0 0 18px var(--primary-light);
+    }
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: translateX(-100%);
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+      100% { transform: translateX(100%); }
+    }
+    .logo-big {
+      display: block;
+      margin: 2rem auto;
+      max-width: 280px;
+      min-width: 260px;
+    }
+    .split {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .split > div {
+      flex: 1 1 45%;
+      min-width: 280px;
+    }
+    footer {
+      text-align: center;
+      background: var(--bg-alt);
+      padding: 2rem 1.5rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .favicon-footer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    @media(max-width: 1024px) {
+      .wrapper, .hero { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+    @media(max-width: 640px) {
+      .wrapper, .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+      h1 { font-size: 2.25rem; }
+      h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
+      <span>YOUR Operating System</span>
+    </div>
+    <div class="nav-links">
+      <a href="https://www.youros.app/youros-home">YourOS Home</a>
+      <div class="dropdown">
+        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content">
+          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+        </div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security & Trust</a>
+      <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
+      <a href="https://www.youros.app/pricing-competitors" style="font-weight:700;">Pricing & Competitors</a>
+      <a href="/search" class="search-icon">🔍</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>FROM FIELD TO OFFICE, INSTANTLY</h1>
+    <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="custom business operating system for HVAC teams" class="logo-big">
+    <a href="https://www.youros.app/begin-your-revolution" class="cta">See How We Did It</a>
+  </section>
+
+  <!-- Rest of your page (unchanged) -->
+
+  <section class="section wrapper">
+    <h2>A PAPER PROBLEM. A DIGITAL ANSWER.</h2>
+    <div class="split">
+      <div>
+        <h3>Where it started</h3>
+        <p>An HVAC tech showed up with paper forms, carbon copies, and a mess of manual receipts. When we asked how they sent info back to the office, the answer: photos, emails, and crossed fingers.</p>
+      </div>
+      <div>
+        <h3>Where it went</h3>
+        <p>We built a custom app with YourOS. Now, techs enter service info on-site. Customers see exactly what their package includes. And the home office gets clean data instantly—no waiting, no guesswork.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- You can continue with the remaining <section> blocks unchanged -->
+
+  <footer>
+    © 2025 YourOS. Those who could excel, should excel.
+    <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon" class="favicon-footer" />
+  </footer>
+
+</body>
+</html>

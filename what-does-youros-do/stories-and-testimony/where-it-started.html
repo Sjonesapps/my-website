@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="canonical" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/where-it-started" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourOS | Built With You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <style>
+    :root {
+      --bg: #1c1c1e;
+      --bg-alt: #2a2a2a;
+      --primary: #0077ff;
+      --primary-light: #00afff;
+      --text: #e6e8ec;
+      --muted: #9ca3af;
+      --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    a:hover { color: var(--primary-light); }
+
+    .navbar {
+      background-color: white;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .navbar-left {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-left img {
+      height: 32px;
+      margin-right: 10px;
+    }
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .navbar a {
+      color: black;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: black;
+      white-space: nowrap;
+    }
+    .search-icon {
+      font-size: 1.1rem;
+    }
+
+    .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 4rem 0; }
+    h1, h2, h3 { font-weight: 700; margin-bottom: 1rem; }
+    h1 { font-size: 2.75rem; letter-spacing: -0.01em; text-align: center; }
+    h2 { font-size: 2rem; text-align: center; }
+    h3 { font-size: 1.25rem; }
+    p + p { margin-top: 1rem; }
+    .hero {
+      background: radial-gradient(circle at center, rgba(0,119,255,.15) 0%, transparent 70%);
+      text-align: center;
+      padding: 7rem 1.5rem 6rem;
+    }
+    .hero h1 {
+      background: var(--chrome);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 680px;
+      margin: 1.5rem auto 0;
+      color: var(--muted);
+    }
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2.25rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      box-shadow: inset 0 0 4px rgba(255,255,255,.15), 0 0 10px var(--primary-light);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+      position: relative;
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: inset 0 0 4px rgba(255,255,255,.2), 0 0 18px var(--primary-light);
+    }
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: translateX(-100%);
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+      100% { transform: translateX(100%); }
+    }
+    .favicon-footer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    footer {
+      text-align: center;
+      background: var(--bg-alt);
+      padding: 2rem 1.5rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    @media(max-width: 1024px) {
+      .wrapper, .hero { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+    @media(max-width: 640px) {
+      .wrapper, .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+      h1 { font-size: 2.25rem; }
+      h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
+      <span>YOUR Operating System</span>
+    </div>
+    <div class="navbar-links">
+      <a href="https://www.youros.app/youros-home">YourOS Home</a>
+      <div class="dropdown">
+        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content">
+          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+        </div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security & Trust</a>
+      <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
+      <a href="https://www.youros.app/pricing-competitors">Pricing & Competitors</a>
+      <a href="/search" class="search-icon">🔍</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>He Just Wanted to Pay His Team Fairly.<br>He Accidentally Created a Monster.</h1>
+    <p>What began as a bonus system turned into a mountain of manual tracking—and a late-night realization that there had to be a better way. That moment became YourOS.</p>
+    <a class="cta" href="https://www.youros.app/begin-your-revolution">Show Us Your Chaos. Let’s Build Your System.</a>
+  </section>
+
+  <section class="section wrapper">
+    <h2>The Ask</h2>
+    <p>A rental manager wanted to reward output. So he created a pay-for-performance system. More work = more money. Simple. Until it wasn’t.</p>
+    <p>Every task had to be logged. Every form had to be counted. Every shift needed to be audited. The bonus system worked—but it crushed the office.</p>
+    <p>“We were staying hours late. Counting. Double-checking. Fixing overlap. It was chaos.”</p>
+  </section>
+
+  <section class="section wrapper">
+    <h2>The Shift</h2>
+    <p>One late night, he said it out loud: “There’s got to be a better way.”</p>
+    <p>So we built it.</p>
+    <ul>
+      <li>No more forms. Every task entered right from the phone</li>
+      <li>No duplication. Once a task is logged, it’s locked</li>
+      <li>No end-of-day audits. Live dashboards show contributions in real time</li>
+      <li>No manual staffing calls. Workload and availability matched automatically</li>
+    </ul>
+    <p>Suddenly: People were still earning more. The office wasn’t breaking under the weight. The system was fair, accurate, and fast.</p>
+  </section>
+
+  <section class="section wrapper">
+    <h2>The Evolution</h2>
+    <p>From tracking work… to forecasting workload.</p>
+    <p>The system now tracks how much work is left, how many people are on shift, and how much time is left in the day. When it predicts a crash—it warns the team at noon, not at 4:30.</p>
+    <p>“We used to find out we were behind when it was too late. Now we get notified before lunch—and we fix it before it’s a problem.”</p>
+    <p>The bonus system stayed. The stress? It didn’t.</p>
+  </section>
+
+  <section class="section wrapper">
+    <h2>The Results</h2>
+    <ul>
+      <li>Huge overtime reduction</li>
+      <li>More time off for staff and managers</li>
+      <li>Real forecasting instead of reactive scrambling</li>
+      <li>A happier, more productive team</li>
+      <li>Room to grow without new hires</li>
+    </ul>
+    <p>And then—more magic.</p>
+    <p>They used YourOS to build a competitive intelligence tool that gave instant, side-by-side comparisons. Pricing. Features. Transparent value. Conversions spiked because customers trusted the clarity.</p>
+  </section>
+
+  <section class="section wrapper">
+    <h2>What It Means for You</h2>
+    <p>You might be asking:</p>
+    <ul>
+      <li>“Can I track work without micromanaging?”</li>
+      <li>“Can I pay fairly without making it my full-time job?”</li>
+      <li>“Can I finally take a vacation without the whole thing falling apart?”</li>
+    </ul>
+    <p>Yes. Yes. And yes.</p>
+    <p>This is what YourOS is made for. Not off-the-shelf solutions. Not months of custom dev. Just your system—built together, to scale your brilliance.</p>
+  </section>
+
+  <section class="section wrapper">
+    <h2>From “I Just Need to Track Tasks” to “We’re Ready to Scale”</h2>
+    <p>It started with one worksheet. It became a live workforce engine. It empowered leadership. It increased trust. It drove conversion. It built a business that got acquired.</p>
+    <p>YourOS = Us + You. We build it with you, for how you work—not how someone else thinks you should.</p>
+    <a class="cta" href="https://www.youros.app/begin-your-revolution">Let’s Build Where You’re Headed—Not Just Where You Are</a>
+  </section>
+
+  <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
+  <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon" class="favicon-footer">
+</body>
+</html>
