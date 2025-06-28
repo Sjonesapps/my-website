@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>YourOS – Built Around You</title>
   <link rel="canonical" href="https://www.youros.app/youros-home" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -21,7 +23,11 @@
       --black: #111;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -38,16 +44,43 @@
       transition: color .2s ease;
     }
 
-    a:hover { color: var(--primary-light); }
+    a:hover {
+      color: var(--primary-light);
+    }
 
-    h1, h2, h3 { font-weight: 700; margin-bottom: 1rem; }
-    h1 { font-size: 2.75rem; letter-spacing: -0.01em; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.25rem; }
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
 
-    .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    .section { padding: 4rem 0; }
-    p + p { margin-top: 1rem; }
+    h1 {
+      font-size: 2.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    p+p {
+      margin-top: 1rem;
+    }
 
     /* === NAVBAR === */
     nav {
@@ -108,7 +141,7 @@
       left: 0;
       background: var(--white);
       min-width: 200px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       z-index: 999;
       border-radius: 4px;
     }
@@ -138,7 +171,7 @@
 
     /* HERO */
     .hero {
-      background: radial-gradient(circle at center, rgba(0,119,255,.15) 0%, transparent 70%);
+      background: radial-gradient(circle at center, rgba(0, 119, 255, .15) 0%, transparent 70%);
       text-align: center;
       padding: 7rem 1.5rem 6rem;
     }
@@ -163,7 +196,7 @@
       padding: 1rem 2.25rem;
       border-radius: 8px;
       margin-top: 2rem;
-      box-shadow: inset 0 0 4px rgba(255,255,255,.15), 0 0 10px var(--primary-light);
+      box-shadow: inset 0 0 4px rgba(255, 255, 255, .15), 0 0 10px var(--primary-light);
       position: relative;
       overflow: hidden;
       transition: transform .2s ease, box-shadow .2s ease;
@@ -171,23 +204,33 @@
 
     .cta:hover {
       transform: translateY(-2px);
-      box-shadow: inset 0 0 4px rgba(255,255,255,.2), 0 0 18px var(--primary-light);
+      box-shadow: inset 0 0 4px rgba(255, 255, 255, .2), 0 0 18px var(--primary-light);
     }
 
     .cta::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
       transform: translateX(-100%);
       animation: shimmer 2s infinite;
     }
 
     @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      50% { transform: translateX(100%); }
-      100% { transform: translateX(100%); }
+      0% {
+        transform: translateX(-100%);
+      }
+
+      50% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
     }
 
     footer {
@@ -209,45 +252,63 @@
     }
 
     @media(max-width: 768px) {
-      .nav-links { display: none; } /* You can add a mobile menu here later */
+      .nav-links {
+        display: none;
+      }
+
+      /* You can add a mobile menu here later */
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y74BBJGYND');
+  </script>
 </head>
+
 <body>
 
   <!-- ✅ NAVIGATION BAR -->
   <nav>
-  <div class="nav-left">
-    <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
-    <span>YOUR Operating System</span>
-  </div>
-  <div class="nav-links">
-    <a href="https://www.youros.app/youros-home">YourOS Home</a>
-    <div class="dropdown">
-      <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
-      <div class="dropdown-content">
-        <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
-      </div>
+    <div class="nav-left">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
+      <span>YOUR Operating System</span>
     </div>
-    <a href="https://www.youros.app/security-trust">Security & Trust</a>
-    <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
-    <a href="https://www.youros.app/pricing-competitors" style="font-weight:700;">Pricing & Competitors</a>
-    <a href="/search" class="search-icon">🔍</a>
-  </div>
-</nav>
+    <div class="nav-links">
+      <a href="https://www.youros.app/youros-home">YourOS Home</a>
+      <div class="dropdown">
+        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content">
+          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+        </div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security & Trust</a>
+      <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
+      <a href="https://www.youros.app/pricing-competitors" style="font-weight:700;">Pricing & Competitors</a>
+      <a href="/search" class="search-icon">🔍</a>
+    </div>
+  </nav>
 
   <!-- HERO -->
   <section class="hero">
     <h1>You’re not broken. Your software is.</h1>
-    <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo" style="display:block;margin:1rem auto;max-width:300px;width:100%;height:auto;">
-    <p>YourOS isn't just different—it’s the first system that finally listens to YOU. No templates. No lag. Just your way, operationalized.</p>
-    <a class="cta" href="https://www.youros.app/begin-your-revolution" target="_blank" rel="noopener">Meet the OS That Works With You</a>
+    <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo"
+      style="display:block;margin:1rem auto;max-width:300px;width:100%;height:auto;">
+    <p>YourOS isn't just different—it’s the first system that finally listens to YOU. No templates. No lag. Just your
+      way, operationalized.</p>
+    <a class="cta" href="https://www.youros.app/begin-your-revolution" target="_blank" rel="noopener">Meet the OS That
+      Works With You</a>
   </section>
 
   <!-- ENEMY SECTION -->
   <section class="section wrapper" id="enemy">
     <h2>You may be suffering from <em>Process Thrombosis</em>.</h2>
-    <p>Symptoms include: inbox swelling, spreadsheet scatter, workflow paralysis, and an allergic reaction to your own software stack.</p>
+    <p>Symptoms include: inbox swelling, spreadsheet scatter, workflow paralysis, and an allergic reaction to your own
+      software stack.</p>
     <p><strong>Left untreated, it leads to chronic meetings, dashboard vertigo, and eventual burnout.</strong></p>
     <p>The diagnosis? BrokenOS.</p>
   </section>
@@ -256,7 +317,8 @@
   <section class="section wrapper" id="process">
     <h2>We’re not another tool. We’re YourOS.</h2>
     <p><strong>YourOS is built around you.</strong> We listen, we adapt, and we deploy fast.</p>
-    <p>Forget bloatware. Forget onboarding to someone else's vision. With YourOS, the system wraps around your workflow—not the other way around.</p>
+    <p>Forget bloatware. Forget onboarding to someone else's vision. With YourOS, the system wraps around your
+      workflow—not the other way around.</p>
     <p style="margin-top:1rem; font-size:1.25rem;"><em>Your mess. Our mission.</em></p>
   </section>
 
@@ -270,13 +332,17 @@
   <section class="section wrapper" style="text-align:center">
     <h3>We work with a limited number of clients each month.</h3>
     <p>That means when you book, you're not a number. You're our focus.</p>
-    <a class="cta" href="https://www.youros.app/begin-your-revolution" target="_blank" rel="noopener">Book Your Discovery Call</a>
-    <p style="margin-top:0.5rem;font-size:0.9rem;color:var(--muted);">20 minutes to ditch BrokenOS—and become the ops hero of your team.</p>
+    <a class="cta" href="https://www.youros.app/begin-your-revolution" target="_blank" rel="noopener">Book Your
+      Discovery Call</a>
+    <p style="margin-top:0.5rem;font-size:0.9rem;color:var(--muted);">20 minutes to ditch BrokenOS—and become the ops
+      hero of your team.</p>
   </section>
 
   <!-- FOOTER -->
   <footer>© 2025 YourOS. Those who could excel, should excel</footer>
-  <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon" class="favicon-footer">
+  <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
+    class="favicon-footer">
 
 </body>
+
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <link rel="canonical" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/whiteboard" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>From Whiteboards to Workflow Mastery | YourOS</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -17,7 +19,13 @@
       --muted: #9ca3af;
       --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
@@ -25,13 +33,17 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+
     a {
       color: var(--primary);
       font-weight: 600;
       text-decoration: none;
       transition: color .2s ease;
     }
-    a:hover { color: var(--primary-light); }
+
+    a:hover {
+      color: var(--primary-light);
+    }
 
     .navbar {
       background-color: white;
@@ -42,30 +54,37 @@
       padding: 1rem 2rem;
       font-family: 'Inter', sans-serif;
     }
+
     .navbar-left {
       display: flex;
       align-items: center;
     }
+
     .navbar-left img {
       height: 32px;
       margin-right: 10px;
     }
+
     .navbar-links {
       display: flex;
       align-items: center;
       gap: 1.5rem;
     }
+
     .navbar a {
       color: black;
       font-weight: 600;
       text-decoration: none;
     }
+
     .navbar a:hover {
       text-decoration: underline;
     }
+
     .dropdown {
       position: relative;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -73,25 +92,42 @@
       left: 0;
       background: white;
       border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       z-index: 999;
     }
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
     .dropdown-content a {
       display: block;
       padding: 0.5rem 1rem;
       color: black;
       white-space: nowrap;
     }
+
     .search-icon {
       font-size: 1.1rem;
     }
 
-    .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    .section { padding: 4rem 0; }
-    h1, h2, h3 { font-weight: 700; margin-bottom: 1rem; }
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
     h1 {
       font-size: 2.75rem;
       letter-spacing: -0.01em;
@@ -101,6 +137,7 @@
       text-align: center;
       text-transform: uppercase;
     }
+
     h2 {
       font-size: 2rem;
       background: var(--chrome);
@@ -109,13 +146,21 @@
       text-transform: uppercase;
       letter-spacing: 0.03em;
     }
-    h3 { font-size: 1.25rem; }
-    p + p { margin-top: 1rem; }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p+p {
+      margin-top: 1rem;
+    }
+
     .hero {
-      background: radial-gradient(circle at center, rgba(0,119,255,.15) 0%, transparent 70%);
+      background: radial-gradient(circle at center, rgba(0, 119, 255, .15) 0%, transparent 70%);
       text-align: center;
       padding: 7rem 1.5rem 6rem;
     }
+
     .hero img {
       display: block;
       margin: 2rem auto;
@@ -123,6 +168,7 @@
       width: 100%;
       height: auto;
     }
+
     .cta {
       display: inline-block;
       background: var(--primary);
@@ -130,44 +176,61 @@
       padding: 1rem 2.25rem;
       border-radius: 8px;
       margin-top: 2rem;
-      box-shadow: inset 0 0 4px rgba(255,255,255,.15), 0 0 10px var(--primary-light);
+      box-shadow: inset 0 0 4px rgba(255, 255, 255, .15), 0 0 10px var(--primary-light);
       overflow: hidden;
       transition: transform .2s ease, box-shadow .2s ease;
       position: relative;
       text-transform: uppercase;
       font-weight: 600;
     }
+
     .cta:hover {
       transform: translateY(-2px);
-      box-shadow: inset 0 0 4px rgba(255,255,255,.2), 0 0 18px var(--primary-light);
+      box-shadow: inset 0 0 4px rgba(255, 255, 255, .2), 0 0 18px var(--primary-light);
     }
+
     .cta::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
       transform: translateX(-100%);
       animation: shimmer 2s infinite;
     }
+
     @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      50% { transform: translateX(100%); }
-      100% { transform: translateX(100%); }
+      0% {
+        transform: translateX(-100%);
+      }
+
+      50% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
     }
+
     .split {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       margin-top: 2rem;
     }
-    .split > div {
+
+    .split>div {
       flex: 1;
       min-width: 300px;
     }
+
     ul {
       padding-left: 1.2rem;
     }
+
     footer {
       background-color: var(--bg-alt);
       color: var(--muted);
@@ -175,6 +238,7 @@
       padding: 2rem 1.5rem;
       font-size: .9rem;
     }
+
     .favicon-footer {
       position: fixed;
       bottom: 20px;
@@ -184,16 +248,44 @@
       opacity: 0.8;
       pointer-events: none;
     }
+
     @media(max-width: 1024px) {
-      .wrapper, .hero { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+      .wrapper,
+      .hero {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
     }
+
     @media(max-width: 640px) {
-      .wrapper, .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
-      h1 { font-size: 2.25rem; }
-      h2 { font-size: 1.6rem; }
+
+      .wrapper,
+      .hero {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y74BBJGYND');
+  </script>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="navbar-left">
@@ -226,10 +318,12 @@
     <div class="split">
       <div>
         <p>This multi-location sales team could close. But their internal operations? Tracked on whiteboards.</p>
-        <p>Appointments clashed. Units vanished. Customers got confused. Teams blamed each other. Manual chaos ruled every asset handoff.</p>
+        <p>Appointments clashed. Units vanished. Customers got confused. Teams blamed each other. Manual chaos ruled
+          every asset handoff.</p>
       </div>
       <div>
-        <p>They needed operational clarity. They found YourOS—a custom business system built to replace whiteboards and unite teams.</p>
+        <p>They needed operational clarity. They found YourOS—a custom business system built to replace whiteboards and
+          unite teams.</p>
       </div>
     </div>
   </section>
@@ -238,11 +332,14 @@
     <h2>A Shift in Perspective</h2>
     <div class="split">
       <div>
-        <p>They didn’t just buy a tool. They asked questions. So did we. The real issue? <em>Lifecycle blindness</em>.</p>
-        <p>They weren’t managing products. They were managing active, evolving assets—each one with its own journey from interest to delivery.</p>
+        <p>They didn’t just buy a tool. They asked questions. So did we. The real issue? <em>Lifecycle blindness</em>.
+        </p>
+        <p>They weren’t managing products. They were managing active, evolving assets—each one with its own journey from
+          interest to delivery.</p>
       </div>
       <div>
-        <p>YourOS gave every asset a record. Every step became visible: interest, service, prep, sale, delivery. One interface. Zero finger-pointing.</p>
+        <p>YourOS gave every asset a record. Every step became visible: interest, service, prep, sale, delivery. One
+          interface. Zero finger-pointing.</p>
       </div>
     </div>
   </section>
@@ -278,7 +375,8 @@
       </div>
       <div>
         <p>And when new needs showed up, YourOS evolved faster than their internal tech team could deliver.</p>
-        <p>Today, it’s used across all departments. New hires onboard faster. Ops run smoother. And data? Always there, always live.</p>
+        <p>Today, it’s used across all departments. New hires onboard faster. Ops run smoother. And data? Always there,
+          always live.</p>
       </div>
     </div>
   </section>
@@ -287,7 +385,8 @@
     <h2>The Takeaway</h2>
     <div class="split">
       <div>
-        <p>They didn’t get a system. They got visibility. Accountability. Efficiency. Because when your process becomes your competitive advantage—your business scales itself.</p>
+        <p>They didn’t get a system. They got visibility. Accountability. Efficiency. Because when your process becomes
+          your competitive advantage—your business scales itself.</p>
       </div>
       <div>
         <a href="https://www.youros.app/begin-your-revolution" class="cta">Replace the Chaos</a>
@@ -297,7 +396,9 @@
 
   <footer>
     © 2025 YourOS. Those who could excel, should excel.
-    <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Electric Y Favicon for YourOS" class="favicon-footer" />
+    <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png"
+      alt="Electric Y Favicon for YourOS" class="favicon-footer" />
   </footer>
 </body>
+
 </html>

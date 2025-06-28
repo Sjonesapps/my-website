@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Request MY Operating System – YourOS</title>
@@ -16,11 +17,13 @@
       --text: #e6e8ec;
       --muted: #9ca3af;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
@@ -28,6 +31,7 @@
       line-height: 1.6;
       padding: 2rem;
     }
+
     .navbar {
       background-color: white;
       color: black;
@@ -38,30 +42,37 @@
       font-family: 'Inter', sans-serif;
       margin: -2rem -2rem 2rem;
     }
+
     .navbar-left {
       display: flex;
       align-items: center;
     }
+
     .navbar-left img {
       height: 32px;
       margin-right: 10px;
     }
+
     .navbar-links {
       display: flex;
       align-items: center;
       gap: 1.5rem;
     }
+
     .navbar a {
       color: black;
       font-weight: 600;
       text-decoration: none;
     }
+
     .navbar a:hover {
       text-decoration: underline;
     }
+
     .dropdown {
       position: relative;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -69,44 +80,53 @@
       left: 0;
       background: white;
       border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       z-index: 999;
     }
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
     .dropdown-content a {
       display: block;
       padding: 0.5rem 1rem;
       color: black;
       white-space: nowrap;
     }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
     }
+
     .header {
       text-align: center;
       margin-bottom: 3rem;
     }
+
     .header img {
       height: 100px;
       margin-bottom: 1rem;
     }
+
     .header h1 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
     }
+
     .main-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
+
     .testimonials {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
     }
+
     .testimonial {
       background: var(--bg-alt);
       padding: 1rem 1.25rem;
@@ -115,15 +135,18 @@
       font-size: 0.95rem;
       color: var(--muted);
     }
+
     .form-card {
       background: var(--bg-alt);
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
+
     .form-group {
       margin-bottom: 1rem;
     }
+
     label {
       display: block;
       margin-bottom: 0.35rem;
@@ -131,7 +154,9 @@
       font-size: 0.9rem;
       color: var(--text);
     }
-    input, textarea {
+
+    input,
+    textarea {
       width: 100%;
       padding: 0.65rem;
       border: 1px solid #444;
@@ -140,10 +165,12 @@
       color: var(--text);
       font-size: 0.95rem;
     }
+
     textarea {
       min-height: 100px;
       resize: vertical;
     }
+
     .cta {
       display: block;
       width: 100%;
@@ -157,22 +184,36 @@
       cursor: pointer;
       transition: background-color 0.2s ease;
     }
+
     .cta:hover {
       background-color: var(--primary-light);
     }
+
     @media (max-width: 768px) {
       .main-grid {
         grid-template-columns: 1fr;
       }
+
       .header h1 {
         font-size: 1.6rem;
       }
+
       .header img {
         height: 80px;
       }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y74BBJGYND');
+  </script>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="navbar-left">
@@ -197,7 +238,8 @@
     <div class="header">
       <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
       <h1>LET’S BUILD, TOGETHER</h1>
-      <p>YourOS isn’t off-the-shelf. It’s built with you. Tell us what’s broken, and we’ll design a custom system that works the way you work.</p>
+      <p>YourOS isn’t off-the-shelf. It’s built with you. Tell us what’s broken, and we’ll design a custom system that
+        works the way you work.</p>
     </div>
 
     <div class="main-grid">
@@ -243,4 +285,5 @@
     </div>
   </div>
 </body>
+
 </html>
