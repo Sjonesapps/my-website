@@ -71,6 +71,21 @@
       gap: 1.5rem;
     }
 
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 5px 0;
+      background: black;
+    }
+
     .navbar a {
       color: black;
       font-weight: 600;
@@ -217,6 +232,28 @@
       pointer-events: none;
     }
 
+    @media(max-width: 768px) {
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        right: 1rem;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+      }
+
+      .navbar-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
     footer {
       text-align: center;
       background: var(--bg-alt);
@@ -268,6 +305,11 @@
       <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
       <span>YOUR Operating System</span>
     </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="navbar-links">
       <a href="https://www.youros.app/youros-home">YourOS Home</a>
       <div class="dropdown">
@@ -361,6 +403,16 @@
   <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
   <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
     class="favicon-footer">
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.navbar-links') || document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 
 </html>
