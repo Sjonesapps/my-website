@@ -119,6 +119,21 @@
       gap: 1.5rem;
     }
 
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 5px 0;
+      background: var(--black);
+    }
+
     .nav-links a {
       text-decoration: none;
       color: var(--black);
@@ -137,7 +152,7 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 2.5rem;
+      top: 100%;
       left: 0;
       background: var(--white);
       min-width: 200px;
@@ -247,11 +262,27 @@
     }
 
     @media(max-width: 768px) {
-      .nav-links {
+      .nav-links,
+      .navbar-links {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        right: 1rem;
+        background: var(--white);
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
       }
 
-      /* You can add a mobile menu here later */
+      .nav-links.open,
+      .navbar-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -273,6 +304,11 @@
       <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
       <span>YOUR Operating System</span>
     </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="nav-links">
       <a href="https://www.youros.app/youros-home">YourOS Home</a>
       <div class="dropdown">
@@ -336,6 +372,16 @@
   <footer>© 2025 YourOS. Those who could excel, should excel</footer>
   <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
     class="favicon-footer">
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links') || document.querySelector('.navbar-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('open');
+      });
+    }
+  </script>
 
 </body>
 
