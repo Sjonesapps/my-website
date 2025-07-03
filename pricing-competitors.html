@@ -229,6 +229,65 @@
       pointer-events: none;
     }
 
+    hr {
+      border: none;
+      border-top: 1px solid var(--bg-alt);
+      margin: 2rem 0;
+    }
+
+    details.dropdown {
+      background: var(--bg-alt);
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      margin-top: 2rem;
+      overflow: hidden;
+      transition: box-shadow .3s ease;
+    }
+
+    details.dropdown:hover {
+      box-shadow: 0 0 20px var(--primary-light);
+    }
+
+    details.dropdown summary {
+      padding: 1.25rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary);
+      background: rgba(0, 119, 255, 0.1);
+      list-style: none;
+      transition: background .3s ease, transform .2s ease;
+    }
+
+    details.dropdown summary:hover {
+      background: rgba(0, 119, 255, 0.25);
+      transform: scale(1.02);
+    }
+
+    details.dropdown[open] summary {
+      background: rgba(0, 119, 255, 0.2);
+    }
+
+    details.dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.dropdown .dropdown-content {
+      display: none;
+      padding: 1rem 1.5rem 2rem;
+      color: var(--text);
+      animation: fadeIn 0.4s ease;
+      position: static;
+    }
+
+    details.dropdown[open] .dropdown-content {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media(max-width: 768px) {
       .navbar-links {
         display: none;
@@ -292,26 +351,81 @@
     <p>See how YourOS compares to legacy platforms and how we price smarter, faster deployments.</p>
   </section>
 
-  <section class="section wrapper">
+  <section id="pricing-comparison" class="section wrapper">
     <h2>What You Typically Pay For</h2>
-    <p>Enterprise software vendors often quote <strong>$50,000 to $100,000+</strong> just to get started, and bill
-      <strong>$100/user/month</strong> thereafter.
-    </p>
+    <p>You’ve probably seen this before. Enterprise software vendors often quote <strong>$50,000 to $100,000+</strong> just to get started. Then they bill <strong>$100/user/month</strong> to keep the lights on.</p>
+    <p>And here’s what you’re actually buying:</p>
     <ul>
-      <li>❌ Slow timelines (3–12 months)</li>
-      <li>❌ Rigid tools with limited flexibility</li>
-      <li>❌ Poor support post-launch</li>
-      <li>❌ Expensive to change or adapt</li>
+      <li>❌ <strong>Slow timelines</strong> (3 to 12 months just to go live)</li>
+      <li>❌ <strong>Rigid tools</strong> that can’t adapt to your business</li>
+      <li>❌ <strong>Little follow-up</strong> once the contract is signed</li>
+      <li>❌ <strong>Vendor lock-in</strong> that makes updates expensive or impossible</li>
     </ul>
+
+    <p><strong>Don’t just take our word for it.</strong> Explore how some of the other players structure their offers:</p>
+    <ul>
+      <li><a href="https://dynamics.microsoft.com/en-us/pricing/" target="_blank">Microsoft Dynamics Pricing →</a></li>
+      <li><a href="https://www.salesforce.com/editions-pricing/sales-cloud/" target="_blank">Salesforce Pricing &amp; Editions →</a></li>
+      <li><a href="https://www.scnsoft.com/software-development/costs#:~:text=Software%20development%20costs%20for%20a,play%20an%20important%20role" target="_blank">ScienceSoft Software Development →</a></li>
+      <li><a href="https://www.bridgeall.com/2024/08/20/everything-you-need-to-know-about-outsystems-licensing/#:~:text=Subscription%20Growth%20,licenses%2C%20or%20server%20consumption" target="_blank">Bridgeall Subscription Prices →</a></li>
+    </ul>
+
+    <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo" class="logo-big" style="margin:3rem auto 0;display:block;max-width:90%;width:260px;">
 
     <h2>What YourOS Costs</h2>
-    <ul>
-      <li>💡 $25,000 Core Setup: Live in 1 week</li>
-      <li>💼 $65,000 Premium Package: Full on-site and strategic transformation</li>
-      <li>🧪 Pilot Programs: Priced via consultation</li>
-    </ul>
+    <p><strong>We price for clarity, speed, and outcomes.</strong><br>No hidden fees. No nickel-and-diming. Just systems that work—and keep working.</p>
 
-    <a class="cta" href="https://www.youros.app/begin-your-revolution">Get Custom Pricing</a>
+    <details class="dropdown">
+      <summary>🚀 Premium Package</summary>
+      <div class="dropdown-content">
+        <p><strong>$65,000</strong><br>Multiple products. Multiple on-site visits. Strategic deep dive. Ongoing iterative system builds.</p>
+        <p><em>For organizations with multiple teams that want transformation—not just configuration.</em></p>
+      </div>
+    </details>
+
+    <details class="dropdown">
+      <summary>🧰 Core Setup</summary>
+      <div class="dropdown-content">
+        <p><strong>$25,000</strong><br>One week. One team. One system.</p>
+        <p><em>On-site build. First version live by Friday.</em></p>
+      </div>
+    </details>
+
+    <details class="dropdown">
+      <summary>🧪 Pilot Programs</summary>
+      <div class="dropdown-content">
+        <p><strong>Priced via Consultation</strong><br>Custom-fit entry points for MVPs, proof-of-concept builds, or departmental rollouts.</p>
+        <p><em>Flexible, fast, and commitment-light.</em></p>
+      </div>
+    </details>
+
+    <details class="dropdown">
+      <summary>📊 User Costs &amp; Savings</summary>
+      <div class="dropdown-content">
+        <p>We base pricing on the value you receive—not just the seats you fill. Here’s our simple model:</p>
+        <ul>
+          <li><strong>$25/user/month</strong> — for your first 50 users</li>
+          <li><strong>$20/user/month</strong> — for users 51 to 100</li>
+          <li><strong>$15/user/month</strong> — for 101+ users</li>
+        </ul>
+        <p>At $25/user, that's roughly <em>the cost of one hour</em> of your employee’s time per month—while YourOS saves them <strong>dozens of hours</strong> every month in return.</p>
+      </div>
+    </details>
+
+    <a class="cta" href="https://www.youros.app/begin-your-revolution" target="_blank" rel="noopener">Get Custom Pricing</a>
+
+    <hr>
+
+    <h2>When you shop!</h2>
+    <p><strong>When you shop other solutions (which you should), ask them or someone you know who uses them these questions:</strong></p>
+    <ul>
+      <li>How long will it take to go live?</li>
+      <li>How quickly can you make changes after launch?</li>
+      <li>How much will it cost to implement those changes?</li>
+    </ul>
+    <p>And then let’s talk...</p>
+
+    <p style="margin-top:3rem;"><em>--As of May 2025. Prices subject to change. --</em></p>
   </section>
 
   <footer>
