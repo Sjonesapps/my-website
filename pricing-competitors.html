@@ -272,9 +272,14 @@
     }
 
     details.dropdown .dropdown-content {
+      display: none;
       padding: 1rem 1.5rem 2rem;
       color: var(--text);
       animation: fadeIn 0.4s ease;
+    }
+
+    details.dropdown[open] .dropdown-content {
+      display: block;
     }
 
     @keyframes fadeIn {
