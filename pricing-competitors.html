@@ -152,6 +152,10 @@
       padding: 4rem 0;
     }
 
+    p+p {
+      margin-top: 1rem;
+    }
+
     h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
@@ -235,52 +239,33 @@
       margin: 2rem 0;
     }
 
+    /* Pricing option dropdowns */
     details.pricing-dropdown {
-      background: var(--bg-alt);
-      border: 1px solid var(--primary);
-      border-radius: 8px;
       margin-top: 2rem;
-      overflow: hidden;
-      transition: box-shadow .3s ease;
     }
-
-    details.pricing-dropdown:hover {
-      box-shadow: 0 0 20px var(--primary-light);
-    }
-
     details.pricing-dropdown summary {
-      padding: 1.25rem;
+      display: block;
+      width: 100%;
       cursor: pointer;
       font-weight: 600;
+      background: var(--bg-alt);
       color: var(--primary);
-      background: rgba(0, 119, 255, 0.1);
+      padding: 1rem 1.5rem;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 119, 255, 0.4);
+      transition: box-shadow .2s ease;
       list-style: none;
-      transition: background .3s ease, transform .2s ease;
     }
-
     details.pricing-dropdown summary:hover {
-      background: rgba(0, 119, 255, 0.25);
-      transform: scale(1.02);
+      box-shadow: 0 0 12px rgba(0, 119, 255, 0.6);
     }
-
-    details.pricing-dropdown[open] summary {
-      background: rgba(0, 119, 255, 0.2);
-    }
-
-    details.pricing-dropdown summary::-webkit-details-marker {
-      display: none;
-    }
-
+    details.pricing-dropdown summary::-webkit-details-marker { display: none; }
+    details.pricing-dropdown[open] summary { /* keep same outline when open */ }
     details.pricing-dropdown .dropdown-content {
-      display: none;
       padding: 1rem 1.5rem 2rem;
       color: var(--text);
       animation: fadeIn 0.4s ease;
-      position: static;
-    }
-
-    details.pricing-dropdown[open] .dropdown-content {
-      display: block;
     }
 
     @keyframes fadeIn {
