@@ -235,7 +235,7 @@
       margin: 2rem 0;
     }
 
-    details.dropdown {
+    details.pricing-dropdown {
       background: var(--bg-alt);
       border: 1px solid var(--primary);
       border-radius: 8px;
@@ -244,11 +244,11 @@
       transition: box-shadow .3s ease;
     }
 
-    details.dropdown:hover {
+    details.pricing-dropdown:hover {
       box-shadow: 0 0 20px var(--primary-light);
     }
 
-    details.dropdown summary {
+    details.pricing-dropdown summary {
       padding: 1.25rem;
       cursor: pointer;
       font-weight: 600;
@@ -258,20 +258,20 @@
       transition: background .3s ease, transform .2s ease;
     }
 
-    details.dropdown summary:hover {
+    details.pricing-dropdown summary:hover {
       background: rgba(0, 119, 255, 0.25);
       transform: scale(1.02);
     }
 
-    details.dropdown[open] summary {
+    details.pricing-dropdown[open] summary {
       background: rgba(0, 119, 255, 0.2);
     }
 
-    details.dropdown summary::-webkit-details-marker {
+    details.pricing-dropdown summary::-webkit-details-marker {
       display: none;
     }
 
-    details.dropdown .dropdown-content {
+    details.pricing-dropdown .dropdown-content {
       display: none;
       padding: 1rem 1.5rem 2rem;
       color: var(--text);
@@ -279,7 +279,7 @@
       position: static;
     }
 
-    details.dropdown[open] .dropdown-content {
+    details.pricing-dropdown[open] .dropdown-content {
       display: block;
     }
 
@@ -375,7 +375,7 @@
     <h2>What YourOS Costs</h2>
     <p><strong>We price for clarity, speed, and outcomes.</strong><br>No hidden fees. No nickel-and-diming. Just systems that work—and keep working.</p>
 
-    <details class="dropdown">
+    <details class="pricing-dropdown">
       <summary>🚀 Premium Package</summary>
       <div class="dropdown-content">
         <p><strong>$65,000</strong><br>Multiple products. Multiple on-site visits. Strategic deep dive. Ongoing iterative system builds.</p>
@@ -383,7 +383,7 @@
       </div>
     </details>
 
-    <details class="dropdown">
+    <details class="pricing-dropdown">
       <summary>🧰 Core Setup</summary>
       <div class="dropdown-content">
         <p><strong>$25,000</strong><br>One week. One team. One system.</p>
@@ -391,7 +391,7 @@
       </div>
     </details>
 
-    <details class="dropdown">
+    <details class="pricing-dropdown">
       <summary>🧪 Pilot Programs</summary>
       <div class="dropdown-content">
         <p><strong>Priced via Consultation</strong><br>Custom-fit entry points for MVPs, proof-of-concept builds, or departmental rollouts.</p>
@@ -399,7 +399,7 @@
       </div>
     </details>
 
-    <details class="dropdown">
+    <details class="pricing-dropdown">
       <summary>📊 User Costs &amp; Savings</summary>
       <div class="dropdown-content">
         <p>We base pricing on the value you receive—not just the seats you fill. Here’s our simple model:</p>
