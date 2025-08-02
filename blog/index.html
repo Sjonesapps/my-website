@@ -274,11 +274,15 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: block;
+      color: var(--text);
+      text-decoration: none;
     }
 
     .post-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      color: var(--text);
     }
 
     @media(max-width: 768px) {
@@ -379,25 +383,25 @@
 
   <!-- POSTS LIST -->
   <section class="section wrapper posts-grid">
-    <article class="post-card">
-      <h2><a href="/blog/most-favorite-software-programs/">What are the most favorite software programs?</a></h2>
+    <a class="post-card" href="/blog/most-favorite-software-programs/">
+      <h2>What are the most favorite software programs?</h2>
       <p class="muted">July 20, 2025 — Productivity</p>
       <p>A quick tour of the tools users rave about, from classic utilities to new productivity powerhouses.</p>
 
-    </article>
-    <article class="post-card">
-      <h2><a href="/blog/dashboard-design-best-practices/">What are the best practices for dashboard design?</a></h2>
+    </a>
+    <a class="post-card" href="/blog/dashboard-design-best-practices/">
+      <h2>What are the best practices for dashboard design?</h2>
       <p class="muted">July 17, 2025 — Ops</p>
       <p>Why context matters more than cramming every metric onto one screen. Learn role-based strategies to maximize screen real estate.</p>
 
-    </article>
-    <article class="post-card">
-      <h2><a href="/blog/software-adoption-secret/">What is the secret to successful software adoption?</a></h2>
+    </a>
+    <a class="post-card" href="/blog/software-adoption-secret/">
+      <h2>What is the secret to successful software adoption?</h2>
       <p class="muted">July 12, 2025 — Logistics</p>
       <p>Feel like no on is using the system right? Discover our game-changing secret to user adoption that transforms frustration into success. Learn why at Your OS, we found the perfect harmony between user and stakeholder—unlocking productivity, boosting morale, and delivering software your team WANTS to use.</p>
 
-    </article>
-    <!-- add more <article class="post-card"> blocks in reverse chronological order -->
+    </a>
+    <!-- add more <a class="post-card" href="#"> blocks in reverse chronological order -->
   </section>
   <!-- FOOTER -->
   <footer>© 2025 YourOS. Those who could excel, should excel</footer>
