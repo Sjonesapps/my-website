@@ -227,30 +227,30 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       text-align: center;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: block;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 400;
     }
 
     .testimonial-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      color: var(--text);
+    }
+
+    .testimonial-card h3 {
+      color: #fff;
+      margin-bottom: 0.75rem;
     }
 
     .testimonial-card p {
-      color: #b0b6bf;
+      color: #b8bec7;
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 1.5rem;
       font-weight: 400;
     }
 
-    .testimonial-card .cta {
+    .testimonial-card .card-link {
       display: inline-block;
       background-color: var(--primary);
-      color: #fff !important;
+      color: #fff;
       padding: 0.75rem 1.5rem;
       border-radius: 6px;
       font-weight: 600;
@@ -259,8 +259,9 @@
       transition: background-color 0.2s ease;
     }
 
-    .testimonial-card .cta:hover {
+    .testimonial-card .card-link:hover {
       background-color: var(--primary-light);
+      color: #fff;
     }
 
     .cta {
@@ -297,11 +298,7 @@
     .stat-num {
       font-size: 2.25rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
+      color: #e0e4e8;
     }
 
     .stat-label {
@@ -478,29 +475,29 @@
   <section class=”section wrapper” style=”text-align: center;”>
     <div class=”testimonial-list”>
 
-      <a class=”testimonial-card” href=”https://www.youros.app/what-does-youros-do/stories-and-testimony/hvac”>
+      <div class=”testimonial-card”>
         <h3>HVAC Company — 30–50 Field Technicians</h3>
         <p>Service records sat in trucks for days. The office sprinted every night to process paper forms — chasing typos, declined cards, and bad phone numbers. Lost sales happened at the moment of service. After YourOS: technicians collect clean, validated information on-site, and the office processes payment before the tech even leaves the customer’s home.</p>
-        <span class=”cta”>Read the Full Story →</span>
-      </a>
+        <a class=”card-link” href=”https://www.youros.app/what-does-youros-do/stories-and-testimony/hvac”>Read the Full Story →</a>
+      </div>
 
-      <a class=”testimonial-card” href=”https://www.youros.app/what-does-youros-do/stories-and-testimony/vehicle-track-to-backlog”>
+      <div class=”testimonial-card”>
         <h3>Biotech Firm — The System That Helped Sell the Company</h3>
         <p>Brad asked for a vehicle tracker. He got an operations system that drove his company’s sample retention rate to 99% — while the industry average sits at 70–80%. When the business was acquired, the purchasing company told corporate to leave the YourOS system alone. They wanted to learn it and replicate it across the organization.</p>
-        <span class=”cta”>Read the Full Story →</span>
-      </a>
+        <a class=”card-link” href=”https://www.youros.app/what-does-youros-do/stories-and-testimony/vehicle-track-to-backlog”>Read the Full Story →</a>
+      </div>
 
-      <a class=”testimonial-card” href=”https://www.youros.app/what-does-youros-do/stories-and-testimony/whiteboard”>
+      <div class=”testimonial-card”>
         <h3>RV Dealership — 25+ Locations, Zero Visibility</h3>
         <p>A multi-location RV dealership was running its entire operation on whiteboards. Inventory vanished between locations. Appointments clashed. Teams blamed each other with no way to prove who was right. YourOS built a live asset command center that gave every location real-time visibility — and eliminated the finger-pointing for good.</p>
-        <span class=”cta”>Read the Full Story →</span>
-      </a>
+        <a class=”card-link” href=”https://www.youros.app/what-does-youros-do/stories-and-testimony/whiteboard”>Read the Full Story →</a>
+      </div>
 
-      <a class=”testimonial-card” href=”https://www.youros.app/what-does-youros-do/stories-and-testimony/where-it-started”>
+      <div class=”testimonial-card”>
         <h3>Where It All Started — The Accidental Platform</h3>
         <p>A rental ops manager tried to build a fair bonus system for his team. The tracking turned into a manual monster that had the office staying hours late every night. The system he built to fix it became the seed that grew into YourOS — and it gave his team back their evenings, their weekends, and room to grow without adding headcount.</p>
-        <span class=”cta”>Read the Full Story →</span>
-      </a>
+        <a class=”card-link” href=”https://www.youros.app/what-does-youros-do/stories-and-testimony/where-it-started”>Read the Full Story →</a>
+      </div>
 
     </div>
   </section>
