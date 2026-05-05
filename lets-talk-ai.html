@@ -5,7 +5,13 @@
   <meta charset="utf-8" />
   <link rel="canonical" href="https://www.youros.app/lets-talk-ai" />
   <meta name="robots" content="index, follow" />
-  <title>YourOS – Your Operating Systems</title>
+  <title>Let's Talk AI – What AI Actually Does for Your Business | YourOS</title>
+  <meta name="description" content="Cutting through AI hype to tell you what actually works for small business operations. No buzzwords — just practical AI that replaces manual work and saves your team time." />
+  <meta property="og:title" content="Let's Talk AI – What AI Actually Does for Your Business | YourOS" />
+  <meta property="og:description" content="Cutting through AI hype to tell you what actually works for small business operations. No buzzwords — just practical AI that replaces manual work and saves your team time." />
+  <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
+  <meta property="og:url" content="https://www.youros.app/lets-talk-ai" />
+  <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" sizes="32x32"
     href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
@@ -21,6 +27,10 @@
       --text: #e6e8ec;
       --muted: #9ca3af;
       --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
+      --action: #f97316;
+      --action-hover: #ea580c;
+      --white: #fff;
+      --black: #111;
     }
 
     * {
@@ -83,81 +93,33 @@
       margin-top: 1rem;
     }
 
-    .navbar {
-      background-color: white;
-      color: black;
+    nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
+      background: var(--white);
+      height: 64px;
+      padding: 0 2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    .navbar-left {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-left img {
-      height: 32px;
-      margin-right: 10px;
-    }
-
-    .navbar-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 3px;
-      margin: 5px 0;
-      background: black;
-    }
-
-    .navbar a {
-      color: black;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: black;
-      white-space: nowrap;
-    }
+    .nav-left { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-left img { height: 32px; width: auto; }
+    .nav-left span { font-weight: 600; font-size: 1rem; color: var(--black); }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span { display: block; width: 24px; height: 3px; margin: 5px 0; background: var(--black); }
+    .nav-links a { text-decoration: none; color: var(--black); font-weight: 500; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta-link { background: var(--action); color: var(--white)!important; padding: 0.5rem 1.1rem; border-radius: 6px; font-weight: 600!important; font-size: 0.9rem; transition: background .2s; }
+    .nav-cta-link:hover { background: var(--action-hover)!important; color: var(--white)!important; }
+    .dropdown { position: relative; }
+    .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); min-width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,.1); z-index: 999; border-radius: 4px; }
+    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: var(--black); font-size: 0.9rem; }
+    .dropdown-content a:hover { background: #f2f2f2; color: var(--primary); }
+    .dropdown:hover .dropdown-content { display: block; }
 
     .hero {
       background: radial-gradient(circle at center, rgba(0, 119, 255, .15) 0%, transparent 70%);
@@ -258,7 +220,7 @@
     }
 
     @media(max-width: 768px) {
-      .navbar-links {
+      .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -270,7 +232,7 @@
         border-radius: 4px;
       }
 
-      .navbar-links.open {
+      .nav-links.open {
         display: flex;
       }
 
@@ -322,28 +284,32 @@
 
 <body>
 
-  <nav class="navbar">
-    <a class="navbar-left" href="https://www.youros.app">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
+  <nav>
+    <a class="nav-left" href="https://www.youros.app">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo">
       <span>YOUR Operating System</span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="navbar-links">
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <div class="nav-links">
       <a href="https://www.youros.app/youros-home">YourOS Home</a>
-      <div class="dropdown">
-        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+      <div class="dropdown"><a href="#">Services ▾</a>
         <div class="dropdown-content">
-          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+          <a href="/ai-automation-services-small-business/">AI Automation Services</a>
+          <a href="/custom-workflow-automation/">Custom Workflow Automation</a>
+          <a href="/replace-spreadsheets-with-custom-app/">Replace Spreadsheets</a>
+          <a href="/appsheet-consultant/">AppSheet Consulting</a>
+          <a href="/ai-assistants-for-business/">AI Assistants for Business</a>
         </div>
       </div>
-      <a href="https://www.youros.app/security-trust">Security & Trust</a>
+      <div class="dropdown"><a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content">
+          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories &amp; Testimony</a>
+        </div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security &amp; Trust</a>
       <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
-      <a href="https://www.youros.app/pricing-competitors">Pricing & Competitors</a>
-      <a href="/blog/" style="color:var(--black)">Blog</a>
+      <a href="/blog/">Blog</a>
+      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Book a Workflow Audit</a>
     </div>
   </nav>
 
@@ -405,7 +371,7 @@
   </script>
   <script>
     const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.navbar-links') || document.querySelector('.nav-links');
+    const links = document.querySelector('.nav-links');
     if (toggle && links) {
       toggle.addEventListener('click', () => {
         links.classList.toggle('open');
