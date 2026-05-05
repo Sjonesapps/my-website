@@ -1,454 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <title>RV Dealership – 25+ Locations, One Live Operations System | YourOS</title>
+  <meta name="description" content="An RV dealership chain with 25+ locations was running its entire operation on whiteboards. Inventory vanished between locations. Teams blamed each other. YourOS replaced the chaos with live asset visibility across every location." />
   <link rel="canonical" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/whiteboard" />
   <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>From Whiteboards to Workflow Mastery | YourOS</title>
-  <link rel="icon" type="image/png" sizes="32x32"
-    href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #1c1c1e;
-      --bg-alt: #2a2a2a;
-      --primary: #0077ff;
-      --primary-light: #00afff;
-      --text: #e6e8ec;
-      --muted: #9ca3af;
-      --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-      transition: color .2s ease;
-    }
-
-    a:hover {
-      color: var(--primary-light);
-    }
-
-    .navbar {
-      background-color: white;
-      color: black;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .navbar-left {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-left img {
-      height: 32px;
-      margin-right: 10px;
-    }
-
-    .navbar-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 3px;
-      margin: 5px 0;
-      background: black;
-    }
-
-    .navbar a {
-      color: black;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: black;
-      white-space: nowrap;
-    }
-
-
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .section {
-      padding: 4rem 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.75rem;
-      letter-spacing: -0.01em;
-      background: var(--chrome);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-size: 2rem;
-      background: var(--chrome);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-    }
-
-    p+p {
-      margin-top: 1rem;
-    }
-
-    .hero {
-      background: radial-gradient(circle at center, rgba(0, 119, 255, .15) 0%, transparent 70%);
-      text-align: center;
-      padding: 7rem 1.5rem 6rem;
-    }
-
-    .hero img {
-      display: block;
-      margin: 2rem auto;
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-    }
-
-    .cta {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      padding: 1rem 2.25rem;
-      border-radius: 8px;
-      margin-top: 2rem;
-      box-shadow: inset 0 0 4px rgba(255, 255, 255, .15), 0 0 10px var(--primary-light);
-      overflow: hidden;
-      transition: transform .2s ease, box-shadow .2s ease;
-      position: relative;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: inset 0 0 4px rgba(255, 255, 255, .2), 0 0 18px var(--primary-light);
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-      transform: translateX(-100%);
-      animation: shimmer 2s infinite;
-    }
-
-    @keyframes shimmer {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      50% {
-        transform: translateX(100%);
-      }
-
-      100% {
-        transform: translateX(100%);
-      }
-    }
-
-    .split {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .split>div {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    footer {
-      background-color: var(--bg-alt);
-      color: var(--muted);
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: .9rem;
-    }
-
-    .favicon-footer {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 32px;
-      height: 32px;
-      opacity: 0.8;
-      pointer-events: auto;
-    }
-
-    @media(max-width: 768px) {
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 64px;
-        right: 1rem;
-        background: white;
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-      }
-
-      .navbar-links.open {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-
-    @media(max-width: 1024px) {
-
-      .wrapper,
-      .hero {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-    }
-
-    @media(max-width: 640px) {
-
-      .wrapper,
-      .hero {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-      }
-
-      h1 {
-        font-size: 2.25rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
-    }
+    :root{--bg:#1c1c1e;--bg-alt:#2a2a2a;--primary:#0077ff;--primary-light:#00afff;--action:#f97316;--action-hover:#ea580c;--text:#e6e8ec;--muted:#9ca3af;--chrome:linear-gradient(135deg,#cfd4d9 0%,#9ea3a6 100%);--white:#fff;--black:#111;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:var(--primary);font-weight:600;text-decoration:none;transition:color .2s;}a:hover{color:var(--primary-light);}
+    h1,h2,h3{font-weight:700;margin-bottom:1rem;}h1{font-size:2.75rem;letter-spacing:-0.02em;line-height:1.15;}h2{font-size:2rem;}h3{font-size:1.25rem;}
+    .wrapper{max-width:1100px;margin:0 auto;padding:0 1.5rem;}.section{padding-top:4rem;padding-bottom:4rem;}p+p{margin-top:1rem;}
+    nav{display:flex;align-items:center;justify-content:space-between;background:var(--white);height:64px;padding:0 2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000;}
+    .nav-left{display:flex;align-items:center;gap:0.75rem;}.nav-left img{height:32px;width:auto;}.nav-left span{font-weight:600;font-size:1rem;color:var(--black);}
+    .nav-links{display:flex;align-items:center;gap:1.5rem;}.nav-toggle{display:none;background:none;border:none;cursor:pointer;}.nav-toggle span{display:block;width:24px;height:3px;margin:5px 0;background:var(--black);}
+    .nav-links a{text-decoration:none;color:var(--black);font-weight:500;}.nav-links a:hover{color:var(--primary);}
+    .nav-cta-link{background:var(--action);color:var(--white)!important;padding:0.5rem 1.1rem;border-radius:6px;font-weight:600!important;font-size:0.9rem;transition:background .2s;}.nav-cta-link:hover{background:var(--action-hover)!important;color:var(--white)!important;}
+    .dropdown{position:relative;}.dropdown-content{display:none;position:absolute;top:100%;left:0;background:var(--white);min-width:220px;box-shadow:0 4px 8px rgba(0,0,0,.1);z-index:999;border-radius:4px;}
+    .dropdown-content a{display:block;padding:0.75rem 1rem;color:var(--black);font-size:0.9rem;}.dropdown-content a:hover{background:#f2f2f2;color:var(--primary);}.dropdown:hover .dropdown-content{display:block;}
+    .hero{background:radial-gradient(circle at center,rgba(0,119,255,.12) 0%,transparent 70%);padding:6rem 1.5rem 5rem;text-align:center;}
+    .hero-eyebrow{display:inline-block;background:rgba(0,119,255,.1);border:1px solid rgba(0,119,255,.25);color:var(--primary-light);font-size:0.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.35rem 1rem;border-radius:999px;margin-bottom:1.5rem;}
+    .hero h1{background:var(--chrome);-webkit-background-clip:text;color:transparent;max-width:820px;margin:0 auto 1.25rem;}
+    .hero p{font-size:1.15rem;max-width:640px;margin:0 auto;color:var(--muted);}
+    .stat-bar{background:var(--bg-alt);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:2.5rem 1.5rem;text-align:center;}
+    .stat-bar .wrapper{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;}
+    .stat{flex:1;min-width:160px;}.stat-num{font-size:2.25rem;font-weight:700;background:var(--chrome);-webkit-background-clip:text;color:transparent;}.stat-label{color:var(--muted);font-size:0.85rem;margin-top:0.25rem;}
+    .cta{display:inline-block;background:var(--action);color:#fff;padding:1rem 2.25rem;border-radius:8px;box-shadow:0 0 12px rgba(249,115,22,.35);transition:transform .2s,box-shadow .2s;font-weight:700;margin-top:2rem;}.cta:hover{background:var(--action-hover);color:#fff;transform:translateY(-2px);box-shadow:0 0 20px rgba(249,115,22,.5);}
+    .phase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2rem;}
+    .phase-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.5rem;}
+    .phase-card h3{font-size:0.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--primary-light);margin-bottom:0.5rem;}
+    .phase-card p{font-size:0.9rem;color:var(--muted);margin:0;}
+    .callout{background:rgba(249,115,22,.07);border-left:3px solid var(--action);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .callout p{color:var(--text);font-size:1rem;font-style:italic;}
+    .check-list{list-style:none;margin-top:1.25rem;}.check-list li{padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:0.95rem;display:flex;align-items:flex-start;gap:0.6rem;}.check-list li::before{content:"✓";color:var(--action);font-weight:700;flex-shrink:0;}
+    .before-list{list-style:none;margin-top:1.25rem;}.before-list li{padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:0.95rem;display:flex;align-items:flex-start;gap:0.6rem;}.before-list li::before{content:"✗";color:#f87171;font-weight:700;flex-shrink:0;}
+    .cta-block{background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.2);border-radius:16px;padding:3.5rem 2rem;text-align:center;margin-top:2rem;}.cta-block h2{margin-bottom:0.75rem;}.cta-block p{color:var(--muted);max-width:520px;margin:0 auto 2rem;}
+    .breadcrumb{font-size:0.85rem;color:var(--muted);padding:1rem 0;}.breadcrumb a{color:var(--muted);font-weight:400;}.breadcrumb a:hover{color:var(--text);}
+    footer{text-align:center;background:var(--bg-alt);padding:2rem 1.5rem;font-size:.9rem;color:var(--muted);}
+    .favicon-footer{position:fixed;bottom:20px;right:20px;width:32px;height:32px;opacity:0.8;}
+    @media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:64px;right:1rem;background:var(--white);padding:1rem;box-shadow:0 4px 8px rgba(0,0,0,.1);border-radius:4px;}.nav-links.open{display:flex;}.nav-toggle{display:block;}}
+    @media(max-width:640px){h1{font-size:2.1rem;}h2{font-size:1.6rem;}}
   </style>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-Y74BBJGYND');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y74BBJGYND');</script>
 </head>
-
 <body>
-  <nav class="navbar">
-    <a class="navbar-left" href="https://www.youros.app">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
-      <span>YOUR Operating System</span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="navbar-links">
+  <nav>
+    <a class="nav-left" href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo"><span>YOUR Operating System</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <div class="nav-links">
       <a href="https://www.youros.app/youros-home">YourOS Home</a>
-      <div class="dropdown">
-        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+      <div class="dropdown"><a href="#">Services ▾</a>
         <div class="dropdown-content">
-          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+          <a href="/ai-automation-services-small-business/">AI Automation Services</a>
+          <a href="/custom-workflow-automation/">Custom Workflow Automation</a>
+          <a href="/replace-spreadsheets-with-custom-app/">Replace Spreadsheets</a>
+          <a href="/appsheet-consultant/">AppSheet Consulting</a>
+          <a href="/ai-assistants-for-business/">AI Assistants for Business</a>
         </div>
       </div>
-      <a href="https://www.youros.app/security-trust">Security & Trust</a>
-      <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
-      <a href="https://www.youros.app/pricing-competitors">Pricing & Competitors</a>
-      <a href="/blog/" style="color:white">Blog</a>
+      <div class="dropdown"><a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content"><a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories &amp; Testimony</a></div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Book a Workflow Audit</a>
     </div>
   </nav>
 
   <section class="hero">
-    <h1>From Whiteboards to Command Center</h1>
-    <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS logo for custom business operating system" />
-    <a href="../../Begin-Your-Revolution.html" class="cta" target="_blank" rel="noopener">See It in Action</a>
+    <div class="hero-eyebrow">Client Results — RV Dealership Chain</div>
+    <h1>25+ Locations Running on Whiteboards. Inventory Vanishing Between Them. Here's How That Ends.</h1>
+    <p>A multi-location RV dealership could close sales. What they couldn't do was track what they had, where it was, or who last touched it — across 25+ locations. All of that lived on whiteboards that couldn't talk to each other.</p>
+  </section>
+
+  <div class="stat-bar">
+    <div class="wrapper">
+      <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Locations unified on one live system</div></div>
+      <div class="stat"><div class="stat-num">Zero</div><div class="stat-label">Whiteboards still running their operations</div></div>
+      <div class="stat"><div class="stat-num">Real-Time</div><div class="stat-label">Asset visibility from interest to delivery</div></div>
+      <div class="stat"><div class="stat-num">Every Team</div><div class="stat-label">Sales, service, delivery — all on one platform</div></div>
+    </div>
+  </div>
+
+  <section class="section wrapper">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/what-does-youros-do/stories-and-testimony/">Client Results</a> › RV Dealership Chain</div>
+    <h2>Before: High Sales, Zero Visibility</h2>
+    <p>This was a successful business. Their salespeople could close. Their service teams were experienced. But the moment a customer said yes, the operational chaos began.</p>
+    <ul class="before-list">
+      <li>Inventory tracked on whiteboards at each location — with no way to see what other locations had</li>
+      <li>Appointments clashed because location A didn't know what location B had scheduled</li>
+      <li>Units disappeared between locations during transfers — no one could prove where they were</li>
+      <li>Customers waited, got confused, or gave up because no one had a clear answer</li>
+      <li>Teams blamed each other with no shared record to settle the dispute</li>
+      <li>Leadership couldn't see the full picture — just whatever they could piece together from phone calls</li>
+    </ul>
+    <div class="callout">
+      <p>The biggest problem wasn't any one location. It was that 25+ locations were operating as 25+ separate businesses — with no shared view of the assets they all depended on.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+    <div class="wrapper">
+      <h2>The Real Problem: Lifecycle Blindness Across Locations</h2>
+      <p>RV dealerships don't just sell units — they manage active, evolving assets. Every unit has a journey: it generates interest, gets serviced, gets prepped, gets sold, gets delivered. That journey doesn't stay at one location. It crosses teams, facilities, and cities.</p>
+      <p>When that lifecycle lives on a whiteboard, it disappears the moment someone walks out of the room. When it crosses locations, it disappears entirely.</p>
+      <p>The fix wasn't a better whiteboard. It was giving every unit a live digital record that followed it through the entire journey — visible to every team, at every location, in real time.</p>
+    </div>
   </section>
 
   <section class="section wrapper">
-    <h2>High Sales, Low Visibility</h2>
-    <div class="split">
-      <div>
-        <p>This multi-location sales team could close. But their internal operations? Tracked on whiteboards.</p>
-        <p>Appointments clashed. Units vanished. Customers got confused. Teams blamed each other. Manual chaos ruled
-          every asset handoff.</p>
+    <h2>The Build: Four Phases, One Unified System</h2>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <h3>Phase 1 — Replace the Whiteboards</h3>
+        <p>Familiar layout, fully digitized. Every unit, every status, every location — visible in one place. No more erase marks, no more "I thought you updated that."</p>
       </div>
-      <div>
-        <p>They needed operational clarity. They found YourOS—a custom business system built to replace whiteboards and
-          unite teams.</p>
+      <div class="phase-card">
+        <h3>Phase 2 — Integrate the Data</h3>
+        <p>We connected the sources that mattered — inventory systems, service records, customer data. Where integrations didn't exist, we built the bridges.</p>
+      </div>
+      <div class="phase-card">
+        <h3>Phase 3 — Sync the Teams</h3>
+        <p>Sales, service, and delivery saw the same record, updated in real time. Across every location. The finger-pointing stopped because there was now a record everyone could see.</p>
+      </div>
+      <div class="phase-card">
+        <h3>Phase 4 — Automate the Ops</h3>
+        <p>Status changes triggered alerts. Bottlenecks flagged themselves. Leadership saw what was moving and what was stalled — without having to make a single phone call.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+    <div class="wrapper">
+      <h2>After: One Source of Truth Across 25+ Locations</h2>
+      <ul class="check-list">
+        <li>Every unit tracked from the moment a customer shows interest to the moment it's delivered</li>
+        <li>Every location sees the same live data — no more "what do you have available?" phone calls</li>
+        <li>Appointments no longer clash because conflicts surface before they become promises</li>
+        <li>Transfers tracked in real time — no more "I thought someone took it" conversations</li>
+        <li>New hires onboard faster because the process is in the system, not in one person's head</li>
+        <li>Leadership gets live operational dashboards — not end-of-day reports reconstructed from memory</li>
+      </ul>
+      <div class="callout">
+        <p>When new needs showed up, YourOS evolved faster than their internal tech team could deliver. Today, it runs across all departments, and data is always there — always live.</p>
       </div>
     </div>
   </section>
 
   <section class="section wrapper">
-    <h2>A Shift in Perspective</h2>
-    <div class="split">
-      <div>
-        <p>They didn’t just buy a tool. They asked questions. So did we. The real issue? <em>Lifecycle blindness</em>.
-        </p>
-        <p>They weren’t managing products. They were managing active, evolving assets—each one with its own journey from
-          interest to delivery.</p>
-      </div>
-      <div>
-        <p>YourOS gave every asset a record. Every step became visible: interest, service, prep, sale, delivery. One
-          interface. Zero finger-pointing.</p>
-      </div>
+    <div class="cta-block">
+      <h2>Running Multiple Locations Without One Shared System?</h2>
+      <p>If your teams can't see what each other has, what each other scheduled, or where each other's assets are — you're not running a multi-location business. You're running several disconnected ones. Let's fix that.</p>
+      <a class="cta" href="/Begin-Your-Revolution.html">Book a Free Workflow Audit</a>
     </div>
   </section>
 
-  <section class="section wrapper">
-    <h2>The Build: Fast, Intuitive, Connected</h2>
-    <div class="split">
-      <div>
-        <h3>Phase 1: Replace the Whiteboards</h3>
-        <p>Familiar layout—fully digitized. No errors, no missed updates.</p>
-        <h3>Phase 2: Integrate the Data</h3>
-        <p>We pulled in what mattered via API. Built new bridges where they didn’t exist.</p>
-      </div>
-      <div>
-        <h3>Phase 3: Sync the Teams</h3>
-        <p>Everyone saw what everyone else did. Across every location. In real time.</p>
-        <h3>Phase 4: Automate the Ops</h3>
-        <p>Statuses triggered alerts. Bottlenecks flagged themselves. Leaders saw what moved—and what didn’t.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section wrapper">
-    <h2>Results: Organizational Clarity</h2>
-    <div class="split">
-      <div>
-        <ul>
-          <li>Live asset tracking from lead to delivery</li>
-          <li>Real-time updates visible to every team</li>
-          <li>Operational silos eliminated</li>
-          <li>Smarter workflows that scale</li>
-        </ul>
-      </div>
-      <div>
-        <p>And when new needs showed up, YourOS evolved faster than their internal tech team could deliver.</p>
-        <p>Today, it’s used across all departments. New hires onboard faster. Ops run smoother. And data? Always there,
-          always live.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section wrapper">
-    <h2>The Takeaway</h2>
-    <div class="split">
-      <div>
-        <p>They didn’t get a system. They got visibility. Accountability. Efficiency. Because when your process becomes
-          your competitive advantage—your business scales itself.</p>
-      </div>
-      <div>
-        <a href="../../Begin-Your-Revolution.html" class="cta" target="_blank" rel="noopener">Replace the Chaos</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 YourOS. Those who could excel, should excel.
-    <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png"
-      alt="Electric Y Favicon for YourOS" class="favicon-footer" /></a>
-  </footer>
-
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.navbar-links') || document.querySelector('.nav-links');
-    if (toggle && links) {
-      toggle.addEventListener('click', () => {
-        links.classList.toggle('open');
-      });
-    }
-  </script>
+  <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
+  <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" class="favicon-footer"></a>
+  <script>const t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');if(t&&l)t.addEventListener('click',()=>l.classList.toggle('open'));</script>
 </body>
-
 </html>
