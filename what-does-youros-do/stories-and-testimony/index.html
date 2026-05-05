@@ -230,6 +230,7 @@
       display: block;
       color: var(--text);
       text-decoration: none;
+      font-weight: 400;
     }
 
     .testimonial-card:hover {
@@ -239,19 +240,18 @@
     }
 
     .testimonial-card p {
-      color: var(--muted);
+      color: #b0b6bf;
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 1.5rem;
+      font-weight: 400;
     }
 
     .testimonial-card .cta {
-      display: block;
-      margin: 0 auto;
-      max-width: 30%;
+      display: inline-block;
       background-color: var(--primary);
-      color: #fff;
-      padding: 0.75rem 1.25rem;
+      color: #fff !important;
+      padding: 0.75rem 1.5rem;
       border-radius: 6px;
       font-weight: 600;
       font-size: 0.95rem;
@@ -292,6 +292,22 @@
       background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
       transform: translateX(-100%);
       animation: shimmer 2s infinite;
+    }
+
+    .stat-num {
+      font-size: 2.25rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
     }
 
     @keyframes shimmer {
@@ -440,20 +456,20 @@
   <section style=”background:var(--bg-alt);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:2.5rem 1.5rem;text-align:center;”>
     <div class=”wrapper” style=”display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;”>
       <div style=”flex:1;min-width:180px;”>
-        <div style=”font-size:2.25rem;font-weight:700;background:var(--chrome);-webkit-background-clip:text;color:transparent;”>99%</div>
-        <div style=”color:var(--muted);font-size:0.9rem;margin-top:0.25rem;”>Sample retention rate (industry avg: 70–80%)</div>
+        <div class=”stat-num”>99%</div>
+        <div class=”stat-label”>Sample retention rate (industry avg: 70–80%)</div>
       </div>
       <div style=”flex:1;min-width:180px;”>
-        <div style=”font-size:2.25rem;font-weight:700;background:var(--chrome);-webkit-background-clip:text;color:transparent;”>30–50</div>
-        <div style=”color:var(--muted);font-size:0.9rem;margin-top:0.25rem;”>Field techs connected to the office instantly</div>
+        <div class=”stat-num”>30–50</div>
+        <div class=”stat-label”>Field techs connected to the office instantly</div>
       </div>
       <div style=”flex:1;min-width:180px;”>
-        <div style=”font-size:2.25rem;font-weight:700;background:var(--chrome);-webkit-background-clip:text;color:transparent;”>25+</div>
-        <div style=”color:var(--muted);font-size:0.9rem;margin-top:0.25rem;”>Locations unified on one live operations system</div>
+        <div class=”stat-num”>25+</div>
+        <div class=”stat-label”>Locations unified on one live operations system</div>
       </div>
       <div style=”flex:1;min-width:180px;”>
-        <div style=”font-size:2.25rem;font-weight:700;background:var(--chrome);-webkit-background-clip:text;color:transparent;”>Days→Min</div>
-        <div style=”color:var(--muted);font-size:0.9rem;margin-top:0.25rem;”>Service records that used to take days now arrive instantly</div>
+        <div class=”stat-num”>Days→Min</div>
+        <div class=”stat-label”>Service records that used to take days now arrive instantly</div>
       </div>
     </div>
   </section>
