@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Book a Free Workflow Audit – YourOS</title>
-  <meta name="description" content="Show us the workflow that is slowing your team down. In a free 20-minute workflow audit, YourOS will map the manual steps, spot automation opportunities, and show what a better system could look like." />
+  <title>Request a Workflow Audit – YourOS</title>
+  <meta name="description" content="Tell YourOS where your team is losing time to manual work, spreadsheets, reporting, or communication drag. Submit the workflow problem and hear back within the hour." />
   <link rel="canonical" href="https://www.youros.app/Begin-Your-Revolution" />
-  <meta property="og:title" content="Book a Free Workflow Audit – YourOS" />
-  <meta property="og:description" content="Show us the workflow that is slowing your team down. In 20 minutes, we will map the manual steps, spot automation opportunities, and show what a better system could look like." />
+  <meta property="og:title" content="Request a Workflow Audit – YourOS" />
+  <meta property="og:description" content="Tell YourOS where your team is losing time to manual work, spreadsheets, reporting, or communication drag. Submit the workflow problem and hear back within the hour." />
   <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
   <meta property="og:url" content="https://www.youros.app/Begin-Your-Revolution" />
   <meta property="og:type" content="website" />
@@ -78,6 +78,10 @@
     .quote-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
     .quote { background: rgba(255,255,255,.04); border-left: 4px solid var(--primary); border-radius: 10px; padding: 1rem; color: var(--muted); font-size: .95rem; }
     .quote strong { color: var(--text); display: block; margin-top: .65rem; font-style: normal; }
+    .proof-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .proof-card { background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; }
+    .proof-card strong { display: block; color: var(--primary-light); font-size: 1.65rem; line-height: 1.1; margin-bottom: .35rem; }
+    .proof-card span { color: var(--muted); font-size: .92rem; }
 
     form { display: grid; gap: 1rem; }
     .form-card h2 { margin-bottom: .35rem; }
@@ -89,6 +93,7 @@
     }
     input:focus, textarea:focus { outline: 2px solid rgba(0,175,255,.35); border-color: var(--primary-light); }
     textarea { min-height: 132px; resize: vertical; }
+    .hidden { display: none; }
     .privacy { font-size: .82rem; color: var(--muted); margin-top: -.25rem; }
     .cta {
       display: block; width: 100%; padding: 1rem 1.1rem; background: var(--action); border: none;
@@ -158,15 +163,15 @@
 
   <main class="container">
     <section class="hero">
-      <span class="eyebrow">Free 20-minute workflow audit</span>
-      <h1>Show us the workflow that is costing you time.</h1>
-      <p>Bring the spreadsheet, inbox handoff, weekly report, or duct-taped process your team keeps fighting. We will map the manual steps and show where automation or a custom app would actually help.</p>
+      <span class="eyebrow">Workflow audit request</span>
+      <h1>Find the workflow quietly costing your business hours every week.</h1>
+      <p>Tell us where work is getting stuck — spreadsheets, handoffs, reporting, follow-up, or communication drag. We will review it and respond within the hour with the best next step.</p>
     </section>
 
     <div class="main-grid">
       <aside class="panel">
-        <h2>What we will look for</h2>
-        <p class="muted">This is not a generic software demo. It is a practical first pass at your actual workflow.</p>
+        <h2>What we look for</h2>
+        <p class="muted">This is not a generic software demo. It is a practical first pass at the workflow that is costing your team time, money, or focus.</p>
         <ul class="checklist">
           <li>Where your team copies the same data between tools.</li>
           <li>Which approvals, updates, or follow-ups are getting stuck.</li>
@@ -174,17 +179,22 @@
           <li>What should be automated, what should stay human, and what can be launched first.</li>
         </ul>
 
-        <div class="quote-grid">
-          <div class="quote">“We replaced three systems with one that actually fits.”<strong>Custom operations system client</strong></div>
-          <div class="quote">“YourOS gave us a system that feels like ours — because it is.”<strong>Workflow automation client</strong></div>
+        <div class="proof-grid" aria-label="Example YourOS outcomes">
+          <div class="proof-card"><strong>4 hrs → 30 min</strong><span>Daily communication and coordination work reduced to a focused operating rhythm.</span></div>
+          <div class="proof-card"><strong>100+ apps</strong><span>Custom workflows, dashboards, internal tools, and automations built around real business operations.</span></div>
+          <div class="proof-card"><strong>25% of sales</strong><span>Tools built for teams carrying meaningful revenue responsibility — not toy demos or generic templates.</span></div>
         </div>
       </aside>
 
       <section class="panel form-card" aria-labelledby="audit-form-title">
-        <h2 id="audit-form-title">Book your workflow audit</h2>
-        <p class="muted">Three fields. No homework packet. Just enough context to start the right conversation.</p>
+        <h2 id="audit-form-title">Request your workflow audit</h2>
+        <p class="muted">Four quick fields. No newsletter funnel. Just enough context to see whether automation or a custom app can help.</p>
 
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbws0ZMVP9B-BrbpFiAw4PoaepWUWDCI4U5pqwnrhaLXkrwkb5sALCra6RErGI5zjj2y/exec">
+        <form name="workflow-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="workflow-audit">
+          <p class="hidden">
+            <label>Do not fill this out if you are human: <input name="bot-field"></label>
+          </p>
           <div class="form-group">
             <label for="name">Name</label>
             <input id="name" name="name" autocomplete="name" required>
@@ -195,14 +205,18 @@
             <p class="privacy">We do not sell your info. Ever.</p>
           </div>
           <div class="form-group">
-            <label for="problem">What is the workflow that is driving you crazy?</label>
+            <label for="phone">Phone <span class="muted">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="problem">What is the biggest thing costing your team time right now?</label>
             <textarea id="problem" name="problem" placeholder="Example: We rebuild the same report every Friday from three spreadsheets, then chase approvals by email." required></textarea>
           </div>
-          <button type="submit" class="cta">Book My Free Workflow Audit</button>
+          <button type="submit" class="cta">Find My Workflow Bottleneck</button>
         </form>
 
         <div class="next-steps">
-          <strong>What happens next:</strong> you will hear back within 1 business day to schedule a 20-minute session. If there is not a real automation opportunity, we will say that plainly.
+          <strong>What happens next:</strong> we review your workflow problem and you will hear back within the hour. If there is a fit, we will schedule a focused audit call. If there is not a real automation opportunity, we will say that plainly.
         </div>
       </section>
     </div>
