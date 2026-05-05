@@ -1,428 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="canonical"
-    href="https://www.youros.app/what-does-youros-do/stories-and-testimony/vehicle-track-to-backlog" />
+  <meta charset="utf-8" />
+  <title>Biotech Firm – 99% Sample Retention, The System That Helped Sell the Company | YourOS</title>
+  <meta name="description" content="Brad asked for a vehicle tracker. He got an operations system that drove his biotech company's sample retention to 99% — and when the company was acquired, buyers told corporate to leave the YourOS system alone." />
+  <link rel="canonical" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/vehicle-track-to-backlog" />
   <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vehicle Tracking to Ops Clarity | YourOS</title>
-  <meta name="description"
-    content="Discover how YourOS helped a biotech company evolve a simple vehicle tracker into a full-scale sample and operations management system." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" sizes="32x32"
-    href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #1c1c1e;
-      --bg-alt: #2a2a2a;
-      --primary: #0077ff;
-      --primary-light: #00afff;
-      --text: #e6e8ec;
-      --muted: #9ca3af;
-      --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--primary-light);
-    }
-
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .section {
-      padding: 4rem 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.75rem;
-      background: var(--chrome);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-size: 2rem;
-      background: var(--chrome);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-transform: uppercase;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-    }
-
-    p+p {
-      margin-top: 1rem;
-    }
-
-    .hero {
-      background: radial-gradient(circle at center, rgba(0, 119, 255, .15) 0%, transparent 70%);
-      text-align: center;
-      padding: 7rem 1.5rem 6rem;
-    }
-
-    .hero img {
-      display: block;
-      margin: 2rem auto;
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-    }
-
-    .cta {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      padding: 1rem 2.25rem;
-      border-radius: 8px;
-      margin-top: 2rem;
-      box-shadow: inset 0 0 4px rgba(255, 255, 255, .15), 0 0 10px var(--primary-light);
-      overflow: hidden;
-      transition: transform .2s ease, box-shadow .2s ease;
-      position: relative;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: inset 0 0 4px rgba(255, 255, 255, .2), 0 0 18px var(--primary-light);
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-      transform: translateX(-100%);
-      animation: shimmer 2s infinite;
-    }
-
-    @keyframes shimmer {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      50% {
-        transform: translateX(100%);
-      }
-
-      100% {
-        transform: translateX(100%);
-      }
-    }
-
-    .split {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .split>div {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    footer {
-      background: var(--bg-alt);
-      color: var(--muted);
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: .9rem;
-    }
-
-    .favicon-footer {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 32px;
-      height: 32px;
-      opacity: 0.8;
-      pointer-events: auto;
-    }
-
-    @media(max-width: 768px) {
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 64px;
-        right: 1rem;
-        background: white;
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-      }
-
-      .navbar-links.open {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-
-    @media(max-width: 1024px) {
-
-      .wrapper,
-      .hero {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-    }
-
-    @media(max-width: 640px) {
-
-      .wrapper,
-      .hero {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-      }
-
-      h1 {
-        font-size: 2.25rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
-    }
-
-    .centered-cta {
-      text-align: center;
-    }
-
-    .navbar {
-      background-color: white;
-      color: black;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
-
-    .navbar-left {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-left img {
-      height: 32px;
-      margin-right: 10px;
-    }
-
-    .navbar-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 3px;
-      margin: 5px 0;
-      background: black;
-    }
-
-    .navbar a {
-      color: black;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: black;
-      white-space: nowrap;
-    }
-
+    :root{--bg:#1c1c1e;--bg-alt:#2a2a2a;--primary:#0077ff;--primary-light:#00afff;--action:#f97316;--action-hover:#ea580c;--text:#e6e8ec;--muted:#9ca3af;--chrome:linear-gradient(135deg,#cfd4d9 0%,#9ea3a6 100%);--white:#fff;--black:#111;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:var(--primary);font-weight:600;text-decoration:none;transition:color .2s;}a:hover{color:var(--primary-light);}
+    h1,h2,h3{font-weight:700;margin-bottom:1rem;}h1{font-size:2.75rem;letter-spacing:-0.02em;line-height:1.15;}h2{font-size:2rem;}h3{font-size:1.25rem;}
+    .wrapper{max-width:1100px;margin:0 auto;padding:0 1.5rem;}.section{padding-top:4rem;padding-bottom:4rem;}p+p{margin-top:1rem;}
+    nav{display:flex;align-items:center;justify-content:space-between;background:var(--white);height:64px;padding:0 2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000;}
+    .nav-left{display:flex;align-items:center;gap:0.75rem;}.nav-left img{height:32px;width:auto;}.nav-left span{font-weight:600;font-size:1rem;color:var(--black);}
+    .nav-links{display:flex;align-items:center;gap:1.5rem;}.nav-toggle{display:none;background:none;border:none;cursor:pointer;}.nav-toggle span{display:block;width:24px;height:3px;margin:5px 0;background:var(--black);}
+    .nav-links a{text-decoration:none;color:var(--black);font-weight:500;}.nav-links a:hover{color:var(--primary);}
+    .nav-cta-link{background:var(--action);color:var(--white)!important;padding:0.5rem 1.1rem;border-radius:6px;font-weight:600!important;font-size:0.9rem;transition:background .2s;}.nav-cta-link:hover{background:var(--action-hover)!important;color:var(--white)!important;}
+    .dropdown{position:relative;}.dropdown-content{display:none;position:absolute;top:100%;left:0;background:var(--white);min-width:220px;box-shadow:0 4px 8px rgba(0,0,0,.1);z-index:999;border-radius:4px;}
+    .dropdown-content a{display:block;padding:0.75rem 1rem;color:var(--black);font-size:0.9rem;}.dropdown-content a:hover{background:#f2f2f2;color:var(--primary);}.dropdown:hover .dropdown-content{display:block;}
+    .hero{background:radial-gradient(circle at center,rgba(0,119,255,.12) 0%,transparent 70%);padding:6rem 1.5rem 5rem;text-align:center;}
+    .hero-eyebrow{display:inline-block;background:rgba(0,119,255,.1);border:1px solid rgba(0,119,255,.25);color:var(--primary-light);font-size:0.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.35rem 1rem;border-radius:999px;margin-bottom:1.5rem;}
+    .hero h1{background:var(--chrome);-webkit-background-clip:text;color:transparent;max-width:820px;margin:0 auto 1.25rem;}
+    .hero p{font-size:1.15rem;max-width:640px;margin:0 auto;color:var(--muted);}
+    .stat-bar{background:var(--bg-alt);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:2.5rem 1.5rem;text-align:center;}
+    .stat-bar .wrapper{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;}
+    .stat{flex:1;min-width:160px;}.stat-num{font-size:2.25rem;font-weight:700;background:var(--chrome);-webkit-background-clip:text;color:transparent;}.stat-label{color:var(--muted);font-size:0.85rem;margin-top:0.25rem;}
+    .cta{display:inline-block;background:var(--action);color:#fff;padding:1rem 2.25rem;border-radius:8px;box-shadow:0 0 12px rgba(249,115,22,.35);transition:transform .2s,box-shadow .2s;font-weight:700;margin-top:2rem;}.cta:hover{background:var(--action-hover);color:#fff;transform:translateY(-2px);box-shadow:0 0 20px rgba(249,115,22,.5);}
+    .split{display:flex;flex-wrap:wrap;gap:2rem;margin-top:1.5rem;}.split>div{flex:1;min-width:280px;}
+    .callout{background:rgba(249,115,22,.07);border-left:3px solid var(--action);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .callout p{color:var(--text);font-size:1rem;font-style:italic;}
+    .highlight-box{background:rgba(0,119,255,.08);border:1px solid rgba(0,119,255,.2);border-radius:12px;padding:2rem;margin:2rem 0;text-align:center;}
+    .highlight-box .big-stat{font-size:4rem;font-weight:700;background:var(--chrome);-webkit-background-clip:text;color:transparent;line-height:1.1;}
+    .highlight-box .big-label{color:var(--muted);font-size:1rem;margin-top:0.5rem;}
+    .check-list{list-style:none;margin-top:1.25rem;}.check-list li{padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:0.95rem;display:flex;align-items:flex-start;gap:0.6rem;}.check-list li::before{content:"✓";color:var(--action);font-weight:700;flex-shrink:0;}
+    .cta-block{background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.2);border-radius:16px;padding:3.5rem 2rem;text-align:center;margin-top:2rem;}.cta-block h2{margin-bottom:0.75rem;}.cta-block p{color:var(--muted);max-width:520px;margin:0 auto 2rem;}
+    .breadcrumb{font-size:0.85rem;color:var(--muted);padding:1rem 0;}.breadcrumb a{color:var(--muted);font-weight:400;}.breadcrumb a:hover{color:var(--text);}
+    footer{text-align:center;background:var(--bg-alt);padding:2rem 1.5rem;font-size:.9rem;color:var(--muted);}
+    .favicon-footer{position:fixed;bottom:20px;right:20px;width:32px;height:32px;opacity:0.8;}
+    @media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:64px;right:1rem;background:var(--white);padding:1rem;box-shadow:0 4px 8px rgba(0,0,0,.1);border-radius:4px;}.nav-links.open{display:flex;}.nav-toggle{display:block;}}
+    @media(max-width:640px){h1{font-size:2.1rem;}h2{font-size:1.6rem;}.highlight-box .big-stat{font-size:3rem;}}
   </style>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-Y74BBJGYND');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y74BBJGYND');</script>
 </head>
-
 <body>
-  <nav class="navbar">
-    <a class="navbar-left" href="https://www.youros.app">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
-      <span>YOUR Operating System</span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="navbar-links">
+  <nav>
+    <a class="nav-left" href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo"><span>YOUR Operating System</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <div class="nav-links">
       <a href="https://www.youros.app/youros-home">YourOS Home</a>
-      <div class="dropdown">
-        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+      <div class="dropdown"><a href="#">Services ▾</a>
         <div class="dropdown-content">
-          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+          <a href="/ai-automation-services-small-business/">AI Automation Services</a>
+          <a href="/custom-workflow-automation/">Custom Workflow Automation</a>
+          <a href="/replace-spreadsheets-with-custom-app/">Replace Spreadsheets</a>
+          <a href="/appsheet-consultant/">AppSheet Consulting</a>
+          <a href="/ai-assistants-for-business/">AI Assistants for Business</a>
         </div>
       </div>
-      <a href="https://www.youros.app/security-trust">Security & Trust</a>
-      <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
-      <a href="https://www.youros.app/pricing-competitors">Pricing & Competitors</a>
-      <a href="/blog/" style="color:white">Blog</a>
+      <div class="dropdown"><a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content"><a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories &amp; Testimony</a></div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Book a Workflow Audit</a>
     </div>
   </nav>
 
   <section class="hero">
-    <h1>From Car Logs to Command Center</h1>
-    <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png"
-      alt="YourOS Logo for custom vehicle and sample tracking" />
-    <p class="intro">Brad wanted a vehicle log. He got full operational visibility across assets, samples, and staff—in
-      just weeks.</p>
-    <a href="../../Begin-Your-Revolution.html" class="cta" target="_blank" rel="noopener">See How We Build Ops</a>
+    <div class="hero-eyebrow">Client Results — Biotech Operations</div>
+    <h1>He Asked for a Vehicle Tracker. He Got the System That Helped Sell His Company.</h1>
+    <p>Brad ran operations for a biotech firm. He had one simple question. What followed was an operations transformation that drove their sample retention rate to 99% — and made the company more valuable when it came time to sell.</p>
+  </section>
+
+  <div class="stat-bar">
+    <div class="wrapper">
+      <div class="stat"><div class="stat-num">99%</div><div class="stat-label">Sample retention rate</div></div>
+      <div class="stat"><div class="stat-num">70–80%</div><div class="stat-label">Industry average retention rate</div></div>
+      <div class="stat"><div class="stat-num">Acquired</div><div class="stat-label">Company sold — system stayed untouched</div></div>
+      <div class="stat"><div class="stat-num">Weeks</div><div class="stat-label">From first request to full operations platform</div></div>
+    </div>
+  </div>
+
+  <section class="section wrapper">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/what-does-youros-do/stories-and-testimony/">Client Results</a> › Biotech Firm</div>
+    <h2>"Can You Build a Vehicle Tracker?"</h2>
+    <p>That was the question. Brad's team was using shared company vehicles and had no system to track who was driving what, when, or where. He needed log entries, fuel tracking, driver handoffs — something clean and mobile.</p>
+    <p>We built it in days. Log entries. Fuel records. Driver history. Timestamps. Fully mobile. Real-time. No paperwork.</p>
+    <p>Then came the follow-up question that changed everything.</p>
+    <div class="callout">
+      <p>"Can we also track our medical samples?"</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+    <div class="wrapper">
+      <h2>Building the Sample Lifecycle System</h2>
+      <p>Medical samples in a biotech context have a defined journey: collected in the field, transported, received at the lab, processed, stored. Every handoff matters. A sample that goes missing or arrives compromised isn't just a lost result — it's lost revenue, lost client trust, and a regulatory problem.</p>
+      <p>We mapped the full lifecycle from collection to fridge delivery and baked it into the same platform.</p>
+      <div class="split">
+        <div>
+          <h3>What the system tracks</h3>
+          <ul class="check-list">
+            <li>Sample collection — who, when, what, where</li>
+            <li>Chain of custody — every handoff logged with timestamp and person</li>
+            <li>Transport status — live updates from field to lab</li>
+            <li>Lab intake — instant alert when incoming batches are in transit</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What the system prevents</h3>
+          <ul class="check-list">
+            <li>Lost or untracked samples — auto-flagged the moment a gap appears</li>
+            <li>Inventory blind spots — live dashboard shows what's where at all times</li>
+            <li>Manual re-entry — once logged in the field, data flows through the system</li>
+            <li>Delayed lab response — incoming batches flagged before arrival, not after</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="section wrapper">
-    <h2>“Can You Build a Vehicle Tracker?”</h2>
-    <div class="split">
-      <div>
-        <p>Brad ran operations for a biotech firm. He needed to track car use, fuel-ups, and handoffs. We delivered
-          that—and more—in days.</p>
-        <p>Log entries. Alerts. Driver history. Field updates. Clean UI. No paperwork. Fully mobile. All real-time.</p>
+    <h2>The Result: 99% Sample Retention</h2>
+    <div class="highlight-box">
+      <div class="big-stat">99%</div>
+      <div class="big-label">Sample retention rate — while the industry average sits at 70–80%</div>
+    </div>
+    <p>The industry average for sample retention in biotech field operations runs 70–80%. That means 20–30% of samples collected don't make it through the chain of custody intact — lost, compromised, or untracked before they reach the lab.</p>
+    <p>With the YourOS system, Brad's team hit 99%. That's not a marginal improvement. That's a structural advantage. Every sample that gets processed instead of lost is revenue recovered, client relationships protected, and results delivered.</p>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+    <div class="wrapper">
+      <h2>When the Company Was Acquired, Corporate Was Told to Leave the System Alone</h2>
+      <p>When the business was acquired, the purchasing organization came in expecting to integrate their own tools and processes. That's standard practice in acquisitions — you bring the acquired team onto your systems.</p>
+      <p>That's not what happened here.</p>
+      <div class="callout">
+        <p>Corporate was told not to touch the YourOS system. They wanted to learn it — and replicate it across the rest of the organization.</p>
       </div>
-      <div>
-        <p>Then came the follow-up: “Can we also track our medical samples?”</p>
-        <p>We mapped the lifecycle—from field collection to fridge delivery—and baked it straight into the platform.</p>
-      </div>
+      <p>That's what a well-built operations system looks like. Not just something that serves the team that built it — but something so obviously effective that the buyers want to adopt it at scale.</p>
+      <p>Brad came in for a vehicle tracker. He left with an operations platform that drove measurably superior outcomes, survived an acquisition intact, and became a model for how the acquiring organization wanted to operate.</p>
     </div>
   </section>
 
   <section class="section wrapper">
-    <h2>What We Delivered</h2>
-    <div class="split">
-      <div>
-        <ul>
-          <li>Live status on every sample, updated from the field</li>
-          <li>Auto-flags on inventory gaps and collection issues</li>
-          <li>Instant alerts to labs for incoming batches</li>
-          <li>Driver oversight with timestamped logs</li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li>Dashboards showing full asset flow and delays</li>
-          <li>No more re-entry or lost samples</li>
-          <li>Scalable workflows tied to live operations</li>
-          <li>And ultimately—an ops system the buyer valued</li>
-        </ul>
-      </div>
+    <div class="cta-block">
+      <h2>What Would 99% Look Like in Your Operation?</h2>
+      <p>Whether you're tracking samples, assets, service records, or inventory — the same principle applies: every item that goes untracked is a loss you've already absorbed. Let's find it.</p>
+      <a class="cta" href="/Begin-Your-Revolution.html">Book a Free Workflow Audit</a>
     </div>
   </section>
 
-  <section class="section wrapper">
-    <h2>The Takeaway</h2>
-    <div class="split">
-      <div>
-        <p>Brad came in for a tracker. He left with an operations system that scaled with him—and even helped close the
-          sale of the business.</p>
-      </div>
-    </div>
-    <div class="centered-cta">
-      <a href="../../Begin-Your-Revolution.html" class="cta" target="_blank" rel="noopener">Show Us Your Chaos</a>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 YourOS. Those who could excel, should excel.
-    <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
-      class="favicon-footer" /></a>
-  </footer>
-
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.navbar-links') || document.querySelector('.nav-links');
-    if (toggle && links) {
-      toggle.addEventListener('click', () => {
-        links.classList.toggle('open');
-      });
-    }
-  </script>
+  <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
+  <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" class="favicon-footer"></a>
+  <script>const t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');if(t&&l)t.addEventListener('click',()=>l.classList.toggle('open'));</script>
 </body>
-
 </html>
