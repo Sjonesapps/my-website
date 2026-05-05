@@ -4,27 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Book a Free Workflow Audit – YourOS</title>
-  <meta name="description" content="Tell us what's broken in your workflow. In a free 20-minute session, we'll map your manual steps, identify automation opportunities, and show you exactly what a working system looks like." />
+  <meta name="description" content="Show us the workflow that is slowing your team down. In a free 20-minute workflow audit, YourOS will map the manual steps, spot automation opportunities, and show what a better system could look like." />
   <link rel="canonical" href="https://www.youros.app/Begin-Your-Revolution" />
   <meta property="og:title" content="Book a Free Workflow Audit – YourOS" />
-  <meta property="og:description" content="Tell us what's broken in your workflow. In 20 minutes, we'll map your manual steps, identify automation opportunities, and show you what a working system looks like." />
+  <meta property="og:description" content="Show us the workflow that is slowing your team down. In 20 minutes, we will map the manual steps, spot automation opportunities, and show what a better system could look like." />
   <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
   <meta property="og:url" content="https://www.youros.app/Begin-Your-Revolution" />
   <meta property="og:type" content="website" />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #1c1c1e;
-      --bg-alt: #2a2a2a;
+      --bg-alt: #252527;
+      --panel: #2f3033;
       --primary: #0077ff;
       --primary-light: #00afff;
       --action: #f97316;
       --action-hover: #ea580c;
       --text: #e6e8ec;
       --muted: #9ca3af;
+      --line: rgba(255,255,255,.1);
       --white: #fff;
       --black: #111;
     }
@@ -32,170 +34,94 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(0,119,255,.18), transparent 36rem),
+        radial-gradient(circle at 85% 10%, rgba(249,115,22,.12), transparent 32rem),
+        var(--bg);
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
+
+    a { color: var(--primary-light); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--action); }
 
     nav{display:flex;align-items:center;justify-content:space-between;background:var(--white);height:64px;padding:0 2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000;}
     .nav-left{display:flex;align-items:center;gap:0.75rem;}.nav-left img{height:32px;width:auto;}.nav-left span{font-weight:600;font-size:1rem;color:var(--black);}
     .nav-links{display:flex;align-items:center;gap:1.5rem;}.nav-toggle{display:none;background:none;border:none;cursor:pointer;}.nav-toggle span{display:block;width:24px;height:3px;margin:5px 0;background:var(--black);}
     .nav-links a{text-decoration:none;color:var(--black);font-weight:500;}.nav-links a:hover{color:var(--primary);}
     .nav-cta-link{background:var(--action);color:var(--white)!important;padding:0.5rem 1.1rem;border-radius:6px;font-weight:600!important;font-size:0.9rem;transition:background .2s;}.nav-cta-link:hover{background:var(--action-hover)!important;color:var(--white)!important;}
-    .dropdown{position:relative;}.dropdown-content{display:none;position:absolute;top:100%;left:0;background:var(--white);min-width:220px;box-shadow:0 4px 8px rgba(0,0,0,.1);z-index:999;border-radius:4px;}
+    .dropdown{position:relative;}.dropdown-content{display:none;position:absolute;top:100%;left:0;background:var(--white);min-width:230px;box-shadow:0 4px 8px rgba(0,0,0,.1);z-index:999;border-radius:4px;}
     .dropdown-content a{display:block;padding:0.75rem 1rem;color:var(--black);font-size:0.9rem;}.dropdown-content a:hover{background:#f2f2f2;color:var(--primary);}.dropdown:hover .dropdown-content{display:block;}
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem;
+    .container { max-width: 1120px; margin: 0 auto; padding: 4.5rem 1.5rem; }
+    .hero { text-align: center; max-width: 860px; margin: 0 auto 3rem; }
+    .eyebrow {
+      display: inline-block; margin-bottom: 1rem; padding: .35rem .9rem; border-radius: 999px;
+      background: rgba(249,115,22,.14); border: 1px solid rgba(249,115,22,.35);
+      color: var(--action); font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
     }
+    h1 { font-size: clamp(2.15rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -.04em; margin-bottom: 1rem; }
+    .hero p { max-width: 720px; margin: 0 auto; color: var(--muted); font-size: 1.12rem; }
 
-    .header {
-      text-align: center;
-      margin-bottom: 3rem;
+    .main-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 2rem; align-items: start; }
+    .panel {
+      background: rgba(47,48,51,.84); border: 1px solid var(--line); border-radius: 18px;
+      box-shadow: 0 20px 70px rgba(0,0,0,.24); padding: 2rem;
     }
+    .panel h2 { font-size: 1.45rem; line-height: 1.25; margin-bottom: 1rem; }
+    .muted { color: var(--muted); }
+    .checklist { list-style: none; display: grid; gap: .9rem; margin: 1.35rem 0 0; }
+    .checklist li { display: flex; gap: .75rem; color: var(--text); }
+    .checklist li::before { content: "✓"; color: var(--action); font-weight: 800; flex: 0 0 auto; }
+    .quote-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .quote { background: rgba(255,255,255,.04); border-left: 4px solid var(--primary); border-radius: 10px; padding: 1rem; color: var(--muted); font-size: .95rem; }
+    .quote strong { color: var(--text); display: block; margin-top: .65rem; font-style: normal; }
 
-    .header img {
-      height: 100px;
-      margin-bottom: 1rem;
+    form { display: grid; gap: 1rem; }
+    .form-card h2 { margin-bottom: .35rem; }
+    .form-card > p { margin-bottom: 1.35rem; }
+    label { display: block; margin-bottom: .35rem; font-weight: 700; font-size: .9rem; }
+    input, textarea {
+      width: 100%; padding: .85rem .9rem; border: 1px solid rgba(255,255,255,.16); border-radius: 9px;
+      background: #19191b; color: var(--text); font: inherit;
     }
-
-    .header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .testimonials {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .testimonial {
-      background: var(--bg-alt);
-      padding: 1rem 1.25rem;
-      border-left: 4px solid var(--primary);
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .form-card {
-      background: var(--bg-alt);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.35rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.65rem;
-      border: 1px solid #444;
-      border-radius: 6px;
-      background-color: #1e1e1e;
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
+    input:focus, textarea:focus { outline: 2px solid rgba(0,175,255,.35); border-color: var(--primary-light); }
+    textarea { min-height: 132px; resize: vertical; }
+    .privacy { font-size: .82rem; color: var(--muted); margin-top: -.25rem; }
     .cta {
-      display: block;
-      width: 100%;
-      padding: 0.9rem;
-      background-color: var(--primary);
-      border: none;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
+      display: block; width: 100%; padding: 1rem 1.1rem; background: var(--action); border: none;
+      color: white; font-weight: 800; font-size: 1rem; border-radius: 9px; cursor: pointer;
+      box-shadow: 0 0 18px rgba(249,115,22,.28); transition: background .2s, transform .2s;
     }
+    .cta:hover { background: var(--action-hover); transform: translateY(-1px); }
+    .next-steps { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .92rem; color: var(--muted); }
+    .next-steps strong { color: var(--text); }
 
-    .cta:hover {
-      background-color: var(--primary-light);
-    }
+    footer { border-top: 1px solid var(--line); background: rgba(0,0,0,.16); color: var(--muted); padding: 2rem 1.5rem; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); font-size: .9rem; }
+    .footer-links a:hover { color: var(--action); }
 
+    @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
-      .main-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .header h1 {
-        font-size: 1.6rem;
-      }
-
-      .header img {
-        height: 80px;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 64px;
-        right: 1rem;
-        background: var(--white);
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-
-    @media (max-width: 1024px) {
-      body {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      body {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-      }
+      nav { padding: 0 1rem; }
+      .nav-links { display:none; flex-direction:column; position:absolute; top:64px; right:1rem; background:var(--white); padding:1rem; box-shadow:0 4px 8px rgba(0,0,0,.1); border-radius:4px; align-items:flex-start; }
+      .nav-links.open { display:flex; }
+      .nav-toggle { display:block; }
+      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; }
+      .dropdown:hover .dropdown-content { display: block; }
+      .container { padding: 3rem 1.25rem; }
+      .panel { padding: 1.4rem; }
     }
   </style>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-Y74BBJGYND');
   </script>
 </head>
@@ -216,6 +142,7 @@
           <a href="/replace-spreadsheets-with-custom-app/">Replace Spreadsheets</a>
           <a href="/appsheet-consultant/">AppSheet Consulting</a>
           <a href="/ai-assistants-for-business/">AI Assistants for Business</a>
+          <a href="/utah-ai-automation/">Utah AI Automation</a>
         </div>
       </div>
       <div class="dropdown"><a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
@@ -224,61 +151,75 @@
         </div>
       </div>
       <a href="https://www.youros.app/security-trust">Security &amp; Trust</a>
-      <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
       <a href="/blog/">Blog</a>
+      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Book a Workflow Audit</a>
     </div>
   </nav>
 
-  <div class="container">
-    <div class="header">
-      <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
-      <h1>LET’S BUILD, TOGETHER</h1>
-      <p>YourOS isn’t off-the-shelf. It’s built with you. Tell us what’s broken, and we’ll design a custom system that
-        works the way you work.</p>
-    </div>
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">Free 20-minute workflow audit</span>
+      <h1>Show us the workflow that is costing you time.</h1>
+      <p>Bring the spreadsheet, inbox handoff, weekly report, or duct-taped process your team keeps fighting. We will map the manual steps and show where automation or a custom app would actually help.</p>
+    </section>
 
     <div class="main-grid">
-      <div class="testimonials">
-        <div class="testimonial">“We replaced three systems with one that actually fits.”</div>
-        <div class="testimonial">“YourOS gave us a system that feels like ours — because it is.”</div>
-        <div class="testimonial">“We nearly picked Salesforce. Then we remembered we liked sleep.”</div>
-      </div>
+      <aside class="panel">
+        <h2>What we will look for</h2>
+        <p class="muted">This is not a generic software demo. It is a practical first pass at your actual workflow.</p>
+        <ul class="checklist">
+          <li>Where your team copies the same data between tools.</li>
+          <li>Which approvals, updates, or follow-ups are getting stuck.</li>
+          <li>Which spreadsheet or manual report has become a hidden payroll tax.</li>
+          <li>What should be automated, what should stay human, and what can be launched first.</li>
+        </ul>
 
-      <div class="form-card">
+        <div class="quote-grid">
+          <div class="quote">“We replaced three systems with one that actually fits.”<strong>Custom operations system client</strong></div>
+          <div class="quote">“YourOS gave us a system that feels like ours — because it is.”<strong>Workflow automation client</strong></div>
+        </div>
+      </aside>
+
+      <section class="panel form-card" aria-labelledby="audit-form-title">
+        <h2 id="audit-form-title">Book your workflow audit</h2>
+        <p class="muted">Three fields. No homework packet. Just enough context to start the right conversation.</p>
+
         <form method="POST" action="https://script.google.com/macros/s/AKfycbws0ZMVP9B-BrbpFiAw4PoaepWUWDCI4U5pqwnrhaLXkrwkb5sALCra6RErGI5zjj2y/exec">
           <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" name="name" required>
+            <input id="name" name="name" autocomplete="name" required>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" required>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <p class="privacy">We do not sell your info. Ever.</p>
           </div>
           <div class="form-group">
-            <label for="company">Company Name</label>
-            <input id="company" name="company">
+            <label for="problem">What is the workflow that is driving you crazy?</label>
+            <textarea id="problem" name="problem" placeholder="Example: We rebuild the same report every Friday from three spreadsheets, then chase approvals by email." required></textarea>
           </div>
-          <div class="form-group">
-            <label for="role">Your Role</label>
-            <input id="role" name="role">
-          </div>
-          <div class="form-group">
-            <label for="problem">What's broken in your workflow?</label>
-            <textarea id="problem" name="problem"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="platform">Are you currently using another platform?</label>
-            <input id="platform" name="platform">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone">
-          </div>
-          <button type="submit" class="cta">Request MY Operating System</button>
+          <button type="submit" class="cta">Book My Free Workflow Audit</button>
         </form>
+
+        <div class="next-steps">
+          <strong>What happens next:</strong> you will hear back within 1 business day to schedule a 20-minute session. If there is not a real automation opportunity, we will say that plainly.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 YourOS. Built around the way your business actually works.</div>
+      <div class="footer-links">
+        <a href="/ai-automation-services-small-business/">AI Automation</a>
+        <a href="/custom-workflow-automation/">Workflow Automation</a>
+        <a href="/appsheet-consultant/">AppSheet Consulting</a>
+        <a href="/security-trust.html">Security</a>
+        <a href="/Begin-Your-Revolution.html">Book an Audit</a>
       </div>
     </div>
-  </div>
+  </footer>
 
   <script>
     const toggle = document.querySelector('.nav-toggle');
