@@ -147,7 +147,48 @@
       vertical-align: middle;
       filter: invert(1);
     }
-</style>
+
+    /* Standard site footer */
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,.16);
+      color: var(--muted);
+      padding: 2rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-brand-line {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      flex-wrap: wrap;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .footer-links a:hover { color: var(--action); }
+    .httl-mark {
+      width: 26px;
+      height: auto;
+      opacity: .55;
+      vertical-align: middle;
+      filter: invert(1);
+    }
+
+  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -264,10 +305,12 @@
       </section>
     </div>
   </main>
-
   <footer>
     <div class="footer-inner">
-      <div>© 2026 YourOS. Built around the way your business actually works.</div>
+      <div class="footer-brand-line">
+        <span>© 2026 YourOS. Custom software and AI systems built around the way your business actually works.</span>
+        <img class="httl-mark" src="/img/httl-monogram.png" alt="Holiness To The Lord" title="Holiness To The Lord">
+      </div>
       <div class="footer-links">
         <a href="/ai-automation-services-small-business/">AI Automation</a>
         <a href="/custom-workflow-automation/">Workflow Automation</a>
@@ -276,7 +319,6 @@
         <a href="/Begin-Your-Revolution.html">Book an Audit</a>
       </div>
     </div>
-    <img class="httl-mark" src="/img/httl-monogram.png" alt="Holiness To The Lord" title="Holiness To The Lord">
   </footer>
 
   <script>
