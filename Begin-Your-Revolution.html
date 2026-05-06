@@ -128,17 +128,26 @@
     .footer-links a:hover { color: var(--action); }
 
     @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 768px) {
-      nav { padding: 0 1rem; }
-      .nav-links { display:none; flex-direction:column; position:absolute; top:64px; right:1rem; background:var(--white); padding:1rem; box-shadow:0 4px 8px rgba(0,0,0,.1); border-radius:4px; align-items:flex-start; }
+    @media (max-width: 1280px) {
+      .nav-links { display:none; flex-direction:column; position:absolute; top:64px; right:1rem; background:var(--white); padding:1rem; box-shadow:0 4px 8px rgba(0,0,0,.1); border-radius:4px; align-items:flex-start; max-width: calc(100vw - 2rem); box-sizing: border-box; }
       .nav-links.open { display:flex; }
       .nav-toggle { display:block; }
-      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; }
+      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; min-width: 0; width: 100%; }
       .dropdown:hover .dropdown-content { display: block; }
+      .dropdown-content a { white-space: normal; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1rem; }
       .container { padding: 3rem 1.25rem; }
       .panel { padding: 1.4rem; }
     }
-  </style>
+      .httl-mark {
+      width: 26px; height: auto;
+      margin-left: 0.85rem; opacity: 0.55;
+      vertical-align: middle;
+      filter: invert(1);
+    }
+</style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -156,7 +165,6 @@
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
     <div class="nav-links">
-      <a href="https://www.youros.app/youros-home">YourOS Home</a>
       <div class="dropdown"><a href="#">Services ▾</a>
         <div class="dropdown-content">
           <a href="/ai-automation-services-small-business/">AI Automation Services</a>
@@ -268,6 +276,7 @@
         <a href="/Begin-Your-Revolution.html">Book an Audit</a>
       </div>
     </div>
+    <img class="httl-mark" src="/img/httl-monogram.png" alt="Holiness To The Lord" title="Holiness To The Lord">
   </footer>
 
   <script>

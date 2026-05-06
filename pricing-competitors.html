@@ -152,6 +152,12 @@
     pointer-events: auto;
   }
 
+    .httl-mark {
+      width: 26px; height: auto;
+      margin-left: 0.85rem; opacity: 0.55;
+      vertical-align: middle;
+      filter: invert(1);
+    }
   hr {
     border: none;
     border-top: 1px solid var(--bg-alt);
@@ -221,19 +227,20 @@
 
   /* ── RESPONSIVE tweaks (unchanged) ─────────────────────────────────────── */
 
-  @media(max-width: 768px) {
-    .nav-links {
-      display: none;
+  @media(max-width: 1280px) {
+    .nav-links { display: none;
       flex-direction: column;
       position: absolute;
       top: 64px; right: 1rem;
       background: white;
       padding: 1rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 4px;
-    }
+      border-radius: 4px; max-width: calc(100vw - 2rem); box-sizing: border-box; }
     .nav-links.open { display: flex; }
     .nav-toggle { display: block; }
+    .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; min-width: 0; width: 100%; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { white-space: normal; }
   }
   @media(max-width: 1024px) {
     .wrapper, .hero { padding-left:1.5rem; padding-right:1.5rem; }
@@ -264,7 +271,6 @@
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
     <div class="nav-links">
-      <a href="https://www.youros.app/youros-home">YourOS Home</a>
       <div class="nav-dropdown"><a href="#">Services ▾</a>
         <div class="nav-dropdown-content">
           <a href="/ai-automation-services-small-business/">AI Automation Services</a>
@@ -353,6 +359,7 @@
     © 2025 YourOS. Those who could excel, should excel.
     <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
       class="favicon-footer"></a>
+    <img class="httl-mark" src="/img/httl-monogram.png" alt="Holiness To The Lord" title="Holiness To The Lord">
   </footer>
 
   <script>
