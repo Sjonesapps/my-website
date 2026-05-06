@@ -221,19 +221,20 @@
 
   /* ── RESPONSIVE tweaks (unchanged) ─────────────────────────────────────── */
 
-  @media(max-width: 768px) {
-    .nav-links {
-      display: none;
+  @media(max-width: 1280px) {
+    .nav-links { display: none;
       flex-direction: column;
       position: absolute;
       top: 64px; right: 1rem;
       background: white;
       padding: 1rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 4px;
-    }
+      border-radius: 4px; max-width: calc(100vw - 2rem); box-sizing: border-box; }
     .nav-links.open { display: flex; }
     .nav-toggle { display: block; }
+    .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; min-width: 0; width: 100%; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { white-space: normal; }
   }
   @media(max-width: 1024px) {
     .wrapper, .hero { padding-left:1.5rem; padding-right:1.5rem; }

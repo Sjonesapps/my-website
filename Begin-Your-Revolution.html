@@ -128,13 +128,16 @@
     .footer-links a:hover { color: var(--action); }
 
     @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 768px) {
-      nav { padding: 0 1rem; }
-      .nav-links { display:none; flex-direction:column; position:absolute; top:64px; right:1rem; background:var(--white); padding:1rem; box-shadow:0 4px 8px rgba(0,0,0,.1); border-radius:4px; align-items:flex-start; }
+    @media (max-width: 1280px) {
+      .nav-links { display:none; flex-direction:column; position:absolute; top:64px; right:1rem; background:var(--white); padding:1rem; box-shadow:0 4px 8px rgba(0,0,0,.1); border-radius:4px; align-items:flex-start; max-width: calc(100vw - 2rem); box-sizing: border-box; }
       .nav-links.open { display:flex; }
       .nav-toggle { display:block; }
-      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; }
+      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; min-width: 0; width: 100%; }
       .dropdown:hover .dropdown-content { display: block; }
+      .dropdown-content a { white-space: normal; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1rem; }
       .container { padding: 3rem 1.25rem; }
       .panel { padding: 1.4rem; }
     }
