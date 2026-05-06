@@ -3,351 +3,277 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Request MY Operating System – YourOS</title>
+  <title>Request a Workflow Audit – YourOS</title>
+  <meta name="description" content="Tell YourOS where your team is losing time to manual work, spreadsheets, reporting, or communication drag. Submit the workflow problem and hear back within the hour." />
   <link rel="canonical" href="https://www.youros.app/Begin-Your-Revolution" />
+  <meta property="og:title" content="Request a Workflow Audit – YourOS" />
+  <meta property="og:description" content="Tell YourOS where your team is losing time to manual work, spreadsheets, reporting, or communication drag. Submit the workflow problem and hear back within the hour." />
+  <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
+  <meta property="og:url" content="https://www.youros.app/Begin-Your-Revolution" />
+  <meta property="og:type" content="website" />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #1c1c1e;
-      --bg-alt: #2a2a2a;
+      --bg-alt: #252527;
+      --panel: #2f3033;
       --primary: #0077ff;
       --primary-light: #00afff;
+      --action: #f97316;
+      --action-hover: #ea580c;
       --text: #e6e8ec;
       --muted: #9ca3af;
+      --line: rgba(255,255,255,.1);
+      --white: #fff;
+      --black: #111;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(0,119,255,.18), transparent 36rem),
+        radial-gradient(circle at 85% 10%, rgba(249,115,22,.12), transparent 32rem),
+        var(--bg);
       color: var(--text);
       line-height: 1.6;
-      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .navbar {
-      background-color: white;
-      color: black;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      font-family: 'Inter', sans-serif;
-      margin: -2rem -2rem 2rem;
-    }
+    a { color: var(--primary-light); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--action); }
 
-    .navbar-left {
-      display: flex;
-      align-items: center;
-    }
+    nav{display:flex;align-items:center;justify-content:space-between;background:var(--white);height:64px;padding:0 2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000;}
+    .nav-left{display:flex;align-items:center;gap:0.75rem;}.nav-left img{height:32px;width:auto;}.nav-left span{font-weight:600;font-size:1rem;color:var(--black);}
+    .nav-links{display:flex;align-items:center;gap:1.5rem;}.nav-toggle{display:none;background:none;border:none;cursor:pointer;}.nav-toggle span{display:block;width:24px;height:3px;margin:5px 0;background:var(--black);}
+    .nav-links a{text-decoration:none;color:var(--black);font-weight:500;}.nav-links a:hover{color:var(--primary);}
+    .nav-cta-link{background:var(--action);color:var(--white)!important;padding:0.5rem 1.1rem;border-radius:6px;font-weight:600!important;font-size:0.9rem;transition:background .2s;}.nav-cta-link:hover{background:var(--action-hover)!important;color:var(--white)!important;}
+    .dropdown{position:relative;}.dropdown-content{display:none;position:absolute;top:100%;left:0;background:var(--white);min-width:230px;box-shadow:0 4px 8px rgba(0,0,0,.1);z-index:999;border-radius:4px;}
+    .dropdown-content a{display:block;padding:0.75rem 1rem;color:var(--black);font-size:0.9rem;}.dropdown-content a:hover{background:#f2f2f2;color:var(--primary);}.dropdown:hover .dropdown-content{display:block;}
 
-    .navbar-left img {
-      height: 32px;
-      margin-right: 10px;
+    .container { max-width: 1120px; margin: 0 auto; padding: 4.5rem 1.5rem; }
+    .hero { text-align: center; max-width: 860px; margin: 0 auto 3rem; }
+    .eyebrow {
+      display: inline-block; margin-bottom: 1rem; padding: .35rem .9rem; border-radius: 999px;
+      background: rgba(249,115,22,.14); border: 1px solid rgba(249,115,22,.35);
+      color: var(--action); font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
     }
+    h1 { font-size: clamp(2.15rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -.04em; margin-bottom: 1rem; }
+    .hero p { max-width: 720px; margin: 0 auto; color: var(--muted); font-size: 1.12rem; }
 
-    .navbar-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+    .main-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 2rem; align-items: start; }
+    .panel {
+      background: rgba(47,48,51,.84); border: 1px solid var(--line); border-radius: 18px;
+      box-shadow: 0 20px 70px rgba(0,0,0,.24); padding: 2rem;
     }
+    .panel h2 { font-size: 1.45rem; line-height: 1.25; margin-bottom: 1rem; }
+    .muted { color: var(--muted); }
+    .checklist { list-style: none; display: grid; gap: .9rem; margin: 1.35rem 0 0; }
+    .checklist li { display: flex; gap: .75rem; color: var(--text); }
+    .checklist li::before { content: "✓"; color: var(--action); font-weight: 800; flex: 0 0 auto; }
+    .quote-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .quote { background: rgba(255,255,255,.04); border-left: 4px solid var(--primary); border-radius: 10px; padding: 1rem; color: var(--muted); font-size: .95rem; }
+    .quote strong { color: var(--text); display: block; margin-top: .65rem; font-style: normal; }
 
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
+    form { display: grid; gap: 1rem; }
+    .form-card h2 { margin-bottom: .35rem; }
+    .form-card > p { margin-bottom: 1.35rem; }
+    label { display: block; margin-bottom: .35rem; font-weight: 700; font-size: .9rem; }
+    input, textarea {
+      width: 100%; padding: .85rem .9rem; border: 1px solid rgba(255,255,255,.16); border-radius: 9px;
+      background: #19191b; color: var(--text); font: inherit;
     }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 3px;
-      margin: 5px 0;
-      background: black;
-    }
-
-    .navbar a {
-      color: black;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: black;
-      white-space: nowrap;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .header img {
-      height: 100px;
-      margin-bottom: 1rem;
-    }
-
-    .header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .testimonials {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .testimonial {
-      background: var(--bg-alt);
-      padding: 1rem 1.25rem;
-      border-left: 4px solid var(--primary);
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .form-card {
-      background: var(--bg-alt);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.35rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.65rem;
-      border: 1px solid #444;
-      border-radius: 6px;
-      background-color: #1e1e1e;
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
+    input:focus, textarea:focus { outline: 2px solid rgba(0,175,255,.35); border-color: var(--primary-light); }
+    textarea { min-height: 132px; resize: vertical; }
+    .hidden { display: none; }
+    .privacy { font-size: .82rem; color: var(--muted); margin-top: -.25rem; }
     .cta {
-      display: block;
-      width: 100%;
-      padding: 0.9rem;
-      background-color: var(--primary);
-      border: none;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
+      display: block; width: 100%; padding: 1rem 1.1rem; background: var(--action); border: none;
+      color: white; font-weight: 800; font-size: 1rem; border-radius: 9px; cursor: pointer;
+      box-shadow: 0 0 18px rgba(249,115,22,.28); transition: background .2s, transform .2s;
     }
+    .cta:hover { background: var(--action-hover); transform: translateY(-1px); }
+    .next-steps { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .92rem; color: var(--muted); }
+    .next-steps strong { color: var(--text); }
 
-    .cta:hover {
-      background-color: var(--primary-light);
+    .proof { margin: 0 auto 3rem; }
+    .proof-eyebrow { text-align: center; color: var(--muted); font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1.25rem; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .stat-card {
+      background: rgba(47,48,51,.84); border: 1px solid var(--line); border-radius: 14px;
+      padding: 1.6rem 1.4rem; box-shadow: 0 12px 36px rgba(0,0,0,.18); display: flex; flex-direction: column; gap: .55rem;
+      transition: transform .2s ease, border-color .2s ease;
     }
+    .stat-card:hover { transform: translateY(-2px); border-color: rgba(0,175,255,.4); }
+    .stat-card .num {
+      font-size: 2.4rem; font-weight: 800; letter-spacing: -.02em; line-height: 1;
+      background: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .stat-card .label { font-weight: 700; font-size: 1rem; color: var(--text); }
+    .stat-card .context { color: var(--muted); font-size: .9rem; line-height: 1.45; }
+    .stat-card .source { margin-top: auto; padding-top: .35rem; font-size: .82rem; }
+    .stat-card .source a { color: var(--primary-light); }
+    .stat-card .source a:hover { color: var(--action); }
+    @media (max-width: 900px) { .stat-grid { grid-template-columns: 1fr; } }
 
+    footer { border-top: 1px solid var(--line); background: rgba(0,0,0,.16); color: var(--muted); padding: 2rem 1.5rem; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); font-size: .9rem; }
+    .footer-links a:hover { color: var(--action); }
+
+    @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
-      .main-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .header h1 {
-        font-size: 1.6rem;
-      }
-
-      .header img {
-        height: 80px;
-      }
-
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 64px;
-        right: 1rem;
-        background: white;
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-      }
-
-      .navbar-links.open {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-
-    @media (max-width: 1024px) {
-      body {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      body {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-      }
+      nav { padding: 0 1rem; }
+      .nav-links { display:none; flex-direction:column; position:absolute; top:64px; right:1rem; background:var(--white); padding:1rem; box-shadow:0 4px 8px rgba(0,0,0,.1); border-radius:4px; align-items:flex-start; }
+      .nav-links.open { display:flex; }
+      .nav-toggle { display:block; }
+      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; }
+      .dropdown:hover .dropdown-content { display: block; }
+      .container { padding: 3rem 1.25rem; }
+      .panel { padding: 1.4rem; }
     }
   </style>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-Y74BBJGYND');
   </script>
 </head>
 
 <body>
-  <nav class="navbar">
-    <a class="navbar-left" href="https://www.youros.app">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
+  <nav>
+    <a class="nav-left" href="https://www.youros.app">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo">
       <span>YOUR Operating System</span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="navbar-links">
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <div class="nav-links">
       <a href="https://www.youros.app/youros-home">YourOS Home</a>
-      <div class="dropdown">
-        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+      <div class="dropdown"><a href="#">Services ▾</a>
         <div class="dropdown-content">
-          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+          <a href="/ai-automation-services-small-business/">AI Automation Services</a>
+          <a href="/custom-workflow-automation/">Custom Workflow Automation</a>
+          <a href="/replace-spreadsheets-with-custom-app/">Replace Spreadsheets</a>
+          <a href="/appsheet-consultant/">AppSheet Consulting</a>
+          <a href="/ai-assistants-for-business/">AI Assistants for Business</a>
+          <a href="/utah-ai-automation/">Utah AI Automation</a>
         </div>
       </div>
-      <a href="https://www.youros.app/security-trust">Security & Trust</a>
-      <a href="https://www.youros.app/pricing-competitors">Pricing & Competitors</a>
-      <a href="/blog/" style="color:var(--black)">Blog</a>
+      <div class="dropdown"><a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content">
+          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories &amp; Testimony</a>
+        </div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security &amp; Trust</a>
+      <a href="/blog/">Blog</a>
+      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Book a Workflow Audit</a>
     </div>
   </nav>
 
-  <div class="container">
-    <div class="header">
-      <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
-      <h1>LET’S BUILD, TOGETHER</h1>
-      <p>YourOS isn’t off-the-shelf. It’s built with you. Tell us what’s broken, and we’ll design a custom system that
-        works the way you work.</p>
-    </div>
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">Workflow audit request</span>
+      <h1>Find the workflow quietly costing your business hours every week.</h1>
+      <p>Tell us where work is getting stuck — spreadsheets, handoffs, reporting, follow-up, or communication drag. We will review it and respond within the hour with the best next step.</p>
+    </section>
+
+    <section class="proof" aria-label="Real client outcomes">
+      <p class="proof-eyebrow">What this looks like in real operations</p>
+      <div class="stat-grid">
+        <article class="stat-card">
+          <div class="num">99%</div>
+          <div class="label">Sample retention vs. 70–80% industry average</div>
+          <p class="context">A biotech operations team replaced paper handoffs with a live chain-of-custody platform. When the company was acquired, the buyer left the system in place and adopted it across the org.</p>
+          <p class="source"><a href="/what-does-youros-do/stories-and-testimony/vehicle-track-to-backlog.html">Read the biotech story →</a></p>
+        </article>
+        <article class="stat-card">
+          <div class="num">Hours&nbsp;→&nbsp;Min</div>
+          <div class="label">From service call to processed payment</div>
+          <p class="context">An HVAC company with 30–50 field techs was losing contracts to overnight delays. After YourOS, payments cleared and contracts locked before the truck left the driveway.</p>
+          <p class="source"><a href="/what-does-youros-do/stories-and-testimony/hvac.html">Read the HVAC story →</a></p>
+        </article>
+        <article class="stat-card">
+          <div class="num">25+</div>
+          <div class="label">Locations unified on one live system</div>
+          <p class="context">A multi-location RV dealership chain was running on disconnected whiteboards. YourOS replaced them with a real-time platform every team and location now shares.</p>
+          <p class="source"><a href="/what-does-youros-do/stories-and-testimony/whiteboard.html">Read the dealership story →</a></p>
+        </article>
+      </div>
+    </section>
 
     <div class="main-grid">
-      <div class="testimonials">
-        <div class="testimonial">“We replaced three systems with one that actually fits.”</div>
-        <div class="testimonial">“YourOS gave us a system that feels like ours — because it is.”</div>
-        <div class="testimonial">“We nearly picked Salesforce. Then we remembered we liked sleep.”</div>
-      </div>
+      <aside class="panel">
+        <h2>What we look for</h2>
+        <p class="muted">This is not a generic software demo. It is a practical first pass at the workflow that is costing your team time, money, or focus.</p>
+        <ul class="checklist">
+          <li>Where your team copies the same data between tools.</li>
+          <li>Which approvals, updates, or follow-ups are getting stuck.</li>
+          <li>Which spreadsheet or manual report has become a hidden payroll tax.</li>
+          <li>What should be automated, what should stay human, and what can be launched first.</li>
+        </ul>
+      </aside>
 
-      <div class="form-card">
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbws0ZMVP9B-BrbpFiAw4PoaepWUWDCI4U5pqwnrhaLXkrwkb5sALCra6RErGI5zjj2y/exec">
+      <section class="panel form-card" aria-labelledby="audit-form-title">
+        <h2 id="audit-form-title">Request your workflow audit</h2>
+        <p class="muted">Four quick fields. No newsletter funnel. Just enough context to see whether automation or a custom app can help.</p>
+
+        <form name="workflow-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="workflow-audit">
+          <p class="hidden">
+            <label>Do not fill this out if you are human: <input name="bot-field"></label>
+          </p>
           <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" name="name" required>
+            <input id="name" name="name" autocomplete="name" required>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" required>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <p class="privacy">We do not sell your info. Ever.</p>
           </div>
           <div class="form-group">
-            <label for="company">Company Name</label>
-            <input id="company" name="company">
+            <label for="phone">Phone <span class="muted">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
           </div>
           <div class="form-group">
-            <label for="role">Your Role</label>
-            <input id="role" name="role">
+            <label for="problem">What is the biggest thing costing your team time right now?</label>
+            <textarea id="problem" name="problem" placeholder="Example: We rebuild the same report every Friday from three spreadsheets, then chase approvals by email." required></textarea>
           </div>
-          <div class="form-group">
-            <label for="problem">What's broken in your workflow?</label>
-            <textarea id="problem" name="problem"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="platform">Are you currently using another platform?</label>
-            <input id="platform" name="platform">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone">
-          </div>
-          <button type="submit" class="cta">Request MY Operating System</button>
+          <button type="submit" class="cta">Find My Workflow Bottleneck</button>
         </form>
+
+        <div class="next-steps">
+          <strong>What happens next:</strong> we review your workflow problem and you will hear back within the hour. If there is a fit, we will schedule a focused audit call. If there is not a real automation opportunity, we will say that plainly.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 YourOS. Built around the way your business actually works.</div>
+      <div class="footer-links">
+        <a href="/ai-automation-services-small-business/">AI Automation</a>
+        <a href="/custom-workflow-automation/">Workflow Automation</a>
+        <a href="/appsheet-consultant/">AppSheet Consulting</a>
+        <a href="/security-trust.html">Security</a>
+        <a href="/Begin-Your-Revolution.html">Book an Audit</a>
       </div>
     </div>
-  </div>
+  </footer>
 
   <script>
     const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.navbar-links') || document.querySelector('.nav-links');
-    if (toggle && links) {
-      toggle.addEventListener('click', () => {
-        links.classList.toggle('open');
-      });
-    }
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
   </script>
 </body>
 
