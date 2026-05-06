@@ -3,32 +3,30 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="canonical" href="https://www.youros.app/lets-talk-ai" />
+  <title>What are the best practices for dashboard design? - YourOS Blog</title>
+  <meta name="description" content="Why context matters more than cramming every metric onto one screen. Learn role-based dashboard strategies and visual economy techniques that maximize operational clarity." />
+  <link rel="canonical" href="https://www.youros.app/blog/dashboard-design-best-practices/" />
   <meta name="robots" content="index, follow" />
-  <title>Let's Talk AI – What AI Actually Does for Your Business | YourOS</title>
-  <meta name="description" content="Cutting through AI hype to tell you what actually works for small business operations. No buzzwords — just practical AI that replaces manual work and saves your team time." />
-  <meta property="og:title" content="Let's Talk AI – What AI Actually Does for Your Business | YourOS" />
-  <meta property="og:description" content="Cutting through AI hype to tell you what actually works for small business operations. No buzzwords — just practical AI that replaces manual work and saves your team time." />
+  <meta property="og:title" content="Dashboard Design Best Practices – YourOS Blog" />
+  <meta property="og:description" content="Why context matters more than cramming every metric onto one screen. Learn role-based strategies that maximize screen real estate and operational clarity." />
   <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
-  <meta property="og:url" content="https://www.youros.app/lets-talk-ai" />
-  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.youros.app/blog/dashboard-design-best-practices/" />
+  <meta property="og:type" content="article" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="32x32"
-    href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #1c1c1e;
       --bg-alt: #2a2a2a;
       --primary: #0077ff;
       --primary-light: #00afff;
+      --action: #f97316;
+      --action-hover: #ea580c;
       --text: #e6e8ec;
       --muted: #9ca3af;
       --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
-      --action: #f97316;
-      --action-hover: #ea580c;
       --white: #fff;
       --black: #111;
     }
@@ -58,16 +56,6 @@
       color: var(--primary-light);
     }
 
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .section {
-      padding: 4rem 0;
-    }
-
     h1,
     h2,
     h3 {
@@ -82,17 +70,27 @@
 
     h2 {
       font-size: 2rem;
-      text-align: center;
     }
 
     h3 {
       font-size: 1.25rem;
     }
 
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
     p+p {
       margin-top: 1rem;
     }
 
+    /* === NAVBAR === */
     nav {
       display: flex;
       align-items: center;
@@ -100,27 +98,67 @@
       background: var(--white);
       height: 64px;
       padding: 0 2rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    .nav-left { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-left img { height: 32px; width: auto; }
-    .nav-left span { font-weight: 600; font-size: 1rem; color: var(--black); }
-    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
-    .nav-toggle span { display: block; width: 24px; height: 3px; margin: 5px 0; background: var(--black); }
-    .nav-links a { text-decoration: none; color: var(--black); font-weight: 500; }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-left img {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-left span {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--black);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 5px 0;
+      background: var(--black);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 500;
+      position: relative;
+    }
+
     .nav-links a:hover { color: var(--primary); }
-    .nav-cta-link { background: var(--action); color: var(--white)!important; padding: 0.5rem 1.1rem; border-radius: 6px; font-weight: 600!important; font-size: 0.9rem; transition: background .2s; }
-    .nav-cta-link:hover { background: var(--action-hover)!important; color: var(--white)!important; }
+    .nav-cta-link { background: var(--action); color: var(--white) !important; padding: 0.5rem 1.1rem; border-radius: 6px; font-weight: 600 !important; font-size: 0.9rem; transition: background .2s; }
+    .nav-cta-link:hover { background: var(--action-hover) !important; color: var(--white) !important; }
     .dropdown { position: relative; }
     .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); min-width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,.1); z-index: 999; border-radius: 4px; }
-    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: var(--black); font-size: 0.9rem; }
-    .dropdown-content a:hover { background: #f2f2f2; color: var(--primary); }
+    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: var(--black); text-decoration: none; font-size: 0.9rem; }
+    .dropdown-content a:hover { background-color: #f2f2f2; color: var(--primary); }
     .dropdown:hover .dropdown-content { display: block; }
 
+    /* HERO */
     .hero {
       background: radial-gradient(circle at center, rgba(0, 119, 255, .15) 0%, transparent 70%);
       text-align: center;
@@ -140,13 +178,6 @@
       color: var(--muted);
     }
 
-    .logo-big {
-      width: 260px;
-      max-width: 90%;
-      display: block;
-      margin: 3rem auto 0;
-    }
-
     .cta {
       display: inline-block;
       background: var(--primary);
@@ -155,9 +186,9 @@
       border-radius: 8px;
       margin-top: 2rem;
       box-shadow: inset 0 0 4px rgba(255, 255, 255, .15), 0 0 10px var(--primary-light);
+      position: relative;
       overflow: hidden;
       transition: transform .2s ease, box-shadow .2s ease;
-      position: relative;
     }
 
     .cta:hover {
@@ -191,19 +222,9 @@
       }
     }
 
-    .split {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .split>div {
-      flex: 1;
-    }
-
     footer {
-      background: var(--bg-alt);
       text-align: center;
+      background: var(--bg-alt);
       padding: 2rem 1.5rem;
       font-size: .9rem;
       color: var(--muted);
@@ -220,19 +241,21 @@
     }
 
     @media(max-width: 768px) {
-      .nav-links {
+      .nav-links,
+      .navbar-links {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 64px;
         right: 1rem;
-        background: white;
+        background: var(--white);
         padding: 1rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
       }
 
-      .nav-links.open {
+      .nav-links.open,
+      .navbar-links.open {
         display: flex;
       }
 
@@ -264,10 +287,6 @@
 
       h2 {
         font-size: 1.6rem;
-      }
-
-      .split {
-        flex-direction: column;
       }
     }
   </style>
@@ -313,71 +332,73 @@
     </div>
   </nav>
 
+  <!-- BLOG POST -->
   <section class="hero">
-    <h1>It’s <span id="today-date"></span>,<br>
-      and your software still isn't using AI?<br>
-      <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo" class="logo-big">
-      integrates AI where <span style="color:var(--primary-light)">YOU</span> want it and where <span
-        style="color:var(--primary-light)">YOU</span> need it.
-    </h1>
-    <p>Your brain can only make so many decisions a day. <a href="https://en.wikipedia.org/wiki/Decision_fatigue"
-        target="_blank">Seriously, it's true.</a> Let AI handle the obvious ones, so you focus on what matters more.</p>
-    <a class="cta" href="Begin-Your-Revolution.html" target="_blank">Let's get you an AI Sidekick!</a>
+    <br><h1>What are the best practices for dashboard design?</h1>
+    <p class="muted">July 17, 2025 — Ops</p>
   </section>
 
   <section class="section wrapper">
-    <h2>AI Shouldn’t Replace You. It Should Enhance You.</h2>
-    <div class="split">
-      <div>
-        <h3>Worried AI Will Take Over?</h3>
-        <p>You’re not alone. Most AI rollouts feel like they sideline humans.</p>
-        <p><strong>YourOS puts humans first—and AI second.</strong> We train AI to enhance how you see the business,
-          never override how you run it.</p>
-      </div>
-      <div>
-        <h3>Excited About AI, But Don’t Know Where to Start?</h3>
-        <p>You don’t need a data science team to get going. You just need YourOS.</p>
-        <p><strong>YourOS trains AI on your unique workflows</strong> so it actually understands how you work—and where
-          to help.</p>
-      </div>
-    </div>
+    <br><h2>You Need To Make The Most of Screen Real Estate. Here's Why—and How to Get the Most Out of It.</h2>
+    <p>In today's fast-paced business environment, leaders often expect every metric on one screen. But showing everything at once causes cognitive overload and hides the insights that matter.</p>
+
+    <br><h2>Why Can't You Have Everything on One Screen?</h2>
+    <p>The temptation to cram in all data is understandable, yet it leads to confusion and decision paralysis. Focus on surfacing the right information at the right time.</p>
+
+    <br><h2>Dimensions of Data: The Six-Sided Dice</h2>
+    <p>Think of your data as a six-sided dice. You need different views depending on your objectives, whom you're helping, and the question at hand.</p>
+    <ul>
+      <li>Your current objectives and immediate needs</li>
+      <li>Whom you're assisting within your organization</li>
+      <li>The questions you're addressing in the moment</li>
+    </ul>
+    <p>A traffic intersection illustrates this perfectly. One driver sees green while another sees red. You, managing the intersection, need a concise way to view every direction. One way of seeing that information is 
+      <br>- North: Red. East: Green. South: Red. West Green.</b>
+      <br>Or, by using a more Hieroglyphic UI, it would look something like this:</br></p>
+    <p>N:🟢 S:🟢 | E:🔴 W:🔴</p>
+    <p>This visual shorthand exemplifies the power of visual economy. It takes a much better advantage of the limited screen space you have to use, and now can display other information you need on your limimted space of your screen.</p>
+
+    <br><h2>Role-Based Visualization: Context is Everything</h2>
+    <p>Marketing, operations, and executive teams all need different data. Context-aware dashboards adapt to each role, surfacing only what matters.</p>
+
+    <br><h2>Hieroglyphic UI: Data at a Glance</h2>
+    <p>By reducing text and using visual symbols, an operations manager can instantly identify statuses and opportunities. This "hieroglyphic UI" cuts through the noise and boosts clarity.</p>
+
+    <br><h2>Practical Strategies to Optimize Screen Real Estate</h2>
+    <ul>
+      <li>Define clear objectives for each team.</li>
+      <li>Personalize views by role.</li>
+      <li>Use symbols, color-coding, and concise indicators.</li>
+      <li>Highlight data needed for immediate decisions.</li>
+      <li>Maintain consistent design across dashboards.</li>
+      <li>Regularly remove outdated information.</li>
+      <li>Gather feedback and refine continuously.</li>
+    </ul>
+
+    <br><h2>The Value of Customized Dashboards</h2>
+    <p>Off-the-shelf solutions rarely fit complex workflows. Customized, context-aware dashboards reduce cognitive load and create a competitive advantage.</p>
+
+    <br><h2>YourOS: Operational Clarity Made Approachable</h2>
+    <p>At YourOS, we believe technology should serve you. Our dashboards are tailored to your unique needs so you can see clearly and act quickly.</p>
+
+    <br><h2>Take the First Step</h2>
+    <p>Ready to optimize your screen real estate and achieve true operational clarity? Book a call and let YourOS craft a dashboard strategy designed for your success.</p>
+    <br><a class="cta" href="/Begin-Your-Revolution.html" target="_blank" rel="noopener">Begin Revolution</a>
   </section>
+  <!-- FOOTER -->
+  <footer>© 2025 YourOS. Those who could excel, should excel</footer>
+  <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon" class="favicon-footer"></a>
 
-  <section class="section wrapper">
-    <h2>Your Brain Can Only Make So Many Decisions a Day.</h2>
-    <p>Called "decision fatigue". YourOS takes repetitive tasks off your plate automatically. For more nuanced choices,
-      AI can suggest the best course of action.</p>
-    <p><em>Less decision fatigue. More clarity. More strategy. More vacation.</em> 😎</p>
-  </section>
-
-  <section class="section wrapper" style="text-align:center">
-    <h2>It’s Your Team. Your Data. Your Decisions. YourOS.</h2>
-    <p>You tell us what matters. We train the AI to support it. Together, we unlock a better way of working.</p>
-  </section>
-
-  <section class="section wrapper" style="text-align:center">
-    <h2>Ready to let AI join the team?</h2>
-    <a class="cta" href="Begin-Your-Revolution.html" target="_blank">Let's get Skyne-- I mean, a
-      Sidekick!</a>
-  </section>
-
-  <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
-  <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
-    class="favicon-footer"></a>
-
-  <script>
-    const opts = { month: 'long', day: 'numeric', year: 'numeric' };
-    document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-US', opts);
-  </script>
   <script>
     const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
+    const links = document.querySelector('.nav-links') || document.querySelector('.navbar-links');
     if (toggle && links) {
       toggle.addEventListener('click', () => {
         links.classList.toggle('open');
       });
     }
   </script>
+
 </body>
 
 </html>

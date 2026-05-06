@@ -1,437 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
-  <title>Stories of Evolution – YourOS</title>
+  <title>Client Results – Real AI Workflow Transformations | YourOS</title>
+  <meta name="description" content="Real results from real businesses. See how YourOS AI-powered workflow systems helped an HVAC company, a biotech firm, an RV dealership chain, and more transform their operations." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://www.youros.app/what-does-youros-do/stories-and-testimony" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Client Results – Real AI Workflow Transformations | YourOS" />
+  <meta property="og:description" content="Real results from real businesses. See how YourOS helped an HVAC company, biotech firm, RV dealership chain, and more transform their operations with custom workflow systems." />
+  <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
+  <meta property="og:url" content="https://www.youros.app/what-does-youros-do/stories-and-testimony" />
+  <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --bg: #1c1c1e;
-      --bg-alt: #2a2a2a;
-      --primary: #0077ff;
-      --primary-light: #00afff;
-      --text: #e6e8ec;
-      --muted: #9ca3af;
-      --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
-      --white: #fff;
-      --black: #111;
-    }
+    :root{--bg:#1c1c1e;--bg-alt:#2a2a2a;--primary:#0077ff;--primary-light:#00afff;--action:#f97316;--action-hover:#ea580c;--text:#e6e8ec;--muted:#9ca3af;--white:#fff;--black:#111;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:var(--primary);font-weight:600;text-decoration:none;transition:color .2s;}a:hover{color:var(--primary-light);}
+    h1,h2,h3{font-weight:700;margin-bottom:1rem;}
+    h1{font-size:2.75rem;letter-spacing:-0.02em;line-height:1.15;}
+    h2{font-size:2rem;}
+    h3{font-size:1.1rem;}
+    .wrapper{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+    .section{padding-top:4rem;padding-bottom:4rem;}
+    p+p{margin-top:1rem;}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* NAV */
+    nav{display:flex;align-items:center;justify-content:space-between;background:var(--white);height:64px;padding:0 2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000;}
+    .nav-left{display:flex;align-items:center;gap:0.75rem;}.nav-left img{height:32px;width:auto;}.nav-left span{font-weight:600;font-size:1rem;color:var(--black);}
+    .nav-links{display:flex;align-items:center;gap:1.5rem;}.nav-toggle{display:none;background:none;border:none;cursor:pointer;}.nav-toggle span{display:block;width:24px;height:3px;margin:5px 0;background:var(--black);}
+    .nav-links a{text-decoration:none;color:var(--black);font-weight:500;}.nav-links a:hover{color:var(--primary);}
+    .nav-cta-link{background:var(--action);color:var(--white)!important;padding:0.5rem 1.1rem;border-radius:6px;font-weight:600!important;font-size:0.9rem;transition:background .2s;}.nav-cta-link:hover{background:var(--action-hover)!important;color:var(--white)!important;}
+    .dropdown{position:relative;}.dropdown-content{display:none;position:absolute;top:100%;left:0;background:var(--white);min-width:200px;box-shadow:0 4px 8px rgba(0,0,0,.1);z-index:999;border-radius:4px;}
+    .dropdown-content a{display:block;padding:0.75rem 1rem;color:var(--black);font-size:0.9rem;}.dropdown-content a:hover{background:#f2f2f2;color:var(--primary);}.dropdown:hover .dropdown-content{display:block;}
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    /* HERO */
+    .hero{background:radial-gradient(circle at center,rgba(0,119,255,.12) 0%,transparent 70%);padding:5rem 1.5rem 4rem;text-align:center;}
+    .hero h1{background:linear-gradient(135deg,#cfd4d9 0%,#9ea3a6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;max-width:700px;margin:0 auto 1rem;}
+    .hero p{font-size:1.1rem;max-width:600px;margin:0 auto;color:var(--muted);}
 
-    a {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
+    /* STAT BAR */
+    .stat-bar{background:var(--bg-alt);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:2.5rem 1.5rem;}
+    .stat-bar .inner{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;max-width:1100px;margin:0 auto;}
+    .stat-item{flex:1;min-width:160px;text-align:center;}
+    .stat-item .num{font-size:2rem;font-weight:700;color:#e0e4e8;line-height:1.1;}
+    .stat-item .lbl{color:var(--muted);font-size:0.82rem;margin-top:0.3rem;}
 
-    a:hover {
-      color: var(--primary-light);
-    }
+    /* CASE STUDY CARDS */
+    .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;}
+    .case-card{background:var(--bg-alt);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;transition:transform .2s,box-shadow .2s;}
+    .case-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.3);}
+    .case-eyebrow{display:inline-block;background:rgba(0,119,255,.12);border:1px solid rgba(0,119,255,.25);color:var(--primary-light);font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:999px;}
+    .case-card h3{color:#fff;font-size:1.05rem;line-height:1.4;margin:0;}
+    .case-outcome{background:rgba(255,255,255,.04);border-radius:8px;padding:0.85rem 1rem;display:flex;align-items:center;gap:0.85rem;}
+    .outcome-num{font-size:1.75rem;font-weight:700;color:#e0e4e8;white-space:nowrap;line-height:1;}
+    .outcome-lbl{font-size:0.8rem;color:var(--muted);line-height:1.35;}
+    .case-card p{color:#b8bec7;font-size:0.88rem;line-height:1.6;flex:1;}
+    .case-cta{display:inline-block;background:var(--primary);color:#fff;padding:0.6rem 1.25rem;border-radius:6px;font-size:0.875rem;font-weight:600;transition:background .2s;align-self:flex-start;}
+    .case-cta:hover{background:var(--primary-light);color:#fff;}
 
-    /* === NAVBAR === */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--white);
-      height: 64px;
-      padding: 0 2rem;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+    /* BOTTOM CTA */
+    .cta-block{background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.2);border-radius:16px;padding:3rem 2rem;text-align:center;}
+    .cta-block h2{margin-bottom:0.75rem;}
+    .cta-block p{color:var(--muted);max-width:500px;margin:0 auto 2rem;}
+    .cta{display:inline-block;background:var(--action);color:#fff;padding:1rem 2.25rem;border-radius:8px;box-shadow:0 0 12px rgba(249,115,22,.35);font-weight:700;transition:transform .2s,box-shadow .2s;}
+    .cta:hover{background:var(--action-hover);color:#fff;transform:translateY(-2px);box-shadow:0 0 20px rgba(249,115,22,.5);}
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
+    footer{text-align:center;background:var(--bg-alt);padding:2rem 1.5rem;font-size:.9rem;color:var(--muted);}
+    .favicon-footer{position:fixed;bottom:20px;right:20px;width:32px;height:32px;opacity:0.8;}
 
-    .nav-left img {
-      height: 32px;
-      width: auto;
-    }
-
-    .nav-left span {
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--black);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 3px;
-      margin: 5px 0;
-      background: var(--black);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--black);
-      font-weight: 500;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: var(--white);
-      min-width: 200px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-      border-radius: 4px;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.75rem 1rem;
-      color: var(--black);
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f2f2f2;
-      color: var(--primary);
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .section {
-      padding: 4rem 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.75rem;
-      letter-spacing: -0.01em;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #fff;
-      margin-bottom: 0.75rem;
-    }
-
-    p+p {
-      margin-top: 1rem;
-    }
-
-    .hero {
-      background: radial-gradient(circle at center, rgba(0, 119, 255, .15) 0%, transparent 70%);
-      text-align: center;
-      padding: 7rem 1.5rem 6rem;
-    }
-
-    .hero h1 {
-      background: var(--chrome);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 1.5rem auto 0;
-      color: var(--muted);
-    }
-
-    .logo-hero {
-      height: 120px;
-      width: auto;
-      margin: 1.25rem auto 1.75rem;
-      display: block;
-    }
-
-    .testimonial-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2.5rem;
-      margin-top: 2rem;
-    }
-
-    .testimonial-card {
-      max-width: 800px;
-      background: var(--bg-alt);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    }
-
-    .testimonial-card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .testimonial-card .cta {
-      display: block;
-      margin: 0 auto;
-      max-width: 30%;
-      background-color: var(--primary);
-      color: #fff;
-      padding: 0.75rem 1.25rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: background-color 0.2s ease;
-    }
-
-    .testimonial-card .cta:hover {
-      background-color: var(--primary-light);
-    }
-
-    .cta {
-      background: var(--primary);
-      color: #fff;
-      padding: 1rem 2.25rem;
-      border-radius: 8px;
-      box-shadow: inset 0 0 4px rgba(255, 255, 255, .15), 0 0 10px var(--primary-light);
-      text-decoration: none;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: inset 0 0 4px rgba(255, 255, 255, .2), 0 0 18px var(--primary-light);
-    }
-
-    footer {
-      background: var(--bg-alt);
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: .9rem;
-      color: var(--muted);
-    }
-
-    .favicon-footer {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 32px;
-      height: 32px;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    @media(max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 64px;
-        right: 1rem;
-        background: var(--white);
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-      .testimonial-card .cta {
-        max-width: 60%;
-      }
-    }
-
-    @media(max-width: 480px) {
-      h1 {
-        font-size: 2.25rem;
-      }
-
-      .testimonial-card {
-        padding: 1.5rem;
-      }
-
-      .testimonial-card .cta {
-        max-width: 100%;
-      }
-    }
+    @media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:64px;right:1rem;background:var(--white);padding:1rem;box-shadow:0 4px 8px rgba(0,0,0,.1);border-radius:4px;}.nav-links.open{display:flex;}.nav-toggle{display:block;}.case-grid{grid-template-columns:1fr;}}
+    @media(max-width:640px){h1{font-size:2.1rem;}h2{font-size:1.6rem;}}
   </style>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-Y74BBJGYND');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y74BBJGYND');</script>
 </head>
-
 <body>
 
-  <!-- ✅ NAVBAR -->
   <nav>
-    <div class="nav-left">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
-      <span>YOUR Operating System</span>
-    </div>
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <a class="nav-left" href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo"><span>YOUR Operating System</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a href="https://www.youros.app/youros-home">YourOS Home</a>
-      <div class="dropdown">
-        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+      <div class="dropdown"><a href="#">Services ▾</a>
         <div class="dropdown-content">
-          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+          <a href="/ai-automation-services-small-business/">AI Automation Services</a>
+          <a href="/custom-workflow-automation/">Custom Workflow Automation</a>
+          <a href="/replace-spreadsheets-with-custom-app/">Replace Spreadsheets</a>
+          <a href="/appsheet-consultant/">AppSheet Consulting</a>
+          <a href="/ai-assistants-for-business/">AI Assistants for Business</a>
         </div>
       </div>
-      <a href="https://www.youros.app/security-trust">Security & Trust</a>
+      <div class="dropdown"><a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="dropdown-content"><a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories &amp; Testimony</a></div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security &amp; Trust</a>
       <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
-      <a href="https://www.youros.app/pricing-competitors">Pricing & Competitors</a>
+      <a href="/blog/">Blog</a>
+      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Book a Workflow Audit</a>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
-    <h1>Stories of Evolution Using <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo"
-        class="logo-hero"></h1>
-    <p>Every one of these is a real-world transformation—from burnout to breakthrough, from chaos to clarity. These are
-      testimonies of people who felt stuck, then built their own revolution with YourOS.</p>
+    <h1>Real Teams. Real Results.</h1>
+    <p>These aren't case studies we invented. They're real businesses that had a broken process, asked a question, and let YourOS build the answer.</p>
   </section>
 
-  <!-- TESTIMONIAL SECTION -->
-  <section class="section wrapper" style="text-align: center;">
-    <div class="testimonial-list">
-      <div class="testimonial-card">
-        <h3>“WHAT IF TRACKING BONUSES DIDN’T REQUIRE PAPERWORK—OR OVERTIME?”</h3>
-        <p>One rental ops manager tried to reward high performers. What he built instead—by accident—was the seed that
-          became YourOS. A manual monster, a late-night spreadsheet, and the spark that turned into a platform.</p>
-        <a href="#" class="cta">Read Where It Started</a>
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="inner">
+      <div class="stat-item"><div class="num">99%</div><div class="lbl">Sample retention rate<br>(industry avg: 70–80%)</div></div>
+      <div class="stat-item"><div class="num">30–50</div><div class="lbl">Field techs connected<br>to the office instantly</div></div>
+      <div class="stat-item"><div class="num">25+</div><div class="lbl">Locations unified on<br>one live system</div></div>
+      <div class="stat-item"><div class="num">Days→Min</div><div class="lbl">Time to process<br>service records</div></div>
+    </div>
+  </div>
+
+  <!-- CASE STUDY CARDS -->
+  <section class="section wrapper">
+    <div class="case-grid">
+
+      <div class="case-card">
+        <span class="case-eyebrow">HVAC — Field Operations</span>
+        <h3>Lost Contracts at the Door. Fixed Before the Tech Left the Driveway.</h3>
+        <div class="case-outcome">
+          <div class="outcome-num">Days→Min</div>
+          <div class="outcome-lbl">Service record delay cut from hours or days to instant</div>
+        </div>
+        <p>30–50 field techs. Paper forms sitting in trucks. The office sprinting every night to process cards — chasing bad data and lost contracts. YourOS put the office in the field.</p>
+        <a class="case-cta" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/hvac">Read the Story →</a>
       </div>
 
-      <div class="testimonial-card">
-        <h3>“HOW CAN I TRACK WHO'S USING OUR COMPANY VEHICLES WITHOUT SPREADSHEETS?”</h3>
-        <p>Brad asked for a better way to track keys and fuel-ups. What he got was a live operations system that
-          reshaped field logistics and sample tracking across an entire biotech firm.</p>
-        <a href="#" class="cta">Read Brad’s Transformation</a>
+      <div class="case-card">
+        <span class="case-eyebrow">Biotech — Operations &amp; Sample Tracking</span>
+        <h3>He Asked for a Vehicle Tracker. He Got the System That Helped Sell His Company.</h3>
+        <div class="case-outcome">
+          <div class="outcome-num">99%</div>
+          <div class="outcome-lbl">Sample retention vs. 70–80% industry average</div>
+        </div>
+        <p>Brad came in with one question. The system that followed drove industry-leading retention — and when the business was acquired, corporate was told to leave it alone.</p>
+        <a class="case-cta" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/vehicle-track-to-backlog">Read the Story →</a>
       </div>
 
-      <div class="testimonial-card">
-        <h3>“HOW CAN OUR TECHS STOP TEXTING PHOTOS OF PAPER FORMS TO THE OFFICE?”</h3>
-        <p>One HVAC team turned that question into action. With YourOS, they went from manual chaos to real-time logs
-          and instant service records.</p>
-        <a href="#" class="cta">Read the HVAC Transformation</a>
+      <div class="case-card">
+        <span class="case-eyebrow">RV Dealership — Multi-Location Ops</span>
+        <h3>25+ Locations. All Running on Whiteboards. Zero Shared Visibility.</h3>
+        <div class="case-outcome">
+          <div class="outcome-num">25+</div>
+          <div class="outcome-lbl">Locations unified on one live asset command center</div>
+        </div>
+        <p>Inventory vanished between locations. Appointments clashed. Teams blamed each other. YourOS gave every location real-time visibility — and ended the finger-pointing for good.</p>
+        <a class="case-cta" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/whiteboard">Read the Story →</a>
       </div>
 
-      <div class="testimonial-card">
-        <h3>“HOW DO WE GO FROM WHITEBOARDS TO SEEING ACROSS EVERY LOCATION?”</h3>
-        <p>This sales organization had no visibility. YourOS replaced the wall scribbles with a live asset command
-          center.</p>
-        <a href="#" class="cta">Read the Whiteboard Transformation</a>
+      <div class="case-card">
+        <span class="case-eyebrow">Rental Operations — Origin Story</span>
+        <h3>He Wanted to Pay His Team Fairly. He Accidentally Built YourOS.</h3>
+        <div class="case-outcome">
+          <div class="outcome-num">Hours</div>
+          <div class="outcome-lbl">Saved per week in manual nightly auditing</div>
+        </div>
+        <p>A fair bonus system turned into a nightly manual monster. The fix he built for his team became the platform that grew into YourOS — and gave his people back their evenings.</p>
+        <a class="case-cta" href="https://www.youros.app/what-does-youros-do/stories-and-testimony/where-it-started">Read the Story →</a>
       </div>
+
     </div>
   </section>
 
-  <!-- CTA SECTION -->
-  <section class="section wrapper" style="text-align:center">
-    <h3>Ready to leave the First Version behind?</h3>
-    <p>Book a call and get on the schedule.</p>
-    <a class="cta"
-      href="https://docs.google.com/forms/d/e/1FAIpQLSepU-CxHQApxlmq3cckESXH0DtQp4TiejhjkHPtL9aV31rkSA/viewform?usp=dialog"
-      target="_blank" rel="noopener">Start Building with YourOS</a>
+  <!-- BOTTOM CTA -->
+  <section class="section wrapper">
+    <div class="cta-block">
+      <h2>Does your situation look like one of these?</h2>
+      <p>Most of the businesses we work with come in with one question and leave with a system that changes how their whole team operates. It starts with a 20-minute conversation.</p>
+      <a class="cta" href="/Begin-Your-Revolution.html">Book a Free Workflow Audit</a>
+    </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
-  <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
-    class="favicon-footer">
-
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links') || document.querySelector('.navbar-links');
-    if (toggle && links) {
-      toggle.addEventListener('click', () => {
-        links.classList.toggle('open');
-      });
-    }
-  </script>
-
+  <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" class="favicon-footer"></a>
+  <script>const t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');if(t&&l)t.addEventListener('click',()=>l.classList.toggle('open'));</script>
 </body>
-
 </html>

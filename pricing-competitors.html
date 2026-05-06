@@ -4,7 +4,14 @@
 <head>
   <meta charset="utf-8" />
   <link rel="canonical" href="https://www.youros.app/pricing-competitors" />
-  <title>YourOS – Pricing & Competitors</title>
+  <meta name="robots" content="index, follow" />
+  <title>YourOS Custom Pricing & How We Compare to Other Options</title>
+  <meta name="description" content="YourOS custom pricing is based on the workflow, the people it helps, and the time it can give back. Start with a workflow audit and get a fit-based recommendation." />
+  <meta property="og:title" content="YourOS Custom Pricing & How We Compare to Other Options" />
+  <meta property="og:description" content="YourOS custom pricing is based on the workflow, the people it helps, and the time it can give back. Start with a workflow audit and get a fit-based recommendation." />
+  <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
+  <meta property="og:url" content="https://www.youros.app/pricing-competitors" />
+  <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" sizes="32x32"
     href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
@@ -12,289 +19,232 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #1c1c1e;
-      --bg-alt: #2a2a2a;
-      --primary: #0077ff;
-      --primary-light: #00afff;
-      --text: #e6e8ec;
-      --muted: #9ca3af;
-      --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
-    }
+  :root {
+    --bg: #1c1c1e;
+    --bg-alt: #2a2a2a;
+    --primary: #0077ff;
+    --primary-light: #00afff;
+    --text: #e6e8ec;
+    --muted: #9ca3af;
+    --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
+    --action: #f97316;
+    --action-hover: #ea580c;
+    --white: #fff;
+    --black: #111;
+  }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
 
-    a {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-    }
+  a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  a:hover { color: var(--primary-light); }
 
-    a:hover {
-      color: var(--primary-light);
-    }
+  /* ── NAVBAR ───────────────────────────────────────────────────────────────── */
 
-    .navbar {
-      background-color: white;
-      color: black;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      font-family: 'Inter', sans-serif;
-    }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    height: 64px;
+    padding: 0 2rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .nav-left { display: flex; align-items: center; gap: 0.75rem; }
+  .nav-left img { height: 32px; width: auto; }
+  .nav-left span { font-weight: 600; font-size: 1rem; color: var(--black); }
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+  .nav-toggle span { display: block; width: 24px; height: 3px; margin: 5px 0; background: var(--black); }
+  .nav-links a { text-decoration: none; color: var(--black); font-weight: 500; }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-cta-link { background: var(--action); color: var(--white)!important; padding: 0.5rem 1.1rem; border-radius: 6px; font-weight: 600!important; font-size: 0.9rem; transition: background .2s; }
+  .nav-cta-link:hover { background: var(--action-hover)!important; color: var(--white)!important; }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); min-width: 220px; box-shadow: 0 4px 8px rgba(0,0,0,.1); z-index: 999; border-radius: 4px; }
+  .nav-dropdown-content a { display: block; padding: 0.75rem 1rem; color: var(--black); font-size: 0.9rem; }
+  .nav-dropdown-content a:hover { background: #f2f2f2; color: var(--primary); }
+  .nav-dropdown:hover .nav-dropdown-content { display: block; }
 
-    .navbar-left {
-      display: flex;
-      align-items: center;
-    }
+  /* ── HERO, WRAPPER, SECTIONS, CTA, ETC. (unchanged) ───────────────────────── */
 
-    .navbar-left img {
-      height: 32px;
-      margin-right: 10px;
-    }
+  .hero {
+    background: radial-gradient(circle at center,
+      rgba(0,119,255,.15) 0%, transparent 70%);
+    text-align: center;
+    padding: 7rem 1.5rem 6rem;
+  }
+  .hero h1 {
+    font-size: 2.75rem;
+    background: var(--chrome);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 680px;
+    margin: 1.5rem auto 0;
+    color: var(--muted);
+  }
+  .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .section { padding: 4rem 0; }
+  h2 { font-size: 2rem; margin-bottom: 1rem; }
+  ul { list-style-position: inside; margin-top: 1rem; }
+  ul li { margin-bottom: 0.75rem; }
 
-    .navbar-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
+  .cta {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 1rem 2.25rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    box-shadow: inset 0 0 4px rgba(255,255,255,.15),
+                0 0 10px var(--primary-light);
+    position: relative; overflow: hidden; text-align: center;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .cta::before {
+    content: "";
+    position: absolute; top:0; left:0;
+    width:100%; height:100%;
+    background: linear-gradient(
+      120deg, transparent, rgba(255,255,255,0.35), transparent
+    );
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
+  }
+  .cta:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 4px rgba(255,255,255,.2),
+                0 0 18px var(--primary-light);
+  }
+  @keyframes shimmer {
+    0%   { transform: translateX(-100%); }
+    50%  { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+  }
 
-    .nav-toggle {
+  footer {
+    background: var(--bg-alt);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .favicon-footer {
+    position: fixed; bottom: 20px; right: 20px;
+    width: 32px; height: 32px; opacity: 0.8;
+    pointer-events: auto;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--bg-alt);
+    margin: 2rem 0;
+  }
+
+  /* ── DETAILS DROPDOWN STYLING ────────────────────────────────────────────── */
+
+  details.dropdown {
+    background: var(--bg-alt);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    margin-top: 2rem;
+    overflow: hidden;
+    transition: box-shadow .3s ease;
+  }
+  details.dropdown:hover {
+    box-shadow: 0 0 20px var(--primary-light);
+  }
+
+  /* make summary a full-width button… */
+  details.dropdown summary {
+    display: block;           /* full width */
+    width: 100%;
+    padding: 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary);
+    background: rgba(0,119,255,0.1);
+    list-style: none;         /* remove bullet/marker */
+    transition: background .3s ease, transform .2s ease;
+  }
+  details.dropdown summary:hover {
+    background: rgba(0,119,255,0.25);
+    transform: scale(1.02);
+  }
+
+  /* hide the native ▼ arrow */
+  details.dropdown summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* style the open state */
+  details.dropdown[open] summary {
+    background: rgba(0,119,255,0.2);
+  }
+
+  /* override the old absolute nav‐dropdown positioning */
+  details.dropdown .dropdown-content {
+    display: none;
+    position: static;           /* <-- key change */
+    padding: 1rem 1.5rem 2rem;
+    color: var(--text);
+    animation: fadeIn 0.4s ease;
+    border-top: 2px solid var(--primary);
+    background: var(--bg-alt);
+    border-radius: 0 0 8px 8px;
+  }
+  details.dropdown[open] .dropdown-content {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE tweaks (unchanged) ─────────────────────────────────────── */
+
+  @media(max-width: 768px) {
+    .nav-links {
       display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 3px;
-      margin: 5px 0;
-      background: black;
-    }
-
-    .navbar a {
-      color: black;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
+      flex-direction: column;
       position: absolute;
-      top: 100%;
-      left: 0;
+      top: 64px; right: 1rem;
       background: white;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      z-index: 999;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
     }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: block; }
+  }
+  @media(max-width: 1024px) {
+    .wrapper, .hero { padding-left:1.5rem; padding-right:1.5rem; }
+  }
+  @media(max-width: 640px) {
+    .wrapper, .hero { padding-left:1.25rem; padding-right:1.25rem; }
+    h1 { font-size:2.25rem; }
+    h2 { font-size:1.6rem; }
+  }
+</style>
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: black;
-      white-space: nowrap;
-    }
-
-    .hero {
-      background: radial-gradient(circle at center, rgba(0, 119, 255, .15) 0%, transparent 70%);
-      text-align: center;
-      padding: 7rem 1.5rem 6rem;
-    }
-
-    .hero h1 {
-      font-size: 2.75rem;
-      background: var(--chrome);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 680px;
-      margin: 1.5rem auto 0;
-      color: var(--muted);
-    }
-
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .section {
-      padding: 4rem 0;
-    }
-
-    p+p {
-      margin-top: 1rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style-position: inside;
-      margin-top: 1rem;
-    }
-
-    ul li {
-      margin-bottom: 0.75rem;
-    }
-
-    .cta {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      padding: 1rem 2.25rem;
-      border-radius: 8px;
-      margin-top: 2rem;
-      box-shadow: inset 0 0 4px rgba(255, 255, 255, .15), 0 0 10px var(--primary-light);
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-      transform: translateX(-100%);
-      animation: shimmer 2s infinite;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: inset 0 0 4px rgba(255, 255, 255, .2), 0 0 18px var(--primary-light);
-    }
-
-    @keyframes shimmer {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      50% {
-        transform: translateX(100%);
-      }
-
-      100% {
-        transform: translateX(100%);
-      }
-    }
-
-    footer {
-      background: var(--bg-alt);
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .favicon-footer {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 32px;
-      height: 32px;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--bg-alt);
-      margin: 2rem 0;
-    }
-
-    /* Pricing option dropdowns */
-    details.pricing-dropdown {
-      margin-top: 2rem;
-    }
-    details.pricing-dropdown summary {
-      display: block;
-      width: 100%;
-      cursor: pointer;
-      font-weight: 600;
-      background: var(--bg-alt);
-      color: var(--primary);
-      padding: 1rem 1.5rem;
-      border: 2px solid var(--primary);
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0, 119, 255, 0.4);
-      transition: box-shadow .2s ease;
-      list-style: none;
-    }
-    details.pricing-dropdown summary:hover {
-      box-shadow: 0 0 12px rgba(0, 119, 255, 0.6);
-    }
-    details.pricing-dropdown summary::-webkit-details-marker { display: none; }
-    details.pricing-dropdown[open] summary { /* keep same outline when open */ }
-    details.pricing-dropdown .dropdown-content {
-      padding: 1rem 1.5rem 2rem;
-      color: var(--text);
-      animation: fadeIn 0.4s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media(max-width: 768px) {
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 64px;
-        right: 1rem;
-        background: white;
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-      }
-
-      .navbar-links.open {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
   <script>
@@ -307,119 +257,107 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="Logo">
+  <nav>
+    <a class="nav-left" href="https://www.youros.app">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo">
       <span>YOUR Operating System</span>
-    </div>
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="navbar-links">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <div class="nav-links">
       <a href="https://www.youros.app/youros-home">YourOS Home</a>
-      <div class="dropdown">
-        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
-        <div class="dropdown-content">
-          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories and Testimony</a>
+      <div class="nav-dropdown"><a href="#">Services ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="/ai-automation-services-small-business/">AI Automation Services</a>
+          <a href="/custom-workflow-automation/">Custom Workflow Automation</a>
+          <a href="/replace-spreadsheets-with-custom-app/">Replace Spreadsheets</a>
+          <a href="/appsheet-consultant/">AppSheet Consulting</a>
+          <a href="/ai-assistants-for-business/">AI Assistants for Business</a>
         </div>
       </div>
-      <a href="https://www.youros.app/security-trust">Security & Trust</a>
+      <div class="nav-dropdown"><a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories &amp; Testimony</a>
+        </div>
+      </div>
+      <a href="https://www.youros.app/security-trust">Security &amp; Trust</a>
       <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
-      <a href="https://www.youros.app/pricing-competitors">Pricing & Competitors</a>
+      <a href="/blog/">Blog</a>
+      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Book a Workflow Audit</a>
     </div>
   </nav>
 
   <section class="hero">
-    <h1>Pricing & Competitors</h1>
-    <p>See how YourOS compares to legacy platforms and how we price smarter, faster deployments.</p>
+    <h1>Custom Pricing for Custom Systems</h1>
+    <p>YourOS is not priced from a menu because your bottlenecks, team, tools, and upside are not generic.</p>
   </section>
 
   <section id="pricing-comparison" class="section wrapper">
-    <h2>What You Typically Pay For</h2>
-    <p>You’ve probably seen this before. Enterprise software vendors often quote <strong>$50,000 to $100,000+</strong> just to get started. Then they bill <strong>$100/user/month</strong> to keep the lights on.</p>
-    <p>And here’s what you’re actually buying:</p>
-    <ul>
-      <li>❌ <strong>Slow timelines</strong> (3 to 12 months just to go live)</li>
-      <li>❌ <strong>Rigid tools</strong> that can’t adapt to your business</li>
-      <li>❌ <strong>Little follow-up</strong> once the contract is signed</li>
-      <li>❌ <strong>Vendor lock-in</strong> that makes updates expensive or impossible</li>
-    </ul>
-
-    <p><strong>Don’t just take our word for it.</strong> Explore how some of the other players structure their offers:</p>
-    <ul>
-      <li><a href="https://dynamics.microsoft.com/en-us/pricing/" target="_blank">Microsoft Dynamics Pricing →</a></li>
-      <li><a href="https://www.salesforce.com/editions-pricing/sales-cloud/" target="_blank">Salesforce Pricing &amp; Editions →</a></li>
-      <li><a href="https://www.scnsoft.com/software-development/costs#:~:text=Software%20development%20costs%20for%20a,play%20an%20important%20role" target="_blank">ScienceSoft Software Development →</a></li>
-      <li><a href="https://www.bridgeall.com/2024/08/20/everything-you-need-to-know-about-outsystems-licensing/#:~:text=Subscription%20Growth%20,licenses%2C%20or%20server%20consumption" target="_blank">Bridgeall Subscription Prices →</a></li>
-    </ul>
+    <h2>Start With the Workflow, Not a Price Tag</h2>
+    <p>Every YourOS engagement starts with a simple question: <strong>where is your team losing time, momentum, or revenue because the process is harder than it should be?</strong></p>
+    <p>Once we understand the workflow, we can confirm whether YourOS is a strong fit and recommend the right arrangement for the problem you actually need solved.</p>
 
     <img src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo" class="logo-big" style="margin:3rem auto 0;display:block;max-width:90%;width:260px;">
 
-    <h2>What YourOS Costs</h2>
-    <p><strong>We price for clarity, speed, and outcomes.</strong><br>No hidden fees. No nickel-and-diming. Just systems that work—and keep working.</p>
+    <h2>How Custom Pricing Works</h2>
+    <p><strong>YourOS pricing is built around value, scope, and support.</strong><br>That means the recommendation depends on what we are building, how many people it helps, how much time it can save, and what level of ongoing improvement your business needs.</p>
 
-    <details class="pricing-dropdown">
-      <summary>🚀 Premium Package</summary>
+    <details class="dropdown">
+      <summary>⏱️ Time Saved Across Your Team</summary>
       <div class="dropdown-content">
-        <p><strong>$65,000</strong><br>Multiple products. Multiple on-site visits. Strategic deep dive. Ongoing iterative system builds.</p>
-        <p><em>For organizations with multiple teams that want transformation—not just configuration.</em></p>
+        <p>We look at the repeated work your team does every week: manual data entry, spreadsheet cleanup, follow-up, reporting, handoffs, reminders, approvals, and process tracking.</p>
+        <p><em>If the system gives meaningful time back across multiple people, the investment is usually much easier to justify.</em></p>
       </div>
     </details>
 
-    <details class="pricing-dropdown">
-      <summary>🧰 Core Setup</summary>
+    <details class="dropdown">
+      <summary>🧩 Complexity of the Workflow</summary>
       <div class="dropdown-content">
-        <p><strong>$25,000</strong><br>One week. One team. One system.</p>
-        <p><em>On-site build. First version live by Friday.</em></p>
+        <p>Some businesses need a focused automation that removes one painful bottleneck. Others need a custom operating system that connects teams, tools, forms, dashboards, and AI-powered workflows.</p>
+        <p><em>The scope should match the size of the problem — not a prepackaged tier.</em></p>
       </div>
     </details>
 
-    <details class="pricing-dropdown">
-      <summary>🧪 Pilot Programs</summary>
+    <details class="dropdown">
+      <summary>🤝 Build, Launch, and Ongoing Support</summary>
       <div class="dropdown-content">
-        <p><strong>Priced via Consultation</strong><br>Custom-fit entry points for MVPs, proof-of-concept builds, or departmental rollouts.</p>
-        <p><em>Flexible, fast, and commitment-light.</em></p>
+        <p>YourOS is meant to keep improving after launch. We discuss what needs to be built first, what can wait, and what kind of ongoing help makes sense once the system is running in the real world.</p>
+        <p><em>No one-size-fits-all subscription. No surprise implementation package. Just the arrangement that fits the work.</em></p>
       </div>
     </details>
 
-    <details class="pricing-dropdown">
-      <summary>📊 User Costs &amp; Savings</summary>
+    <details class="dropdown">
+      <summary>✅ Fit Before Quote</summary>
       <div class="dropdown-content">
-        <p>We base pricing on the value you receive—not just the seats you fill. Here’s our simple model:</p>
-        <ul>
-          <li><strong>$25/user/month</strong> — for your first 50 users</li>
-          <li><strong>$20/user/month</strong> — for users 51 to 100</li>
-          <li><strong>$15/user/month</strong> — for 101+ users</li>
-        </ul>
-        <p>At $25/user, that's roughly <em>the cost of one hour</em> of your employee’s time per month—while YourOS saves them <strong>dozens of hours</strong> every month in return.</p>
+        <p>Before we quote anything, we want to understand your process well enough to know whether we can actually solve the problem. If YourOS is not the right fit, we will tell you.</p>
+        <p><em>The first step is a workflow audit, not a sales pitch.</em></p>
       </div>
     </details>
 
-    <a class="cta" href="https://www.youros.app/begin-your-revolution" target="_blank" rel="noopener">Get Custom Pricing</a>
+    <a class="cta" href="Begin-Your-Revolution.html" target="_blank" rel="noopener">Contact Us for Custom Pricing</a>
 
     <hr>
 
-    <h2>When you shop!</h2>
-    <p><strong>When you shop other solutions (which you should), ask them or someone you know who uses them these questions:</strong></p>
+    <h2>Comparing Your Options?</h2>
+    <p><strong>When you compare YourOS with off-the-shelf software, agencies, or internal builds, ask these questions:</strong></p>
     <ul>
-      <li>How long will it take to go live?</li>
-      <li>How quickly can you make changes after launch?</li>
-      <li>How much will it cost to implement those changes?</li>
+      <li>Will this actually match how our business works?</li>
+      <li>How quickly can we get a useful version live?</li>
+      <li>How easy will it be to change after launch?</li>
+      <li>Will this save enough time across the team to pay for itself?</li>
+      <li>Who keeps improving it once real people start using it?</li>
     </ul>
-    <p>And then let’s talk...</p>
-
-    <p style="margin-top:3rem;"><em>--As of May 2025. Prices subject to change. --</em></p>
+    <p>If those questions matter to you, let’s talk through the workflow and see what arrangement makes sense.</p>
   </section>
 
-  <footer>© 2025 YourOS. Those who could excel, should excel.</footer>
-  <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
-    class="favicon-footer">
+  <footer>
+    © 2025 YourOS. Those who could excel, should excel.
+    <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Favicon"
+      class="favicon-footer"></a>
+  </footer>
 
   <script>
     const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.navbar-links') || document.querySelector('.nav-links');
+    const links = document.querySelector('.nav-links');
     if (toggle && links) {
       toggle.addEventListener('click', () => {
         links.classList.toggle('open');
