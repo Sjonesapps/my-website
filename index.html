@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>YourOS – AI Workflow Systems for Professional Services</title>
-  <meta name="description" content="AI workflow systems for real estate, law, accounting, construction, engineering, insurance, and other service firms. Automate repetitive work and gain real-time visibility." />
+  <title>YourOS – Work ON Your Business, Not Just IN It</title>
+  <meta name="description" content="You work too much in the business and not enough on it. YourOS automates the work that distracts you — so you can focus on what actually matters." />
   <link rel="canonical" href="https://www.youros.app/" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="YourOS – AI Workflow Systems for Professional Services" />
-  <meta property="og:description" content="AI workflow systems for professional services firms. Automate repetitive work, accelerate client follow-up, gain real-time visibility, and scale your team easier than ever." />
+  <meta property="og:title" content="YourOS – Work ON Your Business, Not Just IN It" />
+  <meta property="og:description" content="You work too much in the business and not enough on it. YourOS automates the work that distracts you — so you can focus on what actually matters." />
   <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
   <meta property="og:url" content="https://www.youros.app/" />
   <meta property="og:type" content="website" />
@@ -266,6 +266,75 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* GOLDEN CIRCLE */
+    .golden-section {
+      padding: 5rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .golden-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .golden-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .golden-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,.08);
+    }
+    .label-why { color: var(--action); }
+    .label-how { color: var(--primary-light); }
+    .label-what { color: #a78bfa; }
+    .golden-statement {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text);
+      border: none;
+      margin: 0 0 1rem;
+    }
+    .golden-statement em {
+      font-style: normal;
+      color: var(--action);
+    }
+    .golden-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 620px;
+    }
+    .what-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .what-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.1rem;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .what-item::before {
+      content: "→";
+      color: #a78bfa;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
     /* Standard site footer */
     footer {
       border-top: 1px solid var(--line);
@@ -354,13 +423,12 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-eyebrow">Serving Anywhere from Retail to Rentals to Repairs &amp; All Other Industries</div>
-    <h1>AI Workflow Systems for Professional Services</h1>
-    <p class="hero-tagline">You're not broken. Your software is.</p>
     <img class="hero-logo" src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
-    <p>We build operational systems for real estate brokers, law firms, accounting practices, engineering and construction teams, and insurance agencies. Automate repetitive work, accelerate client follow-up, and gain real-time visibility — and scale your team easier than ever.</p>
+    <h1>You're probably here because you work too much <em style="font-style:normal;background:var(--chrome);-webkit-background-clip:text;color:transparent;">IN</em> the business — and not enough <em style="font-style:normal;color:var(--action);">ON</em> it.</h1>
+    <p class="hero-tagline">You've come to the right place.</p>
     <div class="cta-row">
       <a class="cta" href="/Begin-Your-Revolution.html">Book a Free Strategy Session</a>
-      <a class="cta-secondary" href="#services">See industries we serve →</a>
+      <a class="cta-secondary" href="#why">See how it works ↓</a>
     </div>
   </section>
 
@@ -392,102 +460,51 @@
     </div>
   </div>
 
-  <!-- PAIN SECTION -->
-  <section class="section wrapper" id="enemy">
-    <h2>Are You Drowning in Manual Work?</h2>
-    <p>You didn't grow your firm to spend Mondays rebuilding the same report. The cost of manual work isn't just hours — it's missed follow-ups, slow approvals, and a senior person stuck doing operations instead of practicing their craft.</p>
-    <div class="pain-grid">
-      <div class="pain-item"><div class="pain-dot"></div><p>Client follow-up falls through the cracks between calls and emails</p></div>
-      <div class="pain-item"><div class="pain-dot"></div><p>Approvals buried in email threads nobody checks</p></div>
-      <div class="pain-item"><div class="pain-dot"></div><p>The same report rebuilt every week from three spreadsheets</p></div>
-      <div class="pain-item"><div class="pain-dot"></div><p>Client data scattered across a CRM, drive folders, and one person's head</p></div>
-      <div class="pain-item"><div class="pain-dot"></div><p>Billable time lost to manual data entry instead of client work</p></div>
-      <div class="pain-item"><div class="pain-dot"></div><p>One person who knows how the whole process works — and they're at capacity</p></div>
+  <!-- WHY -->
+  <section class="golden-section" id="why">
+    <div class="golden-inner">
+      <div class="golden-label label-why">Why</div>
+      <p class="golden-statement">I believe business owners should spend more time <em>on</em> the business — and less time <em style="color:var(--muted);font-style:normal;">in</em> it.</p>
+      <p class="golden-sub">You started this business for a reason. That reason wasn’t to spend your days buried in repetitive tasks, chasing updates, or doing work that a well-built system could handle for you. You should be focused on the things that actually matter — growing, leading, and doing the work only you can do.</p>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section wrapper" id="services">
-    <h2>Built around your firm — not a generic template.</h2>
-    <p>We listen, map your workflow, and build a system around the way your firm actually operates. No off-the-shelf software trying to bend your team into its shape.</p>
-    <div class="services-grid" style="margin-top:2.5rem;">
-      <div class="service-card">
-        <h3>⚡ AI Workflow Automation</h3>
-        <p>Automate the repetitive steps that slow service firms down — intake, routing, reminders, follow-up, and handoffs. Example: route a new real estate lead, notify the right person, and trigger follow-up before it goes cold.</p>
-        <a href="/ai-automation-services-small-business/">Learn more →</a>
-      </div>
-      <div class="service-card">
-        <h3>🔧 Custom Workflow Systems</h3>
-        <p>Turn scattered processes into firm-specific workflows where every step has an owner and every status is visible. Example: move a legal matter from intake to documents to approval without chasing updates across email.</p>
-        <a href="/custom-workflow-automation/">Learn more →</a>
-      </div>
-      <div class="service-card">
-        <h3>📊 Replace Spreadsheets</h3>
-        <p>Replace fragile spreadsheets with apps that track work, reduce errors, and give your team one source of truth. Example: rebuild an accounting firm's weekly reporting tracker so updates flow into one live dashboard.</p>
-        <a href="/replace-spreadsheets-with-custom-app/">Learn more →</a>
-      </div>
-      <div class="service-card">
-        <h3>📱 AppSheet Consulting</h3>
-        <p>Build internal apps, dashboards, approval flows, and field tools on Google AppSheet, connected to the Workspace your team already uses. Example: give a construction team mobile job updates without another heavyweight platform.</p>
-        <a href="/appsheet-consultant/">Learn more →</a>
-      </div>
-      <div class="service-card">
-        <h3>🤖 AI Assistants for Business</h3>
-        <p>Give your team practical AI assistants that summarize, draft, route, search, and act inside your existing systems. Example: summarize insurance client history before a renewal call and draft the next follow-up.</p>
-        <a href="/ai-assistants-for-business/">Learn more →</a>
-      </div>
-      <div class="service-card">
-        <h3>📍 Utah AI Consulting</h3>
-        <p>Work with a Utah-based partner who understands local service businesses and builds practical systems, not buzzword demos. Example: help an engineering or construction firm connect field updates, approvals, and client communication.</p>
-        <a href="/utah-ai-automation/">Learn more →</a>
-      </div>
+  <!-- HOW -->
+  <section class="golden-section" style="background:rgba(255,255,255,.015);">
+    <div class="golden-inner">
+      <div class="golden-label label-how">How</div>
+      <p class="golden-statement">I take the meaningless, redundant, or distracting work that still needs to get done — and I automate it and simplify how it gets executed.</p>
+      <p class="golden-sub">Not with bloated software that forces you to change how you work. With systems built around the way your business actually operates — so the right things happen automatically, and your team spends their time where it counts.</p>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section" style="background:var(--bg-alt); border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="wrapper">
-      <h2 style="text-align:center;">From Manual Work to Running System</h2>
-      <p style="text-align:center;color:var(--muted);max-width:560px;margin:0.5rem auto 0;">Four steps. No enterprise bloat. No six-month timelines. A practical system built around how your firm already works.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Strategy Session</h3>
-          <p>We map the manual steps, follow-up gaps, reporting bottlenecks, and automation opportunities inside your firm.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Build</h3>
-          <p>We design and build the workflow system around your firm’s real process — not a generic template.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Launch</h3>
-          <p>We deploy fast, train your team, and make sure client follow-up, approvals, reporting, and handoffs run the way they should.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3>Iterate</h3>
-          <p>We improve, automate more, and keep the system aligned as your firm grows and your process changes.</p>
-        </div>
+  <!-- WHAT -->
+  <section class="golden-section" id="services">
+    <div class="golden-inner">
+      <div class="golden-label label-what">What</div>
+      <p class="golden-statement">AI systems, workflows, integrations, and operational technology — built for your business.</p>
+      <div class="what-list">
+        <div class="what-item">Build automations</div>
+        <div class="what-item">Integrate AI into your workflows</div>
+        <div class="what-item">Build AI agents</div>
+        <div class="what-item">Design and document workflows</div>
+        <div class="what-item">Build custom AI models</div>
+        <div class="what-item">Integrate chatbots into your website</div>
+        <div class="what-item">Build AI-enhanced workflows</div>
+        <div class="what-item">Find the right technology for your needs</div>
+        <div class="what-item">Help you leverage technology you already have</div>
+        <div class="what-item">Identify and maximize ROI on your AI investment</div>
       </div>
     </div>
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section class="section wrapper">
-    <p style="color:var(--muted); font-size:1.1rem;">They build software to make you change.</p>
-    <p style="font-size:1.25rem;"><strong>We build systems that change with <em>you</em>.</strong></p>
-    <p style="margin-top:1rem;color:var(--muted);">We work with a limited number of clients each month. When you book, you're not a number — you're our focus.</p>
   </section>
 
   <!-- CTA BLOCK -->
   <section class="section wrapper">
     <div class="cta-block">
-      <h2>Show Us the Workflow That's Driving You Crazy</h2>
-      <p>In one short session, we'll identify the manual steps, spreadsheet risks, and automation opportunities that are costing your team time every week.</p>
+      <h2>Ready to work more ON the business?</h2>
+      <p>In one free session, we’ll identify what’s stealing your time and map out exactly what a system could do about it.</p>
       <a class="cta" href="/Begin-Your-Revolution.html" style="font-size:1.1rem; padding:1.1rem 2.5rem;">Book a Free Strategy Session</a>
-      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted);">20 minutes to ditch BrokenOS — and become the ops hero of your team.</p>
+      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted);">No pitch. No pressure. Just clarity on where automation can give you your time back.</p>
     </div>
   </section>
   <footer>
