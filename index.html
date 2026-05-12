@@ -95,9 +95,27 @@
       font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;
       text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;
     }
-    .hero h1 { background: var(--chrome); -webkit-background-clip: text; color: transparent; max-width: 820px; margin: 0 auto 0.5rem; }
-    .hero-tagline { font-size: 1.1rem; color: var(--action); font-weight: 600; margin-bottom: 1rem; }
+    .hero h1 {
+      background: var(--chrome); -webkit-background-clip: text; color: transparent;
+      max-width: 880px; margin: 0 auto 0.75rem;
+      font-size: 3rem; line-height: 1.18; letter-spacing: -0.02em;
+    }
+    .hero h1 .word-in {
+      -webkit-text-fill-color: rgba(230,232,236,0.32);
+      background: none;
+    }
+    .hero h1 .word-on {
+      -webkit-text-fill-color: var(--action);
+      background: none;
+    }
+    .hero-tagline { font-size: 1.15rem; color: var(--action); font-weight: 600; margin-bottom: 1.5rem; }
     .hero p { font-size: 1.15rem; max-width: 640px; margin: 0 auto; color: var(--muted); }
+    .hero-bridge {
+      font-size: 1.2rem; color: var(--text);
+      max-width: 600px; margin: 0 auto 1.5rem;
+      font-weight: 500;
+    }
+    .hero-bridge strong { color: var(--text); font-weight: 700; }
     .hero-logo { display: block; margin: 1.5rem auto; max-width: 260px; width: 100%; height: auto; }
     .cta-row { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 2rem; }
 
@@ -223,6 +241,8 @@
     @media(max-width: 640px) {
       h1 { font-size: 2.1rem; }
       h2 { font-size: 1.6rem; }
+      .hero h1 { font-size: 2.1rem; }
+      .golden-statement { font-size: 1.35rem; }
     }
 
     /* LOGO STRIP */
@@ -424,8 +444,9 @@
   <section class="hero">
     <div class="hero-eyebrow">Serving Anywhere from Retail to Rentals to Repairs &amp; All Other Industries</div>
     <img class="hero-logo" src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
-    <h1>You're probably here because you work too much <em style="font-style:normal;background:var(--chrome);-webkit-background-clip:text;color:transparent;">IN</em> the business — and not enough <em style="font-style:normal;color:var(--action);">ON</em> it.</h1>
+    <h1>You're probably here because you work too much <span class="word-in">IN</span> the business — and not enough <span class="word-on">ON</span> it.</h1>
     <p class="hero-tagline">You've come to the right place.</p>
+    <p class="hero-bridge">You started this to build something. <strong>Not to be buried by it.</strong></p>
     <div class="cta-row">
       <a class="cta" href="/Begin-Your-Revolution.html">Book a Free Strategy Session</a>
       <a class="cta-secondary" href="#why">See how it works ↓</a>
@@ -464,8 +485,8 @@
   <section class="golden-section" id="why">
     <div class="golden-inner">
       <div class="golden-label label-why">Why</div>
-      <p class="golden-statement">I believe business owners should spend more time <em>on</em> the business — and less time <em style="color:var(--muted);font-style:normal;">in</em> it.</p>
-      <p class="golden-sub">You started this business for a reason. That reason wasn’t to spend your days buried in repetitive tasks, chasing updates, or doing work that a well-built system could handle for you. You should be focused on the things that actually matter — growing, leading, and doing the work only you can do.</p>
+      <p class="golden-statement">I believe business owners should work more <em>on</em> the business — and less time <em style="color:var(--muted);font-style:normal;">in</em> it.</p>
+      <p class="golden-sub">You should be focused on what matters to <em style="color:var(--text);font-style:normal;font-weight:600;">you</em>. The vision. The clients. The next move. Not the same emails, the same approvals, the same fire drills that quietly steal your week. Freedom and focus aren’t a luxury — they’re the reason you started this.</p>
     </div>
   </section>
 
@@ -473,8 +494,8 @@
   <section class="golden-section" style="background:rgba(255,255,255,.015);">
     <div class="golden-inner">
       <div class="golden-label label-how">How</div>
-      <p class="golden-statement">I take the meaningless, redundant, or distracting work that still needs to get done — and I automate it and simplify how it gets executed.</p>
-      <p class="golden-sub">Not with bloated software that forces you to change how you work. With systems built around the way your business actually operates — so the right things happen automatically, and your team spends their time where it counts.</p>
+      <p class="golden-statement">I take the meaningless, redundant, and distracting work that still needs to get done — and I automate it and simplify how it gets executed.</p>
+      <p class="golden-sub">Not with bloated software that forces your team to change how they work. With systems built around the way your business actually runs — so the work that’s been draining your hours starts running itself, quietly, in the background.</p>
     </div>
   </section>
 
@@ -482,18 +503,17 @@
   <section class="golden-section" id="services">
     <div class="golden-inner">
       <div class="golden-label label-what">What</div>
-      <p class="golden-statement">AI systems, workflows, integrations, and operational technology — built for your business.</p>
+      <p class="golden-statement">AI systems, workflows, integrations, and operational technology — built around your business.</p>
       <div class="what-list">
-        <div class="what-item">Build automations</div>
-        <div class="what-item">Integrate AI into your workflows</div>
-        <div class="what-item">Build AI agents</div>
-        <div class="what-item">Design and document workflows</div>
-        <div class="what-item">Build custom AI models</div>
-        <div class="what-item">Integrate chatbots into your website</div>
-        <div class="what-item">Build AI-enhanced workflows</div>
-        <div class="what-item">Find the right technology for your needs</div>
-        <div class="what-item">Help you leverage technology you already have</div>
-        <div class="what-item">Identify and maximize ROI on your AI investment</div>
+        <div class="what-item">Automations that take repetitive work off your plate</div>
+        <div class="what-item">AI built into the workflows you already use</div>
+        <div class="what-item">AI agents that act inside your tools</div>
+        <div class="what-item">Chatbots on your site that answer, qualify, and route</div>
+        <div class="what-item">Custom AI trained on your business</div>
+        <div class="what-item">Workflows designed around how you actually work</div>
+        <div class="what-item">The right technology for what you actually need</div>
+        <div class="what-item">More value from the tools you already pay for</div>
+        <div class="what-item">Clear, measurable ROI on every AI investment</div>
       </div>
     </div>
   </section>
@@ -501,10 +521,10 @@
   <!-- CTA BLOCK -->
   <section class="section wrapper">
     <div class="cta-block">
-      <h2>Ready to work more ON the business?</h2>
-      <p>In one free session, we’ll identify what’s stealing your time and map out exactly what a system could do about it.</p>
+      <h2>Let’s get you back to running the business — not the other way around.</h2>
+      <p>One free conversation. We’ll find what’s stealing your time and map out exactly what a system can do about it.</p>
       <a class="cta" href="/Begin-Your-Revolution.html" style="font-size:1.1rem; padding:1.1rem 2.5rem;">Book a Free Strategy Session</a>
-      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted);">No pitch. No pressure. Just clarity on where automation can give you your time back.</p>
+      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted);">No pitch. No pressure. Just clarity.</p>
     </div>
   </section>
   <footer>
