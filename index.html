@@ -286,6 +286,111 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* COST OF INACTION */
+    .cost-section {
+      padding: 5rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .cost-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .cost-headline {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .cost-headline em {
+      font-style: normal;
+      color: var(--action);
+    }
+    .cost-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 2.75rem;
+    }
+    .cost-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .cost-card {
+      background: rgba(239,68,68,.05);
+      border: 1px solid rgba(239,68,68,.2);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+    }
+    .cost-card-num {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #ef4444;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .cost-card-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .cost-card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .cost-math-block {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .cost-math-title {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .cost-math-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      font-size: 0.9rem;
+      color: var(--text);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cost-math-row:last-child { border-bottom: none; }
+    .cost-math-row span:first-child { color: var(--muted); }
+    .cost-math-row span:last-child { font-weight: 700; color: var(--text); }
+    .cost-math-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+      border-top: 2px solid rgba(239,68,68,.3);
+      font-size: 1.05rem;
+      font-weight: 700;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .cost-math-total span:last-child { color: #ef4444; font-size: 1.4rem; }
+    .cost-source {
+      font-size: 0.75rem;
+      color: rgba(156,163,175,.5);
+      margin-top: 1rem;
+    }
+
     /* GOLDEN CIRCLE */
     .golden-section {
       padding: 5rem 1.5rem;
@@ -480,6 +585,59 @@
       <img src="/img/affiliates/bbrv.png" alt="BBRV">
     </div>
   </div>
+
+  <!-- COST OF INACTION -->
+  <section class="cost-section">
+    <div class="cost-inner">
+      <h2 class="cost-headline">You're <em>already paying</em> for this problem.</h2>
+      <p class="cost-sub">Every week you run without systems, the bill keeps adding up. It's just invisible — scattered across wasted hours, missed follow-ups, and a team stuck doing work a machine should be doing.</p>
+
+      <div class="cost-grid">
+        <div class="cost-card">
+          <div class="cost-card-num">60%</div>
+          <div class="cost-card-label">of your team's day is "work about work"</div>
+          <div class="cost-card-desc">Emails, status updates, re-entering data, chasing approvals — not the skilled work you actually hired them for. (<a href="https://asana.com/resources/anatomy-of-work" target="_blank" rel="noopener" style="color:var(--muted);font-size:inherit;">Asana Anatomy of Work Index</a>)</div>
+        </div>
+        <div class="cost-card">
+          <div class="cost-card-num">157 hrs</div>
+          <div class="cost-card-label">lost per employee, per year, just to unnecessary meetings</div>
+          <div class="cost-card-desc">Nearly a full month of working hours evaporated before a single real task gets done. At $30/hr, that's $4,700 per person. (Asana)</div>
+        </div>
+        <div class="cost-card">
+          <div class="cost-card-num">36%</div>
+          <div class="cost-card-label">of deadlines are missed every single week</div>
+          <div class="cost-card-desc">Not because people are lazy — because the systems that should catch things don't exist. Every miss costs you in rework, relationships, and revenue. (Asana)</div>
+        </div>
+      </div>
+
+      <div class="cost-math-block">
+        <div class="cost-math-title">Run the numbers — a 5-person team</div>
+        <div class="cost-math-row">
+          <span>5 employees × $30/hr fully loaded</span>
+          <span>$150/hr of capacity</span>
+        </div>
+        <div class="cost-math-row">
+          <span>60% of time lost to admin &amp; "work about work"</span>
+          <span>$90/hr burning quietly</span>
+        </div>
+        <div class="cost-math-row">
+          <span>40 working hours/week × 50 weeks</span>
+          <span>2,000 hrs/employee/year</span>
+        </div>
+        <div class="cost-math-row">
+          <span>1,200 of those hours per person on low-value work</span>
+          <span>6,000 hours/year — team-wide</span>
+        </div>
+        <div class="cost-math-total">
+          <span>Annual cost of doing nothing</span>
+          <span>$180,000+</span>
+        </div>
+      </div>
+
+      <p class="cost-sub" style="margin-bottom:0;">The question isn't whether you can afford to fix it. It's how long you can afford not to.</p>
+      <p class="cost-source">Sources: <a href="https://asana.com/resources/anatomy-of-work" target="_blank" rel="noopener" style="color:inherit;">Asana Anatomy of Work Index</a> · <a href="https://www.mckinsey.com/featured-insights/future-of-work/jobs-lost-jobs-gained-what-the-future-of-work-will-mean-for-jobs-skills-and-wages" target="_blank" rel="noopener" style="color:inherit;">McKinsey Global Institute Automation Report</a></p>
+    </div>
+  </section>
 
   <!-- WHY -->
   <section class="golden-section" id="why">
