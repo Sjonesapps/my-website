@@ -149,6 +149,145 @@
     }
     .cta-secondary:hover { color: var(--text); border-color: var(--text); }
 
+
+
+    /* AI DIAGNOSTIC HERO */
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 420px;
+      gap: 2.75rem;
+      align-items: center;
+      text-align: left;
+    }
+    .hero-copy { min-width: 0; }
+    .hero-copy .hero-eyebrow { margin-bottom: 1.25rem; }
+    .hero-copy .hero-logo { margin: 1.25rem 0; }
+    .hero-copy h1 { margin-left: 0; margin-right: 0; }
+    .hero-copy p { margin-left: 0; margin-right: 0; }
+    .hero-copy .cta-row { justify-content: flex-start; }
+    .ai-diagnostic-card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 20px 60px rgba(0,0,0,.28), 0 0 28px rgba(0,119,255,.13);
+      border-radius: 18px;
+      overflow: hidden;
+      text-align: left;
+    }
+    .ai-diagnostic-header {
+      padding: 1.15rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(135deg, rgba(0,119,255,.18), rgba(249,115,22,.10));
+    }
+    .ai-diagnostic-kicker {
+      color: var(--action);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: .35rem;
+    }
+    .ai-diagnostic-header h2 {
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin-bottom: .45rem;
+    }
+    .ai-diagnostic-header p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 0;
+    }
+    .ai-diagnostic-body { padding: 1rem; }
+    .ai-chat-log {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      min-height: 185px;
+      max-height: 320px;
+      overflow-y: auto;
+      padding-right: .25rem;
+      margin-bottom: .9rem;
+    }
+    .ai-message {
+      border-radius: 13px;
+      padding: .8rem .9rem;
+      font-size: .9rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+    .ai-message.bot {
+      background: rgba(255,255,255,.07);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .ai-message.user {
+      background: rgba(249,115,22,.16);
+      border: 1px solid rgba(249,115,22,.25);
+      color: var(--text);
+      align-self: flex-end;
+      max-width: 88%;
+    }
+    .ai-prompt-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-bottom: .9rem;
+    }
+    .ai-chip {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.045);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .45rem .65rem;
+      font: inherit;
+      font-size: .78rem;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .ai-chip:hover {
+      border-color: rgba(249,115,22,.55);
+      background: rgba(249,115,22,.12);
+      transform: translateY(-1px);
+    }
+    .ai-chat-form {
+      display: flex;
+      gap: .5rem;
+      align-items: stretch;
+    }
+    .ai-chat-input {
+      flex: 1;
+      min-width: 0;
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: .8rem .85rem;
+      font: inherit;
+      font-size: .9rem;
+      outline: none;
+    }
+    .ai-chat-input:focus { border-color: rgba(0,175,255,.65); }
+    .ai-chat-submit {
+      border: none;
+      border-radius: 10px;
+      background: var(--action);
+      color: white;
+      padding: 0 .95rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .ai-chat-submit:hover { background: var(--action-hover); transform: translateY(-1px); }
+    .ai-chat-submit:disabled { opacity: .65; cursor: wait; transform: none; }
+    .ai-diagnostic-note {
+      color: rgba(156,163,175,.72);
+      font-size: .72rem;
+      line-height: 1.45;
+      margin-top: .75rem;
+    }
+    .ai-diagnostic-note a { color: var(--muted); }
+
     /* TRUST STRIP */
     .trust-strip {
       border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06);
@@ -235,8 +374,18 @@
       .dropdown:hover .dropdown-content { display: block; }
       .dropdown-content a { white-space: normal; }
     }
+    @media(max-width: 980px) {
+      .hero { text-align: center; padding-top: 4.5rem; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+      .hero-copy .hero-logo { margin-left: auto; margin-right: auto; }
+      .hero-copy h1, .hero-copy p { margin-left: auto; margin-right: auto; }
+      .hero-copy .cta-row { justify-content: center; }
+      .ai-diagnostic-card { max-width: 560px; margin: 0 auto; }
+    }
     @media(max-width: 768px) {
       .cta-row { flex-direction: column; }
+      .ai-chat-form { flex-direction: column; }
+      .ai-chat-submit { padding: .8rem .95rem; }
     }
     @media(max-width: 640px) {
       h1 { font-size: 2.1rem; }
@@ -547,14 +696,41 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">Serving Anywhere from Retail to Rentals to Repairs &amp; All Other Industries</div>
-    <img class="hero-logo" src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
-    <h1>You're probably here because you work too much <span class="word-in">IN</span> the business — and not enough <span class="word-on">ON</span> it.</h1>
-    <p class="hero-tagline">You've come to the right place.</p>
-    <p class="hero-bridge">You started this to build something. <strong>Not to be buried by it.</strong></p>
-    <div class="cta-row">
-      <a class="cta" href="/Begin-Your-Revolution.html">Book a Free Strategy Session</a>
-      <a class="cta-secondary" href="#why">See how it works ↓</a>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">Serving Anywhere from Retail to Rentals to Repairs &amp; All Other Industries</div>
+        <img class="hero-logo" src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
+        <h1>You're probably here because you work too much <span class="word-in">IN</span> the business — and not enough <span class="word-on">ON</span> it.</h1>
+        <p class="hero-tagline">You've come to the right place.</p>
+        <p class="hero-bridge">You started this to build something. <strong>Not to be buried by it.</strong></p>
+        <div class="cta-row">
+          <a class="cta" href="/Begin-Your-Revolution.html">Book a Free Strategy Session</a>
+          <a class="cta-secondary" href="#why">See how it works ↓</a>
+        </div>
+      </div>
+
+      <aside class="ai-diagnostic-card" aria-labelledby="ai-diagnostic-title">
+        <div class="ai-diagnostic-header">
+          <div class="ai-diagnostic-kicker">Live AI diagnostic</div>
+          <h2 id="ai-diagnostic-title">Ask the YourOS AI what you should automate first.</h2>
+          <p>Describe a workflow, bottleneck, or messy spreadsheet. Get a practical first move.</p>
+        </div>
+        <div class="ai-diagnostic-body">
+          <div class="ai-chat-log" id="ai-chat-log" aria-live="polite">
+            <div class="ai-message bot">Tell me what keeps repeating in your business. I’ll point to the first automation worth exploring.</div>
+          </div>
+          <div class="ai-prompt-chips" aria-label="Suggested prompts">
+            <button class="ai-chip" type="button">I run a service business and miss leads. What should I automate?</button>
+            <button class="ai-chip" type="button">How could AI help a small rental shop?</button>
+            <button class="ai-chip" type="button">What would a YourOS engagement look like?</button>
+          </div>
+          <form class="ai-chat-form" id="ai-chat-form">
+            <input class="ai-chat-input" id="ai-chat-input" name="message" type="text" maxlength="1200" placeholder="Example: We track jobs in three spreadsheets…" autocomplete="off" required>
+            <button class="ai-chat-submit" type="submit">Ask</button>
+          </form>
+          <p class="ai-diagnostic-note">No sensitive info, passwords, or customer records. For a real plan, <a href="/Begin-Your-Revolution.html">book a free strategy session</a>.</p>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -697,6 +873,8 @@
         <a href="/appsheet-consultant/">AppSheet Consulting</a>
         <a href="/security-trust.html">Security</a>
         <a href="/Begin-Your-Revolution.html">Book a Strategy Session</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
@@ -706,6 +884,56 @@
     const toggle = document.querySelector('.nav-toggle');
     const links = document.querySelector('.nav-links');
     if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    const aiForm = document.querySelector('#ai-chat-form');
+    const aiInput = document.querySelector('#ai-chat-input');
+    const aiLog = document.querySelector('#ai-chat-log');
+    const aiSubmit = document.querySelector('.ai-chat-submit');
+    const aiChips = document.querySelectorAll('.ai-chip');
+
+    function addAiMessage(text, role) {
+      if (!aiLog) return null;
+      const message = document.createElement('div');
+      message.className = `ai-message ${role}`;
+      message.textContent = text;
+      aiLog.appendChild(message);
+      aiLog.scrollTop = aiLog.scrollHeight;
+      return message;
+    }
+
+    async function askDiagnostic(message) {
+      if (!message || !aiSubmit) return;
+      addAiMessage(message, 'user');
+      aiInput.value = '';
+      aiSubmit.disabled = true;
+      const thinking = addAiMessage('Thinking through the best first automation…', 'bot');
+
+      try {
+        const response = await fetch('/api/automation-diagnostic', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        });
+        const data = await response.json();
+        thinking.textContent = data.reply || 'Worth mapping this out in a free strategy session. Tell us what repeats every week, and we’ll help find the first system to build.';
+      } catch (error) {
+        thinking.textContent = 'Something glitched, but this is probably worth a free strategy session. Start with the work that repeats, delays follow-up, or keeps living in a messy spreadsheet.';
+      } finally {
+        aiSubmit.disabled = false;
+        aiInput.focus();
+      }
+    }
+
+    if (aiForm && aiInput) {
+      aiForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        askDiagnostic(aiInput.value.trim());
+      });
+    }
+
+    aiChips.forEach((chip) => {
+      chip.addEventListener('click', () => askDiagnostic(chip.textContent.trim()));
+    });
   </script>
 </body>
 </html>
