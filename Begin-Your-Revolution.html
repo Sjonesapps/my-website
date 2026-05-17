@@ -296,7 +296,10 @@
             <label for="problem">What is the biggest thing costing your team time right now?</label>
             <textarea id="problem" name="problem" placeholder="Example: We rebuild the same report every Friday from three spreadsheets, then chase approvals by email." required></textarea>
           </div>
-          <p style="font-size:.8rem;color:var(--muted);margin:.75rem 0 1rem;padding:.65rem .85rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;line-height:1.55;">By providing your phone number, you consent to receive SMS text messages from <strong style="color:var(--text);">Spencer Jones / YourOS</strong> related to your inquiry, scheduling, project status, and business follow-up communications. Message frequency varies based on your inquiry and project activity. Msg &amp; data rates may apply. Reply STOP to opt out at any time. Reply HELP for help. See our <a href="/privacy-policy.html#sms" style="color:var(--primary);">Privacy Policy</a> and <a href="/terms.html#sms" style="color:var(--primary);">SMS Terms</a>.</p>
+          <label for="sms-consent" style="display:flex;gap:.65rem;align-items:flex-start;font-size:.8rem;color:var(--muted);margin:.75rem 0 1rem;padding:.65rem .85rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;line-height:1.55;">
+            <input id="sms-consent" name="sms_consent" type="checkbox" value="yes" style="margin-top:.25rem;">
+            <span>I agree to receive SMS text messages from <strong style="color:var(--text);">YourOS / Spencer Jones</strong> related to my inquiry, scheduling, project status, and business follow-up communications. Message frequency varies based on my inquiry and project activity. Msg &amp; data rates may apply. Reply STOP to opt out at any time. Reply HELP for help. See our <a href="/privacy-policy.html#sms" style="color:var(--primary);">Privacy Policy</a> and <a href="/terms.html#sms" style="color:var(--primary);">SMS Terms</a>.</span>
+          </label>
           <button type="submit" class="cta">Find My Workflow Bottleneck</button>
         </form>
 
@@ -328,6 +331,16 @@
     const toggle = document.querySelector('.nav-toggle');
     const links = document.querySelector('.nav-links');
     if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    const phoneInput = document.querySelector('#phone');
+    const smsConsent = document.querySelector('#sms-consent');
+    if (phoneInput && smsConsent) {
+      const syncSmsConsent = () => {
+        smsConsent.required = phoneInput.value.trim().length > 0;
+      };
+      phoneInput.addEventListener('input', syncSmsConsent);
+      syncSmsConsent();
+    }
   </script>
 </body>
 
