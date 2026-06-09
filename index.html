@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>YourOS – Work ON Your Business, Not Just IN It</title>
-  <meta name="description" content="You work too much in the business and not enough on it. YourOS automates the work that distracts you — so you can focus on what actually matters." />
+  <title>YourOS – Work ON the Business With Growth Systems Engineering</title>
+  <meta name="description" content="YourOS helps growing service businesses work on the business instead of staying buried in it by finding and fixing the systems holding back growth." />
   <link rel="canonical" href="https://www.youros.app/" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="YourOS – Work ON Your Business, Not Just IN It" />
-  <meta property="og:description" content="You work too much in the business and not enough on it. YourOS automates the work that distracts you — so you can focus on what actually matters." />
+  <meta property="og:title" content="YourOS – Work ON the Business With Growth Systems Engineering" />
+  <meta property="og:description" content="YourOS helps growing service businesses work on the business instead of staying buried in it by finding and fixing the systems holding back growth." />
   <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
   <meta property="og:url" content="https://www.youros.app/" />
   <meta property="og:type" content="website" />
@@ -248,6 +248,84 @@
       .hero h1 { font-size: 2.1rem; }
       .golden-statement { font-size: 1.35rem; }
     }
+
+    /* HOW WE HELP RIBBON */
+    .how-ribbon {
+      padding: 4rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: rgba(0,119,255,.04);
+    }
+    .how-ribbon-inner { max-width: 900px; margin: 0 auto; }
+    .how-ribbon h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    .how-ribbon h2 em { font-style: normal; color: var(--action); }
+    .how-ribbon-sub { color: var(--muted); max-width: 680px; font-size: 1rem; margin-bottom: 0; }
+    .how-ribbon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem; margin-top: 2rem;
+    }
+    .how-ribbon-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(0,119,255,.15);
+      border-radius: 10px; font-size: 0.9rem; color: var(--text);
+    }
+    .how-ribbon-item::before {
+      content: "→"; color: var(--primary-light); font-weight: 700;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* BIZTECHS SECTION */
+    .biztechs-section {
+      padding: 5rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .biztechs-inner { max-width: 900px; margin: 0 auto; }
+    .biztechs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem; margin-top: 2rem;
+    }
+    .biztech-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px; padding: 1.75rem 1.5rem;
+      transition: border-color .2s;
+    }
+    .biztech-card:hover { border-color: var(--primary-light); }
+    .biztech-card-name {
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--primary-light); margin-bottom: 0.2rem;
+    }
+    .biztech-card-role {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem;
+    }
+    .biztech-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; }
+    .biztech-card a { font-size: 0.85rem; color: var(--action); }
+    .biztech-card a:hover { color: var(--action-hover); }
+
+    /* CONSULTING SECTION */
+    .consulting-section {
+      padding: 5rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.015);
+    }
+    .consulting-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .consulting-inner h2 { margin-bottom: 1rem; }
+    .consulting-inner p { color: var(--muted); margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .consulting-bullets {
+      list-style: none; text-align: left;
+      margin: 1.5rem auto; max-width: 520px;
+    }
+    .consulting-bullets li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.6rem 0; font-size: 0.95rem; color: var(--text);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .consulting-bullets li::before { content: "✓"; color: var(--action); font-weight: 700; flex-shrink: 0; }
+    .consulting-bullets li:last-child { border-bottom: none; }
 
     /* LOGO STRIP */
     .logo-strip {
@@ -545,20 +623,20 @@
       <a href="https://www.youros.app/security-trust">Security & Trust</a>
       <a href="https://www.youros.app/lets-talk-ai">Let's Talk AI</a>
       <a href="/blog/">Blog</a>
-      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Book a Free Strategy Session</a>
+      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Start a Growth Conversation</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">Serving Anywhere from Retail to Rentals to Repairs &amp; All Other Industries</div>
+    <div class="hero-eyebrow">Growth Systems Engineering</div>
     <img class="hero-logo" src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
-    <h1>You’re probably here because you work too much <span class="word-in">IN</span> the business — and not enough <span class="word-on">ON</span> it.</h1>
-    <p class="hero-tagline">You’ve come to the right place.</p>
-    <p class="hero-bridge">You started this to build something. <strong>Not to be buried by it.</strong></p>
+    <h1>You're probably here because you want to work more <span class="word-on">on</span> the business — and less time buried <span class="word-in">in</span> it.</h1>
+    <p class="hero-tagline">Most owners aren't stuck because they don't work hard enough. Their systems don't.</p>
+    <p class="hero-bridge">Too often, great leaders become operators — caught running the machine instead of building it. Not from lack of vision, but because their systems, software, or processes weren't designed for where they're trying to go. <strong>We find and fix those constraints — without overhauling everything you've already built.</strong></p>
     <div class="cta-row">
-      <a class="cta" href="/Begin-Your-Revolution.html">Book a Free Strategy Session</a>
-      <a class="cta-secondary" href="#why">See how it works ↓</a>
+      <a class="cta" href="/Begin-Your-Revolution.html">Start a Growth Conversation</a>
+      <a class="cta-secondary" href="#how-we-help">See how we work ↓</a>
     </div>
   </section>
 
@@ -590,11 +668,24 @@
     </div>
   </div>
 
+  <!-- HOW WE HELP — addresses fear of change, 4x size claim -->
+  <section class="how-ribbon" id="how-we-help">
+    <div class="how-ribbon-inner">
+      <h2>We help organizations run like they're <em>twice the size</em> — without adding headcount or replacing what's already working.</h2>
+      <p class="how-ribbon-sub">YourOS stands for YOUR Operating System — because we start with <em>your</em> current system and optimize it, not ours. We enhance and build around what you've already got. <em>(Hence the name.)</em></p>
+      <div class="how-ribbon-grid">
+        <div class="how-ribbon-item">From a whiteboard session to a custom AI agent — we use whatever fits your operation and your team</div>
+        <div class="how-ribbon-item">We find the actual constraint first. The technology choice comes second.</div>
+        <div class="how-ribbon-item">Known for building tools so practical your team actually uses them</div>
+      </div>
+    </div>
+  </section>
+
   <!-- COST OF INACTION -->
   <section class="cost-section">
     <div class="cost-inner">
-      <h2 class="cost-headline">You're <em>already paying</em> for this problem.</h2>
-      <p class="cost-sub">Every week you run without systems, the bill keeps adding up. It's just invisible — scattered across wasted hours, missed follow-ups, and a team stuck doing work a machine should be doing.</p>
+      <h2 class="cost-headline">You can feel the growth pressure before you can name the system problem.</h2>
+      <p class="cost-sub">You are trying to grow, but the business keeps pulling you back into calls, quotes, appointments, handoffs, reporting, follow-up, and daily cleanup. That is where the growth constraint usually shows itself first.</p>
 
       <div class="cost-grid">
         <div class="cost-card">
@@ -638,7 +729,7 @@
         </div>
       </div>
 
-      <p class="cost-sub" style="margin-bottom:0;">The question isn't whether you can afford to fix it. It's how long you can afford not to.</p>
+      <p class="cost-sub" style="margin-bottom:0;">The question is not which app you should buy. It is which system would let you work on the business again.</p>
       <p class="cost-source">Sources: <a href="https://asana.com/resources/anatomy-of-work" target="_blank" rel="noopener" style="color:inherit;">Asana Anatomy of Work Index</a> · <a href="https://www.mckinsey.com/featured-insights/future-of-work/jobs-lost-jobs-gained-what-the-future-of-work-will-mean-for-jobs-skills-and-wages" target="_blank" rel="noopener" style="color:inherit;">McKinsey Global Institute Automation Report</a></p>
     </div>
   </section>
@@ -647,8 +738,8 @@
   <section class="golden-section" id="why">
     <div class="golden-inner">
       <div class="golden-label label-why">Why</div>
-      <p class="golden-statement">We believe business owners should work more <em>on</em> the business — and less time <em style="color:var(--muted);font-style:normal;">in</em> it.</p>
-      <p class="golden-sub">You should be focused on what matters to <em style="color:var(--text);font-style:normal;font-weight:600;">you</em>. The vision. The clients. The next move. Not the same emails, the same approvals, the same fire drills that quietly steal your week. Freedom and focus aren’t a luxury — they’re the reason you started this.</p>
+      <p class="golden-statement">Business owners should be building companies, not spending every day running them.</p>
+      <p class="golden-sub">We got into this work by solving real operational drag — field teams waiting on paperwork, owners chasing status, locations still running on whiteboards. The constraint was never effort. It was always system. Growth Systems Engineering turns those recurring problems into systems the business can actually run on.</p>
     </div>
   </section>
 
@@ -656,43 +747,88 @@
   <section class="golden-section" style="background:rgba(255,255,255,.015);">
     <div class="golden-inner">
       <div class="golden-label label-how">How</div>
-      <p class="golden-statement">We take the meaningless, redundant, and distracting work that still needs to get done — and we automate it and simplify how it gets executed.</p>
-      <p class="golden-sub">Not with bloated software that forces your team to change how they work. With systems built around the way your business actually runs — so the work that’s been draining your hours starts running itself, quietly, in the background.</p>
+      <p class="golden-statement">We identify the constraint holding back your growth, then engineer the system that removes it — using your tools, your team, and your workflow.</p>
+      <p class="golden-sub">The goal is never to blow up what's working. It's to find the one constraint costing you the most and eliminate it. That might be a phone-call system, a CRM fix, better follow-up, an AI agent, or a whiteboard session to map it out. The tool comes after the bottleneck is understood.</p>
     </div>
   </section>
 
-  <!-- WHAT -->
+  <!-- WHAT / PROBLEMS WE'VE SOLVED -->
   <section class="golden-section" id="services">
     <div class="golden-inner">
-      <div class="golden-label label-what">What</div>
-      <p class="golden-statement">AI systems, workflows, integrations, and operational technology — built around your business.</p>
+      <div class="golden-label label-what">What We've Solved</div>
+      <p class="golden-statement">Growth systems built around businesses like yours — problems we've solved before and can solve for you.</p>
       <div class="what-list">
-        <div class="what-item">Automations that take repetitive work off your plate</div>
-        <div class="what-item">AI built into the workflows you already use</div>
-        <div class="what-item">AI agents that act inside your tools</div>
-        <div class="what-item">Chatbots on your site that answer, qualify, and route</div>
-        <div class="what-item">Custom AI trained on your business</div>
-        <div class="what-item">Workflows designed around how you actually work</div>
-        <div class="what-item">The right technology for what you actually need</div>
-        <div class="what-item">More value from the tools you already pay for</div>
-        <div class="what-item">Clear, measurable ROI on every AI investment</div>
+        <div class="what-item">Phone-call and missed-call systems</div>
+        <div class="what-item">Lead intake, routing, and ownership</div>
+        <div class="what-item">Quote follow-up and next-step tracking</div>
+        <div class="what-item">Appointment reminders and no-show protection</div>
+        <div class="what-item">Customer communication and status updates</div>
+        <div class="what-item">Internal workflows designed around how you actually work</div>
+        <div class="what-item">AI agents and automation where they create leverage</div>
+        <div class="what-item">Reporting that shows where growth is getting stuck</div>
+        <div class="what-item">Practical technology chosen for the real constraint</div>
       </div>
+    </div>
+  </section>
+
+  <!-- BIZTECHS / TOOLS & PRODUCTS -->
+  <section class="biztechs-section" id="biztechs">
+    <div class="biztechs-inner">
+      <div class="golden-label" style="color:#34d399;">Our Tools &amp; Products</div>
+      <p class="golden-statement">We created the concept of Business Technicians — <em>BizTechs</em> — so growing companies can access the kind of leverage that used to belong only to enterprise.</p>
+      <p class="golden-sub" style="margin-bottom:2rem;">Each BizTech is a specialized operator who works inside your system, not outside it. Here are the ones available today.</p>
+      <div class="biztechs-grid">
+        <div class="biztech-card">
+          <div class="biztech-card-name">Peter</div>
+          <div class="biztech-card-role">Website &amp; Content</div>
+          <p>Keeps your site sharp. SEO enhancements, blog posts, page updates, adding or removing pages — all handled. No agency retainers. No tickets into a void.</p>
+          <a href="mailto:peter@youros.app">Email Peter for a demo →</a>
+        </div>
+        <div class="biztech-card">
+          <div class="biztech-card-name">Friday</div>
+          <div class="biztech-card-role">CRM &amp; Follow-Up</div>
+          <p>CC Friday on your emails and she'll go through your CRM, update statuses, and keep your team's notes current — automatically. No more data entry. No more chasing.</p>
+          <a href="/Begin-Your-Revolution.html">See how Friday works →</a>
+        </div>
+        <div class="biztech-card">
+          <div class="biztech-card-name">Money Penny</div>
+          <div class="biztech-card-role">Calls &amp; Scheduling</div>
+          <p>Takes and makes phone calls for your business. Call her now to find out when we're available for a strategy call — she'll handle the scheduling.</p>
+          <a href="tel:+12085455465">📞 Call Money Penny: (208) 545-5465 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTING / ONGOING PARTNERSHIP -->
+  <section class="consulting-section">
+    <div class="consulting-inner">
+      <h2>We're not a vendor. We're a long-term growth partner.</h2>
+      <p>We offer ongoing consulting to help you accomplish your long-term growth goals — strategy, execution, and accountability. Proven across companies from local to national, small to scaling.</p>
+      <p>Just book a time to meet over the phone. If we can help you grow, we'll tell you exactly how. If we can't, we'll tell you that too.</p>
+      <ul class="consulting-bullets">
+        <li>Ongoing strategy &amp; execution consulting tied to your actual growth goals</li>
+        <li>Product builds to initiate and support your systems</li>
+        <li>Works for operations of every size — local to national</li>
+      </ul>
+      <a class="cta" href="/Begin-Your-Revolution.html" style="font-size:1rem;padding:0.9rem 2rem;">Book a Free Strategy Call</a>
+      <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);max-width:520px;margin-left:auto;margin-right:auto;">Or — if you just want our honest opinion without committing to any services, we're happy to do that too. We'll give you a written gameplan for how you can grow and get to where you're trying to go. No strings.</p>
     </div>
   </section>
 
   <!-- CTA BLOCK -->
   <section class="section wrapper">
     <div class="cta-block">
-      <h2>Let’s get you back to running the business — not the other way around.</h2>
-      <p>One free conversation. We’ll find what’s stealing your time and map out exactly what a system can do about it.</p>
-      <a class="cta" href="/Begin-Your-Revolution.html" style="font-size:1.1rem; padding:1.1rem 2.5rem;">Book a Free Strategy Session</a>
-      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted);">No pitch. No pressure. Just clarity.</p>
+      <h2>Start with the growth problem, not the software.</h2>
+      <p>Tell us where growth feels stuck. We'll find the constraint and show you the simplest path forward — whether that's a 30-minute whiteboard session or a full build.</p>
+      <a class="cta" href="/Begin-Your-Revolution.html" style="font-size:1.1rem; padding:1.1rem 2.5rem;">Start a Growth Systems Conversation</a>
+      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted);">No generic software pitch. No pressure. Just the next useful system.</p>
     </div>
   </section>
   <footer>
     <div class="footer-inner">
       <div class="footer-brand-line">
-        <span>© 2026 YourOS. Work ON the business. Not just in it.</span>
+        <span>© 2026 YourOS. Growth Systems Engineering.</span>
         <img class="httl-mark" src="/img/httl-monogram.png" alt="Holiness To The Lord" title="Holiness To The Lord">
       </div>
       <div class="footer-links">
@@ -700,7 +836,7 @@
         <a href="/custom-workflow-automation/">Workflow Automation</a>
         <a href="/appsheet-consultant/">AppSheet Consulting</a>
         <a href="/security-trust.html">Security</a>
-        <a href="/Begin-Your-Revolution.html">Book a Strategy Session</a>
+        <a href="/Begin-Your-Revolution.html">Start a Growth Conversation</a>
         <a href="/privacy-policy.html">Privacy Policy</a>
         <a href="/terms.html">Terms of Service</a>
       </div>
@@ -709,9 +845,9 @@
   <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" class="favicon-footer"></a>
 
   <script>
-    const toggle = document.querySelector(‘.nav-toggle’);
-    const links = document.querySelector(‘.nav-links’);
-    if (toggle && links) toggle.addEventListener(‘click’, () => links.classList.toggle(‘open’));
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
   </script>
 </body>
 </html>
