@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+
+# AI / LLM agents — plain-markdown summary at /llms.txt
+# https://www.youros.app/llms.txt
+
 Sitemap: https://www.youros.app/sitemap.xml

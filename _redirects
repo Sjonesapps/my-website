@@ -1,2 +1,8 @@
 /youros-home    /    301!
 /youros-home/   /    301!
+
+# Killed 2026-06-16 — page violated the no-"AI-replaces-team" framing rule.
+# Send any incoming traffic to the closest on-message page.
+/lets-talk-ai           /what-does-youros-do/    301!
+/lets-talk-ai/          /what-does-youros-do/    301!
+/lets-talk-ai.html      /what-does-youros-do/    301!
