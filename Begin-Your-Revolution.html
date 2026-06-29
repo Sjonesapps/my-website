@@ -279,7 +279,7 @@
         <h2 id="audit-form-title">Start the conversation</h2>
         <p class="muted">Four quick fields. No newsletter funnel, no pitch deck to sit through. Just enough context for us to see where the constraint is and what kind of system would help.</p>
 
-        <form name="growth-systems-conversation" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+        <form id="workflow-audit-form" name="growth-systems-conversation" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
           <input type="hidden" name="form-name" value="growth-systems-conversation">
           <p class="hidden">
             <label>Do not fill this out if you are human: <input name="bot-field"></label>
@@ -309,7 +309,7 @@
         </form>
 
         <div class="next-steps">
-          <strong>What happens next:</strong> we read where growth is getting stuck and reply with a practical next step — or an honest answer if there isn't a real systems fit. If we can help, we'll tell you how. If we can't, we'll tell you that too.
+          <strong>What happens next:</strong> we review the stuck workflow, name the likely constraint, and send back the simplest useful next step. That may be a 30-minute whiteboard session, a small automation, a deeper build, or a plain answer that there is not a real systems fit right now.
         </div>
       </section>
     </div>
@@ -339,6 +339,34 @@
 
     const phoneInput = document.querySelector('#phone');
     const smsConsent = document.querySelector('#sms-consent');
+    const workflowAuditForm = document.querySelector('#workflow-audit-form');
+
+    function trackWorkflowAudit(eventName, extraParams) {
+      if (typeof gtag !== 'function') return;
+      gtag('event', eventName, {
+        form_id: 'workflow-audit-form',
+        form_name: 'workflow-audit',
+        page_path: window.location.pathname,
+        transport_type: 'beacon',
+        ...(extraParams || {})
+      });
+    }
+
+    if (workflowAuditForm) {
+      let formStarted = false;
+      workflowAuditForm.addEventListener('input', () => {
+        if (formStarted) return;
+        formStarted = true;
+        trackWorkflowAudit('form_start');
+      }, { passive: true });
+
+      workflowAuditForm.addEventListener('submit', () => {
+        trackWorkflowAudit('form_submit', {
+          sms_consent_checked: Boolean(smsConsent && smsConsent.checked)
+        });
+      });
+    }
+
     if (phoneInput && smsConsent) {
       const syncSmsConsent = () => {
         smsConsent.required = phoneInput.value.trim().length > 0;
