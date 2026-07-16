@@ -17,7 +17,7 @@ These are breaking things right now.
 The CTA at the bottom of `what-does-youros-do/index.html` links directly to a Google Form URL instead of `/Begin-Your-Revolution.html`. This sends leads off-site, untracked, to an outdated form. Change to match every other page.
 
 ### 4. Three different nav designs exist on the same site
-- **New nav** (index, service pages): sticky, Services dropdown, orange "Book a Workflow Audit" button ✓
+- **New nav** (index, BizTech pages): sticky, BizTechs dropdown, orange "Hire a BizTech" button ✓
 - **Semi-old nav** (stories pages): sticky but uses old links (Security & Trust, Let's Talk AI, Pricing & Competitors) — no Services dropdown, no CTA button
 - **Old nav** (Begin-Your-Revolution, what-does-youros-do): not sticky, different class names, different structure
 
@@ -109,7 +109,7 @@ This page gets a prominent nav link from every page. Its current content is a po
 ## UX / UI — DESIGN AND USABILITY
 
 ### 19. No footer navigation
-Every page has a single copyright line as the footer. No links to services, no social profiles, no contact email, no "Book an Audit" link. Footer navigation is where users go when they finish reading and want to explore or take action. A simple 3-column footer (Services | Company | Contact) would meaningfully improve navigation flow.
+Every page has a single copyright line as the footer. No links to BizTechs, no social profiles, no contact email, no "Hire a BizTech" link. Footer navigation is where users go when they finish reading and want to explore or take action. A simple 3-column footer (BizTechs | Company | Contact) would meaningfully improve navigation flow.
 
 ### 20. Floating favicon is confusing UX
 The fixed `<img class="favicon-footer">` pinned to the bottom-right corner of every page is a link that goes to the homepage. Most users don't know it's clickable. It's visually noisy. Either remove it, replace it with a "Back to top" button, or add a visible label. The trademark "floating Y" is distinctive but unexplained.
