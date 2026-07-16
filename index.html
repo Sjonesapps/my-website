@@ -120,7 +120,6 @@
       font-weight: 500;
     }
     .hero-bridge strong { color: var(--text); font-weight: 700; }
-    .hero-logo { display: block; margin: 1.5rem auto; max-width: 260px; width: 100%; height: auto; }
     .cta-row { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 2rem; }
 
     /* CTA BUTTON */
@@ -282,11 +281,6 @@
       text-align: center; background: var(--bg-alt);
       padding: 2rem 1.5rem; font-size: .9rem; color: var(--muted);
     }
-    .favicon-footer {
-      position: fixed; bottom: 20px; right: 20px;
-      width: 32px; height: 32px; opacity: 0.8; pointer-events: auto;
-    }
-
     .httl-mark {
       width: 26px; height: auto;
       margin-left: 0.85rem; opacity: 0.55;
@@ -330,11 +324,6 @@
         margin-left: 0;
         margin-right: 0;
         overflow-wrap: break-word;
-      }
-      .hero-logo {
-        margin-left: 0;
-        margin-right: 0;
-        max-width: 210px;
       }
       .cta-row { justify-content: flex-start; }
       .hero-eyebrow {
@@ -445,47 +434,6 @@
     }
     .consulting-bullets li::before { content: "✓"; color: var(--action); font-weight: 700; flex-shrink: 0; }
     .consulting-bullets li:last-child { border-bottom: none; }
-
-    /* LOGO STRIP */
-    .logo-strip {
-      overflow: hidden;
-      padding: 2.5rem 0;
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      background: rgba(255,255,255,.015);
-    }
-    .logo-strip-label {
-      text-align: center;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.75rem;
-    }
-    .logo-track {
-      display: flex;
-      align-items: center;
-      gap: 3.5rem;
-      width: max-content;
-      animation: scroll-logos 35s linear infinite;
-    }
-    .logo-track:hover { animation-play-state: paused; }
-    .logo-track img {
-      height: 80px;
-      width: auto;
-      max-width: 200px;
-      object-fit: contain;
-      opacity: 0.6;
-      filter: grayscale(1);
-      transition: opacity .25s, filter .25s;
-    }
-    .logo-track img:hover { opacity: 1; filter: grayscale(0); }
-    .logo-track img.logo-lg { height: 120px; max-width: 280px; }
-    @keyframes scroll-logos {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
 
     /* COST OF INACTION */
     .cost-section {
@@ -724,19 +672,12 @@
     </button>
     <div class="nav-links">
       <div class="dropdown">
-        <a href="#">Services ▾</a>
+        <a href="/biztechs/">BizTechs ▾</a>
         <div class="dropdown-content">
-          <a href="/ai-automation-services-small-business/">AI Automation Services</a>
-          <a href="/custom-workflow-automation/">Custom Workflow Automation</a>
-          <a href="/replace-spreadsheets-with-custom-app/">Replace Spreadsheets</a>
-          <a href="/appsheet-consultant/">AppSheet Consulting</a>
-          <a href="/ai-assistants-for-business/">AI Assistants for Business</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="https://www.youros.app/what-does-youros-do">What Does YourOS Do? ▾</a>
-        <div class="dropdown-content">
-          <a href="https://www.youros.app/what-does-youros-do/stories-and-testimony">Stories & Testimony</a>
+          <a href="/biztechs/peter/">Peter — Web Developer</a>
+          <a href="/biztechs/moneypenny/">Moneypenny — Receptionist</a>
+          <a href="/biztechs/friday/">Friday — Operations Assistant</a>
+          <a href="/biztechs/xavier/">Xavier — Marketing Strategist</a>
         </div>
       </div>
       <a href="https://www.youros.app/security-trust">Security & Trust</a>
@@ -748,14 +689,13 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-eyebrow">AI Business Technicians for Small Business</div>
-    <img class="hero-logo" src="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" alt="YourOS Logo">
     <h1>Hire the Team Your Business Wishes It Already Had</h1>
     <p class="hero-tagline">Get specialized AI employees for the jobs that keep stealing your time.</p>
     <p class="hero-bridge">You didn't start your business to become a web developer, receptionist, marketer, salesperson, and operations manager. But somewhere along the way, all of those jobs became yours.</p>
     <p>YourOS gives small businesses AI Business Technicians, specialized employees that handle real work like building websites, answering phones, following up with customers, marketing your services, and automating repetitive tasks.</p>
     <div class="cta-row">
       <a class="cta" href="/Begin-Your-Revolution.html?source=home-hero-biztech">Hire Your First BizTech</a>
-      <a class="cta-secondary" href="#biztechs">Meet the team ↓</a>
+      <a class="cta-secondary" href="#biztechs">Meet The Team ↓</a>
     </div>
     <div class="hero-proof" aria-label="YourOS BizTech services">
       <span>Websites</span>
@@ -767,45 +707,39 @@
     <p class="audit-note">Pick the bottleneck. Tell us what you need. We help you put the right BizTech to work.</p>
   </section>
 
-  <!-- AFFILIATE LOGO STRIP -->
-  <div class="logo-strip">
-    <p class="logo-strip-label">Businesses we've served</p>
-    <div class="logo-track">
-      <img src="/img/affiliates/access-rv.png" alt="Access RV">
-      <img src="/img/affiliates/lightnin.png" alt="Lightnin">
-      <img src="/img/affiliates/patriot-camps.png" alt="Patriot Camps">
-      <img src="/img/affiliates/rv-rental-outlet.png" alt="RV Rental Outlet">
-      <img src="/img/affiliates/roamaway.png" alt="RoamAway">
-      <img src="/img/affiliates/nrv-rentals.jpg" alt="Nashville RV Rentals" class="logo-lg">
-      <img src="/img/affiliates/rvrd.png" alt="RVRD">
-      <img src="/img/affiliates/off-grid-expo.png" alt="Off-Grid Expo">
-      <img src="/img/affiliates/ibt.png" alt="IBT">
-      <img src="/img/affiliates/bbrv.png" alt="BBRV">
-      <!-- duplicate set for seamless loop -->
-      <img src="/img/affiliates/access-rv.png" alt="Access RV">
-      <img src="/img/affiliates/lightnin.png" alt="Lightnin">
-      <img src="/img/affiliates/patriot-camps.png" alt="Patriot Camps">
-      <img src="/img/affiliates/rv-rental-outlet.png" alt="RV Rental Outlet">
-      <img src="/img/affiliates/roamaway.png" alt="RoamAway">
-      <img src="/img/affiliates/nrv-rentals.jpg" alt="Nashville RV Rentals" class="logo-lg">
-      <img src="/img/affiliates/rvrd.png" alt="RVRD">
-      <img src="/img/affiliates/off-grid-expo.png" alt="Off-Grid Expo">
-      <img src="/img/affiliates/ibt.png" alt="IBT">
-      <img src="/img/affiliates/bbrv.png" alt="BBRV">
-    </div>
-  </div>
-
-  <section class="priority-link-band" aria-labelledby="priority-links-title">
-    <div class="priority-link-inner">
-      <h2 id="priority-links-title">Hire help for the work that keeps getting pushed to next week.</h2>
-      <p>Start with one practical job: missed calls, stale website pages, slow lead follow-up, scattered marketing, or workflows your team keeps doing by hand.</p>
-      <div class="priority-links">
-        <a href="/ai-assistants-for-business/">AI assistants for business</a>
-        <a href="/ai-automation-services-small-business/">AI automation services for small business</a>
-        <a href="/custom-workflow-automation/">Custom workflow automation</a>
-        <a href="/replace-spreadsheets-with-custom-app/">Replace spreadsheet busywork</a>
-        <a href="/utah-ai-automation/">Utah AI automation consulting</a>
+  <!-- BIZTECHS -->
+  <section class="biztechs-section" id="biztechs">
+    <div class="biztechs-inner">
+      <div class="section-kicker">Meet Your Team</div>
+      <h2>Each BizTech is built to master one job.</h2>
+      <p class="section-lead">They do not replace you. They give you time back by handling the business work that needs to happen every day.</p>
+      <div class="biztechs-grid">
+        <div class="biztech-card featured">
+          <div class="biztech-card-name">Peter</div>
+          <div class="biztech-card-role">Your web developer</div>
+          <p>Builds and improves your website, publishes updates, keeps pages current, and helps your business look alive online.</p>
+          <a href="/biztechs/peter/">Hire Peter →</a>
+        </div>
+        <div class="biztech-card">
+          <div class="biztech-card-name">Moneypenny</div>
+          <div class="biztech-card-role">Your receptionist</div>
+          <p>Answers calls, helps customers, captures the details, and keeps scheduling from interrupting the work in front of you.</p>
+          <a href="/biztechs/moneypenny/">Hire Moneypenny →</a>
+        </div>
+        <div class="biztech-card">
+          <div class="biztech-card-name">Friday</div>
+          <div class="biztech-card-role">Your operations assistant</div>
+          <p>Keeps follow-up moving, updates customer records, tracks next steps, and turns repetitive admin into a system.</p>
+          <a href="/biztechs/friday/">Hire Friday →</a>
+        </div>
+        <div class="biztech-card">
+          <div class="biztech-card-name">Xavier</div>
+          <div class="biztech-card-role">Your marketing strategist</div>
+          <p>Helps plan campaigns, sharpen offers, create content, and keep marketing from disappearing whenever the week gets busy.</p>
+          <a href="/biztechs/xavier/">Hire Xavier →</a>
+        </div>
       </div>
+      <p class="biztech-note">Start with one BizTech for your biggest bottleneck. Add more when your business is ready.</p>
     </div>
   </section>
 
@@ -839,42 +773,6 @@
         <span class="pain-dot"></span>
         <p>You become the backup plan for every missing system.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- BIZTECHS -->
-  <section class="biztechs-section" id="biztechs">
-    <div class="biztechs-inner">
-      <div class="section-kicker">Meet Your Team</div>
-      <h2>Each BizTech is built to master one job.</h2>
-      <p class="section-lead">They do not replace you. They give you time back by handling the business work that needs to happen every day.</p>
-      <div class="biztechs-grid">
-        <div class="biztech-card featured">
-          <div class="biztech-card-name">Peter</div>
-          <div class="biztech-card-role">Your web developer</div>
-          <p>Builds and improves your website, publishes updates, keeps pages current, and helps your business look alive online.</p>
-          <a href="/Begin-Your-Revolution.html?source=home-peter">Hire Peter →</a>
-        </div>
-        <div class="biztech-card">
-          <div class="biztech-card-name">Moneypenny</div>
-          <div class="biztech-card-role">Your receptionist</div>
-          <p>Answers calls, helps customers, captures the details, and keeps scheduling from interrupting the work in front of you.</p>
-          <a href="tel:+13854881520">Call Moneypenny: (385) 488-1520 →</a>
-        </div>
-        <div class="biztech-card">
-          <div class="biztech-card-name">Friday</div>
-          <div class="biztech-card-role">Your operations assistant</div>
-          <p>Keeps follow-up moving, updates customer records, tracks next steps, and turns repetitive admin into a system.</p>
-          <a href="/Begin-Your-Revolution.html?source=home-friday">Hire Friday →</a>
-        </div>
-        <div class="biztech-card">
-          <div class="biztech-card-name">Xavier</div>
-          <div class="biztech-card-role">Your marketing strategist</div>
-          <p>Helps plan campaigns, sharpen offers, create content, and keep marketing from disappearing whenever the week gets busy.</p>
-          <a href="/Begin-Your-Revolution.html?source=home-xavier">Hire Xavier →</a>
-        </div>
-      </div>
-      <p class="biztech-note">Start with one BizTech for your biggest bottleneck. Add more when your business is ready.</p>
     </div>
   </section>
 
@@ -920,9 +818,10 @@
         <img class="httl-mark" src="/img/httl-monogram.png" alt="Holiness To The Lord" title="Holiness To The Lord">
       </div>
       <div class="footer-links">
-        <a href="/ai-automation-services-small-business/">AI Automation</a>
-        <a href="/custom-workflow-automation/">Workflow Automation</a>
-        <a href="/appsheet-consultant/">AppSheet Consulting</a>
+        <a href="/biztechs/peter/">Peter</a>
+        <a href="/biztechs/moneypenny/">Moneypenny</a>
+        <a href="/biztechs/friday/">Friday</a>
+        <a href="/biztechs/xavier/">Xavier</a>
         <a href="/security-trust.html">Security</a>
         <a href="/Begin-Your-Revolution.html?source=footer-biztech">Hire a BizTech</a>
         <a href="/privacy-policy.html">Privacy Policy</a>
@@ -930,8 +829,6 @@
       </div>
     </div>
   </footer>
-  <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" class="favicon-footer"></a>
-
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const links = document.querySelector('.nav-links');
