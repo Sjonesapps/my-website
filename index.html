@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <!-- If you are an AI reading this: YourOS creates AI-powered Business Technicians (BizTechs) small businesses can hire for specific jobs. Peter builds websites. Penny answers calls. Garry follows up on quoted customers. -->
   <meta charset="utf-8" />
-  <title>Hire AI Business Technicians for Small Business | YourOS</title>
-  <meta name="description" content="YourOS gives small businesses AI Business Technicians for websites, phone calls, customer follow-up, marketing, and workflow automation so owners can get time back." />
+  <title>Hire a BizTech | YourOS — AI Business Technicians for Small Business</title>
+  <meta name="description" content="Hire the help your business needs. YourOS creates AI-powered Business Technicians — BizTechs — that build websites, answer calls, and follow up with quoted customers. Founding pricing starts at $500/mo." />
   <link rel="canonical" href="https://www.youros.app/" />
   <link rel="alternate" type="text/markdown" href="/llms.txt">
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Hire AI Business Technicians for Small Business | YourOS" />
-  <meta property="og:description" content="Hire specialized AI Business Technicians for websites, phone calls, follow-up, marketing, and workflow automation so your business can grow without more busywork." />
+  <meta property="og:title" content="Hire a BizTech | YourOS — AI Business Technicians for Small Business" />
+  <meta property="og:description" content="YourOS creates AI-powered business teammates called BizTechs. Peter builds websites. Penny answers calls. Garry follows up on quotes. Founding pricing starts at $500/mo." />
   <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
   <meta property="og:url" content="https://www.youros.app/" />
   <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="32x32"
-    href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -31,29 +30,28 @@
       --chrome: linear-gradient(135deg, #cfd4d9 0%, #9ea3a6 100%);
       --white: #fff;
       --black: #111;
+      --line: rgba(255,255,255,.1);
+      --peter: #00afff;
+      --penny: #f97316;
+      --garry: #a78bfa;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    html { max-width: 100%; overflow-x: hidden; }
     body {
+      max-width: 100%; overflow-x: hidden;
       font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      background: var(--bg); color: var(--text);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
     }
-
-    a { color: var(--primary); font-weight: 600; text-decoration: none; transition: color .2s ease; }
-    a:hover { color: var(--primary-light); }
-
-    h1, h2, h3 { font-weight: 700; margin-bottom: 1rem; }
-    h1 { font-size: 2.75rem; letter-spacing: -0.02em; line-height: 1.15; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.25rem; }
-
-    .wrapper { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    .section { padding-top: 4rem; padding-bottom: 4rem; }
+    a { color: var(--primary-light); font-weight: 600; text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--action); }
+    h1, h2, h3 { font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.4rem, 5.2vw, 3.75rem); line-height: 1.08; }
+    h2 { font-size: clamp(1.7rem, 3.2vw, 2.25rem); line-height: 1.2; }
+    h3 { font-size: 1.15rem; }
+    .wrapper { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 4.5rem 0; }
     p + p { margin-top: 1rem; }
 
     /* NAV */
@@ -64,591 +62,354 @@
     }
     .nav-left { display: flex; align-items: center; gap: 0.75rem; }
     .nav-left img { height: 32px; width: auto; }
-    .nav-left span { font-weight: 600; font-size: 1rem; color: var(--black); }
+    .nav-left span { font-weight: 700; font-size: 1rem; color: var(--black); }
     .nav-links { display: flex; align-items: center; gap: 1.5rem; }
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
     .nav-toggle span { display: block; width: 24px; height: 3px; margin: 5px 0; background: var(--black); }
-    .nav-links a { text-decoration: none; color: var(--black); font-weight: 500; }
+    .nav-links a { text-decoration: none; color: var(--black); font-weight: 500; font-size: 0.95rem; }
     .nav-links a:hover { color: var(--primary); }
     .nav-cta-link {
-      background: var(--action); color: var(--white) !important; padding: 0.5rem 1.1rem;
-      border-radius: 6px; font-weight: 600 !important; font-size: 0.9rem;
+      background: var(--action); color: var(--white) !important; padding: 0.55rem 1.15rem;
+      border-radius: 6px; font-weight: 700 !important; font-size: 0.9rem;
       transition: background .2s;
     }
     .nav-cta-link:hover { background: var(--action-hover) !important; color: var(--white) !important; }
     .dropdown { position: relative; }
     .dropdown-content {
       display: none; position: absolute; top: 100%; left: 0;
-      background: var(--white); min-width: 220px;
-      box-shadow: 0 4px 8px rgba(0,0,0,.1); z-index: 999; border-radius: 4px;
+      background: var(--white); min-width: 240px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.12); z-index: 999; border-radius: 6px;
+      padding: 0.35rem 0;
     }
-    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: var(--black); font-size: 0.9rem; }
-    .dropdown-content a:hover { background: #f2f2f2; color: var(--primary); }
-    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { display: block; padding: 0.7rem 1rem; color: var(--black); font-size: 0.9rem; }
+    .dropdown-content a:hover { background: #f2f4f7; color: var(--primary); }
+    .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display: block; }
 
     /* HERO */
     .hero {
       background: radial-gradient(circle at center, rgba(0,119,255,.12) 0%, transparent 70%);
-      text-align: center; padding: 6rem 1.5rem 5rem;
+      text-align: center; padding: 5.5rem 1.5rem 4.5rem;
     }
     .hero-eyebrow {
       display: inline-block; background: rgba(249,115,22,.12);
       border: 1px solid rgba(249,115,22,.3); color: var(--action);
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;
-      max-width: 100%;
-      line-height: 1.4;
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 999px;
+      margin-bottom: 1.5rem;
     }
     .hero h1 {
       background: var(--chrome); -webkit-background-clip: text; color: transparent;
-      max-width: 880px; margin: 0 auto 0.75rem;
-      font-size: 3rem; line-height: 1.18; letter-spacing: -0.02em;
+      max-width: 880px; margin: 0 auto 1.25rem;
     }
-    .hero h1 .word-in {
-      -webkit-text-fill-color: rgba(230,232,236,0.32);
-      background: none;
+    .hero p.hero-sub {
+      font-size: 1.15rem; max-width: 760px; margin: 0 auto; color: var(--muted);
     }
-    .hero h1 .word-on {
-      -webkit-text-fill-color: var(--action);
-      background: none;
+    .cta-row {
+      display: flex; gap: 1rem; justify-content: center; align-items: center;
+      flex-wrap: wrap; margin-top: 2rem;
     }
-    .hero-tagline { font-size: 1.15rem; color: var(--action); font-weight: 600; margin-bottom: 1.5rem; }
-    .hero p { font-size: 1.15rem; max-width: 760px; margin: 0 auto; color: var(--muted); }
-    .hero-bridge {
-      font-size: 1.2rem; color: var(--text);
-      max-width: 600px; margin: 0 auto 1.5rem;
-      font-weight: 500;
-    }
-    .hero-bridge strong { color: var(--text); font-weight: 700; }
-    .cta-row { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 2rem; }
-
-    /* CTA BUTTON */
     .cta {
       display: inline-block; background: var(--action); color: #fff;
-      padding: 1rem 2.25rem; border-radius: 8px;
-      box-shadow: 0 0 12px rgba(249,115,22,.35);
-      position: relative; overflow: hidden;
-      transition: transform .2s ease, box-shadow .2s ease;
-      font-weight: 700;
+      padding: 1rem 2rem; border-radius: 8px;
+      box-shadow: 0 0 14px rgba(249,115,22,.35);
+      font-weight: 800; transition: transform .2s, box-shadow .2s;
     }
     .cta:hover {
       background: var(--action-hover); color: #fff;
-      transform: translateY(-2px); box-shadow: 0 0 20px rgba(249,115,22,.5);
+      transform: translateY(-2px); box-shadow: 0 0 22px rgba(249,115,22,.5);
     }
-    .cta::before {
-      content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,.25), transparent);
-      transform: translateX(-100%); animation: shimmer 2.5s infinite;
+    .cta-outline {
+      display: inline-block; background: transparent; color: var(--text);
+      padding: 1rem 2rem; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.2); font-weight: 700;
     }
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      50% { transform: translateX(100%); }
-      100% { transform: translateX(100%); }
-    }
-    .cta-secondary {
-      display: inline-block; color: var(--muted); font-weight: 500; font-size: 0.95rem;
-      text-decoration: none; border-bottom: 1px solid rgba(156,163,175,.4);
-      transition: color .2s, border-color .2s;
-    }
-    .cta-secondary:hover { color: var(--text); border-color: var(--text); }
-    .audit-note {
-      max-width: 520px; margin: 1rem auto 0;
+    .cta-outline:hover { border-color: var(--action); color: var(--action); }
+    .trust-line {
+      max-width: 620px; margin: 1.5rem auto 0;
       color: var(--muted); font-size: 0.92rem;
     }
-    .hero-proof {
-      display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;
-      max-width: 760px; margin: 2rem auto 0;
-    }
-    .hero-proof span {
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.035);
-      border-radius: 999px;
-      color: var(--text);
-      font-size: 0.86rem;
-      padding: 0.45rem 0.85rem;
-    }
 
-
-    /* TRUST STRIP */
-    .trust-strip {
-      border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06);
-      background: rgba(255,255,255,.02); padding: 1rem 0;
-    }
-    .trust-strip-inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
-      display: flex; flex-wrap: wrap; gap: 0.25rem;
-    }
-    .trust-tag {
-      padding: 0.4rem 1.1rem; color: var(--muted); font-size: 0.85rem;
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
-    .trust-tag:last-child { border-right: none; }
-
-    /* PAIN SECTION */
-    .pain-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 2rem;
-    }
-    .pain-item {
-      display: flex; align-items: flex-start; gap: 0.75rem;
-      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
-      border-radius: 10px; padding: 1rem 1.25rem;
-    }
-    .pain-dot { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; flex-shrink: 0; margin-top: 0.45rem; }
-    .pain-item p { font-size: 0.95rem; color: var(--text); }
-    .section-kicker {
-      color: var(--action);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-    }
-    .section-lead {
-      color: var(--muted);
-      max-width: 680px;
-      margin-bottom: 1.5rem;
-    }
-    .simple-panel {
-      background: rgba(255,255,255,.025);
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .priority-link-band {
-      background: rgba(255,255,255,.025);
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      padding: 2.5rem 1.5rem;
-    }
-    .priority-link-inner { max-width: 1100px; margin: 0 auto; }
-    .priority-link-inner h2 {
-      font-size: 1.3rem; margin-bottom: 0.4rem;
-    }
-    .priority-link-inner p {
-      color: var(--muted); max-width: 640px; margin-bottom: 1.25rem;
-    }
-    .priority-links {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem;
-    }
-    .priority-links a {
-      display: block; padding: 0.9rem 1rem;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 8px; color: var(--text); font-size: 0.92rem;
-    }
-    .priority-links a:hover { border-color: var(--action); color: var(--action); }
-
-    /* SERVICES GRID */
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 2rem;
-    }
-    .service-card {
-      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
-      border-radius: 12px; padding: 1.75rem;
-      transition: border-color .2s;
-    }
-    .service-card:hover { border-color: var(--action); }
-    .service-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
-    .service-card a { font-size: 0.85rem; color: var(--action); display: inline-block; margin-top: 0.75rem; }
-    .service-card a:hover { color: var(--action-hover); }
-
-    /* STEPS */
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .step {
-      text-align: left;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 12px;
-      padding: 1.5rem;
-    }
-    .step-num {
-      width: 48px; height: 48px; border-radius: 50%; background: var(--action);
-      color: white; font-size: 1.25rem; font-weight: 800;
-      display: flex; align-items: center; justify-content: center; margin: 0 0 1rem;
-    }
-    .step h3 { font-size: 1rem; margin-bottom: 0.5rem; }
-    .step p { font-size: 0.9rem; color: var(--muted); }
-
-    /* CTA BLOCK */
-    .cta-block {
-      background: rgba(249,115,22,.07); border: 1px solid rgba(249,115,22,.2);
-      border-radius: 16px; padding: 3.5rem 2rem; text-align: center;
-    }
-    .cta-block h2 { margin-bottom: 0.75rem; }
-    .cta-block p { color: var(--muted); max-width: 520px; margin: 0 auto 2rem; }
-
-    footer {
-      text-align: center; background: var(--bg-alt);
-      padding: 2rem 1.5rem; font-size: .9rem; color: var(--muted);
-    }
-    .httl-mark {
-      width: 26px; height: auto;
-      margin-left: 0.85rem; opacity: 0.55;
-      vertical-align: middle;
-      filter: invert(1);
-    }
-    @media(max-width: 1280px) {
-      .nav-links { display: none; flex-direction: column; position: absolute;
-        top: 64px; right: 1rem; background: var(--white);
-        padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,.1); border-radius: 4px; max-width: calc(100vw - 2rem); box-sizing: border-box; }
-      .nav-links.open { display: flex; }
-      .nav-toggle { display: block; }
-      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; min-width: 0; width: 100%; }
-      .dropdown:hover .dropdown-content { display: block; }
-      .dropdown-content a { white-space: normal; }
-    }
-    @media(max-width: 980px) {
-      .hero { text-align: center; padding-top: 4.5rem; }
-    }
-    @media(max-width: 768px) {
-      .cta-row { flex-direction: column; }
-    }
-    @media(max-width: 640px) {
-      h1 { font-size: 2.1rem; }
-      h2 { font-size: 1.6rem; }
-      .hero {
-        overflow: hidden;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-        text-align: left;
-      }
-      .hero h1 {
-        font-size: 1.95rem;
-        max-width: 340px;
-        margin-left: 0;
-        margin-right: 0;
-        overflow-wrap: break-word;
-      }
-      .hero p {
-        max-width: 340px;
-        margin-left: 0;
-        margin-right: 0;
-        overflow-wrap: break-word;
-      }
-      .cta-row { justify-content: flex-start; }
-      .hero-eyebrow {
-        display: block;
-        width: fit-content;
-        max-width: 330px;
-        margin-left: 0;
-        margin-right: 0;
-        border-radius: 8px;
-        font-size: 0.72rem;
-        letter-spacing: 0.6px;
-        white-space: normal;
-      }
-      .hero-proof {
-        justify-content: flex-start;
-        gap: 0.5rem;
-        max-width: 340px;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      .hero-proof span { font-size: 0.8rem; padding: 0.4rem 0.7rem; }
-      .golden-statement { font-size: 1.35rem; }
-    }
-
-    /* HOW WE HELP RIBBON */
-    .how-ribbon {
-      padding: 4rem 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      background: rgba(0,119,255,.04);
-    }
-    .how-ribbon-inner { max-width: 900px; margin: 0 auto; }
-    .how-ribbon h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
-    .how-ribbon h2 em { font-style: normal; color: var(--action); }
-    .how-ribbon-sub { color: var(--muted); max-width: 680px; font-size: 1rem; margin-bottom: 0; }
-    .how-ribbon-grid {
+    /* BIZTECH TEAM CARD ROW */
+    .team-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem; margin-top: 2rem;
+      gap: 1rem; margin: 2.5rem auto 0; max-width: 900px;
     }
-    .how-ribbon-item {
-      display: flex; align-items: flex-start; gap: 0.75rem;
-      padding: 1rem 1.25rem;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(0,119,255,.15);
-      border-radius: 10px; font-size: 0.9rem; color: var(--text);
+    .team-avatar {
+      display: flex; align-items: center; gap: .85rem;
+      padding: .7rem .85rem;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px; overflow: hidden; text-align: left;
+      transition: border-color .2s, transform .2s, background .2s;
     }
-    .how-ribbon-item::before {
-      content: "→"; color: var(--primary-light); font-weight: 700;
-      flex-shrink: 0; margin-top: 2px;
+    .team-avatar:hover, .team-avatar:focus-visible {
+      color: var(--text); transform: translateY(-3px); background: rgba(255,255,255,.07);
+      outline: none;
     }
+    .team-avatar.peter:hover, .team-avatar.peter:focus-visible { border-color: var(--peter); }
+    .team-avatar.penny:hover, .team-avatar.penny:focus-visible { border-color: var(--penny); }
+    .team-avatar.garry:hover, .team-avatar.garry:focus-visible { border-color: var(--garry); }
+    .team-image {
+      display: block; width: 68px; height: 68px; flex: 0 0 68px;
+      aspect-ratio: 1; object-fit: cover; object-position: center;
+      border-radius: 9px; border: 1px solid rgba(255,255,255,.1);
+    }
+    .team-copy { padding: 0; }
+    .team-name { font-weight: 800; font-size: 1.05rem; color: var(--text); }
+    .team-role { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
+
+    /* SECTION UTILITIES */
+    .kicker {
+      color: var(--action); font-size: 0.78rem; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .lead { color: var(--muted); max-width: 720px; font-size: 1.05rem; }
+    .band { background: rgba(255,255,255,.025); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    /* PAIN LIST */
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.9rem; margin-top: 2rem;
+    }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: 0.8rem;
+      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+      border-radius: 10px; padding: 1rem 1.2rem;
+    }
+    .pain-dot { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; flex-shrink: 0; margin-top: 0.55rem; }
+    .pain-item p { font-size: 0.95rem; color: var(--text); }
+    .pain-closer {
+      margin-top: 2rem; font-size: 1.15rem; font-weight: 700; color: var(--text);
+      max-width: 640px;
+    }
+    .pain-closer em { font-style: normal; color: var(--action); }
 
     /* BIZTECHS SECTION */
-    .biztechs-section {
-      padding: 5rem 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .biztechs-inner { max-width: 900px; margin: 0 auto; }
     .biztechs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.25rem; margin-top: 2rem;
     }
     .biztech-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 12px; padding: 1.75rem 1.5rem;
-      transition: border-color .2s;
+      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px; padding: 1.75rem;
+      display: flex; flex-direction: column;
+      transition: border-color .2s, transform .2s;
     }
-    .biztech-card:hover { border-color: var(--primary-light); }
-    .biztech-card.featured {
-      border-color: rgba(249,115,22,.45);
-      box-shadow: 0 0 18px rgba(249,115,22,.12);
+    .biztech-card:hover { transform: translateY(-2px); }
+    .biztech-card.peter:hover { border-color: var(--peter); }
+    .biztech-card.penny:hover { border-color: var(--penny); }
+    .biztech-card.garry:hover { border-color: var(--garry); }
+    .biztech-head {
+      display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1rem;
     }
-    .biztech-card-name {
-      font-size: 1.1rem; font-weight: 700;
-      color: var(--primary-light); margin-bottom: 0.2rem;
+    .biztech-badge {
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.3rem; color: #fff; flex-shrink: 0;
     }
-    .biztech-card-role {
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem;
+    .biztech-card.peter .biztech-badge { background: var(--peter); }
+    .biztech-card.penny .biztech-badge { background: var(--penny); }
+    .biztech-card.garry .biztech-badge { background: var(--garry); }
+    .biztech-name { font-size: 1.15rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+    .biztech-role { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-top: 0.2rem; }
+    .biztech-desc { color: var(--muted); font-size: 0.95rem; flex: 1; margin-bottom: 1rem; }
+    .biztech-price {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px; padding: 0.7rem 0.9rem; margin-bottom: 1rem;
+      font-size: 0.88rem; color: var(--text);
     }
-    .biztech-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; }
-    .biztech-card a { font-size: 0.85rem; color: var(--action); }
-    .biztech-card a:hover { color: var(--action-hover); }
-    .biztech-note {
-      color: var(--muted);
-      max-width: 640px;
-      margin-top: 2rem;
+    .biztech-price strong { color: var(--action); }
+    .biztech-actions { display: flex; flex-direction: column; gap: 0.5rem; }
+    .biztech-actions .cta { padding: 0.75rem 1.25rem; text-align: center; font-size: 0.95rem; }
+    .biztech-actions .secondary-link {
+      text-align: center; color: var(--muted); font-size: 0.85rem;
+      text-decoration: underline; text-decoration-color: rgba(156,163,175,.4);
     }
-
-    /* CONSULTING SECTION */
-    .consulting-section {
-      padding: 5rem 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      background: rgba(255,255,255,.015);
-    }
-    .consulting-inner { max-width: 760px; margin: 0 auto; text-align: center; }
-    .consulting-inner h2 { margin-bottom: 1rem; }
-    .consulting-inner p { color: var(--muted); margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-    .consulting-bullets {
-      list-style: none; text-align: left;
-      margin: 1.5rem auto; max-width: 520px;
-    }
-    .consulting-bullets li {
-      display: flex; align-items: flex-start; gap: 0.75rem;
-      padding: 0.6rem 0; font-size: 0.95rem; color: var(--text);
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-    .consulting-bullets li::before { content: "✓"; color: var(--action); font-weight: 700; flex-shrink: 0; }
-    .consulting-bullets li:last-child { border-bottom: none; }
-
-    /* COST OF INACTION */
-    .cost-section {
-      padding: 5rem 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .cost-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .cost-headline {
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-    .cost-headline em {
-      font-style: normal;
-      color: var(--action);
-    }
-    .cost-sub {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 2.75rem;
-    }
-    .cost-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
-    }
-    .cost-card {
-      background: rgba(239,68,68,.05);
-      border: 1px solid rgba(239,68,68,.2);
-      border-radius: 12px;
-      padding: 1.75rem 1.5rem;
-    }
-    .cost-card-num {
-      font-size: 2.6rem;
-      font-weight: 800;
-      color: #ef4444;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-    .cost-card-label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.35rem;
-    }
-    .cost-card-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-    .cost-math-block {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 12px;
-      padding: 1.75rem 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .cost-math-title {
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-    .cost-math-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-      font-size: 0.9rem;
-      color: var(--text);
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .cost-math-row:last-child { border-bottom: none; }
-    .cost-math-row span:first-child { color: var(--muted); }
-    .cost-math-row span:last-child { font-weight: 700; color: var(--text); }
-    .cost-math-total {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding-top: 1rem;
-      margin-top: 0.5rem;
-      border-top: 2px solid rgba(239,68,68,.3);
-      font-size: 1.05rem;
-      font-weight: 700;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .cost-math-total span:last-child { color: #ef4444; font-size: 1.4rem; }
-    .cost-source {
-      font-size: 0.75rem;
-      color: rgba(156,163,175,.5);
-      margin-top: 1rem;
+    .biztech-actions .secondary-link:hover { color: var(--action); }
+    .biztechs-closer {
+      margin-top: 2rem; color: var(--muted); max-width: 720px; font-size: 1rem;
     }
 
-    /* GOLDEN CIRCLE */
-    .golden-section {
-      padding: 5rem 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,.06);
+    /* DEMO SECTION */
+    .demo-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem; margin-top: 2rem;
     }
-    .golden-inner {
-      max-width: 760px;
-      margin: 0 auto;
+    .demo-card {
+      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px; padding: 1.5rem;
     }
-    .golden-label {
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .golden-label::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: rgba(255,255,255,.08);
-    }
-    .label-why { color: var(--action); }
-    .label-how { color: var(--primary-light); }
-    .label-what { color: #a78bfa; }
-    .golden-statement {
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 1.4;
-      color: var(--text);
-      border: none;
-      margin: 0 0 1rem;
-    }
-    .golden-statement em {
-      font-style: normal;
-      color: var(--action);
-    }
-    .golden-sub {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 620px;
-    }
-    .what-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.75rem;
-      margin-top: 2rem;
-    }
-    .what-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.85rem 1.1rem;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 8px;
-      font-size: 0.95rem;
-      color: var(--text);
-    }
-    .what-item::before {
-      content: "→";
-      color: #a78bfa;
-      font-weight: 700;
-      flex-shrink: 0;
+    .demo-card h3 { color: var(--text); margin-bottom: 0.5rem; }
+    .demo-card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
+    .demo-card .cta {
+      display: block; text-align: center; padding: 0.75rem 1rem; font-size: 0.9rem;
     }
 
-    /* Standard site footer */
+    /* STORY BLOCK */
+    .story-block {
+      background: rgba(0,119,255,.05);
+      border: 1px solid rgba(0,119,255,.15);
+      border-radius: 14px; padding: 2.5rem;
+    }
+    .story-block h2 { margin-bottom: 1.25rem; }
+    .story-block p { color: var(--text); font-size: 1.02rem; margin-bottom: 1rem; max-width: 720px; }
+    .story-block .cta { margin-top: 0.75rem; padding: 0.85rem 1.5rem; font-size: 0.95rem; }
+
+    /* STEPS */
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem; margin-top: 2rem;
+    }
+    .step {
+      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--action);
+      color: #fff; font-size: 1.15rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+    }
+    .step h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.92rem; color: var(--muted); }
+    .steps-footnote {
+      margin-top: 1.5rem; color: var(--muted); font-size: 0.95rem; max-width: 620px;
+    }
+
+    /* PRICING SECTION */
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem; margin-top: 2rem;
+    }
+    .price-card {
+      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px; padding: 1.75rem;
+    }
+    .price-card.peter { border-top: 3px solid var(--peter); }
+    .price-card.penny { border-top: 3px solid var(--penny); }
+    .price-card.garry { border-top: 3px solid var(--garry); }
+    .price-card h3 { font-size: 1.1rem; color: var(--text); }
+    .price-role { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    .price-amount {
+      color: var(--action); font-weight: 800; font-size: 1.5rem;
+      margin-bottom: 0.35rem; line-height: 1.2;
+    }
+    .price-standard { color: var(--muted); font-size: 0.85rem; text-decoration: line-through; margin-bottom: 0.9rem; }
+    .price-note { font-size: 0.88rem; color: var(--muted); margin-bottom: 1rem; }
+    .warm-note {
+      background: rgba(167,139,250,.08); border: 1px solid rgba(167,139,250,.2);
+      border-radius: 10px; padding: 1rem 1.2rem; margin-top: 2rem;
+      color: var(--text); font-size: 0.92rem;
+    }
+    .warm-note strong { color: #a78bfa; }
+    .pricing-terms {
+      margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .pricing-terms span {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 999px; padding: 0.35rem 0.85rem; font-size: 0.82rem; color: var(--muted);
+    }
+
+    /* CUSTOM BIZTECH */
+    .custom-block {
+      background: rgba(167,139,250,.05); border: 1px solid rgba(167,139,250,.2);
+      border-radius: 14px; padding: 2.5rem;
+    }
+    .custom-quotes { margin: 1.5rem 0; }
+    .custom-quotes li {
+      list-style: none; padding: 0.55rem 0;
+      color: var(--text); font-style: italic;
+      border-bottom: 1px dashed rgba(255,255,255,.08);
+    }
+    .custom-quotes li:last-child { border-bottom: none; }
+    .custom-quotes li:before { content: "\201C"; color: #a78bfa; margin-right: 0.35rem; font-weight: 800; }
+    .custom-quotes li:after { content: "\201D"; color: #a78bfa; margin-left: 0.15rem; font-weight: 800; }
+    .custom-note { margin-top: 1rem; color: var(--muted); font-size: 0.88rem; }
+
+    /* EXPERIENCE */
+    .experience-list {
+      list-style: none; display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem; margin: 1.5rem 0;
+    }
+    .experience-list li {
+      display: flex; gap: 0.6rem; align-items: flex-start;
+      color: var(--text); font-size: 0.95rem;
+    }
+    .experience-list li:before {
+      content: "→"; color: var(--primary-light); font-weight: 700; flex-shrink: 0;
+    }
+    .experience-note {
+      margin-top: 1.5rem; padding: 1rem 1.2rem;
+      background: rgba(255,255,255,.03); border-left: 3px solid var(--muted);
+      color: var(--muted); font-size: 0.88rem;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: rgba(249,115,22,.07); border: 1px solid rgba(249,115,22,.25);
+      border-radius: 16px; padding: 3.5rem 2rem; text-align: center;
+    }
+    .final-cta h2 { margin-bottom: 0.75rem; }
+    .final-cta p { color: var(--muted); max-width: 560px; margin: 0 auto 2rem; font-size: 1.02rem; }
+
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--line);
-      background: rgba(0,0,0,.16);
-      color: var(--muted);
-      padding: 2rem 1.5rem;
+      background: rgba(0,0,0,.16); color: var(--muted);
+      padding: 2.5rem 1.5rem;
     }
     .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem; align-items: start;
     }
-    .footer-brand-line {
-      display: flex;
-      align-items: center;
-      gap: .85rem;
-      flex-wrap: wrap;
+    .footer-brand { display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap; }
+    .footer-brand-text { font-size: 0.9rem; color: var(--muted); }
+    .footer-col h4 {
+      color: var(--text); font-size: 0.85rem;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.85rem;
     }
-    .footer-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+    .footer-col a {
+      display: block; color: var(--muted); font-size: 0.88rem;
+      margin-bottom: 0.5rem; font-weight: 500;
     }
-    .footer-links a {
-      color: var(--muted);
-      font-size: .9rem;
+    .footer-col a:hover { color: var(--action); }
+    .footer-bottom {
+      max-width: 1120px; margin: 2rem auto 0; padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-size: 0.82rem; color: var(--muted);
     }
-    .footer-links a:hover { color: var(--action); }
-    .httl-mark {
-      width: 26px;
-      height: auto;
-      opacity: .55;
-      vertical-align: middle;
-      filter: invert(1);
-    }
+    .httl-mark { width: 26px; opacity: 0.55; filter: invert(1); vertical-align: middle; }
 
+    @media (max-width: 1280px) {
+      .nav-links {
+        display: none; flex-direction: column; position: absolute;
+        top: 64px; right: 1rem; background: var(--white);
+        padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,.1); border-radius: 6px;
+        align-items: flex-start; max-width: calc(100vw - 2rem);
+      }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; min-width: 0; width: 100%; }
+      .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display: block; }
+    }
+    @media (max-width: 900px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      .hero { text-align: left; padding: 4rem 1.25rem 3.5rem; }
+      .hero h1, .hero p.hero-sub { max-width: 340px; margin-left: 0; margin-right: 0; }
+      .hero-eyebrow { display: block; width: fit-content; max-width: 330px; border-radius: 8px; }
+      .cta-row { justify-content: flex-start; flex-direction: column; align-items: stretch; }
+      .cta, .cta-outline { width: 100%; text-align: center; }
+      .trust-line { margin-left: 0; margin-right: 0; max-width: 340px; }
+      .section { padding: 3.5rem 0; }
+      .story-block, .custom-block, .final-cta { padding: 2rem 1.5rem; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
   </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
@@ -659,176 +420,361 @@
     gtag('config', 'G-Y74BBJGYND');
   </script>
 </head>
-
 <body>
 
   <nav>
-    <a class="nav-left" href="https://www.youros.app">
+    <a class="nav-left" href="/">
       <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo">
-      <span>YOUR Operating System</span>
+      <span>YourOS</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links">
       <div class="dropdown">
-        <a href="/biztechs/">BizTechs ▾</a>
+        <a href="#biztechs">BizTechs ▾</a>
         <div class="dropdown-content">
-          <a href="/biztechs/peter/">Peter — Web Developer</a>
-          <a href="/biztechs/penny/">Penny — Receptionist</a>
-          <a href="/biztechs/friday/">Friday — Operations Assistant</a>
-          <a href="/biztechs/xavier/">Xavier — Marketing Strategist</a>
+          <a href="/biztechs/peter/">Peter — Website Developer</a>
+          <a href="/biztechs/penny/">Penny — Phone Receptionist</a>
+          <a href="/biztechs/garry/">Garry — Follow-Up Closer</a>
+          <a href="/custom-biztech/">Custom BizTechs</a>
         </div>
       </div>
-      <a href="https://www.youros.app/security-trust">Security & Trust</a>
-      <a href="/blog/">Blog</a>
-      <a class="nav-cta-link" href="/Begin-Your-Revolution.html?source=nav-biztech">Hire a BizTech</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#results">Results</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a class="nav-cta-link" href="/hire-a-biztech/?source=nav">Hire a BizTech</a>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- SECTION 1: HERO -->
   <section class="hero">
     <div class="hero-eyebrow">AI Business Technicians for Small Business</div>
-    <h1>Hire the Team Your Business Wishes It Already Had</h1>
-    <p class="hero-tagline">Get specialized AI employees for the jobs that keep stealing your time.</p>
-    <p class="hero-bridge">You didn't start your business to become a web developer, receptionist, marketer, salesperson, and operations manager. But somewhere along the way, all of those jobs became yours.</p>
-    <p>YourOS gives small businesses AI Business Technicians, specialized employees that handle real work like building websites, answering phones, following up with customers, marketing your services, and automating repetitive tasks.</p>
+    <h1>Hire the Help Your Business Needs</h1>
+    <p class="hero-sub">You’re probably here because there are too many things at your company that somehow keep becoming your job. Maybe nobody owns them. Maybe someone does, but they’re already overwhelmed. Maybe you delegated the work before and eventually had to take it back.<br><br>YourOS creates AI-powered business teammates called BizTechs. They can build and manage your website, answer incoming calls, follow up with quoted customers, and handle the repetitive work that keeps falling through the cracks.</p>
     <div class="cta-row">
-      <a class="cta" href="/Begin-Your-Revolution.html?source=home-hero-biztech">Hire Your First BizTech</a>
-      <a class="cta-secondary" href="#biztechs">Meet The Team ↓</a>
+      <a class="cta" href="/hire-a-biztech/?source=home-hero">Hire a BizTech</a>
+      <a class="cta-outline" href="/hire-a-biztech/?source=home-hero-job">Tell Us the Job You Need Done</a>
     </div>
-    <div class="hero-proof" aria-label="YourOS BizTech services">
-      <span>Websites</span>
-      <span>Phone calls</span>
-      <span>Customer follow-up</span>
-      <span>Marketing</span>
-      <span>Workflow automation</span>
-    </div>
-    <p class="audit-note">Pick the bottleneck. Tell us what you need. We help you put the right BizTech to work.</p>
-  </section>
-
-  <!-- BIZTECHS -->
-  <section class="biztechs-section" id="biztechs">
-    <div class="biztechs-inner">
-      <div class="section-kicker">Meet Your Team</div>
-      <h2>Each BizTech is built to master one job.</h2>
-      <p class="section-lead">They do not replace you. They give you time back by handling the business work that needs to happen every day.</p>
-      <div class="biztechs-grid">
-        <div class="biztech-card featured">
-          <div class="biztech-card-name">Peter</div>
-          <div class="biztech-card-role">Your web developer</div>
-          <p>Builds and improves your website, publishes updates, keeps pages current, and helps your business look alive online.</p>
-          <a href="/biztechs/peter/">Hire Peter →</a>
-        </div>
-        <div class="biztech-card">
-          <div class="biztech-card-name">Penny</div>
-          <div class="biztech-card-role">Your receptionist</div>
-          <p>Answers calls, helps customers, captures the details, and keeps scheduling from interrupting the work in front of you.</p>
-          <a href="/biztechs/penny/">Hire Penny →</a>
-        </div>
-        <div class="biztech-card">
-          <div class="biztech-card-name">Friday</div>
-          <div class="biztech-card-role">Your operations assistant</div>
-          <p>Keeps follow-up moving, updates customer records, tracks next steps, and turns repetitive admin into a system.</p>
-          <a href="/biztechs/friday/">Hire Friday →</a>
-        </div>
-        <div class="biztech-card">
-          <div class="biztech-card-name">Xavier</div>
-          <div class="biztech-card-role">Your marketing strategist</div>
-          <p>Helps plan campaigns, sharpen offers, create content, and keep marketing from disappearing whenever the week gets busy.</p>
-          <a href="/biztechs/xavier/">Hire Xavier →</a>
-        </div>
-      </div>
-      <p class="biztech-note">Start with one BizTech for your biggest bottleneck. Add more when your business is ready.</p>
+    <p class="trust-line">Founding plans for Peter and Penny start at <strong style="color:var(--text);">$500</strong>. Garry uses performance-based pricing. Most BizTechs can begin immediately or by the next business day.</p>
+    <div class="team-row" aria-label="Meet the BizTech team">
+      <a class="team-avatar peter" href="/biztechs/peter/" aria-label="Learn more about Peter, the Website Developer">
+        <img class="team-image" src="/assets/biztech/peter-website.webp" alt="Laptop displaying a polished small-business website">
+        <div class="team-copy"><div class="team-name">Peter</div><div class="team-role">Website Developer · Learn more →</div></div>
+      </a>
+      <a class="team-avatar penny" href="/biztechs/penny/" aria-label="Learn more about Penny, the Phone Receptionist">
+        <img class="team-image" src="/assets/biztech/penny-phone.webp" alt="Desktop phone and monitor showing an incoming call interface">
+        <div class="team-copy"><div class="team-name">Penny</div><div class="team-role">Phone Receptionist · Learn more →</div></div>
+      </a>
+      <a class="team-avatar garry" href="/biztechs/garry/" aria-label="Learn more about Garry, the Follow-Up Closer">
+        <img class="team-image" src="/assets/biztech/garry-sales-professional.webp" alt="Faceted sales avatar holding a quote follow-up and confirmation on a phone">
+        <div class="team-copy"><div class="team-name">Garry</div><div class="team-role">Follow-Up Closer · Learn more →</div></div>
+      </a>
     </div>
   </section>
 
-  <!-- PROBLEM -->
+  <!-- SECTION 2: THE CUSTOMER PROBLEM -->
   <section class="section wrapper" id="problem">
-    <div class="section-kicker">The problem</div>
-    <h2>Every Business Owner Hits the Same Wall</h2>
-    <p class="section-lead">The more your business grows, the more hats you wear. Growth should not require you to do everything yourself.</p>
+    <div class="kicker">The Problem</div>
+    <h2>Somehow, Every Job Without an Owner Becomes Yours</h2>
+    <p class="lead">You probably have jobs at your company that nobody was officially hired to do.</p>
     <div class="pain-grid">
-      <div class="pain-item">
-        <span class="pain-dot"></span>
-        <p>Customers call while you're working.</p>
-      </div>
-      <div class="pain-item">
-        <span class="pain-dot"></span>
-        <p>Your website falls behind.</p>
-      </div>
-      <div class="pain-item">
-        <span class="pain-dot"></span>
-        <p>Leads don't get followed up.</p>
-      </div>
-      <div class="pain-item">
-        <span class="pain-dot"></span>
-        <p>Marketing gets pushed to next week.</p>
-      </div>
-      <div class="pain-item">
-        <span class="pain-dot"></span>
-        <p>The important work gets buried under the urgent work.</p>
-      </div>
-      <div class="pain-item">
-        <span class="pain-dot"></span>
-        <p>You become the backup plan for every missing system.</p>
-      </div>
+      <div class="pain-item"><span class="pain-dot"></span><p>Someone needs to answer the phone when everyone else is already helping someone else.</p></div>
+      <div class="pain-item"><span class="pain-dot"></span><p>Someone needs to follow up after the quote is sent.</p></div>
+      <div class="pain-item"><span class="pain-dot"></span><p>Someone needs to update the website, but it keeps getting pushed behind customer emergencies.</p></div>
+      <div class="pain-item"><span class="pain-dot"></span><p>Someone needs to check information, move it into the right system, or make sure the customer hears back.</p></div>
     </div>
+    <p class="pain-closer">When nobody owns those jobs, they usually become yours. And even when you know you need help, hiring someone is not a simple decision. You have to think about cost, whether there will be enough work, whether they’ll understand the business, whether you can trust them with your customers, and whether you’ll spend weeks training them and months checking their work.</p>
+    <p class="pain-closer">I’ve been there. I’ve hired people I later regretted hiring. I’ve worked late, gone home, and started working again. I’ve watched important work get delayed because everyone was already busy with something else.</p>
+    <p class="pain-closer">It’s a lot. And I get it. That’s why we created BizTechs.</p>
   </section>
 
-  <!-- SIMPLE PLAN -->
-  <section class="section simple-panel" id="start">
+  <!-- SECTION 3: MEET THE BIZTECHS -->
+  <section class="section band" id="biztechs">
     <div class="wrapper">
-      <div class="section-kicker">Getting Started Is Simple</div>
-      <h2>Hire useful AI help without turning it into another project.</h2>
-      <p class="section-lead">You do not need to map your entire business first. Choose the pressure point you want off your plate, then let YourOS help you put the right BizTech to work.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Choose a BizTech</h3>
-          <p>Pick the employee that solves your biggest bottleneck: web, phones, operations, or marketing.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Tell them what you need</h3>
-          <p>Send the job in plain English. No technical plan, software spec, or long onboarding process required.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Get time back</h3>
-          <p>Your BizTech handles the work, reports progress, and helps your business keep moving while you focus on growth.</p>
-        </div>
+      <div class="kicker">Meet the BizTechs</div>
+      <h2>Hire the BizTech Responsible for the Job</h2>
+      <p class="lead">BizTechs are AI-powered business teammates trained for specific jobs. Peter handles websites. Penny handles incoming calls. Garry follows up with quoted customers.</p>
+      <p class="lead">You don’t have to map every process in your business before getting started. Choose the job that keeps falling through, tell the BizTech what it needs to know, and see how it works.</p>
+
+      <div class="biztechs-grid">
+
+        <article class="biztech-card peter">
+          <div class="biztech-head">
+            <div class="biztech-badge">P</div>
+            <div>
+              <div class="biztech-name">Peter</div>
+              <div class="biztech-role">Your website developer</div>
+            </div>
+          </div>
+          <p class="biztech-desc">The website developer you manage by email. Peter builds, updates, and maintains your website from plain-English instructions, photos, examples, sketches, or voice-typed emails.</p>
+          <div class="biztech-price">Founding customer price: <strong>$500 / website / month</strong></div>
+          <div class="biztech-actions">
+            <a class="cta" href="mailto:peter@youros.app?subject=Hire%20Peter%20-%20Website%20Request">Hire Peter</a>
+            <a class="secondary-link" href="/biztechs/peter/">See what Peter can build →</a>
+          </div>
+        </article>
+
+        <article class="biztech-card penny">
+          <div class="biztech-head">
+            <div class="biztech-badge">P</div>
+            <div>
+              <div class="biztech-name">Penny</div>
+              <div class="biztech-role">Your phone receptionist</div>
+            </div>
+          </div>
+          <p class="biztech-desc">Penny answers incoming calls, helps callers, captures their information, routes important calls, and can check or book appointments using the systems we connect.</p>
+          <div class="biztech-price">Founding plan: <strong>$500 / month</strong> for up to 1,000 incoming-call minutes</div>
+          <div class="biztech-actions">
+            <a class="cta" href="tel:+13854881520">Call Penny</a>
+            <a class="secondary-link" href="/biztechs/penny/">Set up Penny →</a>
+          </div>
+        </article>
+
+        <article class="biztech-card garry">
+          <div class="biztech-head">
+            <div class="biztech-badge">G</div>
+            <div>
+              <div class="biztech-name">Garry</div>
+              <div class="biztech-role">Your follow-up closer</div>
+            </div>
+          </div>
+          <p class="biztech-desc">Garry follows up with quoted customers by text, follows the sales process and pricing boundaries you approve, and returns customers when they explicitly communicate that they intend to purchase.</p>
+          <div class="biztech-price">Performance pricing: <strong>10% of the quote, $20 minimum</strong>, when the customer becomes warm</div>
+          <div class="biztech-actions">
+            <a class="cta" href="mailto:garry@youros.app?subject=Test%20Garry">Test Garry</a>
+            <a class="secondary-link" href="/biztechs/garry/">Give Garry a quote →</a>
+          </div>
+        </article>
+
+      </div>
+      <p class="biztechs-closer">Start with one BizTech for the job costing you the most time or opportunity. Add another when your business is ready.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: DEMONSTRATION PROOF -->
+  <section class="section wrapper" id="results">
+    <div class="kicker">Demonstration Proof</div>
+    <h2>See How a BizTech Works Before You Hire One</h2>
+    <p class="lead">You can experience each BizTech directly. Send Peter a real website request. Call Penny and speak with her. Create a test quote for yourself and let Garry follow up with you. See how the work gets done before deciding whether a BizTech belongs in your business.</p>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3>Test Peter</h3>
+        <p>Email Peter a real website request. Send him a rough idea, photo, drawing, reference website, or voice-typed message. Review what he creates before deciding whether to hire him.</p>
+        <a class="cta" href="mailto:peter@youros.app?subject=Website%20Request%20for%20Peter">Email Peter a Website Request</a>
+      </div>
+      <div class="demo-card">
+        <h3>Test Penny</h3>
+        <p>Call Penny and experience how she answers, identifies what you need, captures information, and helps schedule the next step.</p>
+        <a class="cta" href="tel:+13854881520">Call Penny Now</a>
+      </div>
+      <div class="demo-card">
+        <h3>Test Garry</h3>
+        <p>Create a test quote for yourself and let Garry follow up with you as though you were the customer.</p>
+        <a class="cta" href="mailto:garry@youros.app?subject=Test%20Garry">Test Garry on Yourself</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA BLOCK -->
-  <section class="section wrapper">
-    <div class="cta-block">
-      <h2>Stop carrying every job yourself.</h2>
-      <p>Hire your first AI Business Technician and hand off the work that should already have an owner.</p>
-      <a class="cta" href="/Begin-Your-Revolution.html?source=home-final-biztech" style="font-size:1.1rem; padding:1.1rem 2.5rem;">Hire Your First BizTech</a>
-      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted);">Simple start. Real work. Built for small business owners who need help now.</p>
+  <!-- SECTION 5: PETER STORY -->
+  <section class="section band">
+    <div class="wrapper">
+      <div class="story-block">
+        <div class="kicker">A Peter Story</div>
+        <h2>From Word of Mouth to Being Found Online</h2>
+        <p>A local landscaper had built his business primarily through friends, referrals, and word of mouth. He knew he needed a better online presence, but building and maintaining a website was another job he did not have time to learn.</p>
+        <p>He sent Peter the information, examples, photos, and changes he wanted. Peter built and managed the website for him.</p>
+        <p>After the website went live, people outside his existing network began finding the business online and reaching out about projects. The owner did not have to become a website developer. He hired Peter.</p>
+        <a class="cta" href="/biztechs/peter/">See What Peter Can Build</a>
+      </div>
     </div>
   </section>
+
+  <!-- SECTION 6: HOW IT WORKS -->
+  <section class="section wrapper" id="how-it-works">
+    <div class="kicker">How It Works</div>
+    <h2>Start With One Job That Keeps Coming Back to You</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Choose the Job</h3>
+        <p>Choose Peter, Penny, Garry, or describe another job that needs an owner.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Give the Instructions</h3>
+        <p>Tell the BizTech what it needs to know, which systems it may use, and where human approval is required.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Review and Put It to Work</h3>
+        <p>Test the setup, approve it, and put it to work.</p>
+      </div>
+    </div>
+    <p class="steps-footnote">No job posting, résumé review, interviews, payroll setup, or long-term employment contract.</p>
+    <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
+      <a class="cta" href="/hire-a-biztech/?source=home-how">Hire a BizTech</a>
+    </div>
+  </section>
+
+  <!-- SECTION 6.5: THE OUTCOME -->
+  <section class="section wrapper">
+    <div class="story-block success-block">
+      <div class="kicker">After You Hire a BizTech</div>
+      <h2>The work keeps moving, even when your day gets full.</h2>
+      <p class="lead">Calls get answered while your team is helping the customers already in front of them. Quotes get followed up instead of quietly going cold. Website changes get completed without waiting for the one evening you might have free. The important jobs still have an owner when things get busy. And fewer unfinished tasks find their way back to you at the end of the day.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 7: FOUNDING CUSTOMER PRICING -->
+  <section class="section band" id="pricing">
+    <div class="wrapper">
+      <div class="kicker">Founding Customer Pricing</div>
+      <h2>Founding Customer Pricing</h2>
+      <p class="lead">We are opening a limited number of Founding Customer positions for the first businesses that put each BizTech to work. Founding Customers receive reduced pricing because they are helping us test, refine, and improve the service in real business environments.</p>
+
+      <div class="pricing-grid">
+        <div class="price-card peter">
+          <h3>Peter</h3>
+          <div class="price-role">Website developer</div>
+          <div class="price-amount">$500 / mo</div>
+          <div class="price-standard">Standard: $1,000 / website / month</div>
+          <p class="price-note">One website. Per month. Founding customer pricing.</p>
+          <a class="cta" href="mailto:peter@youros.app?subject=Founding%20Customer%20-%20Peter" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Claim Peter Founding Spot</a>
+        </div>
+        <div class="price-card penny">
+          <h3>Penny</h3>
+          <div class="price-role">Phone receptionist</div>
+          <div class="price-amount">$500 / mo</div>
+          <p class="price-note">Up to 1,000 incoming-call minutes per month. Higher-volume plans priced separately.</p>
+          <a class="cta" href="/hire-a-biztech/?source=home-pricing-penny" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Claim Penny Founding Spot</a>
+        </div>
+        <div class="price-card garry">
+          <h3>Garry</h3>
+          <div class="price-role">Follow-up closer</div>
+          <div class="price-amount">10% / $20 min</div>
+          <p class="price-note">10% of the quoted product or service value, with a $20 minimum, when Garry makes the customer warm.</p>
+          <a class="cta" href="mailto:garry@youros.app?subject=Test%20Garry" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Test Garry First</a>
+        </div>
+      </div>
+
+      <div class="warm-note">
+        <strong>What "warm" means:</strong> A customer becomes warm when they explicitly communicate that they agree or intend to purchase, subject to the business's normal final payment, scheduling, financing, or approval steps.
+      </div>
+
+      <div class="pricing-terms">
+        <span>Month-to-month</span>
+        <span>Cancel anytime</span>
+        <span>Founding rate locked while continuously subscribed</span>
+        <span>Limited Founding Customer availability</span>
+      </div>
+
+      <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
+        <a class="cta" href="/hire-a-biztech/?source=home-pricing">Claim a Founding Customer Position</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: CUSTOM BIZTECHS -->
+  <section class="section wrapper">
+    <div class="custom-block">
+      <div class="kicker" style="color: #a78bfa;">Custom BizTechs</div>
+      <h2>Do You Need a Different Job Done?</h2>
+      <p style="color: var(--muted); max-width: 720px; margin-bottom: 0.75rem;">Some of the most valuable jobs in a business do not have an official title. They are the responsibilities that live in the owner's head:</p>
+      <ul class="custom-quotes">
+        <li>Someone should check this every day.</li>
+        <li>Someone needs to make sure every customer hears back.</li>
+        <li>Someone should move this information between our systems.</li>
+        <li>Someone needs to catch this before it becomes a problem.</li>
+      </ul>
+      <p style="color: var(--text);">Tell us the job you wish someone else owned. YourOS can build a Custom BizTech around your process, systems, boundaries, and desired outcome.</p>
+      <div class="cta-row" style="justify-content:flex-start; margin-top: 1.5rem;">
+        <a class="cta" href="/custom-biztech/">Tell Us the Job</a>
+      </div>
+      <p class="custom-note">Custom BizTech services generally begin at $500, depending on workload, systems, and complexity.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 9: EXPERIENCE AND AUTHORITY -->
+  <section class="section band" id="about">
+    <div class="wrapper">
+      <div class="kicker">Experience</div>
+      <h2>Built From Real Business Problems</h2>
+      <p class="lead">Since 2017, YourOS has helped businesses simplify difficult jobs across retail, service, rentals, RV, marine, HVAC, medical sampling, sales, and customer operations.</p>
+      <p style="color: var(--text); margin-top: 1rem; max-width: 720px;">Our experience began before the BizTech product line. These results show the systems, automation, and real business problems that helped shape the BizTechs we build today.</p>
+      <ul class="experience-list">
+        <li>Customers waiting for responses.</li>
+        <li>Employees becoming overloaded.</li>
+        <li>Information trapped in disconnected systems.</li>
+        <li>Leads losing momentum.</li>
+        <li>Owners working late because important work had no reliable owner.</li>
+        <li>Teams depending on memory instead of a process.</li>
+      </ul>
+      <p style="color: var(--text); max-width: 720px;">The work has always been practical: help a business get important work completed, using systems that fit the way the business already operates.</p>
+      <p class="experience-note">More detailed context about these stories and results is available on the Results and Examples page.</p>
+      <div class="cta-row" style="justify-content:flex-start; margin-top: 1.5rem;">
+        <a class="cta-outline" href="/what-does-youros-do/">See Our Results</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: FINAL CTA -->
+  <section class="section wrapper">
+    <div class="final-cta">
+      <h2>What’s the next job you want off your plate?</h2>
+      <p>Start with Peter, Penny, or Garry—or tell us about the responsibility that keeps finding its way back to you.</p>
+      <div class="cta-row">
+        <a class="cta" href="/hire-a-biztech/?source=home-final">Hire a BizTech</a>
+        <a class="cta-outline" href="/hire-a-biztech/?source=home-final-job">Tell Us the Job You Need Done</a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand-line">
-        <span>© 2026 YourOS. AI Business Technicians for small business.</span>
+      <div>
+        <div class="footer-brand">
+          <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" style="height:28px;">
+          <span class="footer-brand-text"><strong style="color:var(--text);">YourOS</strong> — AI Business Technicians<br>for small business.</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>BizTechs</h4>
+        <a href="/biztechs/peter/">Peter — Websites</a>
+        <a href="/biztechs/penny/">Penny — Phone</a>
+        <a href="/biztechs/garry/">Garry — Follow-Up</a>
+        <a href="/custom-biztech/">Custom BizTechs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#results">Results</a>
+        <a href="#about">About YourOS</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/what-does-youros-do/">What YourOS Does</a>
+        <a href="/appsheet-consultant/">AppSheet Consulting</a>
+        <a href="/custom-workflow-automation/">Workflow Automation</a>
+        <a href="/blog/">Blog</a>
+        <a href="/security-trust.html">Security &amp; Trust</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <span>© 2026 YourOS. All rights reserved.</span>
         <img class="httl-mark" src="/img/httl-monogram.png" alt="Holiness To The Lord" title="Holiness To The Lord">
       </div>
-      <div class="footer-links">
-        <a href="/biztechs/peter/">Peter</a>
-        <a href="/biztechs/penny/">Penny</a>
-        <a href="/biztechs/friday/">Friday</a>
-        <a href="/biztechs/xavier/">Xavier</a>
-        <a href="/security-trust.html">Security</a>
-        <a href="/Begin-Your-Revolution.html?source=footer-biztech">Hire a BizTech</a>
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
+      <div class="footer-links" style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="/privacy-policy.html" style="color:var(--muted); font-size:0.82rem;">Privacy Policy</a>
+        <a href="/terms.html" style="color:var(--muted); font-size:0.82rem;">Terms of Service</a>
+        <a href="/terms.html#sms" style="color:var(--muted); font-size:0.82rem;">SMS Terms</a>
       </div>
     </div>
   </footer>
+
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const links = document.querySelector('.nav-links');
