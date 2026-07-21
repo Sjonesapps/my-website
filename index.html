@@ -136,18 +136,23 @@
       gap: 1rem; margin: 2.5rem auto 0; max-width: 900px;
     }
     .team-avatar {
+      display: block;
       background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
-      border-radius: 12px; padding: 1.5rem 1rem; text-align: center;
+      border-radius: 12px; overflow: hidden; text-align: center;
+      transition: border-color .2s, transform .2s, background .2s;
     }
-    .team-badge {
-      width: 64px; height: 64px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.75rem; font-weight: 800; margin: 0 auto 0.75rem;
-      color: #fff;
+    .team-avatar:hover, .team-avatar:focus-visible {
+      color: var(--text); transform: translateY(-3px); background: rgba(255,255,255,.07);
+      outline: none;
     }
-    .team-avatar.peter .team-badge { background: var(--peter); }
-    .team-avatar.penny .team-badge { background: var(--penny); }
-    .team-avatar.garry .team-badge { background: var(--garry); }
+    .team-avatar.peter:hover, .team-avatar.peter:focus-visible { border-color: var(--peter); }
+    .team-avatar.penny:hover, .team-avatar.penny:focus-visible { border-color: var(--penny); }
+    .team-avatar.garry:hover, .team-avatar.garry:focus-visible { border-color: var(--garry); }
+    .team-image {
+      display: block; width: 100%; aspect-ratio: 1.85 / 1; object-fit: cover;
+      object-position: center 55%; border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .team-copy { padding: .85rem 1rem 1rem; }
     .team-name { font-weight: 800; font-size: 1.05rem; color: var(--text); }
     .team-role { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
 
@@ -452,9 +457,18 @@
     </div>
     <p class="trust-line">Founding plans for Peter and Penny start at <strong style="color:var(--text);">$500</strong>. Garry uses performance-based pricing. Most BizTechs can begin immediately or by the next business day.</p>
     <div class="team-row" aria-label="Meet the BizTech team">
-      <div class="team-avatar peter"><div class="team-badge">P</div><div class="team-name">Peter</div><div class="team-role">Website Developer</div></div>
-      <div class="team-avatar penny"><div class="team-badge">P</div><div class="team-name">Penny</div><div class="team-role">Phone Receptionist</div></div>
-      <div class="team-avatar garry"><div class="team-badge">G</div><div class="team-name">Garry</div><div class="team-role">Follow-Up Closer</div></div>
+      <a class="team-avatar peter" href="/biztechs/peter/" aria-label="Learn more about Peter, the Website Developer">
+        <img class="team-image" src="/assets/biztech/peter-website.webp" alt="Laptop displaying a polished small-business website">
+        <div class="team-copy"><div class="team-name">Peter</div><div class="team-role">Website Developer · Learn more →</div></div>
+      </a>
+      <a class="team-avatar penny" href="/biztechs/penny/" aria-label="Learn more about Penny, the Phone Receptionist">
+        <img class="team-image" src="/assets/biztech/penny-phone.webp" alt="Desktop phone and monitor showing an incoming call interface">
+        <div class="team-copy"><div class="team-name">Penny</div><div class="team-role">Phone Receptionist · Learn more →</div></div>
+      </a>
+      <a class="team-avatar garry" href="/biztechs/garry/" aria-label="Learn more about Garry, the Follow-Up Closer">
+        <img class="team-image" src="/assets/biztech/garry-followup.webp" alt="Tablet showing organized customer follow-up beside a shirt and tie">
+        <div class="team-copy"><div class="team-name">Garry</div><div class="team-role">Follow-Up Closer · Learn more →</div></div>
+      </a>
     </div>
   </section>
 
