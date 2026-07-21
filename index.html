@@ -136,9 +136,10 @@
       gap: 1rem; margin: 2.5rem auto 0; max-width: 900px;
     }
     .team-avatar {
-      display: block;
+      display: flex; align-items: center; gap: .85rem;
+      padding: .7rem .85rem;
       background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
-      border-radius: 12px; overflow: hidden; text-align: center;
+      border-radius: 12px; overflow: hidden; text-align: left;
       transition: border-color .2s, transform .2s, background .2s;
     }
     .team-avatar:hover, .team-avatar:focus-visible {
@@ -149,10 +150,11 @@
     .team-avatar.penny:hover, .team-avatar.penny:focus-visible { border-color: var(--penny); }
     .team-avatar.garry:hover, .team-avatar.garry:focus-visible { border-color: var(--garry); }
     .team-image {
-      display: block; width: 100%; aspect-ratio: 1.85 / 1; object-fit: cover;
-      object-position: center 55%; border-bottom: 1px solid rgba(255,255,255,.1);
+      display: block; width: 68px; height: 68px; flex: 0 0 68px;
+      aspect-ratio: 1; object-fit: cover; object-position: center;
+      border-radius: 9px; border: 1px solid rgba(255,255,255,.1);
     }
-    .team-copy { padding: .85rem 1rem 1rem; }
+    .team-copy { padding: 0; }
     .team-name { font-weight: 800; font-size: 1.05rem; color: var(--text); }
     .team-role { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
 
@@ -466,7 +468,7 @@
         <div class="team-copy"><div class="team-name">Penny</div><div class="team-role">Phone Receptionist · Learn more →</div></div>
       </a>
       <a class="team-avatar garry" href="/biztechs/garry/" aria-label="Learn more about Garry, the Follow-Up Closer">
-        <img class="team-image" src="/assets/biztech/garry-followup.webp" alt="Tablet showing organized customer follow-up beside a shirt and tie">
+        <img class="team-image" src="/assets/biztech/garry-sales-professional.webp" alt="Professional salesperson reviewing a customer follow-up on his phone and tablet">
         <div class="team-copy"><div class="team-name">Garry</div><div class="team-role">Follow-Up Closer · Learn more →</div></div>
       </a>
     </div>
