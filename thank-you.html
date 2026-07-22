@@ -68,15 +68,34 @@
     }
 
   </style>
+  <link rel="stylesheet" href="/site-header.css">
 </head>
 
 <body>
-  <nav>
-    <a class="nav-left" href="https://www.youros.app">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo">
-      <span>YOUR Operating System</span>
+  <nav class="yos-header" aria-label="Primary navigation">
+    <a class="yos-header__brand" href="/">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS">
+      <span>YourOS</span>
     </a>
-    <a class="nav-link" href="/">Home</a>
+    <button class="yos-header__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="yos-header__links" id="primary-navigation">
+      <div class="yos-header__dropdown">
+        <a href="/biztechs/">BizTechs ▾</a>
+        <div class="yos-header__dropdown-menu">
+          <a href="/biztechs/peter/">Peter — Website Developer</a>
+          <a href="/biztechs/penny/">Penny — Phone Receptionist</a>
+          <a href="/biztechs/garry/">Garry — Follow-Up Closer</a>
+          <a href="/custom-biztech/">Custom BizTechs</a>
+        </div>
+      </div>
+      <a href="/how-it-works/">How It Works</a>
+      <a href="/results/">Results</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/about/">About</a>
+      <a class="yos-header__cta" href="/hire-a-biztech/?source=nav">Hire a BizTech</a>
+    </div>
   </nav>
 
   <main>
@@ -107,6 +126,7 @@
       </div>
     </div>
   </footer>
+  <script src="/site-header.js"></script>
 </body>
 
 </html>

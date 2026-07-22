@@ -128,28 +128,32 @@
     "serviceType": ["AI Workflow Automation", "Custom App Development", "AppSheet Consulting", "Workflow Systems"]
   }
   </script>
+  <link rel="stylesheet" href="/site-header.css">
 </head>
 <body>
-
-  <nav>
-    <a class="nav-left" href="https://www.youros.app">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS Logo">
-      <span>YOUR Operating System</span>
+  <nav class="yos-header" aria-label="Primary navigation">
+    <a class="yos-header__brand" href="/">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS">
+      <span>YourOS</span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <div class="dropdown">
+    <button class="yos-header__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="yos-header__links" id="primary-navigation">
+      <div class="yos-header__dropdown">
         <a href="/biztechs/">BizTechs ▾</a>
-        <div class="dropdown-content">
-          <a href="/biztechs/peter/">Peter — Web Developer</a>
-          <a href="/biztechs/penny/">Penny — Receptionist</a>
-          <a href="/biztechs/friday/">Friday — Operations Assistant</a>
-          <a href="/biztechs/xavier/">Xavier — Marketing Strategist</a>
+        <div class="yos-header__dropdown-menu">
+          <a href="/biztechs/peter/">Peter — Website Developer</a>
+          <a href="/biztechs/penny/">Penny — Phone Receptionist</a>
+          <a href="/biztechs/garry/">Garry — Follow-Up Closer</a>
+          <a href="/custom-biztech/">Custom BizTechs</a>
         </div>
       </div>
-      <a href="https://www.youros.app/security-trust">Security &amp; Trust</a>
-      <a href="/blog/">Blog</a>
-      <a class="nav-cta-link" href="/Begin-Your-Revolution.html">Hire a BizTech</a>
+      <a href="/how-it-works/">How It Works</a>
+      <a href="/results/">Results</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/about/">About</a>
+      <a class="yos-header__cta" href="/hire-a-biztech/?source=nav">Hire a BizTech</a>
     </div>
   </nav>
 
@@ -249,5 +253,6 @@
   </footer>
   <a href="https://www.youros.app"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" class="favicon-footer"></a>
   <script>const t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');if(t&&l)t.addEventListener('click',()=>l.classList.toggle('open'));</script>
+  <script src="/site-header.js"></script>
 </body>
 </html>
