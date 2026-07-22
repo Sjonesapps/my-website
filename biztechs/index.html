@@ -68,26 +68,32 @@
     @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
     @media(max-width:640px){nav{padding:0 1rem}.hero{text-align:left;padding:4rem 1.25rem 3rem}.hero h1,.hero p{max-width:340px;margin-left:0;margin-right:0}.eyebrow{border-radius:8px}.cta-row{justify-content:flex-start;flex-direction:column;align-items:stretch}.cta,.cta-outline{width:100%;text-align:center}.footer-inner{grid-template-columns:1fr}}
   </style>
+  <link rel="stylesheet" href="/site-header.css">
 </head>
 <body>
-  <nav>
-    <a class="nav-left" href="/"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS"><span>YourOS</span></a>
-    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <div class="dropdown">
+  <nav class="yos-header" aria-label="Primary navigation">
+    <a class="yos-header__brand" href="/">
+      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS">
+      <span>YourOS</span>
+    </a>
+    <button class="yos-header__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="yos-header__links" id="primary-navigation">
+      <div class="yos-header__dropdown">
         <a href="/biztechs/">BizTechs ▾</a>
-        <div class="dropdown-content">
+        <div class="yos-header__dropdown-menu">
           <a href="/biztechs/peter/">Peter — Website Developer</a>
           <a href="/biztechs/penny/">Penny — Phone Receptionist</a>
           <a href="/biztechs/garry/">Garry — Follow-Up Closer</a>
           <a href="/custom-biztech/">Custom BizTechs</a>
         </div>
       </div>
-      <a href="/#how-it-works">How It Works</a>
-      <a href="/#results">Results</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/#about">About</a>
-      <a class="nav-cta-link" href="/hire-a-biztech/?source=biztechs-nav">Hire a BizTech</a>
+      <a href="/how-it-works/">How It Works</a>
+      <a href="/results/">Results</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/about/">About</a>
+      <a class="yos-header__cta" href="/hire-a-biztech/?source=nav">Hire a BizTech</a>
     </div>
   </nav>
 
@@ -182,5 +188,6 @@
     </div>
   </footer>
   <script>const toggle=document.querySelector('.nav-toggle');const links=document.querySelector('.nav-links');if(toggle&&links)toggle.addEventListener('click',()=>links.classList.toggle('open'));</script>
+  <script src="/site-header.js"></script>
 </body>
 </html>
