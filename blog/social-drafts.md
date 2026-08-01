@@ -2,7 +2,7 @@
 
 Status: Drafted for Spencer approval. Do not publish before the matching blog article is live.
 
-Each social post links back to its matching article. Each article links out to either Spencer’s Facebook profile or LinkedIn profile so the website and social post reference each other.
+Each social post links back to its matching article. Each article contains a literal `[Facebook URL]` or `[LinkedIn URL]` placeholder to replace once the matching social post has a live URL, so the website and social post can reference each other without inventing a link pre-publication.
 
 ---
 
@@ -120,9 +120,9 @@ Simple. Understandable. Operational today.
 
 Once I started thinking this way, I stopped seeing AI as software. I started seeing AI as a workforce.
 
-My goal isn’t to sell AI tools. My goal is to make hiring an AI employee easier than hiring a human.
+My goal isn’t to sell AI tools. My goal is to make putting an AI specialist to work easier than adopting another piece of software.
 
-No HR. No onboarding. Less training. Just email, text, or call them exactly the same way you already communicate every day with your team.
+No new dashboard to learn. No giant onboarding project. Less training. Just email, text, or call them exactly the same way you already communicate every day with your team.
 
 I shared the full framework here:
 https://www.youros.app/blog/ai-as-workforce-not-software/
@@ -147,9 +147,9 @@ Simple. Understandable. Operational today.
 
 Once I started thinking this way, I stopped seeing AI as software. I started seeing AI as a workforce.
 
-My goal isn’t to sell AI tools. My goal is to make hiring an AI employee easier than hiring a human.
+My goal isn’t to sell AI tools. My goal is to make putting an AI specialist to work easier than adopting another piece of software.
 
-No HR. No onboarding. Less training. Just email, text, or call them exactly the same way you already communicate every day with your team.
+No new dashboard to learn. No giant onboarding project. Less training. Just email, text, or call them exactly the same way you already communicate every day with your team.
 
 Marcus Sheridan, author of *They Ask, You Answer*, told me the framework is “something people can understand and relate to — and share with others” and that “it has legs.”
 
@@ -176,7 +176,7 @@ Someone has to answer the missed call. Someone has to follow up with the custome
 
 When that work falls back on a person, it competes with the work only that person can do.
 
-AI does not have to replace the relationship to create value. It can protect the time the relationship requires.
+AI creates value by protecting the time the relationship requires.
 
 The full post is here:
 https://www.youros.app/blog/ai-makes-human-interaction-more-valuable/
@@ -197,7 +197,7 @@ Someone has to answer the missed call. Someone has to follow up with the custome
 
 When that work falls back on a person, it competes with the work only that person can do.
 
-AI does not have to replace the relationship to create value. It can protect the time the relationship requires.
+AI creates value by protecting the time the relationship requires.
 
 I wrote more about why trust becomes more valuable—not less—in an AI world:
 https://www.youros.app/blog/ai-makes-human-interaction-more-valuable/
