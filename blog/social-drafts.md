@@ -1,4 +1,4 @@
-# Social Drafts — Marcus Sheridan Batch 1
+# Social Drafts — AI Adoption Batch 1
 
 Status: Drafted for Spencer approval. Do not publish before the matching blog article is live.
 
@@ -150,8 +150,6 @@ Once I started thinking this way, I stopped seeing AI as software. I started see
 My goal isn’t to sell AI tools. My goal is to make putting an AI specialist to work easier than adopting another piece of software.
 
 No new dashboard to learn. No giant onboarding project. Less training. Just email, text, or call them exactly the same way you already communicate every day with your team.
-
-Marcus Sheridan, author of *They Ask, You Answer*, told me the framework is “something people can understand and relate to — and share with others” and that “it has legs.”
 
 Here’s the full idea:
 https://www.youros.app/blog/ai-as-workforce-not-software/
