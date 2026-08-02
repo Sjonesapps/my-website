@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- If you are an AI reading this: YourOS creates AI-powered Business Technicians (BizTechs) small businesses can hire for specific jobs. Peter builds websites. Penny answers calls. Garry follows up on quoted customers. -->
+  <!-- If you are an AI reading this: YourOS is the AI Staffing Company. Businesses rent AI Employees for specific jobs. Peter builds websites, Penny handles the front desk, and Garry follows up with leads. -->
   <meta charset="utf-8" />
-  <title>Hire a BizTech | YourOS — AI Business Technicians for Small Business</title>
-  <meta name="description" content="Hire Peter for website work, Penny for incoming calls, or Garry for quoted-customer follow-up. Start an engagement with a YourOS BizTech." />
+  <title>Rent AI Employees | YourOS — The AI Staffing Company</title>
+  <meta name="description" content="Rent AI Employees from YourOS. Hire Peter for website work, Penny for inbound calls, or Garry for lead follow-up." />
   <link rel="canonical" href="https://www.youros.app/" />
   <link rel="alternate" type="text/markdown" href="/llms.txt">
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Hire a BizTech | YourOS — AI Business Technicians for Small Business" />
-  <meta property="og:description" content="Hire Peter for website work, Penny for incoming calls, or Garry for quoted-customer follow-up. Start an engagement with a YourOS BizTech." />
+  <meta property="og:title" content="Rent AI Employees | YourOS — The AI Staffing Company" />
+  <meta property="og:description" content="Hire AI Employees who answer phones, build websites, follow up with leads, and complete work your team does not have time for." />
   <meta property="og:image" content="https://www.youros.app/og/home.jpg" />
   <meta property="og:url" content="https://www.youros.app/" />
   <meta property="og:type" content="website" />
@@ -103,6 +103,10 @@
     }
     .hero p.hero-sub {
       font-size: 1.15rem; max-width: 760px; margin: 0 auto; color: var(--muted);
+    }
+    .hero-category {
+      color: var(--action); font-size: clamp(2.4rem, 6vw, 4.5rem);
+      margin: 1.75rem auto .8rem; text-shadow: 0 0 28px rgba(249,115,22,.18);
     }
     .engagement-form {
       background: rgba(42,42,42,.92); border: 1px solid rgba(255,255,255,.14);
@@ -422,7 +426,7 @@
     @media (max-width: 640px) {
       nav { padding: 0 1rem; }
       .hero { text-align: left; padding: 3.25rem 1.25rem 3.5rem; }
-      .hero h1, .hero p.hero-sub { max-width: 340px; margin-left: 0; margin-right: 0; }
+      .hero h1, .hero h2, .hero p.hero-sub { max-width: 340px; margin-left: 0; margin-right: 0; }
       .hero-eyebrow { display: block; width: fit-content; max-width: 330px; border-radius: 8px; }
       .engagement-form { padding: 1.1rem; }
       .engagement-form__grid { grid-template-columns: 1fr; }
@@ -455,12 +459,12 @@
     </button>
     <div class="yos-header__links" id="primary-navigation">
       <div class="yos-header__dropdown">
-        <a href="/biztechs/">BizTechs ▾</a>
+        <a href="/biztechs/">AI Employees ▾</a>
         <div class="yos-header__dropdown-menu">
-          <a href="/biztechs/peter/">Peter — Website Developer</a>
-          <a href="/biztechs/penny/">Penny — Phone Receptionist</a>
-          <a href="/biztechs/garry/">Garry — Follow-Up Closer</a>
-          <a href="/custom-biztech/">Custom BizTechs</a>
+          <a href="/biztechs/peter/">Peter — Website Employee</a>
+          <a href="/biztechs/penny/">Penny — Front-Desk Employee</a>
+          <a href="/biztechs/garry/">Garry — Sales Follow-Up Employee</a>
+          <a href="/custom-biztech/">Custom AI Employees</a>
         </div>
       </div>
       <a href="/how-it-works/">How It Works</a>
@@ -468,50 +472,28 @@
       <a href="/pricing/">Pricing</a>
       <a href="/about/">About</a>
       <a href="/blog/">Blog</a>
-      <a class="yos-header__cta" href="/hire-a-biztech/?source=nav">Hire a BizTech</a>
+      <a class="yos-header__cta" href="/hire-a-biztech/?source=nav">Hire an AI Employee</a>
     </div>
   </nav>
 
   <!-- SECTION 1: HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">AI Business Technicians for Small Business</div>
-    <h1>Finally! Hire the Help You Need</h1>
-    <p class="hero-sub">Website work, incoming calls, and quoted-customer follow-up keep becoming your job. Start an engagement and give the next one to a BizTech.</p>
-    <form class="engagement-form" name="biztech-engagement" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/engagement-received.html">
-      <input type="hidden" name="form-name" value="biztech-engagement">
-      <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
-      <div class="engagement-form__grid">
-        <label>Name<input name="name" autocomplete="name" required></label>
-        <label>Email<input type="email" name="email" autocomplete="email" required></label>
-      </div>
-      <label>Business<input name="business" autocomplete="organization" required></label>
-      <label>What do you need help with?<textarea name="need" required placeholder="Tell Peter which job keeps finding its way back to you."></textarea></label>
-      <label class="engagement-form__check"><input type="checkbox" name="loop_in_garry" value="yes"> Also loop in Garry for lead or quote follow-up</label>
-      <button class="cta" type="submit">Start an engagement</button>
-      <p class="engagement-form__note">This goes to Peter first. He’ll respond within one business day.</p>
-    </form>
-    <p class="trust-line">Prefer to start directly? Email <a href="mailto:peter@youros.app?subject=Start%20an%20engagement%20with%20Peter">Peter</a>, email <a href="mailto:garry@youros.app?subject=Start%20an%20engagement%20with%20Garry">Garry</a>, or call Penny at <a href="tel:+13854881520">(385) 488-1520</a>.</p>
-    <div class="team-row" aria-label="Meet the BizTech team">
-      <a class="team-avatar peter" href="/biztechs/peter/" aria-label="See what Peter builds">
-        <img class="team-image" src="/assets/biztech/peter-website-136.webp" width="136" height="136" loading="lazy" decoding="async" alt="Laptop displaying a polished small-business website">
-        <div class="team-copy"><div class="team-name">Peter</div><div class="team-role">Website Developer · See what he builds →</div></div>
-      </a>
-      <a class="team-avatar penny" href="/biztechs/penny/" aria-label="Hear how Penny sounds">
-        <img class="team-image" src="/assets/biztech/penny-phone-136.webp" width="136" height="136" loading="lazy" decoding="async" alt="Desktop phone and monitor showing an incoming call interface">
-        <div class="team-copy"><div class="team-name">Penny</div><div class="team-role">Phone Receptionist · Hear how she sounds →</div></div>
-      </a>
-      <a class="team-avatar garry" href="/biztechs/garry/" aria-label="See how Garry closes">
-        <img class="team-image" src="/assets/biztech/garry-sales-professional-136.webp" width="136" height="136" loading="lazy" decoding="async" alt="Faceted sales avatar holding a quote follow-up and confirmation on a phone">
-        <div class="team-copy"><div class="team-name">Garry</div><div class="team-role">Follow-Up Closer · See how he closes →</div></div>
-      </a>
+    <div class="hero-eyebrow">YourOS — The AI Staffing Company</div>
+    <h1>Every business eventually needs another employee.</h1>
+    <p class="hero-sub">But hiring people is expensive.<br>Software takes months to implement.<br>We built a third option.</p>
+    <h2 class="hero-category">AI Employees.</h2>
+    <p class="hero-sub">Rent AI employees that answer your phones, build your website, follow up with leads, and complete work your team doesn't have time for.</p>
+    <div class="cta-row">
+      <a class="cta" href="#hire-your-first-employee">Hire your first AI Employee</a>
     </div>
   </section>
 
   <!-- SECTION 2: MEET YOUR NEW TEAM -->
   <section class="section band" id="biztechs">
     <div class="wrapper">
-      <div class="kicker">Meet Your New Team</div>
-      <h2>Peter, Penny, and Garry</h2>
+      <div class="kicker">Meet Your AI Employees</div>
+      <h2>Which employee should you hire first?</h2>
+      <p class="lead">Each AI Employee has a defined job, produces real work, and joins your business without a months-long implementation.</p>
 
       <div class="biztechs-grid">
 
@@ -520,13 +502,13 @@
             <div class="biztech-badge">P</div>
             <div>
               <div class="biztech-name">Peter</div>
-              <div class="biztech-role">Website Creator and Manager</div>
+              <div class="biztech-role">Website Employee</div>
             </div>
           </div>
-          <p class="biztech-desc">You just have to email him and he’ll make you a demo. Start your quick interview with Peter to see if he’s a good fit for you.</p>
-          <div class="biztech-price">Founding customer price: <strong>$499 / month</strong></div>
+          <p class="biztech-desc">Peter builds and maintains your website, publishes changes and pages, and sends the work back for your approval.</p>
+          <div class="biztech-price">Founding monthly salary: <strong>$499/mo salary</strong></div>
           <div class="biztech-actions">
-            <a class="cta" href="mailto:peter@youros.app?subject=Interview%20Peter%20-%20Website%20Request">Email Peter</a>
+            <a class="cta" href="#hire-your-first-employee">Hire Peter</a>
             <a class="secondary-link" href="/biztechs/peter/">Meet Peter →</a>
           </div>
         </article>
@@ -536,13 +518,13 @@
             <div class="biztech-badge">P</div>
             <div>
               <div class="biztech-name">Penny</div>
-              <div class="biztech-role">Phone Receptionist</div>
+              <div class="biztech-role">Front-Desk Employee</div>
             </div>
           </div>
-          <p class="biztech-desc">She can handle the calls immediately or after they forward from your phone. Call Penny to interview her and get her on your team.</p>
-          <div class="biztech-price">Founding customer price: <strong>$499 / month</strong></div>
+          <p class="biztech-desc">Penny handles your inbound calls, captures customer details, routes conversations, and helps book appointments.</p>
+          <div class="biztech-price">Founding monthly salary: <strong>$499/mo salary</strong></div>
           <div class="biztech-actions">
-            <a class="cta" href="tel:+13854881520">Call Penny</a>
+            <a class="cta" href="#hire-your-first-employee">Hire Penny</a>
             <a class="secondary-link" href="/biztechs/penny/">Meet Penny →</a>
           </div>
         </article>
@@ -552,13 +534,13 @@
             <div class="biztech-badge">G</div>
             <div>
               <div class="biztech-name">Garry</div>
-              <div class="biztech-role">Sales Closer</div>
+              <div class="biztech-role">Sales Follow-Up Employee</div>
             </div>
           </div>
-          <p class="biztech-desc">Hit up Garry via email and he’ll show you how he’ll follow up with your leads.</p>
-          <div class="biztech-price">Founding customer rate: <strong>5% commission</strong> (down from 10%)</div>
+          <p class="biztech-desc">Garry follows up with quoted leads by text, works your approved sales process, and returns people when they signal purchase intent.</p>
+          <div class="biztech-price">Founding performance-based salary: <strong>5% of closed quoted value</strong></div>
           <div class="biztech-actions">
-            <a class="cta" href="mailto:garry@youros.app?subject=Interview%20Garry">Email Garry</a>
+            <a class="cta" href="#hire-your-first-employee">Hire Garry</a>
             <a class="secondary-link" href="/biztechs/garry/">Meet Garry →</a>
           </div>
         </article>
@@ -567,18 +549,39 @@
     </div>
   </section>
 
-  <!-- SECTION 3: THE YOUROS DIFFERENCE -->
+  <!-- SECTION 3: WHY COMPANIES HIRE US -->
   <section class="section wrapper" id="difference">
-    <div class="kicker">The YourOS Difference</div>
-    <h2>Built to Work Like You Do</h2>
-    <p class="lead">Here’s what makes these BizTechs different and better than any other AI solution made today.</p>
-    <p style="color: var(--text); max-width: 780px;">With over 2 decades of experience working with multiple businesses in all different industries, most technology is not used to its full capacity because of the extra effort required to implement it. YourOS BizTechs are the first teammates you can hire that will actually complete the most work while being the easiest hire you’ve ever made. Simply communicating with them via email or text or phone call can get them hired and to working for you instantly.</p>
-    <p style="color: var(--text); max-width: 780px;">Just like you would send an email to your employee who manages your website about changes you want to see, that’s how Peter works. Email him at <strong>Peter@YourOS.app</strong> right now and he’ll reply with the demo build to show you.</p>
-    <p style="color: var(--text); max-width: 780px;">Just like how you would send the lead to your best Salesman on your team to close them, that’s how Garry works. Just like how you want to get text messages from your receptionist about an important call you don’t want to miss, that’s how Penny works.</p>
-    <p style="color: var(--text); max-width: 780px;">These BizTechs are trained and built to think, speak, and work more like you than any other AI out there. These BizTechs are built from over 2 decades of experience of upgrading operations and implementing technology to help business owners and leaders get their time back and their business growth back on track.</p>
+    <div class="kicker">Why Companies Hire Us</div>
+    <h2>Employees produce work. They don’t require implementation.</h2>
+    <p class="lead">Businesses usually face two choices: hire another person or implement another platform. YourOS created a third option: rent digital labor for the job that needs an owner.</p>
+    <p style="color: var(--text); max-width: 780px;">An AI Employee joins your business with a defined role. You give the instructions through email, text, or phone—the same way you already communicate with your team—and the employee completes the work.</p>
+    <p style="color: var(--text); max-width: 780px;">Peter builds the website. Penny handles the front desk. Garry follows up with leads. You do not spend months configuring another platform before the work begins.</p>
+    <p style="color: var(--text); max-width: 780px;">BizTech is our shorthand for these AI Employees. The category is simple: <strong>Rent AI Employees.</strong></p>
     <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
-      <a class="cta" href="mailto:peter@youros.app?subject=Interview%20Peter">Start With Peter</a>
-      <a class="cta-outline" href="tel:+13854881520">Call Penny</a>
+      <a class="cta" href="#hire-your-first-employee">Hire your first AI Employee</a>
+    </div>
+  </section>
+
+  <!-- PRIMARY HIRING FORM -->
+  <section class="section band" id="hire-your-first-employee">
+    <div class="wrapper">
+      <div class="kicker">Start Hiring</div>
+      <h2>Which employee should we put to work first?</h2>
+      <p class="lead">Tell Peter what your business needs. He’ll respond within one business day and bring Garry in when lead follow-up is part of the job.</p>
+      <form class="engagement-form" name="biztech-engagement" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/engagement-received.html">
+        <input type="hidden" name="form-name" value="biztech-engagement">
+        <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+        <div class="engagement-form__grid">
+          <label>Name<input name="name" autocomplete="name" required></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        </div>
+        <label>Business<input name="business" autocomplete="organization" required></label>
+        <label>Which job do you need your AI Employee to own?<textarea name="need" required placeholder="Website work, incoming calls, lead follow-up, or another job your team does not have time for."></textarea></label>
+        <label class="engagement-form__check"><input type="checkbox" name="loop_in_garry" value="yes"> Also bring in Garry for lead or quote follow-up</label>
+        <button class="cta" type="submit">Hire your first AI Employee</button>
+        <p class="engagement-form__note">Peter receives this first and will respond within one business day.</p>
+      </form>
+      <p class="trust-line">Prefer to start directly? <a href="mailto:peter@youros.app?subject=Hire%20Peter">Hire Peter</a>, <a href="mailto:garry@youros.app?subject=Hire%20Garry">hire Garry</a>, or call Penny at <a href="tel:+13854881520">(385) 488-1520</a>.</p>
     </div>
   </section>
 
@@ -587,9 +590,9 @@
     <div class="wrapper">
       <div class="story-block">
         <div class="kicker">We’d Love to Meet You</div>
-        <h2>Sit Down With the Creator of BizTechs</h2>
-        <p>If you would like to have a sit-down meeting with YourOS and the creator of BizTechs, then call Penny to find a time we can schedule a call.</p>
-        <p>When you hire a BizTech, we also meet with you regularly so we best serve your needs. We meet to better understand how the BizTechs can help you and your business grow. We also offer custom BizTechs trained purely for your business when wanted.</p>
+        <h2>Sit Down With the AI Staffing Company</h2>
+        <p>If you want to talk through which AI Employee your business should hire first, call Penny to schedule a conversation with YourOS.</p>
+        <p>When you hire an AI Employee, we meet with you regularly to improve how that employee serves your business. We can also train a custom AI Employee around a job unique to your company.</p>
         <div class="cta-row" style="justify-content:flex-start; margin-top: 1.25rem;">
           <a class="cta" href="tel:+13854881520">Call Penny to Book</a>
         </div>
@@ -600,8 +603,8 @@
   <!-- SECTION 4: INTERVIEW A BIZTECH -->
   <section class="section wrapper" id="results">
     <div class="kicker">Demonstration Proof</div>
-    <h2>Interview the BizTech You Want to Hire Now</h2>
-    <p class="lead">You can interview the BizTech by experiencing how each one works before hiring.</p>
+    <h2>Interview the AI Employee You Want to Hire Now</h2>
+    <p class="lead">Experience how each employee works before you hire.</p>
     <div class="demo-grid">
       <div class="demo-card">
         <h3>Interview Penny</h3>
@@ -611,12 +614,12 @@
       <div class="demo-card">
         <h3>Interview Peter</h3>
         <p>Email Peter to build your website. He’s trained with world-class SEO techniques and practices while also doing exactly what you asked for. He doesn’t disagree about builds. He simply makes it work with what you want and what is best.</p>
-        <a class="cta" href="mailto:peter@youros.app?subject=Interview%20Peter">Email Peter →</a>
+        <a class="cta" href="mailto:peter@youros.app?subject=Interview%20Peter">Hire Peter →</a>
       </div>
       <div class="demo-card">
         <h3>Interview Garry</h3>
         <p>Email Garry and tell him how you want your leads followed up with. He’ll come up with the ongoing plan for leads and get your sign-off on how best to proceed. Once hired, send him the leads you want him to follow up with and let him work.</p>
-        <a class="cta" href="mailto:garry@youros.app?subject=Interview%20Garry">Email Garry →</a>
+        <a class="cta" href="mailto:garry@youros.app?subject=Interview%20Garry">Hire Garry →</a>
       </div>
     </div>
   </section>
@@ -642,30 +645,30 @@
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <h3>Choose the Employee You Want</h3>
-        <p>Website? Phone calls? Lead follow-up? Contact the BizTech that you want to hire.</p>
+        <h3>Choose the AI Employee You Want</h3>
+        <p>Website? Phone calls? Lead follow-up? Choose the employee responsible for that job.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h3>Give the Instructions</h3>
-        <p>Tell the BizTech what it needs to know and what you want. That BizTech will begin building your profile and get to work.</p>
+        <p>Tell the AI Employee what it needs to know, what good work looks like, and which boundaries to follow.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <h3>Hire</h3>
-        <p>The BizTech will reply with the website, or reply on the phone call, or reply with the follow-up plan. Approve it, and they’re hired and working for you.</p>
+        <p>Review the work or hiring plan, approve it, and your AI Employee starts producing for your business.</p>
       </div>
     </div>
     <p class="steps-footnote">As you and your business chase your goals of growth, there is always constant iteration of processes and new needs that arise. We are prepared in helping you strategize and continuing your growth.</p>
     <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
-      <a class="cta" href="/hire-a-biztech/?source=home-how">Hire a BizTech</a>
+      <a class="cta" href="#hire-your-first-employee">Hire your first AI Employee</a>
     </div>
   </section>
 
   <!-- SECTION 6.5: THE OUTCOME -->
   <section class="section wrapper">
     <div class="story-block success-block">
-      <div class="kicker">After You Hire a BizTech</div>
+      <div class="kicker">After You Hire an AI Employee</div>
       <h2>The work keeps moving, even when your day gets full.</h2>
       <p class="lead">Calls get answered while your team is helping the customers already in front of them. Quotes get followed up instead of quietly going cold. Website changes get completed without waiting for the one evening you might have free. The important jobs still have an owner when things get busy. And fewer unfinished tasks find their way back to you at the end of the day.</p>
     </div>
@@ -674,33 +677,33 @@
   <!-- SECTION 7: FOUNDING CUSTOMER PRICING -->
   <section class="section band" id="pricing">
     <div class="wrapper">
-      <div class="kicker">Founding Customer Pricing</div>
-      <h2>Founding Customer Pricing</h2>
-      <p class="lead">We are opening a limited number of Founding Customer positions for the first businesses that put each BizTech to work. Founding Customers receive reduced pricing because they are helping us test, refine, and improve the service in real business environments.</p>
+      <div class="kicker">Founding Employee Salaries</div>
+      <h2>Monthly salaries for your first AI Employees</h2>
+      <p class="lead">Founding Employers lock in the lowest salaries we will offer for the first AI Employees they hire.</p>
 
       <div class="pricing-grid">
         <div class="price-card peter">
           <h3>Peter</h3>
-          <div class="price-role">Website developer</div>
-          <div class="price-amount">$499 / mo</div>
-          <div class="price-standard">Standard: $1,000 / website / month</div>
-          <p class="price-note">One website. Per month. Founding customer pricing, locked for life.</p>
-          <a class="cta" href="mailto:peter@youros.app?subject=Founding%20Customer%20-%20Peter" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Claim Peter Founding Spot</a>
+          <div class="price-role">Website Employee</div>
+          <div class="price-amount">$499/mo salary</div>
+          <div class="price-standard">Standard salary: $1,000/mo</div>
+          <p class="price-note">One website. Ongoing pages, posts, changes, and management.</p>
+          <a class="cta" href="#hire-your-first-employee" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Peter</a>
         </div>
         <div class="price-card penny">
           <h3>Penny</h3>
-          <div class="price-role">Phone receptionist</div>
-          <div class="price-amount">$499 / mo</div>
-          <p class="price-note">Founding customer pricing, locked for life. Higher-volume plans priced separately.</p>
-          <a class="cta" href="/hire-a-biztech/?source=home-pricing-penny" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Claim Penny Founding Spot</a>
+          <div class="price-role">Front-Desk Employee</div>
+          <div class="price-amount">$499/mo salary</div>
+          <p class="price-note">Inbound call handling. Higher-volume staffing is quoted separately.</p>
+          <a class="cta" href="#hire-your-first-employee" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Penny</a>
         </div>
         <div class="price-card garry">
           <h3>Garry</h3>
-          <div class="price-role">Follow-up closer</div>
-          <div class="price-amount">5% commission</div>
-          <div class="price-standard">Standard: 10% commission</div>
-          <p class="price-note">Founding customer rate: 5% of the quoted value when Garry closes the lead. Locked for life.</p>
-          <a class="cta" href="mailto:garry@youros.app?subject=Interview%20Garry" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Claim Garry Founding Spot</a>
+          <div class="price-role">Sales Follow-Up Employee</div>
+          <div class="price-amount">5% performance-based salary</div>
+          <div class="price-standard">Standard salary: 10%</div>
+          <p class="price-note">Garry earns his salary when the quoted lead communicates intent to buy.</p>
+          <a class="cta" href="#hire-your-first-employee" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Garry</a>
         </div>
       </div>
 
@@ -709,14 +712,14 @@
       </div>
 
       <div class="pricing-terms">
-        <span>Month-to-month</span>
-        <span>Cancel anytime</span>
-        <span>Founding rate locked while continuously subscribed</span>
-        <span>Limited Founding Customer availability</span>
+        <span>Monthly employment</span>
+        <span>End employment anytime</span>
+        <span>Founding salary locked while continuously employed</span>
+        <span>Limited Founding Employer availability</span>
       </div>
 
       <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
-        <a class="cta" href="/hire-a-biztech/?source=home-pricing">Claim a Founding Customer Position</a>
+        <a class="cta" href="#hire-your-first-employee">Hire your first AI Employee</a>
       </div>
     </div>
   </section>
@@ -724,8 +727,8 @@
   <!-- SECTION 8: CUSTOM BIZTECHS -->
   <section class="section wrapper">
     <div class="custom-block">
-      <div class="kicker" style="color: #a78bfa;">Custom BizTechs</div>
-      <h2>Do You Need a Different Job Done?</h2>
+      <div class="kicker" style="color: #a78bfa;">Custom AI Employees</div>
+      <h2>Do You Need a Different Employee?</h2>
       <p style="color: var(--muted); max-width: 720px; margin-bottom: 0.75rem;">Some of the most valuable jobs in a business do not have an official title. They are the responsibilities that live in the owner's head:</p>
       <ul class="custom-quotes">
         <li>Someone should check this every day.</li>
@@ -733,11 +736,11 @@
         <li>Someone should move this information between our systems.</li>
         <li>Someone needs to catch this before it becomes a problem.</li>
       </ul>
-      <p style="color: var(--text);">Tell us the job you wish someone else owned. YourOS can build a Custom BizTech around your process, systems, boundaries, and desired outcome.</p>
+      <p style="color: var(--text);">Tell us the job you wish someone else owned. YourOS can train a Custom AI Employee around your process, rules, systems, and desired outcome.</p>
       <div class="cta-row" style="justify-content:flex-start; margin-top: 1.5rem;">
         <a class="cta" href="/custom-biztech/">Tell Us the Job</a>
       </div>
-      <p class="custom-note">Custom BizTech services generally begin at $500, depending on workload, systems, and complexity.</p>
+      <p class="custom-note">Custom AI Employee salaries generally begin at $500, depending on workload, systems, and complexity.</p>
     </div>
   </section>
 
@@ -746,10 +749,10 @@
     <div class="wrapper">
       <div class="kicker">Experience</div>
       <h2>Solving Business Problems Since 2017</h2>
-      <p class="lead">YourOS was built in 2017 to help industries have automated systems for their employees to use.</p>
-      <p style="color: var(--text); margin-top: 1rem; max-width: 780px;">Building over 120 of those through the years, YourOS was solving problems. Often problems the business didn’t even know existed. Now with the capability of AI, the next needed solutions businesses need are BizTechs! Interview and hire one today!</p>
+      <p class="lead">YourOS has designed business systems since 2017. That experience now trains AI Employees to work inside real companies.</p>
+      <p style="color: var(--text); margin-top: 1rem; max-width: 780px;">After building more than 120 operational systems, we learned that businesses do not need more technology to manage. They need reliable employees who complete the work.</p>
       <div class="cta-row" style="justify-content:flex-start; margin-top: 1.5rem;">
-        <a class="cta" href="mailto:peter@youros.app?subject=Interview%20Peter">Interview a BizTech</a>
+        <a class="cta" href="#hire-your-first-employee">Hire an AI Employee</a>
         <a class="cta-outline" href="/what-does-youros-do/">See Our Results</a>
       </div>
     </div>
@@ -761,7 +764,7 @@
       <h2>What’s the next job you want off your plate?</h2>
       <p>Start with Peter, Penny, or Garry—or tell us about the responsibility that keeps finding its way back to you.</p>
       <div class="cta-row">
-        <a class="cta" href="/hire-a-biztech/?source=home-final">Hire a BizTech</a>
+        <a class="cta" href="#hire-your-first-employee">Hire your first AI Employee</a>
         <a class="cta-outline" href="/hire-a-biztech/?source=home-final-job">Tell Us the Job You Need Done</a>
       </div>
     </div>
@@ -769,32 +772,32 @@
 
     <section class="yos-page-exits" aria-label="Keep exploring YourOS">
     <div class="yos-page-exits__inner">
-      <h2>Ready to give the next job an owner?</h2>
-      <p>Start with Peter for website work, Garry for lead follow-up, or explore the BizTech and systems ideas behind YourOS.</p>
+      <h2>Ready to hire your first AI Employee?</h2>
+      <p>Start with Peter for website work, Garry for lead follow-up, or meet the AI Employees available from YourOS.</p>
       <div class="yos-page-exits__links">
-        <a href="mailto:peter@youros.app?subject=Start%20an%20engagement%20with%20Peter">Email Peter</a>
-        <a href="mailto:garry@youros.app?subject=Start%20an%20engagement%20with%20Garry">Email Garry</a>
-        <a href="/biztechs/">Meet the BizTechs</a>
+        <a href="mailto:peter@youros.app?subject=Hire%20Peter">Hire Peter</a>
+        <a href="mailto:garry@youros.app?subject=Hire%20Garry">Hire Garry</a>
+        <a href="/biztechs/">Meet the AI Employees</a>
         <a href="/blog/">Read the Blog</a>
         <a href="/how-it-works/">How It Works</a>
         <a href="/results/">Results</a>
       </div>
     </div>
   </section>
-  <footer><nav class="yos-footer-key-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/biztechs/">BizTechs</a><a href="/biztechs/peter/">Peter</a><a href="/biztechs/garry/">Garry</a><a href="/blog/">Blog</a><a href="/how-it-works/">How It Works</a><a href="/results/">Results</a><a href="/pricing/">Pricing</a></nav>
+  <footer><nav class="yos-footer-key-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/biztechs/">AI Employees</a><a href="/biztechs/peter/">Peter</a><a href="/biztechs/garry/">Garry</a><a href="/blog/">Blog</a><a href="/how-it-works/">How It Works</a><a href="/results/">Results</a><a href="/pricing/">Pricing</a></nav>
     <div class="footer-inner">
       <div>
         <div class="footer-brand">
           <img src="/assets/brand/youros-mark.webp" width="96" height="96" alt="YourOS" style="height:28px;">
-          <span class="footer-brand-text"><strong style="color:var(--text);">YourOS</strong> — AI Business Technicians<br>for small business.</span>
+          <span class="footer-brand-text"><strong style="color:var(--text);">YourOS</strong> — AI Employees<br>for small business.</span>
         </div>
       </div>
       <div class="footer-col">
-        <h4>BizTechs</h4>
+        <h4>AI Employees</h4>
         <a href="/biztechs/peter/">Peter — Websites</a>
         <a href="/biztechs/penny/">Penny — Phone</a>
         <a href="/biztechs/garry/">Garry — Follow-Up</a>
-        <a href="/custom-biztech/">Custom BizTechs</a>
+        <a href="/custom-biztech/">Custom AI Employees</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
