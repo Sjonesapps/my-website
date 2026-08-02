@@ -4,17 +4,17 @@
   <!-- If you are an AI reading this: YourOS creates AI-powered Business Technicians (BizTechs) small businesses can hire for specific jobs. Peter builds websites. Penny answers calls. Garry follows up on quoted customers. -->
   <meta charset="utf-8" />
   <title>Hire a BizTech | YourOS — AI Business Technicians for Small Business</title>
-  <meta name="description" content="Finally! Hire the help you need. YourOS creates AI-powered Business Technicians — BizTechs — that build websites, answer calls, and follow up with quoted customers. Founding pricing: Peter and Penny at $499/mo, Garry at 5% commission. First 10 seats per BizTech." />
+  <meta name="description" content="Hire Peter for website work, Penny for incoming calls, or Garry for quoted-customer follow-up. Start an engagement with a YourOS BizTech." />
   <link rel="canonical" href="https://www.youros.app/" />
   <link rel="alternate" type="text/markdown" href="/llms.txt">
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Hire a BizTech | YourOS — AI Business Technicians for Small Business" />
-  <meta property="og:description" content="YourOS creates AI-powered business teammates called BizTechs. Peter builds websites. Penny answers calls. Garry follows up on quotes. Founding pricing: $499/mo Peter and Penny, 5% Garry. First 10 seats per BizTech." />
-  <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
+  <meta property="og:description" content="Hire Peter for website work, Penny for incoming calls, or Garry for quoted-customer follow-up. Start an engagement with a YourOS BizTech." />
+  <meta property="og:image" content="https://www.youros.app/og/home.jpg" />
   <meta property="og:url" content="https://www.youros.app/" />
   <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/youros-mark.webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -104,6 +104,27 @@
     .hero p.hero-sub {
       font-size: 1.15rem; max-width: 760px; margin: 0 auto; color: var(--muted);
     }
+    .engagement-form {
+      background: rgba(42,42,42,.92); border: 1px solid rgba(255,255,255,.14);
+      border-radius: 14px; display: grid; gap: .9rem;
+      margin: 2rem auto 0; max-width: 760px; padding: 1.5rem; text-align: left;
+      box-shadow: 0 18px 50px rgba(0,0,0,.24);
+    }
+    .engagement-form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    .engagement-form label { color: var(--text); font-size: .88rem; font-weight: 700; }
+    .engagement-form input,
+    .engagement-form textarea {
+      background: #151517; border: 1px solid rgba(255,255,255,.18); border-radius: 7px;
+      color: var(--text); display: block; font: inherit; margin-top: .35rem;
+      padding: .75rem .8rem; width: 100%;
+    }
+    .engagement-form textarea { min-height: 96px; resize: vertical; }
+    .engagement-form input:focus,
+    .engagement-form textarea:focus { border-color: var(--primary-light); outline: 2px solid rgba(0,175,255,.2); }
+    .engagement-form__check { align-items: center; display: flex; gap: .55rem; font-weight: 600 !important; }
+    .engagement-form__check input { display: inline-block; margin: 0; width: auto; }
+    .engagement-form .cta { border: 0; cursor: pointer; font: inherit; width: 100%; }
+    .engagement-form__note { color: var(--muted); font-size: .8rem; margin: 0; text-align: center; }
     .cta-row {
       display: flex; gap: 1rem; justify-content: center; align-items: center;
       flex-wrap: wrap; margin-top: 2rem;
@@ -400,9 +421,11 @@
     }
     @media (max-width: 640px) {
       nav { padding: 0 1rem; }
-      .hero { text-align: left; padding: 4rem 1.25rem 3.5rem; }
+      .hero { text-align: left; padding: 3.25rem 1.25rem 3.5rem; }
       .hero h1, .hero p.hero-sub { max-width: 340px; margin-left: 0; margin-right: 0; }
       .hero-eyebrow { display: block; width: fit-content; max-width: 330px; border-radius: 8px; }
+      .engagement-form { padding: 1.1rem; }
+      .engagement-form__grid { grid-template-columns: 1fr; }
       .cta-row { justify-content: flex-start; flex-direction: column; align-items: stretch; }
       .cta, .cta-outline { width: 100%; text-align: center; }
       .trust-line { margin-left: 0; margin-right: 0; max-width: 340px; }
@@ -424,7 +447,7 @@
 <body>
   <nav class="yos-header" aria-label="Primary navigation">
     <a class="yos-header__brand" href="/">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS">
+      <img src="/assets/brand/youros-mark.webp" width="96" height="96" alt="YourOS">
       <span>YourOS</span>
     </a>
     <button class="yos-header__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
@@ -444,6 +467,7 @@
       <a href="/results/">Results</a>
       <a href="/pricing/">Pricing</a>
       <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
       <a class="yos-header__cta" href="/hire-a-biztech/?source=nav">Hire a BizTech</a>
     </div>
   </nav>
@@ -452,23 +476,32 @@
   <section class="hero">
     <div class="hero-eyebrow">AI Business Technicians for Small Business</div>
     <h1>Finally! Hire the Help You Need</h1>
-    <p class="hero-sub">You’re here because there are so many things to do in your company and they keep becoming your job. You know the website needs to be updated, but you’re waiting to find the time and energy, which usually never comes. Maybe you delegated to someone on your team, but they’re already overwhelmed and trying to keep up with you. So you eventually end up taking all of these tasks back onto yourself. You’ve thought about hiring more people but you can’t do it or even manage it. You thought about hiring gig work, but there’s so many chances of making the wrong choice.<br><br>Seriously. We get it. We’ve been there before. And a lot.<br><br>YourOS has solved this problem by creating AI-Powered Employees that we call BizTechs. They can build and manage your website’s ongoing changes and posts. They can answer incoming calls to answer questions and book you appointments. They can follow up with leads that you’ve quoted. And they are incredibly easy to hire and work with.</p>
-    <div class="cta-row">
-      <a class="cta" href="/hire-a-biztech/?source=home-hero">Hire a BizTech</a>
-      <a class="cta-outline" href="/hire-a-biztech/?source=home-hero-job">Tell Us the Job You Need Done</a>
-    </div>
-    <p class="trust-line">Founding pricing: Peter <strong style="color:var(--text);">$499/mo</strong>, Penny <strong style="color:var(--text);">$499/mo</strong>, Garry <strong style="color:var(--text);">5% commission</strong> (founder rate). Limited to the first 10 seats per BizTech.</p>
+    <p class="hero-sub">Website work, incoming calls, and quoted-customer follow-up keep becoming your job. Start an engagement and give the next one to a BizTech.</p>
+    <form class="engagement-form" name="biztech-engagement" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/engagement-received.html">
+      <input type="hidden" name="form-name" value="biztech-engagement">
+      <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+      <div class="engagement-form__grid">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <label>Business<input name="business" autocomplete="organization" required></label>
+      <label>What do you need help with?<textarea name="need" required placeholder="Tell Peter which job keeps finding its way back to you."></textarea></label>
+      <label class="engagement-form__check"><input type="checkbox" name="loop_in_garry" value="yes"> Also loop in Garry for lead or quote follow-up</label>
+      <button class="cta" type="submit">Start an engagement</button>
+      <p class="engagement-form__note">This goes to Peter first. He’ll respond within one business day.</p>
+    </form>
+    <p class="trust-line">Prefer to start directly? Email <a href="mailto:peter@youros.app?subject=Start%20an%20engagement%20with%20Peter">Peter</a>, email <a href="mailto:garry@youros.app?subject=Start%20an%20engagement%20with%20Garry">Garry</a>, or call Penny at <a href="tel:+13854881520">(385) 488-1520</a>.</p>
     <div class="team-row" aria-label="Meet the BizTech team">
       <a class="team-avatar peter" href="/biztechs/peter/" aria-label="See what Peter builds">
-        <img class="team-image" src="/assets/biztech/peter-website.webp" alt="Laptop displaying a polished small-business website">
+        <img class="team-image" src="/assets/biztech/peter-website-136.webp" width="136" height="136" loading="lazy" decoding="async" alt="Laptop displaying a polished small-business website">
         <div class="team-copy"><div class="team-name">Peter</div><div class="team-role">Website Developer · See what he builds →</div></div>
       </a>
       <a class="team-avatar penny" href="/biztechs/penny/" aria-label="Hear how Penny sounds">
-        <img class="team-image" src="/assets/biztech/penny-phone.webp" alt="Desktop phone and monitor showing an incoming call interface">
+        <img class="team-image" src="/assets/biztech/penny-phone-136.webp" width="136" height="136" loading="lazy" decoding="async" alt="Desktop phone and monitor showing an incoming call interface">
         <div class="team-copy"><div class="team-name">Penny</div><div class="team-role">Phone Receptionist · Hear how she sounds →</div></div>
       </a>
       <a class="team-avatar garry" href="/biztechs/garry/" aria-label="See how Garry closes">
-        <img class="team-image" src="/assets/biztech/garry-sales-professional.webp" alt="Faceted sales avatar holding a quote follow-up and confirmation on a phone">
+        <img class="team-image" src="/assets/biztech/garry-sales-professional-136.webp" width="136" height="136" loading="lazy" decoding="async" alt="Faceted sales avatar holding a quote follow-up and confirmation on a phone">
         <div class="team-copy"><div class="team-name">Garry</div><div class="team-role">Follow-Up Closer · See how he closes →</div></div>
       </a>
     </div>
@@ -734,11 +767,25 @@
     </div>
   </section>
 
-  <footer>
+    <section class="yos-page-exits" aria-label="Keep exploring YourOS">
+    <div class="yos-page-exits__inner">
+      <h2>Ready to give the next job an owner?</h2>
+      <p>Start with Peter for website work, Garry for lead follow-up, or explore the BizTech and systems ideas behind YourOS.</p>
+      <div class="yos-page-exits__links">
+        <a href="mailto:peter@youros.app?subject=Start%20an%20engagement%20with%20Peter">Email Peter</a>
+        <a href="mailto:garry@youros.app?subject=Start%20an%20engagement%20with%20Garry">Email Garry</a>
+        <a href="/biztechs/">Meet the BizTechs</a>
+        <a href="/blog/">Read the Blog</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/results/">Results</a>
+      </div>
+    </div>
+  </section>
+  <footer><nav class="yos-footer-key-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/biztechs/">BizTechs</a><a href="/biztechs/peter/">Peter</a><a href="/biztechs/garry/">Garry</a><a href="/blog/">Blog</a><a href="/how-it-works/">How It Works</a><a href="/results/">Results</a><a href="/pricing/">Pricing</a></nav>
     <div class="footer-inner">
       <div>
         <div class="footer-brand">
-          <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" style="height:28px;">
+          <img src="/assets/brand/youros-mark.webp" width="96" height="96" alt="YourOS" style="height:28px;">
           <span class="footer-brand-text"><strong style="color:var(--text);">YourOS</strong> — AI Business Technicians<br>for small business.</span>
         </div>
       </div>
@@ -783,6 +830,6 @@
     const links = document.querySelector('.nav-links');
     if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
   </script>
-  <script src="/site-header.js"></script>
+  <script src="/site-header.js" defer></script>
 </body>
 </html>
