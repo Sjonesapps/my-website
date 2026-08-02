@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Most businesses have a growth leak they haven't found yet. | YourOS Blog</title>
-  <meta name="description" content="Practical ideas for small-business owners about AI adoption, workflow systems, growth leaks, and giving important work a reliable owner." />
+  <title>Field Notes From The AI Staffing Company | YourOS Blog</title>
+  <meta name="description" content="How small businesses hire AI Employees, use digital labor, compare hiring with building, and make the economics work." />
   <link rel="canonical" href="https://www.youros.app/blog/" />
   <link rel="alternate" type="text/markdown" href="/llms.txt">
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Most businesses have a growth leak they haven&#x27;t found yet. | YourOS Blog" />
-  <meta property="og:description" content="Practical ideas for small-business owners about AI adoption, workflow systems, growth leaks, and giving important work a reliable owner." />
+  <meta property="og:title" content="Field Notes From The AI Staffing Company | YourOS Blog" />
+  <meta property="og:description" content="How small businesses hire AI Employees, use digital labor, compare hiring with building, and make the economics work." />
   <meta property="og:image" content="https://www.youros.app/og/blog.jpg" />
   <meta property="og:url" content="https://www.youros.app/blog/" />
   <meta property="og:type" content="website" />
@@ -314,6 +314,36 @@
       color: var(--primary-light);
     }
 
+    .eyebrow {
+      color: var(--action);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow { margin-bottom: 1rem; }
+    .hero .cta { background: var(--action); color: #fff; box-shadow: 0 0 14px rgba(249,115,22,.3); }
+    .hero .cta:hover { color: #fff; box-shadow: 0 0 20px rgba(249,115,22,.45); }
+
+    .section-heading { margin-bottom: 2rem; max-width: 760px; }
+    .section-heading p { color: var(--muted); font-size: 1.08rem; }
+    .topic-section { background: rgba(255,255,255,.025); border-bottom: 1px solid rgba(255,255,255,.08); border-top: 1px solid rgba(255,255,255,.08); }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1.25rem; }
+    .topic-card { background: var(--bg-alt); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 1.5rem; }
+    .topic-card h3 { color: #fff; }
+    .topic-card p { color: var(--muted); }
+    .topic-card a { display: inline-block; margin-top: 1rem; }
+
+    .post-card { display: flex; flex-direction: column; }
+    .post-card__topic { color: var(--action); font-size: .75rem; font-weight: 800; letter-spacing: 1px; margin-bottom: .7rem; text-transform: uppercase; }
+    .post-card__employee { border-top: 1px solid rgba(255,255,255,.1); margin-top: auto; padding-top: 1rem; }
+    .post-card__employee a { color: var(--primary-light); }
+    .post-card__employee a:hover { color: var(--action); }
+
+    .blog-hire { background: radial-gradient(circle at center,rgba(249,115,22,.1),transparent 70%); text-align: center; }
+    .blog-hire p { color: var(--muted); margin: 0 auto; max-width: 680px; }
+
     @media(max-width: 1280px) {
       .nav-links,
       .navbar-links { display: none;
@@ -443,28 +473,71 @@
 
   <!-- BLOG HERO -->
   <section class="hero">
-    <h1>Most businesses have a growth leak they haven't found yet.</h1>
-    <p>We write about the strategy to find it — and the systems to seal it.</p>
+    <div class="eyebrow">YourOS — The AI Staffing Company</div>
+    <h1>Field notes from The AI Staffing Company.</h1>
+    <p>How small businesses hire AI Employees. Digital labor, category creation, and the death of implementation timelines.</p>
+    <a class="cta" href="/hire-a-biztech/?source=blog-hero">Hire an AI Employee</a>
+  </section>
+
+  <section class="section topic-section" aria-labelledby="topics-title">
+    <div class="wrapper">
+      <div class="section-heading">
+        <div class="eyebrow">What we are learning</div>
+        <h2 id="topics-title">The questions behind the category.</h2>
+        <p>AI makes more sense when you stop asking which tool to buy and start asking which job needs an owner.</p>
+      </div>
+      <div class="topic-grid">
+        <article class="topic-card"><h3>AI Adoption for Small Business</h3><p>Start with the next two or three useful steps, not a ten-step transformation nobody can explain.</p><a href="#ai-adoption">Read the adoption notes →</a></article>
+        <article class="topic-card"><h3>Hire vs. Build</h3><p>Why hiring digital labor can beat buying a platform, managing another tool, or waiting through a long implementation.</p><a href="/blog/ai-as-workforce-not-software/">Start with workforce thinking →</a></article>
+        <article class="topic-card"><h3>Meet Your Employees</h3><p>What Peter, Penny, and Garry own, what their workday looks like, and how owners put them to work.</p><a href="/biztechs/">Meet the AI Employees →</a></article>
+        <article class="topic-card"><h3>Digital Labor Economics</h3><p>Monthly salary, performance-based salary, and the math behind giving important work a reliable owner.</p><a href="/pricing/">Compare employee salaries →</a></article>
+        <article class="topic-card"><h3>Category Creation Notes</h3><p>Why AI Staffing is a category, not a feature—and why the language of hiring makes adoption easier.</p><a href="/about/">Why YourOS exists →</a></article>
+      </div>
+    </div>
   </section>
 
   <!-- POSTS LIST -->
-  <section class="section wrapper posts-grid" aria-label="Latest articles">
-    <a class="post-card" href="/blog/ai-makes-human-interaction-more-valuable/">
-      <h2>Will AI Make Human-to-Human Interaction More Valuable?</h2>
-      <p>When AI handles logistics and repetitive work, people have more time for trust, judgment, and relationships.</p>
-    </a>
-    <a class="post-card" href="/blog/ai-as-workforce-not-software/">
-      <h2>What Changes When You Stop Seeing AI as Software and Start Seeing It as a Workforce?</h2>
-      <p>A business owner does not need another tool to manage. They need an important job to have a reliable owner.</p>
-    </a>
-    <a class="post-card" href="/blog/businesses-need-the-next-two-or-three-steps/">
-      <h2>Businesses Don’t Need to Leap Ten Steps Into AI. They Need the Next Two or Three.</h2>
-      <p>Practical adoption starts with one understandable responsibility and the tools your team already uses.</p>
-    </a>
-    <a class="post-card" href="/blog/wait-ai-can-do-that/">
-      <h2>Why Do Business Owners Still Say, “Wait… AI Can Do That?”</h2>
-      <p>The technology is far ahead of most businesses’ understanding of what it can do in the right condition.</p>
-    </a>
+  <section class="section wrapper" id="ai-adoption" aria-labelledby="latest-title">
+    <div class="section-heading">
+      <div class="eyebrow">AI Adoption for Small Business</div>
+      <h2 id="latest-title">Start with one job that needs an owner.</h2>
+      <p>Four practical notes for owners trying to understand what AI can do without turning the business into a technology project.</p>
+    </div>
+    <div class="posts-grid">
+      <article class="post-card">
+        <div class="post-card__topic">People + Digital Labor</div>
+        <h2><a href="/blog/ai-makes-human-interaction-more-valuable/">Will AI Make Human-to-Human Interaction More Valuable?</a></h2>
+        <p>When AI Employees handle logistics and repetitive work, people have more time for trust, judgment, and relationships.</p>
+        <p class="post-card__employee">Related employee: <a href="/biztechs/penny/">Meet Penny, the Front-Desk Employee →</a></p>
+      </article>
+      <article class="post-card">
+        <div class="post-card__topic">Hire vs. Build</div>
+        <h2><a href="/blog/ai-as-workforce-not-software/">What Changes When You See AI as a Workforce?</a></h2>
+        <p>An owner does not need another tool to manage. An important job needs a reliable owner.</p>
+        <p class="post-card__employee">Related employee: <a href="/biztechs/peter/">Meet Peter, the Website Employee →</a></p>
+      </article>
+      <article class="post-card">
+        <div class="post-card__topic">Practical Adoption</div>
+        <h2><a href="/blog/businesses-need-the-next-two-or-three-steps/">Businesses Don’t Need to Leap Ten Steps Into AI</a></h2>
+        <p>Practical adoption starts with one understandable responsibility and the tools your team already uses.</p>
+        <p class="post-card__employee">Related employee: <a href="/biztechs/garry/">Meet Garry, the Sales Follow-Up Employee →</a></p>
+      </article>
+      <article class="post-card">
+        <div class="post-card__topic">The Adoption Gap</div>
+        <h2><a href="/blog/wait-ai-can-do-that/">Why Do Business Owners Still Say, “Wait… AI Can Do That?”</a></h2>
+        <p>Capability is ahead of understanding. The useful question is which real responsibility an AI Employee can own now.</p>
+        <p class="post-card__employee">Related employees: <a href="/biztechs/">Meet the YourOS team →</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section blog-hire">
+    <div class="wrapper">
+      <div class="eyebrow">Put the idea to work</div>
+      <h2>Which job needs an owner?</h2>
+      <p>Hire Peter for website work, Penny for the front desk, Garry for quoted-customer follow-up, or describe the next responsibility your business needs covered.</p>
+      <a class="cta" href="/hire-a-biztech/?source=blog-bottom">Hire an AI Employee</a>
+    </div>
   </section>
   <!-- FOOTER -->
     <section class="yos-page-exits" aria-label="Keep exploring YourOS">
