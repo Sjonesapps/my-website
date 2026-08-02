@@ -7,12 +7,12 @@
   <link rel="canonical" href="https://www.youros.app/biztechs/" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Meet the BizTechs | YourOS AI Business Technicians" />
-  <meta property="og:description" content="Hire Peter, Penny, or Garry — or build a Custom BizTech for the job your business needs an owner for." />
-  <meta property="og:image" content="https://i.postimg.cc/Bnrbwc51/Your-OS-Logo.png" />
+  <meta property="og:description" content="Meet the YourOS BizTechs: Peter builds websites, Penny answers calls, Garry follows up with quoted customers. Founding pricing starts at $500/month." />
+  <meta property="og:image" content="https://www.youros.app/og/biztechs.jpg" />
   <meta property="og:url" content="https://www.youros.app/biztechs/" />
   <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/youros-mark.webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{--bg:#1c1c1e;--bg-alt:#2a2a2a;--primary:#0077ff;--primary-light:#00afff;--action:#f97316;--action-hover:#ea580c;--text:#e6e8ec;--muted:#9ca3af;--chrome:linear-gradient(135deg,#cfd4d9 0%,#9ea3a6 100%);--white:#fff;--black:#111;--line:rgba(255,255,255,.1);--peter:#00afff;--penny:#f97316;--garry:#a78bfa;--custom:#a78bfa;}
@@ -73,7 +73,7 @@
 <body>
   <nav class="yos-header" aria-label="Primary navigation">
     <a class="yos-header__brand" href="/">
-      <img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS">
+      <img src="/assets/brand/youros-mark.webp" width="96" height="96" alt="YourOS">
       <span>YourOS</span>
     </a>
     <button class="yos-header__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
@@ -93,6 +93,7 @@
       <a href="/results/">Results</a>
       <a href="/pricing/">Pricing</a>
       <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
       <a class="yos-header__cta" href="/hire-a-biztech/?source=nav">Hire a BizTech</a>
     </div>
   </nav>
@@ -175,9 +176,23 @@
     </div>
   </section>
 
-  <footer>
+    <section class="yos-page-exits" aria-label="Keep exploring YourOS">
+    <div class="yos-page-exits__inner">
+      <h2>Ready to give the next job an owner?</h2>
+      <p>Start with Peter for website work, Garry for lead follow-up, or explore the BizTech and systems ideas behind YourOS.</p>
+      <div class="yos-page-exits__links">
+        <a href="mailto:peter@youros.app?subject=Start%20an%20engagement%20with%20Peter">Email Peter</a>
+        <a href="mailto:garry@youros.app?subject=Start%20an%20engagement%20with%20Garry">Email Garry</a>
+        <a href="/biztechs/">Meet the BizTechs</a>
+        <a href="/blog/">Read the Blog</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/results/">Results</a>
+      </div>
+    </div>
+  </section>
+  <footer><nav class="yos-footer-key-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/biztechs/">BizTechs</a><a href="/biztechs/peter/">Peter</a><a href="/biztechs/garry/">Garry</a><a href="/blog/">Blog</a><a href="/how-it-works/">How It Works</a><a href="/results/">Results</a><a href="/pricing/">Pricing</a></nav>
     <div class="footer-inner">
-      <div><div class="footer-brand"><img src="https://i.postimg.cc/438dsJnm/3-D-Electric-Blue-Y-with-Chrome-Line.png" alt="YourOS" style="height:28px;"><span class="footer-brand-text"><strong style="color:var(--text);">YourOS</strong> — AI Business Technicians<br>for small business.</span></div></div>
+      <div><div class="footer-brand"><img src="/assets/brand/youros-mark.webp" width="96" height="96" alt="YourOS" style="height:28px;"><span class="footer-brand-text"><strong style="color:var(--text);">YourOS</strong> — AI Business Technicians<br>for small business.</span></div></div>
       <div class="footer-col"><h4>BizTechs</h4><a href="/biztechs/peter/">Peter — Websites</a><a href="/biztechs/penny/">Penny — Phone</a><a href="/biztechs/garry/">Garry — Follow-Up</a><a href="/custom-biztech/">Custom BizTechs</a></div>
       <div class="footer-col"><h4>Company</h4><a href="/#how-it-works">How It Works</a><a href="/#pricing">Pricing</a><a href="/#results">Results</a><a href="/#about">About YourOS</a></div>
       <div class="footer-col"><h4>Resources</h4><a href="/what-does-youros-do/">What YourOS Does</a><a href="/appsheet-consultant/">AppSheet Consulting</a><a href="/custom-workflow-automation/">Workflow Automation</a><a href="/blog/">Blog</a><a href="/security-trust.html">Security &amp; Trust</a></div>
@@ -188,6 +203,6 @@
     </div>
   </footer>
   <script>const toggle=document.querySelector('.nav-toggle');const links=document.querySelector('.nav-links');if(toggle&&links)toggle.addEventListener('click',()=>links.classList.toggle('open'));</script>
-  <script src="/site-header.js"></script>
+  <script src="/site-header.js" defer></script>
 </body>
 </html>

@@ -20,9 +20,9 @@
 .yos-header * { box-sizing: border-box; }
 .yos-header a { text-decoration: none; }
 .yos-header__brand { align-items: center; display: flex; gap: .75rem; }
-.yos-header__brand img { height: 32px; width: auto; }
+.yos-header__brand img { height: 32px; width: 32px; }
 .yos-header__brand span { color: var(--yos-nav-black); font-size: 1rem; font-weight: 600; }
-.yos-header__links { align-items: center; display: flex; gap: 1.5rem; }
+.yos-header__links { align-items: center; display: flex; gap: 1.35rem; }
 .yos-header__links > a,
 .yos-header__dropdown > a { color: var(--yos-nav-black); font-size: .95rem; font-weight: 500; }
 .yos-header__links > a:hover,
@@ -61,6 +61,65 @@
 .yos-header__toggle { background: none; border: 0; cursor: pointer; display: none; padding: .5rem; }
 .yos-header__toggle span { background: var(--yos-nav-black); display: block; height: 3px; margin: 4px 0; width: 24px; }
 
+/* Persistent action bar: visible after the visitor leaves the primary navigation. */
+.yos-action-bar {
+  align-items: center;
+  background: rgba(17, 17, 17, .97);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .2);
+  display: flex;
+  font-family: Inter, system-ui, sans-serif;
+  gap: .6rem;
+  justify-content: center;
+  padding: .55rem 1rem;
+  position: sticky;
+  top: 64px;
+  width: 100%;
+  z-index: 990;
+}
+.yos-action-bar a {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 7px;
+  color: #e6e8ec;
+  display: inline-flex;
+  font-size: .86rem;
+  font-weight: 700;
+  gap: .35rem;
+  justify-content: center;
+  min-height: 38px;
+  padding: .45rem .85rem;
+  text-decoration: none;
+}
+.yos-action-bar a:hover { border-color: #f97316; color: #fff; }
+.yos-action-bar__primary { background: #f97316; border-color: #f97316 !important; color: #fff !important; }
+.yos-action-bar__primary:hover { background: #ea580c; }
+
+/* Shared exits appended before every footer so no page ends without a useful next step. */
+.yos-page-exits {
+  background: #202023;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  color: #e6e8ec;
+  font-family: Inter, system-ui, sans-serif;
+  padding: 3rem 1.25rem;
+}
+.yos-page-exits__inner { margin: 0 auto; max-width: 1120px; }
+.yos-page-exits h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.15rem); margin: 0 0 .55rem; }
+.yos-page-exits p { color: #a7adb8; margin: 0; max-width: 720px; }
+.yos-page-exits__links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.35rem; }
+.yos-page-exits__links a {
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 7px;
+  color: #e6e8ec;
+  font-size: .9rem;
+  font-weight: 700;
+  padding: .65rem .9rem;
+  text-decoration: none;
+}
+.yos-page-exits__links a:first-child { background: #f97316; border-color: #f97316; color: #fff; }
+.yos-page-exits__links a:hover { border-color: #f97316; color: #f97316; }
+.yos-page-exits__links a:first-child:hover { background: #ea580c; color: #fff; }
+
 @media (max-width: 1280px) {
   .yos-header { padding: 0 1rem; }
   .yos-header__toggle { display: block; }
@@ -94,3 +153,23 @@
   }
   .yos-header__dropdown-menu a { padding: .45rem .5rem; }
 }
+
+@media (max-width: 640px) {
+  .yos-action-bar { gap: .35rem; padding: .4rem; }
+  .yos-action-bar a { font-size: .74rem; min-height: 36px; padding: .35rem .5rem; }
+  .yos-action-bar a span { display: none; }
+  .yos-page-exits { padding: 2.5rem 1.25rem; }
+  .yos-page-exits__links { display: grid; grid-template-columns: 1fr 1fr; }
+  .yos-page-exits__links a { text-align: center; }
+}
+
+.yos-footer-key-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem 1rem;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  max-width: 1120px;
+}
+.yos-footer-key-links a { color: #a7adb8; font: 600 .84rem/1.4 Inter, system-ui, sans-serif; text-decoration: none; }
+.yos-footer-key-links a:hover { color: #f97316; }
