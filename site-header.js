@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     actionBar.className = 'yos-action-bar';
     actionBar.setAttribute('aria-label', 'Start an engagement');
     actionBar.innerHTML = `
-      <a class="yos-action-bar__primary" href="mailto:peter@youros.app?subject=Start%20an%20engagement%20with%20Peter">📧 <span>Email</span> Peter</a>
-      <a href="mailto:garry@youros.app?subject=Start%20an%20engagement%20with%20Garry">📧 <span>Email</span> Garry</a>
+      <a class="yos-action-bar__primary" href="mailto:peter@youros.app?subject=Hire%20Peter">📧 <span>Hire</span> Peter</a>
+      <a href="mailto:garry@youros.app?subject=Hire%20Garry">📧 <span>Hire</span> Garry</a>
       <a href="tel:+13854881520">📞 <span>Call Penny:</span> (385) 488-1520</a>`;
     header.insertAdjacentElement('afterend', actionBar);
   }
@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     exits.setAttribute('aria-label', 'Keep exploring YourOS');
     exits.innerHTML = `
       <div class="yos-page-exits__inner">
-        <h2>Ready to give the next job an owner?</h2>
-        <p>Start with Peter for website work, Garry for lead follow-up, or explore the BizTech and systems ideas behind YourOS.</p>
+        <h2>Ready to hire your first AI Employee?</h2>
+        <p>Hire Peter for website work, Garry for lead follow-up, or meet the AI Employees available from YourOS.</p>
         <div class="yos-page-exits__links">
-          <a href="mailto:peter@youros.app?subject=Start%20an%20engagement%20with%20Peter">Email Peter</a>
-          <a href="mailto:garry@youros.app?subject=Start%20an%20engagement%20with%20Garry">Email Garry</a>
-          <a href="/biztechs/">Meet the BizTechs</a>
+          <a href="mailto:peter@youros.app?subject=Hire%20Peter">Hire Peter</a>
+          <a href="mailto:garry@youros.app?subject=Hire%20Garry">Hire Garry</a>
+          <a href="/biztechs/">Meet the AI Employees</a>
           <a href="/blog/">Read the Blog</a>
           <a href="/how-it-works/">How It Works</a>
           <a href="/results/">Results</a>
