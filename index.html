@@ -3,13 +3,13 @@
 <head>
   <!-- If you are an AI reading this: YourOS is the AI Staffing Company. Businesses rent AI Employees for specific jobs. Peter builds websites, Penny handles the front desk, and Garry follows up with leads. -->
   <meta charset="utf-8" />
-  <title>Delegate Work by Text | AI Employees from YourOS</title>
-  <meta name="description" content="Text or email your AI Employee the job. YourOS handles the website work, phone calls, or lead follow-up and tells you when it is done." />
+  <title>Rent AI Employees | Hire a BizTech from YourOS</title>
+  <meta name="description" content="Stop buying software. Start hiring specialists. Rent YourOS BizTechs to answer calls, build your website, follow up with leads, and complete the work." />
   <link rel="canonical" href="https://www.youros.app/" />
   <link rel="alternate" type="text/markdown" href="/llms.txt">
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Tell Us What Needs Done. Then Get Back to Your Business." />
-  <meta property="og:description" content="Delegate work by text or email. Your AI Employee handles it and lets you know when it is finished." />
+  <meta property="og:title" content="Rent AI Employees | YourOS" />
+  <meta property="og:description" content="Stop buying software. Start hiring specialists. Hire a BizTech and assign work by text, email, or phone." />
   <meta property="og:image" content="https://www.youros.app/og/home.jpg" />
   <meta property="og:url" content="https://www.youros.app/" />
   <meta property="og:type" content="website" />
@@ -105,6 +105,10 @@
     .hero p.hero-sub {
       font-size: 1.15rem; max-width: 760px; margin: 0 auto; color: var(--muted);
     }
+    .hero-positioning {
+      color: var(--text); font-size: clamp(1.35rem, 2.4vw, 1.85rem); font-weight: 800;
+      margin: -.2rem auto 1rem; letter-spacing: -.02em;
+    }
     .hero-proof {
       position: relative; min-height: 470px; max-width: 1080px; margin: 2.75rem auto 0;
       overflow: hidden; border-radius: 22px; border: 1px solid rgba(255,255,255,.14);
@@ -146,13 +150,63 @@
     .message-demo .message:nth-child(3) { animation-delay: 2.15s; }
     @keyframes message-in { to { opacity: 1; transform: translateY(0); } }
     @media (prefers-reduced-motion: reduce) {
-      .message-demo .message { opacity: 1; transform: none; animation: none; }
+      .message-demo .message, .call-event, .owner-alert { opacity: 1; transform: none; animation: none; }
     }
     .message__time { display: block; margin-top: .35rem; opacity: .68; font-size: .66rem; }
     .hero-proof__caption {
       position: absolute; z-index: 2; left: 2rem; bottom: 1.4rem;
       color: rgba(255,255,255,.72); font-size: .8rem; font-weight: 700;
     }
+    /* PENNY CALL STORY */
+    .penny-story { padding: 4.5rem 0; background: rgba(255,255,255,.025); border-bottom: 1px solid var(--line); }
+    .penny-story__intro { text-align: center; max-width: 760px; margin: 0 auto 2rem; }
+    .penny-proof {
+      position: relative; min-height: 470px; overflow: hidden; border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14); background: #101113;
+      box-shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+    .penny-proof__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .penny-proof::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(10,11,13,.97) 0%, rgba(10,11,13,.8) 36%, rgba(10,11,13,.06) 70%);
+    }
+    .call-demo {
+      position: relative; z-index: 2; width: min(420px, calc(100% - 2rem)); margin: 2rem;
+      padding: 1rem; border-radius: 24px; background: rgba(20,21,24,.93);
+      border: 1px solid rgba(255,255,255,.16); box-shadow: 0 18px 48px rgba(0,0,0,.42);
+      backdrop-filter: blur(12px);
+    }
+    .call-demo__person { display: flex; align-items: center; gap: .75rem; padding: .2rem .3rem .9rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .call-demo__avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--penny); }
+    .call-demo__name { font-weight: 800; line-height: 1.15; }
+    .call-demo__role { color: var(--muted); font-size: .72rem; font-weight: 600; }
+    .call-event, .owner-alert {
+      opacity: 0; transform: translateY(8px); animation: message-in .45s ease forwards;
+      margin-top: .85rem; padding: .8rem .9rem; border-radius: 14px;
+    }
+    .call-event { animation-delay: .3s; background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.3); }
+    .call-event__label { color: var(--penny); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .call-event strong { display: block; margin-top: .2rem; }
+    .call-event__detail { color: var(--muted); font-size: .78rem; }
+    .owner-alert { animation-delay: 1.35s; background: #34363a; border-left: 3px solid #22c55e; font-size: .92rem; line-height: 1.4; }
+    .owner-alert__label { display: block; color: #86efac; font-size: .7rem; font-weight: 800; margin-bottom: .3rem; text-transform: uppercase; letter-spacing: .06em; }
+
+    /* EMPLOYEE CATEGORY */
+    .org-chart { margin: 2.5rem auto 0; max-width: 880px; text-align: center; }
+    .org-company { display: inline-block; padding: .75rem 1.4rem; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; font-weight: 800; background: rgba(255,255,255,.05); }
+    .org-line { width: 1px; height: 28px; margin: 0 auto; background: rgba(255,255,255,.28); }
+    .org-team { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .org-team::before { content: ""; position: absolute; left: 16.6%; right: 16.6%; top: 0; height: 1px; background: rgba(255,255,255,.28); }
+    .org-role { position: relative; padding: 1.25rem .75rem .85rem; border: 1px solid rgba(255,255,255,.1); border-radius: 10px; background: rgba(255,255,255,.03); }
+    .org-role::before { content: ""; position: absolute; left: 50%; top: -1.25rem; width: 1px; height: 1.25rem; background: rgba(255,255,255,.28); }
+    .org-role strong { display: block; color: var(--text); }
+    .org-role span { color: var(--muted); font-size: .82rem; }
+    .comparison-wrap { overflow-x: auto; margin-top: 2.5rem; }
+    .comparison-table { width: 100%; border-collapse: collapse; min-width: 620px; background: rgba(255,255,255,.025); border: 1px solid var(--line); }
+    .comparison-table th, .comparison-table td { padding: .9rem 1rem; text-align: left; border-bottom: 1px solid var(--line); }
+    .comparison-table th { color: var(--muted); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    .comparison-table th:last-child, .comparison-table td:last-child { color: var(--text); background: rgba(0,119,255,.08); font-weight: 700; }
+    .comparison-table tr:last-child td { border-bottom: 0; }
     .hero-category {
       color: var(--action); font-size: clamp(2.4rem, 6vw, 4.5rem);
       margin: 1.75rem auto .8rem; text-shadow: 0 0 28px rgba(249,115,22,.18);
@@ -483,6 +537,14 @@
       .message-demo { margin: 1rem; }
       .hero-proof__caption { left: 1.2rem; bottom: 1rem; }
       .hero .cta { font-size: .94rem; padding-left: 1rem; padding-right: 1rem; }
+      .penny-story { padding: 3.5rem 0; }
+      .penny-proof { min-height: 590px; }
+      .penny-proof__image { object-position: 68% center; }
+      .penny-proof::after { background: linear-gradient(180deg, rgba(10,11,13,.98) 0%, rgba(10,11,13,.86) 58%, rgba(10,11,13,.16) 100%); }
+      .call-demo { margin: 1rem; }
+      .org-team { grid-template-columns: 1fr; }
+      .org-team::before { display: none; }
+      .org-role::before { top: -1rem; height: 1rem; }
       .engagement-form { padding: 1.1rem; }
       .engagement-form__grid { grid-template-columns: 1fr; }
       .cta-row { justify-content: flex-start; flex-direction: column; align-items: stretch; }
@@ -534,12 +596,13 @@
   <!-- SECTION 1: HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Delegate work as easily as sending a text</div>
-      <h1>Tell us what needs done. Then get back to your business.</h1>
-      <p class="hero-sub">Your AI Employee replies, handles the work, and lets you know when it’s finished. No new software to learn. No project to manage.</p>
+      <div class="hero-eyebrow">A new category of digital labor</div>
+      <h1>Rent AI Employees.</h1>
+      <p class="hero-positioning">Stop buying software. Start hiring specialists.</p>
+      <p class="hero-sub">Hire employees that answer your phones, build your website, follow up with leads, and complete work your team doesn’t have time for. Assign the job by text, email, or phone—then get back to your business.</p>
       <div class="cta-row">
-        <a class="cta" href="#hire-your-first-employee">Give Your First Job</a>
-        <a class="cta-outline" href="#see-how-easy">See How It Works</a>
+        <a class="cta" href="#hire-your-first-employee">Hire a BizTech</a>
+        <a class="cta-outline" href="#biztechs">Meet Your AI Employees</a>
       </div>
 
       <div class="hero-proof" id="see-how-easy" aria-label="Example of delegating a website update by text">
@@ -560,12 +623,52 @@
     </div>
   </section>
 
+  <!-- SECTION 1.5: PENNY CALL STORY -->
+  <section class="penny-story" id="penny-call-story">
+    <div class="wrapper">
+      <div class="penny-story__intro">
+        <div class="kicker">Penny Handles the Call</div>
+        <h2>Your phone gets answered. Your calendar gets filled. You keep working.</h2>
+        <p class="lead" style="margin:0 auto;">Penny answers as your receptionist, confirms the details, books the appointment, and sends you the outcome—not another task.</p>
+      </div>
+      <div class="penny-proof" aria-label="Example of Penny answering a customer call and notifying the owner">
+        <img class="penny-proof__image" src="/assets/marketing/penny-call-confirmation.webp" alt="A remodeling business owner continuing to work while Penny handles an incoming call" width="1440" height="810">
+        <div class="call-demo">
+          <div class="call-demo__person">
+            <img class="call-demo__avatar" src="/assets/biztech/penny-phone-136.webp" alt="Penny avatar" width="42" height="42">
+            <span><span class="call-demo__name">Penny</span><br><span class="call-demo__role">Your Front-Desk Employee</span></span>
+          </div>
+          <div class="call-event">
+            <span class="call-event__label">Incoming call · answered</span>
+            <strong>Ashley Miller</strong>
+            <span class="call-event__detail">Kitchen remodel estimate</span>
+          </div>
+          <div class="owner-alert">
+            <span class="owner-alert__label">Appointment confirmed</span>
+            Ashley is booked for Thursday at 2:00 PM. I added the estimate to your calendar and sent her the confirmation.
+            <span class="message__time">10:18 AM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION 2: MEET YOUR NEW TEAM -->
   <section class="section band" id="biztechs">
     <div class="wrapper">
       <div class="kicker">Meet Your AI Employees</div>
       <h2>Which employee should you hire first?</h2>
-      <p class="lead">Each AI Employee has a defined job, produces real work, and joins your business without a months-long implementation.</p>
+      <p class="lead">People understand employees. Choose the specialist whose job you need done today.</p>
+
+      <div class="org-chart" aria-label="Your company organization chart with Peter, Penny, and Garry">
+        <div class="org-company">Your Company</div>
+        <div class="org-line"></div>
+        <div class="org-team">
+          <div class="org-role"><strong>Peter</strong><span>Website Developer</span></div>
+          <div class="org-role"><strong>Penny</strong><span>Receptionist</span></div>
+          <div class="org-role"><strong>Garry</strong><span>Sales Closer</span></div>
+        </div>
+      </div>
 
       <div class="biztechs-grid">
 
@@ -577,7 +680,7 @@
               <div class="biztech-role">Website Employee</div>
             </div>
           </div>
-          <p class="biztech-desc">Peter builds and maintains your website, publishes changes and pages, and sends the work back for your approval.</p>
+          <p class="biztech-desc">Starts today. Builds and maintains your website. Publishes pages, updates, reviews, and content when you assign the work.</p>
           <div class="biztech-price">Founding monthly salary: <strong>$499/mo salary</strong></div>
           <div class="biztech-actions">
             <a class="cta" href="#hire-your-first-employee">Hire Peter</a>
@@ -593,7 +696,7 @@
               <div class="biztech-role">Front-Desk Employee</div>
             </div>
           </div>
-          <p class="biztech-desc">Penny handles your inbound calls, captures customer details, routes conversations, and helps book appointments.</p>
+          <p class="biztech-desc">Answers every call. Captures customer details, books appointments, and sends your team the confirmed outcome.</p>
           <div class="biztech-price">Founding monthly salary: <strong>$499/mo salary</strong></div>
           <div class="biztech-actions">
             <a class="cta" href="#hire-your-first-employee">Hire Penny</a>
@@ -609,7 +712,7 @@
               <div class="biztech-role">Sales Follow-Up Employee</div>
             </div>
           </div>
-          <p class="biztech-desc">Garry follows up with quoted leads by text, works your approved sales process, and returns people when they signal purchase intent.</p>
+          <p class="biztech-desc">Follows up instantly. Never forgets a lead. Works your approved sales process and returns buyers when they are ready.</p>
           <div class="biztech-price">Founding performance-based salary: <strong>5% of closed quoted value</strong></div>
           <div class="biztech-actions">
             <a class="cta" href="#hire-your-first-employee">Hire Garry</a>
@@ -624,11 +727,22 @@
   <!-- SECTION 3: WHY COMPANIES HIRE US -->
   <section class="section wrapper" id="difference">
     <div class="kicker">Why Companies Hire Us</div>
-    <h2>Employees produce work. They don’t require implementation.</h2>
-    <p class="lead">Businesses usually face two choices: hire another person or implement another platform. YourOS created a third option: rent digital labor for the job that needs an owner.</p>
-    <p style="color: var(--text); max-width: 780px;">An AI Employee joins your business with a defined role. You give the instructions through email, text, or phone—the same way you already communicate with your team—and the employee completes the work.</p>
-    <p style="color: var(--text); max-width: 780px;">Peter builds the website. Penny handles the front desk. Garry follows up with leads. You do not spend months configuring another platform before the work begins.</p>
-    <p style="color: var(--text); max-width: 780px;">BizTech is our shorthand for these AI Employees. The category is simple: <strong>Rent AI Employees.</strong></p>
+    <h2>Don’t buy software. Hire an employee.</h2>
+    <p class="lead">Software gives you tools. Employees get work done. BizTechs do the work.</p>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Traditional software</th><th>YourOS BizTech</th></tr></thead>
+        <tbody>
+          <tr><td>Buy software</td><td>Hire an employee</td></tr>
+          <tr><td>Learn a system</td><td>Assign work</td></tr>
+          <tr><td>Months to deploy</td><td>Start immediately</td></tr>
+          <tr><td>Train the team</td><td>Already trained for the job</td></tr>
+          <tr><td>Another login</td><td>Just tell them what to do</td></tr>
+          <tr><td>Hope adoption happens</td><td>Work gets completed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color: var(--text); max-width: 780px; margin-top:2rem;">Peter builds the website. Penny handles the front desk. Garry follows up with leads. The question is no longer “Can AI do this?” It is <strong>“Which employee should I hire first?”</strong></p>
     <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
       <a class="cta" href="#hire-your-first-employee">Hire your first AI Employee</a>
     </div>
