@@ -3,13 +3,13 @@
 <head>
   <!-- If you are an AI reading this: YourOS is the AI Staffing Company. Businesses rent AI Employees for specific jobs. Peter builds websites, Penny handles the front desk, and Garry follows up with leads. -->
   <meta charset="utf-8" />
-  <title>Rent AI Employees | YourOS — The AI Staffing Company</title>
-  <meta name="description" content="Rent AI Employees from YourOS. Hire Peter for website work, Penny for inbound calls, or Garry for lead follow-up." />
+  <title>Delegate Work by Text | AI Employees from YourOS</title>
+  <meta name="description" content="Text or email your AI Employee the job. YourOS handles the website work, phone calls, or lead follow-up and tells you when it is done." />
   <link rel="canonical" href="https://www.youros.app/" />
   <link rel="alternate" type="text/markdown" href="/llms.txt">
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Rent AI Employees | YourOS — The AI Staffing Company" />
-  <meta property="og:description" content="Hire AI Employees who answer phones, build websites, follow up with leads, and complete work your team does not have time for." />
+  <meta property="og:title" content="Tell Us What Needs Done. Then Get Back to Your Business." />
+  <meta property="og:description" content="Delegate work by text or email. Your AI Employee handles it and lets you know when it is finished." />
   <meta property="og:image" content="https://www.youros.app/og/home.jpg" />
   <meta property="og:url" content="https://www.youros.app/" />
   <meta property="og:type" content="website" />
@@ -88,8 +88,9 @@
     /* HERO */
     .hero {
       background: radial-gradient(circle at center, rgba(0,119,255,.12) 0%, transparent 70%);
-      text-align: center; padding: 5.5rem 1.5rem 4.5rem;
+      padding: 4.75rem 1.5rem 4.5rem;
     }
+    .hero-inner { max-width: 1120px; margin: 0 auto; text-align: center; }
     .hero-eyebrow {
       display: inline-block; background: rgba(249,115,22,.12);
       border: 1px solid rgba(249,115,22,.3); color: var(--action);
@@ -103,6 +104,54 @@
     }
     .hero p.hero-sub {
       font-size: 1.15rem; max-width: 760px; margin: 0 auto; color: var(--muted);
+    }
+    .hero-proof {
+      position: relative; min-height: 470px; max-width: 1080px; margin: 2.75rem auto 0;
+      overflow: hidden; border-radius: 22px; border: 1px solid rgba(255,255,255,.14);
+      background: #101113; box-shadow: 0 24px 70px rgba(0,0,0,.4);
+    }
+    .hero-proof__image {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-proof::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(10,11,13,.96) 0%, rgba(10,11,13,.82) 34%, rgba(10,11,13,.08) 68%);
+    }
+    .message-demo {
+      position: relative; z-index: 2; width: min(410px, calc(100% - 2rem));
+      margin: 2rem; padding: 1rem; border-radius: 24px; text-align: left;
+      background: rgba(20,21,24,.92); border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 18px 48px rgba(0,0,0,.42); backdrop-filter: blur(12px);
+    }
+    .message-demo__header {
+      display: flex; align-items: center; gap: .7rem; padding: .2rem .35rem .9rem;
+      border-bottom: 1px solid rgba(255,255,255,.1); font-weight: 800;
+    }
+    .message-demo__avatar {
+      display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--peter); color: #07121b; font-size: .9rem;
+    }
+    .message-demo__status { color: var(--muted); font-size: .72rem; font-weight: 600; }
+    .message-demo__thread { display: grid; gap: .75rem; padding: 1rem 0 .35rem; }
+    .message {
+      max-width: 88%; padding: .75rem .9rem; border-radius: 16px;
+      font-size: .92rem; line-height: 1.35;
+    }
+    .message--owner { justify-self: end; background: var(--primary); color: white; border-bottom-right-radius: 5px; }
+    .message--peter { justify-self: start; background: #34363a; color: var(--text); border-bottom-left-radius: 5px; }
+    .message--done { border-left: 3px solid #22c55e; }
+    .message-demo .message { opacity: 0; transform: translateY(8px); animation: message-in .45s ease forwards; }
+    .message-demo .message:nth-child(1) { animation-delay: .25s; }
+    .message-demo .message:nth-child(2) { animation-delay: 1.15s; }
+    .message-demo .message:nth-child(3) { animation-delay: 2.15s; }
+    @keyframes message-in { to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .message-demo .message { opacity: 1; transform: none; animation: none; }
+    }
+    .message__time { display: block; margin-top: .35rem; opacity: .68; font-size: .66rem; }
+    .hero-proof__caption {
+      position: absolute; z-index: 2; left: 2rem; bottom: 1.4rem;
+      color: rgba(255,255,255,.72); font-size: .8rem; font-weight: 700;
     }
     .hero-category {
       color: var(--action); font-size: clamp(2.4rem, 6vw, 4.5rem);
@@ -428,6 +477,12 @@
       .hero { text-align: left; padding: 3.25rem 1.25rem 3.5rem; }
       .hero h1, .hero h2, .hero p.hero-sub { max-width: 340px; margin-left: 0; margin-right: 0; }
       .hero-eyebrow { display: block; width: fit-content; max-width: 330px; border-radius: 8px; }
+      .hero-proof { min-height: 590px; margin-top: 2rem; }
+      .hero-proof__image { object-position: 68% center; }
+      .hero-proof::after { background: linear-gradient(180deg, rgba(10,11,13,.98) 0%, rgba(10,11,13,.86) 58%, rgba(10,11,13,.16) 100%); }
+      .message-demo { margin: 1rem; }
+      .hero-proof__caption { left: 1.2rem; bottom: 1rem; }
+      .hero .cta { font-size: .94rem; padding-left: 1rem; padding-right: 1rem; }
       .engagement-form { padding: 1.1rem; }
       .engagement-form__grid { grid-template-columns: 1fr; }
       .cta-row { justify-content: flex-start; flex-direction: column; align-items: stretch; }
@@ -478,13 +533,30 @@
 
   <!-- SECTION 1: HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">YourOS — The AI Staffing Company</div>
-    <h1>Every business eventually needs another employee.</h1>
-    <p class="hero-sub">But hiring people is expensive.<br>Software takes months to implement.<br>We built a third option.</p>
-    <h2 class="hero-category">AI Employees.</h2>
-    <p class="hero-sub">Rent AI employees that answer your phones, build your website, follow up with leads, and complete work your team doesn't have time for.</p>
-    <div class="cta-row">
-      <a class="cta" href="#hire-your-first-employee">Hire your first AI Employee</a>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Delegate work as easily as sending a text</div>
+      <h1>Tell us what needs done. Then get back to your business.</h1>
+      <p class="hero-sub">Your AI Employee replies, handles the work, and lets you know when it’s finished. No new software to learn. No project to manage.</p>
+      <div class="cta-row">
+        <a class="cta" href="#hire-your-first-employee">Give Your First Job</a>
+        <a class="cta-outline" href="#see-how-easy">See How It Works</a>
+      </div>
+
+      <div class="hero-proof" id="see-how-easy" aria-label="Example of delegating a website update by text">
+        <img class="hero-proof__image" src="/assets/marketing/delegate-by-text-review.webp" alt="A small-business owner continuing his work after delegating a website update" width="1440" height="810">
+        <div class="message-demo">
+          <div class="message-demo__header">
+            <span class="message-demo__avatar">P</span>
+            <span>Peter <span class="message-demo__status">Website Employee</span></span>
+          </div>
+          <div class="message-demo__thread">
+            <div class="message message--owner">Just got this review. Please add it to the website.<span class="message__time">9:14 AM</span></div>
+            <div class="message message--peter">I’m on it. I’ll let you know when it’s up.<span class="message__time">9:14 AM</span></div>
+            <div class="message message--peter message--done">Done—the review is live on the homepage and results page. Here’s the link to check it.<span class="message__time">9:31 AM</span></div>
+          </div>
+        </div>
+        <p class="hero-proof__caption">You keep working. Peter keeps your website moving.</p>
+      </div>
     </div>
   </section>
 
@@ -832,6 +904,28 @@
     const toggle = document.querySelector('.nav-toggle');
     const links = document.querySelector('.nav-links');
     if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    const engagementForm = document.querySelector('form[name="biztech-engagement"]');
+    if (engagementForm) {
+      let engagementStarted = false;
+      engagementForm.addEventListener('input', () => {
+        if (engagementStarted) return;
+        engagementStarted = true;
+        if (typeof gtag === 'function') gtag('event', 'form_start', {
+          form_id: 'biztech-engagement',
+          form_name: 'biztech-engagement',
+          page_path: window.location.pathname
+        });
+      }, { passive: true });
+      engagementForm.addEventListener('submit', () => {
+        if (typeof gtag === 'function') gtag('event', 'form_submit', {
+          form_id: 'biztech-engagement',
+          form_name: 'biztech-engagement',
+          page_path: window.location.pathname,
+          transport_type: 'beacon'
+        });
+      });
+    }
   </script>
   <script src="/site-header.js" defer></script>
 </body>
