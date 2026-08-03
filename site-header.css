@@ -61,39 +61,52 @@
 .yos-header__toggle { background: none; border: 0; cursor: pointer; display: none; padding: .5rem; }
 .yos-header__toggle span { background: var(--yos-nav-black); display: block; height: 3px; margin: 4px 0; width: 24px; }
 
-/* Persistent action bar: visible after the visitor leaves the primary navigation. */
+/* Floating engagement dock: persistent without consuming the page header. */
 .yos-action-bar {
   align-items: center;
-  background: rgba(17, 17, 17, .97);
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+  background: linear-gradient(135deg, rgba(20, 22, 27, .94), rgba(10, 11, 14, .96));
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 18px;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .38), 0 0 0 1px rgba(0, 119, 255, .08) inset;
   display: flex;
   font-family: Inter, system-ui, sans-serif;
   gap: .6rem;
   justify-content: center;
-  padding: .55rem 1rem;
-  position: sticky;
-  top: 64px;
-  width: 100%;
-  z-index: 990;
+  left: 50%;
+  padding: .55rem;
+  position: fixed;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 1100;
 }
 .yos-action-bar a {
   align-items: center;
   border: 1px solid rgba(255, 255, 255, .16);
-  border-radius: 7px;
+  border-radius: 12px;
   color: #e6e8ec;
   display: inline-flex;
   font-size: .86rem;
   font-weight: 700;
-  gap: .35rem;
+  gap: .5rem;
   justify-content: center;
-  min-height: 38px;
-  padding: .45rem .85rem;
+  min-height: 42px;
+  padding: .5rem .8rem;
   text-decoration: none;
+  transition: border-color .2s, background .2s, color .2s, transform .2s;
 }
-.yos-action-bar a:hover { border-color: #f97316; color: #fff; }
-.yos-action-bar__primary { background: #f97316; border-color: #f97316 !important; color: #fff !important; }
-.yos-action-bar__primary:hover { background: #ea580c; }
+.yos-action-bar a:hover { background: rgba(255,255,255,.07); border-color: #00afff; color: #fff; transform: translateY(-1px); }
+.yos-action-bar__primary { background: rgba(0, 119, 255, .18); border-color: rgba(0, 175, 255, .6) !important; color: #fff !important; }
+.yos-action-bar__primary:hover { background: rgba(0, 119, 255, .28); }
+.yos-action-bar__icon {
+  color: #7dd3fc; display: block; flex: 0 0 20px; height: 20px; width: 20px;
+}
+.yos-action-bar__garry .yos-action-bar__icon { color: #c4b5fd; }
+.yos-action-bar__penny .yos-action-bar__icon { color: #fb923c; }
+.yos-action-bar__detail { color: #a7adb8; font-weight: 600; }
+body.has-yos-action-bar { padding-bottom: 82px; }
 
 /* Shared exits appended before every footer so no page ends without a useful next step. */
 .yos-page-exits {
@@ -155,9 +168,11 @@
 }
 
 @media (max-width: 640px) {
-  .yos-action-bar { gap: .35rem; padding: .4rem; }
-  .yos-action-bar a { font-size: .74rem; min-height: 36px; padding: .35rem .5rem; }
-  .yos-action-bar a span { display: none; }
+  .yos-action-bar { bottom: max(10px, env(safe-area-inset-bottom)); gap: .3rem; padding: .4rem; width: calc(100vw - 20px); }
+  .yos-action-bar a { flex: 1 1 0; font-size: .76rem; min-height: 42px; padding: .4rem .45rem; }
+  .yos-action-bar__detail { display: none; }
+  .yos-action-bar__icon { height: 18px; width: 18px; }
+  body.has-yos-action-bar { padding-bottom: 72px; }
   .yos-page-exits { padding: 2.5rem 1.25rem; }
   .yos-page-exits__links { display: grid; grid-template-columns: 1fr 1fr; }
   .yos-page-exits__links a { text-align: center; }
