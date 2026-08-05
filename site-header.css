@@ -191,7 +191,6 @@ body.has-yos-action-bar { padding-bottom: 82px; }
   .yos-action-bar__contact { flex: 1 1 0; font-size: .76rem; min-width: 0; }
   .yos-action-bar > a { min-height: 42px; padding: .4rem .45rem; }
   .yos-action-bar__contact a { min-width: 0; padding: .32rem .45rem; }
-  .yos-action-bar__contact .yos-action-bar__icon { display: none; }
   .yos-action-bar__contact .yos-action-bar__detail { display: block; font-size: .59rem; overflow-wrap: anywhere; }
   .yos-action-bar__penny { grid-column: 1 / -1; }
   .yos-action-bar__icon { height: 18px; width: 18px; }
