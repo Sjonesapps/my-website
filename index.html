@@ -462,6 +462,44 @@
       border-radius: 999px; padding: 0.35rem 0.85rem; font-size: 0.82rem; color: var(--muted);
     }
 
+    /* FOUNDING MEMBER OFFER BANNER */
+    .founding-offer {
+      background: radial-gradient(ellipse at 50% 60%, rgba(249,115,22,.11) 0%, transparent 72%);
+      border-top: 1px solid rgba(249,115,22,.22);
+      border-bottom: 1px solid rgba(249,115,22,.22);
+    }
+    .founding-offer__inner { text-align: center; }
+    .founding-offer__inner .hero-eyebrow { margin-bottom: 1.5rem; }
+    .founding-offer__inner h2 {
+      max-width: 760px; margin: 0 auto 1.25rem;
+      background: var(--chrome); -webkit-background-clip: text; color: transparent;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+    }
+    .founding-offer__body {
+      color: var(--text); font-size: 1.08rem; max-width: 680px;
+      margin: 0 auto 1rem; line-height: 1.65;
+    }
+    .founding-offer__support {
+      color: var(--muted); font-size: 1rem; max-width: 600px; margin: 0 auto;
+    }
+    .founding-offer__cta-row { margin-top: 2.25rem; }
+    .founding-offer__cta-row .cta {
+      padding: 1.1rem 2.5rem; font-size: 1.05rem;
+      box-shadow: 0 0 24px rgba(249,115,22,.45);
+    }
+    .founding-offer__microcopy {
+      margin-top: 1rem; color: var(--muted); font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 680px) {
+      .founding-offer__inner { text-align: left; }
+      .founding-offer__inner .hero-eyebrow { display: block; width: fit-content; border-radius: 8px; }
+      .founding-offer__inner h2 { font-size: clamp(1.65rem, 6vw, 2.25rem); margin-left: 0; margin-right: 0; }
+      .founding-offer__body, .founding-offer__support { margin-left: 0; margin-right: 0; }
+      .founding-offer__cta-row { flex-direction: column; align-items: stretch; }
+      .founding-offer__cta-row .cta { width: 100%; text-align: center; }
+    }
+
     /* CUSTOM BIZTECH */
     .custom-block {
       background: rgba(167,139,250,.05); border: 1px solid rgba(167,139,250,.2);
@@ -913,6 +951,20 @@
       <div class="kicker">After You Hire an AI Employee</div>
       <h2>The work keeps moving, even when your day gets full.</h2>
       <p class="lead">Calls get answered while your team is helping the customers already in front of them. Quotes get followed up instead of quietly going cold. Website changes get completed without waiting for the one evening you might have free. The important jobs still have an owner when things get busy. And fewer unfinished tasks find their way back to you at the end of the day.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDING MEMBER OFFER BANNER -->
+  <section class="section founding-offer" id="founding-offer">
+    <div class="wrapper founding-offer__inner">
+      <div class="hero-eyebrow">Founding Member Offer &mdash; First 10 Seats</div>
+      <h2>Lock in YourOS at $499/month. For life.</h2>
+      <p class="founding-offer__body">The first businesses joining YourOS get more than a smarter growth system. They get the founder price &mdash; $499/month, locked for life. When the first 10 seats are gone, this price is gone with them.</p>
+      <p class="founding-offer__support">Be early. Get the advantage. Help shape the system built to give small businesses their time and control back.</p>
+      <div class="cta-row founding-offer__cta-row">
+        <a class="cta" href="/founders">Claim a Founder's Seat</a>
+      </div>
+      <p class="founding-offer__microcopy">10 founder seats. One lifetime price lock. No waiting for the &ldquo;right time.&rdquo;</p>
     </div>
   </section>
 
