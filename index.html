@@ -61,30 +61,6 @@
       background: var(--white); height: 64px; padding: 0 2rem;
       box-shadow: 0 1px 4px rgba(0,0,0,.08); position: sticky; top: 0; z-index: 1000;
     }
-    .nav-left { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-left img { height: 32px; width: auto; }
-    .nav-left span { font-weight: 700; font-size: 1rem; color: var(--black); }
-    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
-    .nav-toggle span { display: block; width: 24px; height: 3px; margin: 5px 0; background: var(--black); }
-    .nav-links a { text-decoration: none; color: var(--black); font-weight: 500; font-size: 0.95rem; }
-    .nav-links a:hover { color: var(--primary); }
-    .nav-cta-link {
-      background: var(--action); color: var(--white) !important; padding: 0.55rem 1.15rem;
-      border-radius: 6px; font-weight: 700 !important; font-size: 0.9rem;
-      transition: background .2s;
-    }
-    .nav-cta-link:hover { background: var(--action-hover) !important; color: var(--white) !important; }
-    .dropdown { position: relative; }
-    .dropdown-content {
-      display: none; position: absolute; top: 100%; left: 0;
-      background: var(--white); min-width: 240px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.12); z-index: 999; border-radius: 6px;
-      padding: 0.35rem 0;
-    }
-    .dropdown-content a { display: block; padding: 0.7rem 1rem; color: var(--black); font-size: 0.9rem; }
-    .dropdown-content a:hover { background: #f2f4f7; color: var(--primary); }
-    .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display: block; }
 
     /* HERO */
     .hero {
@@ -581,18 +557,6 @@
     }
     .httl-mark { width: 26px; opacity: 0.55; filter: invert(1); vertical-align: middle; }
 
-    @media (max-width: 1280px) {
-      .nav-links {
-        display: none; flex-direction: column; position: absolute;
-        top: 64px; right: 1rem; background: var(--white);
-        padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,.1); border-radius: 6px;
-        align-items: flex-start; max-width: calc(100vw - 2rem);
-      }
-      .nav-links.open { display: flex; }
-      .nav-toggle { display: block; }
-      .dropdown-content { position: static; box-shadow: none; display: none; margin-top: .35rem; min-width: 0; width: 100%; }
-      .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display: block; }
-    }
     @media (max-width: 900px) {
       .footer-inner { grid-template-columns: 1fr 1fr; }
     }
@@ -782,7 +746,7 @@
             </div>
           </div>
           <p class="biztech-desc">Starts today. Builds and maintains your website. Publishes pages, updates, reviews, and content when you assign the work.</p>
-          <div class="biztech-price">Founding monthly salary: <strong>$499/mo salary</strong></div>
+          <div class="biztech-price">Discounted price: <strong>$499/mo</strong></div>
           <div class="biztech-actions">
             <a class="cta" href="#hire-your-first-employee">Hire Peter</a>
             <a class="secondary-link" href="/biztechs/peter/">Meet Peter →</a>
@@ -798,7 +762,7 @@
             </div>
           </div>
           <p class="biztech-desc">Answers every call. Captures customer details, books appointments, and sends your team the confirmed outcome.</p>
-          <div class="biztech-price">Founding monthly salary: <strong>$499/mo salary</strong></div>
+          <div class="biztech-price">Discounted price: <strong>$499/mo</strong></div>
           <div class="biztech-actions">
             <a class="cta" href="#hire-your-first-employee">Hire Penny</a>
             <a class="secondary-link" href="/biztechs/penny/">Meet Penny →</a>
@@ -814,7 +778,7 @@
             </div>
           </div>
           <p class="biztech-desc">Follows up instantly. Never forgets a lead. Works your approved sales process and returns buyers when they are ready.</p>
-          <div class="biztech-price">Founding performance-based salary: <strong>5% of closed quoted value</strong></div>
+          <div class="biztech-price">Discounted rate: <strong>5% of closed quoted value</strong></div>
           <div class="biztech-actions">
             <a class="cta" href="#hire-your-first-employee">Hire Garry</a>
             <a class="secondary-link" href="/biztechs/garry/">Meet Garry →</a>
@@ -1131,10 +1095,6 @@
   </footer>
 
   <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
-    if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
-
     const storyAnimations = document.querySelectorAll('.story-animation');
     if ('IntersectionObserver' in window) {
       const storyObserver = new IntersectionObserver((entries, observer) => {
