@@ -482,11 +482,18 @@
     .founding-offer__support {
       color: var(--muted); font-size: 1rem; max-width: 600px; margin: 0 auto;
     }
-    .founding-offer__cta-row { margin-top: 2.25rem; }
+    .founding-offer__cta-row { margin-top: 2.25rem; gap: .75rem; }
     .founding-offer__cta-row .cta {
       padding: 1.1rem 2.5rem; font-size: 1.05rem;
       box-shadow: 0 0 24px rgba(249,115,22,.45);
     }
+    .founding-offer__cta-outline {
+      padding: 1.05rem 2.25rem; font-size: 1.05rem;
+      background: transparent; border: 2px solid rgba(249,115,22,.65);
+      color: #f97316; border-radius: 8px; font-weight: 700;
+      text-decoration: none; transition: background .2s, border-color .2s;
+    }
+    .founding-offer__cta-outline:hover { background: rgba(249,115,22,.1); border-color: #f97316; }
     .founding-offer__microcopy {
       margin-top: 1rem; color: var(--muted); font-size: 0.82rem; font-weight: 600;
       letter-spacing: 0.04em;
@@ -962,7 +969,8 @@
       <p class="founding-offer__body">The first businesses joining YourOS get more than a smarter growth system. They get the founder price &mdash; $499/month, locked for life. When the first 10 seats are gone, this price is gone with them.</p>
       <p class="founding-offer__support">Be early. Get the advantage. Help shape the system built to give small businesses their time and control back.</p>
       <div class="cta-row founding-offer__cta-row">
-        <a class="cta" href="/founders">Claim a Founder's Seat</a>
+        <a class="cta" href="mailto:peter@youros.app?subject=Founder%27s%20Seat%20Inquiry">Email Peter</a>
+        <a class="founding-offer__cta-outline" href="tel:+13854881520">Call Penny · (385) 488-1520</a>
       </div>
       <p class="founding-offer__microcopy">10 founder seats. One lifetime price lock. No waiting for the &ldquo;right time.&rdquo;</p>
     </div>

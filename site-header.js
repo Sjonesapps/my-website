@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Founding Member Offer bar — bright yellow, every page, dismissible
+  if (!document.querySelector('.yos-founder-bar') && !localStorage.getItem('yos-founder-dismissed')) {
+    const bar = document.createElement('div');
+    bar.className = 'yos-founder-bar';
+    bar.setAttribute('role', 'banner');
+    bar.setAttribute('aria-label', 'Founding Member Offer');
+    bar.innerHTML = `
+      <div class="yos-founder-bar__inner">
+        <span class="yos-founder-bar__badge">FOUNDING OFFER</span>
+        <span class="yos-founder-bar__msg">Lock in YourOS at <strong>$499/mo for life</strong> — first 10 seats only.</span>
+        <div class="yos-founder-bar__actions">
+          <a class="yos-founder-bar__btn" href="mailto:peter@youros.app?subject=Founder%27s%20Seat%20Inquiry">Email Peter</a>
+          <a class="yos-founder-bar__btn yos-founder-bar__btn--outline" href="tel:+13854881520">Call Penny</a>
+        </div>
+        <button class="yos-founder-bar__close" aria-label="Dismiss offer banner">&#x2715;</button>
+      </div>`;
+    bar.querySelector('.yos-founder-bar__close').addEventListener('click', () => {
+      bar.remove();
+      document.body.classList.remove('has-yos-founder-bar');
+      document.documentElement.style.removeProperty('--founder-bar-h');
+      localStorage.setItem('yos-founder-dismissed', '1');
+    });
+    document.body.insertAdjacentElement('afterbegin', bar);
+    document.body.classList.add('has-yos-founder-bar');
+    const setOffset = () => {
+      document.documentElement.style.setProperty('--founder-bar-h', bar.offsetHeight + 'px');
+    };
+    setOffset();
+    window.addEventListener('resize', setOffset);
+  }
+
   const header = document.querySelector('.yos-header');
   if (!header) return;
 

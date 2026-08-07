@@ -1,3 +1,100 @@
+/* ── Founding Member Offer Bar ── */
+.yos-founder-bar {
+  background: #FFE600;
+  font-family: Inter, system-ui, sans-serif;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1500;
+}
+.yos-founder-bar__inner {
+  align-items: center;
+  display: flex;
+  gap: .65rem;
+  height: 44px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 0 3rem 0 1rem;
+  position: relative;
+  white-space: nowrap;
+}
+.yos-founder-bar__badge {
+  background: #111;
+  border-radius: 4px;
+  color: #FFE600;
+  flex-shrink: 0;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: .18rem .45rem;
+  text-transform: uppercase;
+}
+.yos-founder-bar__msg {
+  color: #111;
+  font-size: .88rem;
+  font-weight: 500;
+}
+.yos-founder-bar__msg strong { font-weight: 800; }
+.yos-founder-bar__actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: .35rem;
+}
+.yos-founder-bar__btn {
+  background: #111;
+  border: 1.5px solid #111;
+  border-radius: 5px;
+  color: #FFE600;
+  font-family: inherit;
+  font-size: .78rem;
+  font-weight: 800;
+  padding: .28rem .65rem;
+  text-decoration: none;
+  transition: opacity .15s;
+  white-space: nowrap;
+}
+.yos-founder-bar__btn:hover { opacity: .78; }
+.yos-founder-bar__btn--outline {
+  background: transparent;
+  color: #111;
+}
+.yos-founder-bar__btn--outline:hover { background: rgba(0,0,0,.08); opacity: 1; }
+.yos-founder-bar__close {
+  background: none;
+  border: none;
+  color: #111;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: .55;
+  padding: .3rem;
+  position: absolute;
+  right: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.yos-founder-bar__close:hover { opacity: 1; }
+body.has-yos-founder-bar { padding-top: var(--founder-bar-h, 44px); }
+body.has-yos-founder-bar .yos-header { top: var(--founder-bar-h, 44px); }
+@media (max-width: 720px) {
+  .yos-founder-bar__inner {
+    flex-wrap: wrap;
+    gap: .4rem;
+    height: auto;
+    justify-content: center;
+    min-height: 44px;
+    padding: .45rem 2.5rem .45rem .75rem;
+    text-align: center;
+    white-space: normal;
+  }
+  .yos-founder-bar__badge { display: none; }
+  .yos-founder-bar__msg { font-size: .8rem; }
+  .yos-founder-bar__btn { font-size: .75rem; }
+}
+
 .yos-header {
   --yos-nav-blue: #0077ff;
   --yos-nav-orange: #f97316;
