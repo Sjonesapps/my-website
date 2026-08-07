@@ -77,8 +77,8 @@
   transform: translateY(-50%);
 }
 .yos-founder-bar__close:hover { opacity: 1; }
-body.has-yos-founder-bar { padding-top: var(--founder-bar-h, 44px); }
-body.has-yos-founder-bar .yos-header { top: var(--founder-bar-h, 44px); }
+body.has-yos-founder-bar { padding-top: 44px; }
+body.has-yos-founder-bar .yos-header { top: 44px; }
 @media (max-width: 720px) {
   .yos-founder-bar__inner {
     flex-wrap: wrap;
@@ -93,6 +93,8 @@ body.has-yos-founder-bar .yos-header { top: var(--founder-bar-h, 44px); }
   .yos-founder-bar__badge { display: none; }
   .yos-founder-bar__msg { font-size: .8rem; }
   .yos-founder-bar__btn { font-size: .75rem; }
+  body.has-yos-founder-bar { padding-top: 72px; }
+  body.has-yos-founder-bar .yos-header { top: 72px; }
 }
 
 .yos-header {

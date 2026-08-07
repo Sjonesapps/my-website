@@ -18,16 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     bar.querySelector('.yos-founder-bar__close').addEventListener('click', () => {
       bar.remove();
       document.body.classList.remove('has-yos-founder-bar');
-      document.documentElement.style.removeProperty('--founder-bar-h');
       localStorage.setItem('yos-founder-dismissed', '1');
     });
     document.body.insertAdjacentElement('afterbegin', bar);
     document.body.classList.add('has-yos-founder-bar');
-    const setOffset = () => {
-      document.documentElement.style.setProperty('--founder-bar-h', bar.offsetHeight + 'px');
-    };
-    setOffset();
-    window.addEventListener('resize', setOffset);
   }
 
   const header = document.querySelector('.yos-header');
