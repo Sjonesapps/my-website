@@ -92,6 +92,16 @@
     textarea { min-height: 132px; resize: vertical; }
     .hidden { display: none; }
     .privacy { font-size: .82rem; color: var(--muted); margin-top: -.25rem; }
+    .sms-consent {
+      display: grid; grid-template-columns: 1.1rem minmax(0, 1fr); gap: .7rem; align-items: start;
+      margin: .75rem 0 1rem; padding: .8rem .9rem; border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px; color: var(--muted); font-size: .8rem; font-weight: 400; line-height: 1.55;
+    }
+    .sms-consent input[type="checkbox"] {
+      width: 1.1rem; height: 1.1rem; margin: .15rem 0 0; padding: 0; flex: none;
+      accent-color: var(--action);
+    }
+    .sms-consent span { display: block; min-width: 0; overflow-wrap: anywhere; }
     .cta {
       display: block; width: 100%; padding: 1rem 1.1rem; background: var(--action); border: none;
       color: white; font-weight: 800; font-size: 1rem; border-radius: 9px; cursor: pointer;
@@ -301,8 +311,8 @@
             <label for="problem">What work needs a dependable owner?</label>
             <textarea id="problem" name="problem" placeholder="Example: We miss too many calls, quoted customers stop hearing from us, or our website never gets updated because nobody has time to own it." required></textarea>
           </div>
-          <label for="sms-consent" style="display:flex;gap:.65rem;align-items:flex-start;font-size:.8rem;color:var(--muted);margin:.75rem 0 1rem;padding:.65rem .85rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;line-height:1.55;">
-            <input id="sms-consent" name="sms_consent" type="checkbox" value="yes" style="margin-top:.25rem;">
+          <label for="sms-consent" class="sms-consent">
+            <input id="sms-consent" name="sms_consent" type="checkbox" value="yes">
             <span>I agree to receive SMS text messages from <strong style="color:var(--text);">YourOS</strong> related to my inquiry, scheduling, project status, and business follow-up communications. Message frequency varies based on my inquiry and project activity. Msg &amp; data rates may apply. Reply STOP to opt out at any time. Reply HELP for help. See our <a href="/privacy-policy.html#sms" style="color:var(--primary);">Privacy Policy</a> and <a href="/terms.html#sms" style="color:var(--primary);">SMS Terms</a>.</span>
           </label>
           <button type="submit" class="cta">Hire My First AI Employee</button>
