@@ -84,7 +84,7 @@
     }
     .hero-positioning {
       color: var(--text); font-size: clamp(1.35rem, 2.4vw, 1.85rem); font-weight: 800;
-      margin: -.2rem auto 1rem; letter-spacing: -.02em;
+      margin: .5rem auto 1.25rem; letter-spacing: -.02em; max-width: 760px;
     }
     .hero-proof {
       position: relative; min-height: 470px; max-width: 1080px; margin: 2.75rem auto 0;
@@ -585,7 +585,8 @@
       .cta-row { justify-content: flex-start; flex-direction: column; align-items: stretch; }
       .cta, .cta-outline { width: 100%; text-align: center; }
       .trust-line { margin-left: 0; margin-right: 0; max-width: 340px; }
-      .section { padding: 3.5rem 0; }
+      .section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+      .wrapper { padding-left: 1.25rem; padding-right: 1.25rem; }
       .story-block, .custom-block, .final-cta { padding: 2rem 1.5rem; }
       .footer-inner { grid-template-columns: 1fr; }
       .before-after { grid-template-columns: 1fr; }
@@ -722,9 +723,9 @@
   <!-- SECTION 1: HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">BizTechs grow your business.</div>
-      <h1>You don’t need more software.<br>You need someone who actually runs it.</h1>
-      <p class="hero-sub">BizTechs are hands-on operators who handle the jobs your business keeps dropping — calls, follow-up, websites — so you can focus on growth. No new subscriptions. No learning curve. Just results.</p>
+      <h1>BizTechs Grow Your Business.</h1>
+      <p class="hero-positioning">You don’t need more software. You need someone who actually runs it.</p>
+      <p class="hero-sub">BizTechs are AI agents who handle the jobs your business keeps dropping — calls, follow-up, websites — so you can focus on growth. No new subscriptions. No learning curve. Just results.</p>
       <div class="cta-row">
         <a class="cta" href="/hire-a-biztech/?source=home-hero">Talk to a BizTech</a>
         <a class="cta-outline" href="#biztechs">Meet Your BizTechs</a>
@@ -767,8 +768,9 @@
   <section class="guide-section" id="what-is-biztech">
     <div class="wrapper">
       <div class="kicker">Enter BizTech</div>
-      <h2>We're not a platform. We're people.</h2>
-      <p class="lead">A BizTech is a hands-on operator assigned to your business. We learn your ops, pick the right tools, set everything up, and run it week to week. Think of us as your ops layer — without the hiring process, the onboarding, or the overhead.</p>
+      <h2>BizTechs are AI agents, not employees.</h2>
+      <p class="lead">Each one is trained on real operational experience — 120+ business systems built since 2017 — and supported by a human team that keeps them sharp, fixes what breaks, and improves how they work.</p>
+      <p class="lead" style="margin-top: 1rem;">A BizTech is an AI agent assigned to your business. We learn your ops, pick the right tools, set everything up, and run it week to week. Think of it as your ops layer — automated, supervised, and ready week one.</p>
       <div class="guide-role-diagram" aria-label="How BizTech fits into your business">
         <span class="guide-box guide-box--you">You (Founder)</span>
         <span class="guide-arrow" aria-hidden="true">→</span>
@@ -776,7 +778,7 @@
         <span class="guide-arrow" aria-hidden="true">→</span>
         <span class="guide-box guide-box--tools">Growth</span>
       </div>
-      <p style="color: var(--muted); font-size: .9rem; margin-top: 1.25rem;">We've helped Utah founders get their phones answered, their leads followed up, and their websites built — without adding headcount. We built BizTechs because we know exactly what's breaking your growth.</p>
+      <p style="color: var(--muted); font-size: .9rem; margin-top: 1.25rem;">We've designed 120+ operational systems since 2017. BizTechs are built on everything we learned about what makes businesses grow.</p>
       <div class="cta-row" style="justify-content: flex-start; margin-top: 2rem;">
         <a class="cta" href="/hire-a-biztech/?source=home-guide">Talk to a BizTech</a>
       </div>
