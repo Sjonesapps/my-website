@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.youros.app/</loc></url>
-  <url><loc>https://www.youros.app/biztechs/</loc></url>
-  <url><loc>https://www.youros.app/biztechs/garry/</loc></url>
-  <url><loc>https://www.youros.app/custom-biztech/</loc></url>
-  <url><loc>https://www.youros.app/hire-a-biztech/</loc></url>
-  <url><loc>https://www.youros.app/how-it-works/</loc></url>
-  <url><loc>https://www.youros.app/results/</loc></url>
-  <url><loc>https://www.youros.app/pricing/</loc></url>
-  <url><loc>https://www.youros.app/about/</loc></url>
   <url>
     <loc>https://www.youros.app/</loc>
     <lastmod>2026-07-16</lastmod>
@@ -34,13 +25,43 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.youros.app/biztechs/friday/</loc>
+    <loc>https://www.youros.app/biztechs/garry/</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.youros.app/biztechs/xavier/</loc>
+    <loc>https://www.youros.app/hire-a-biztech/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.youros.app/custom-biztech/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.youros.app/how-it-works/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.youros.app/results/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.youros.app/pricing/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.youros.app/about/</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
