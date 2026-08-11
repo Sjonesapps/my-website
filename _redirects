@@ -10,3 +10,10 @@
 /lets-talk-ai           /what-does-youros-do/    301!
 /lets-talk-ai/          /what-does-youros-do/    301!
 /lets-talk-ai.html      /what-does-youros-do/    301!
+
+# Friday and Xavier are not current public BizTech offerings (per llms.txt 2026-08-03).
+# Removed from sitemap 2026-08-10. Send traffic to the BizTechs index.
+/biztechs/friday        /biztechs/    301!
+/biztechs/friday/       /biztechs/    301!
+/biztechs/xavier        /biztechs/    301!
+/biztechs/xavier/       /biztechs/    301!
