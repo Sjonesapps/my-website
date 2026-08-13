@@ -15,6 +15,8 @@
   <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/youros-mark.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('js');</script>
 
@@ -683,12 +685,21 @@
     .before-after__label--after { color: #22c55e; background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.2); }
   </style>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-Y74BBJGYND');
+    window.addEventListener('load', () => {
+      const loadAnalytics = () => {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND';
+        document.head.appendChild(script);
+      };
+      if ('requestIdleCallback' in window) requestIdleCallback(loadAnalytics, { timeout: 2500 });
+      else setTimeout(loadAnalytics, 1500);
+    }, { once: true });
   </script>
   <link rel="stylesheet" href="/site-header.css">
   <script type="application/ld+json">
@@ -724,7 +735,18 @@
   }
   </script>
 </head>
-<body>
+<body class="has-yos-founder-bar">
+  <div class="yos-founder-bar" role="banner" aria-label="Founding Member Offer">
+    <div class="yos-founder-bar__inner">
+      <span class="yos-founder-bar__badge">FOUNDING OFFER</span>
+      <span class="yos-founder-bar__msg">Lock in YourOS at <strong>$499/mo for life</strong> — first 10 seats only.</span>
+      <div class="yos-founder-bar__actions">
+        <a class="yos-founder-bar__btn" href="mailto:peter@youros.app?subject=Founder%27s%20Seat%20Inquiry">Email Peter</a>
+        <a class="yos-founder-bar__btn yos-founder-bar__btn--outline" href="tel:+13854881520">Call Penny</a>
+      </div>
+      <button class="yos-founder-bar__close" aria-label="Dismiss offer banner">&#x2715;</button>
+    </div>
+  </div>
   <nav class="yos-header" aria-label="Primary navigation">
     <a class="yos-header__brand" href="/">
       <img src="/assets/brand/youros-mark.webp" width="96" height="96" alt="YourOS">
@@ -753,6 +775,7 @@
   </nav>
 
   <!-- SECTION 1: HERO -->
+  <main>
   <section class="hero">
     <div class="hero-inner">
       <h1>BizTechs Grow Your Business.</h1>
@@ -826,7 +849,7 @@
         <p class="lead" style="margin:0 auto;">Penny answers as your receptionist, confirms the details, books the appointment, and sends you the outcome—not another task.</p>
       </div>
       <div class="penny-proof story-animation" aria-label="Example of Penny answering a customer call and notifying the owner">
-        <img class="penny-proof__image" src="/assets/marketing/penny-call-confirmation.webp" alt="A remodeling business owner continuing to work while Penny handles an incoming call" width="1440" height="810">
+        <img class="penny-proof__image" src="/assets/marketing/penny-call-confirmation.webp" alt="A remodeling business owner continuing to work while Penny handles an incoming call" width="1440" height="810" loading="lazy" decoding="async">
         <div class="call-demo">
           <div class="call-demo__person">
             <img class="call-demo__avatar" src="/assets/biztech/penny-phone-136.webp" alt="Penny avatar" width="42" height="42">
@@ -856,7 +879,7 @@
         <p class="lead" style="margin:0 auto;">Garry follows your approved sales process, confirms buying intent, and hands back the customer when it is time to close.</p>
       </div>
       <div class="penny-proof garry-proof story-animation" aria-label="Example of Garry returning a buyer who is ready to purchase">
-        <img class="penny-proof__image" src="/assets/marketing/garry-ready-buyer.webp" alt="An RV dealership owner continuing to manage inventory while Garry follows up with a buyer" width="1440" height="810">
+        <img class="penny-proof__image" src="/assets/marketing/garry-ready-buyer.webp" alt="An RV dealership owner continuing to manage inventory while Garry follows up with a buyer" width="1440" height="810" loading="lazy" decoding="async">
         <div class="call-demo garry-demo">
           <div class="call-demo__person">
             <img class="call-demo__avatar" src="/assets/biztech/garry-sales-professional-136.webp" alt="Garry avatar" width="42" height="42">
@@ -1205,6 +1228,7 @@
       </div>
     </div>
   </section>
+  </main>
   <footer><nav class="yos-footer-key-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/biztechs/">BizTechs</a><a href="/biztechs/peter/">Peter</a><a href="/biztechs/garry/">Garry</a><a href="/blog/">Blog</a><a href="/how-it-works/">How It Works</a><a href="/results/">Results</a><a href="/pricing/">Pricing</a></nav>
     <div class="footer-inner">
       <div>
@@ -1239,7 +1263,7 @@
     <div class="footer-bottom">
       <div>
         <span>© 2026 YourOS. All rights reserved.</span>
-        <img class="httl-mark" src="/img/httl-monogram.png" alt="Holiness To The Lord" title="Holiness To The Lord">
+        <img class="httl-mark" src="/img/httl-monogram.png" width="256" height="202" alt="Holiness To The Lord" title="Holiness To The Lord">
       </div>
       <div class="footer-links" style="display:flex; gap:1rem; flex-wrap:wrap;">
         <a href="/privacy-policy.html" style="color:var(--muted); font-size:0.82rem;">Privacy Policy</a>

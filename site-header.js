@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Founding Member Offer bar — bright yellow, every page, dismissible
-  if (!document.querySelector('.yos-founder-bar') && !localStorage.getItem('yos-founder-dismissed')) {
-    const bar = document.createElement('div');
-    bar.className = 'yos-founder-bar';
-    bar.setAttribute('role', 'banner');
-    bar.setAttribute('aria-label', 'Founding Member Offer');
-    bar.innerHTML = `
+  // The offer is rendered in initial HTML to prevent layout shift; dismissal remains client-side.
+  let founderBar = document.querySelector('.yos-founder-bar');
+  if (!founderBar && !localStorage.getItem('yos-founder-dismissed')) {
+    founderBar = document.createElement('div');
+    founderBar.className = 'yos-founder-bar';
+    founderBar.setAttribute('role', 'banner');
+    founderBar.setAttribute('aria-label', 'Founding Member Offer');
+    founderBar.innerHTML = `
       <div class="yos-founder-bar__inner">
         <span class="yos-founder-bar__badge">FOUNDING OFFER</span>
         <span class="yos-founder-bar__msg">Lock in YourOS at <strong>$499/mo for life</strong> — first 10 seats only.</span>
@@ -15,13 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <button class="yos-founder-bar__close" aria-label="Dismiss offer banner">&#x2715;</button>
       </div>`;
-    bar.querySelector('.yos-founder-bar__close').addEventListener('click', () => {
-      bar.remove();
+    document.body.insertAdjacentElement('afterbegin', founderBar);
+    document.body.classList.add('has-yos-founder-bar');
+  }
+  if (founderBar && localStorage.getItem('yos-founder-dismissed')) {
+    founderBar.remove();
+    document.body.classList.remove('has-yos-founder-bar');
+  } else if (founderBar) {
+    founderBar.querySelector('.yos-founder-bar__close').addEventListener('click', () => {
+      founderBar.remove();
       document.body.classList.remove('has-yos-founder-bar');
       localStorage.setItem('yos-founder-dismissed', '1');
     });
-    document.body.insertAdjacentElement('afterbegin', bar);
-    document.body.classList.add('has-yos-founder-bar');
   }
 
   const header = document.querySelector('.yos-header');
