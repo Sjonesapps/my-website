@@ -1,33 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // The offer is rendered in initial HTML to prevent layout shift; dismissal remains client-side.
-  let founderBar = document.querySelector('.yos-founder-bar');
-  if (!founderBar && !localStorage.getItem('yos-founder-dismissed')) {
-    founderBar = document.createElement('div');
-    founderBar.className = 'yos-founder-bar';
-    founderBar.setAttribute('role', 'banner');
-    founderBar.setAttribute('aria-label', 'Founding Member Offer');
-    founderBar.innerHTML = `
-      <div class="yos-founder-bar__inner">
-        <span class="yos-founder-bar__badge">FOUNDING OFFER</span>
-        <span class="yos-founder-bar__msg">Lock in YourOS at <strong>$499/mo for life</strong> — first 10 seats only.</span>
-        <div class="yos-founder-bar__actions">
-          <a class="yos-founder-bar__btn" href="mailto:peter@youros.app?subject=Founder%27s%20Seat%20Inquiry">Email Peter</a>
-          <a class="yos-founder-bar__btn yos-founder-bar__btn--outline" href="tel:+13854881520">Call Penny</a>
-        </div>
-        <button class="yos-founder-bar__close" aria-label="Dismiss offer banner">&#x2715;</button>
-      </div>`;
-    document.body.insertAdjacentElement('afterbegin', founderBar);
-    document.body.classList.add('has-yos-founder-bar');
+  const measurementId = 'G-Y74BBJGYND';
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
+  if (!window.__yourosAnalyticsConfigured) {
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId);
+    window.__yourosAnalyticsConfigured = true;
   }
-  if (founderBar && localStorage.getItem('yos-founder-dismissed')) {
-    founderBar.remove();
-    document.body.classList.remove('has-yos-founder-bar');
-  } else if (founderBar) {
-    founderBar.querySelector('.yos-founder-bar__close').addEventListener('click', () => {
-      founderBar.remove();
-      document.body.classList.remove('has-yos-founder-bar');
-      localStorage.setItem('yos-founder-dismissed', '1');
-    });
+  if (!document.querySelector('script[data-youros-analytics]')) {
+    const analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.dataset.yourosAnalytics = 'true';
+    analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.appendChild(analyticsScript);
   }
 
   const header = document.querySelector('.yos-header');
@@ -97,6 +82,38 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('has-yos-action-bar');
   }
 
+  const classifyCTA = (link) => {
+    const href = link.getAttribute('href') || '';
+    const label = (link.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+    const subject = decodeURIComponent(href).toLowerCase();
+    if (href.includes('peter@youros.app') || label.includes('hire peter')) return { name: 'hire_peter', biztech: 'peter', action: 'hire' };
+    if (href.includes('garry@youros.app') || label.includes('hire garry')) return { name: 'hire_garry', biztech: 'garry', action: 'hire' };
+    if (href.includes('/biztechs/peter/') && label.includes('hire')) return { name: 'hire_peter', biztech: 'peter', action: 'hire' };
+    if (href.includes('/biztechs/penny/') && (label.includes('hire') || label.includes('penny'))) return { name: 'hire_penny', biztech: 'penny', action: 'hire' };
+    if (href.startsWith('tel:') && href.includes('3854881520')) return { name: 'call_penny', biztech: 'penny', action: 'call' };
+    if (href.startsWith('sms:') && href.includes('3854881520')) return { name: 'text_penny', biztech: 'penny', action: 'text' };
+    if (href.includes('reason=custom') || label.includes('custom biztech') || label.includes('different job')) return { name: 'custom_job', biztech: 'custom', action: 'describe_job' };
+    if (href === '/biztechs/' || href.startsWith('/biztechs/?') || label.includes('choose a biztech') || label.includes('meet the biztech')) return { name: 'choose_biztech', biztech: 'multiple', action: 'choose' };
+    if (href === '#hire-your-first-employee' || label.includes('tell us what needs doing')) return { name: 'tell_us_the_job', biztech: 'multiple', action: 'qualify' };
+    return null;
+  };
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a');
+    if (!link) return;
+    const cta = classifyCTA(link);
+    if (!cta || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'cta_click', {
+      cta_name: cta.name,
+      biztech: cta.biztech,
+      action: cta.action,
+      placement: link.closest('.yos-action-bar') ? 'sticky_action_bar' : (link.closest('header, nav') ? 'navigation' : 'page_content'),
+      destination: link.getAttribute('href') || '',
+      page_path: window.location.pathname,
+      transport_type: 'beacon'
+    });
+  }, { passive: true });
+
   const footer = document.querySelector('footer');
   if (footer && !document.querySelector('.yos-page-exits')) {
     const exits = document.createElement('section');
@@ -104,12 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
     exits.setAttribute('aria-label', 'Keep exploring YourOS');
     exits.innerHTML = `
       <div class="yos-page-exits__inner">
-        <h2>Ready to hire your first AI Employee?</h2>
-        <p>Hire Peter for website work, Garry for lead follow-up, or meet the AI Employees available from YourOS.</p>
+        <h2>Ready to hire your first BizTech?</h2>
+        <p>Hire Peter for website work, Garry for lead follow-up, or meet the specialists available from YourOS.</p>
         <div class="yos-page-exits__links">
           <a href="mailto:peter@youros.app?subject=Hire%20Peter">Hire Peter</a>
           <a href="mailto:garry@youros.app?subject=Hire%20Garry">Hire Garry</a>
-          <a href="/biztechs/">Meet the AI Employees</a>
+          <a href="/biztechs/">Choose a BizTech</a>
           <a href="/blog/">Read the Blog</a>
           <a href="/how-it-works/">How It Works</a>
           <a href="/results/">Results</a>
