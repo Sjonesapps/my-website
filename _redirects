@@ -1,6 +1,11 @@
 /youros-home    /    301!
 /youros-home/   /    301!
 
+# Founders offer was retired; pricing is now the authoritative offer page.
+/founders        /pricing/    301!
+/founders/       /pricing/    301!
+/founders.html   /pricing/    301!
+
 # Penny was formerly branded as Moneypenny. Preserve old links and search traffic.
 /biztechs/moneypenny    /biztechs/penny/    301!
 /biztechs/moneypenny/   /biztechs/penny/    301!
