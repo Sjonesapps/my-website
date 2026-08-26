@@ -100,34 +100,49 @@
       content: ""; position: absolute; inset: 0;
       background: linear-gradient(90deg, rgba(10,11,13,.96) 0%, rgba(10,11,13,.82) 34%, rgba(10,11,13,.08) 68%);
     }
+    /* iPhone Messages-style proof cards: familiar light thread, real sender header, animated exchange. */
     .message-demo {
       position: relative; z-index: 2; width: min(410px, calc(100% - 2rem));
-      margin: 2rem; padding: 1rem; border-radius: 24px; text-align: left;
-      background: rgba(20,21,24,.92); border: 1px solid rgba(255,255,255,.16);
-      box-shadow: 0 18px 48px rgba(0,0,0,.42); backdrop-filter: blur(12px);
+      margin: 2rem; padding: .7rem .8rem 1rem; border-radius: 24px; text-align: left;
+      background: #f8f8fa; border: 1px solid rgba(255,255,255,.72);
+      box-shadow: 0 18px 48px rgba(0,0,0,.42);
     }
     .message-demo__header {
       display: flex; align-items: center; gap: .7rem; padding: .2rem .35rem .9rem;
-      border-bottom: 1px solid rgba(255,255,255,.1); font-weight: 800;
+      border-bottom: 1px solid #dedee3; color: #17171a; font-weight: 800;
     }
     .message-demo__avatar {
       display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%;
-      background: var(--peter); color: #07121b; font-size: .9rem;
+      background: var(--peter); color: #07121b; font-size: .9rem; object-fit: cover; overflow: hidden;
     }
-    .message-demo__status { color: var(--muted); font-size: .72rem; font-weight: 600; }
-    .message-demo__thread { display: grid; gap: .75rem; padding: 1rem 0 .35rem; }
+    .message-demo__status { color: #77777e; font-size: .72rem; font-weight: 600; }
+    .message-demo__thread { display: grid; gap: .45rem; padding: 1rem .2rem .35rem; }
     .message {
-      max-width: 88%; padding: .75rem .9rem; border-radius: 16px;
-      font-size: .92rem; line-height: 1.35;
+      max-width: 88%; padding: .56rem .78rem; border-radius: 18px;
+      color: #17171a; font-size: .92rem; line-height: 1.35;
+      box-shadow: 0 1px 1px rgba(0,0,0,.08);
     }
-    .message--owner { justify-self: end; background: var(--primary); color: white; border-bottom-right-radius: 5px; }
-    .message--peter { justify-self: start; background: #34363a; color: var(--text); border-bottom-left-radius: 5px; }
+    .message--owner { justify-self: end; background: #1685f5; color: white; border-bottom-right-radius: 5px; }
+    .message--peter, .message--penny, .message--garry { justify-self: start; background: #e5e5ea; border-bottom-left-radius: 5px; }
     .message--done { border-left: 3px solid #22c55e; }
-    .message-demo .message { opacity: 0; transform: translateY(8px); animation: message-in .45s ease forwards; }
-    .message-demo .message:nth-child(1) { animation-delay: .25s; }
-    .message-demo .message:nth-child(2) { animation-delay: 1.15s; }
-    .message-demo .message:nth-child(3) { animation-delay: 2.15s; }
-    @keyframes message-in { to { opacity: 1; transform: translateY(0); } }
+    .message-demo .message { opacity: 0; transform: translateY(8px) scale(.98); animation: story-item 10s ease-in-out infinite; animation-play-state: paused; }
+    .story-owner { animation-delay: .25s !important; }
+    .story-typing--first { animation: story-typing-bubble 10s ease-in-out infinite !important; animation-delay: 1.35s !important; }
+    .story-action { animation-delay: 2.35s !important; }
+    .story-typing--second { animation: story-typing-bubble 10s ease-in-out infinite !important; animation-delay: 4.05s !important; }
+    .story-done { animation-delay: 5.05s !important; }
+    .story-response { animation-delay: 2.35s !important; }
+    .story-done-call { animation-delay: 5.05s !important; }
+    @keyframes story-item {
+      0%, 5% { opacity: 0; transform: translateY(8px) scale(.98); }
+      9%, 62% { opacity: 1; transform: translateY(0) scale(1); }
+      73%, 100% { opacity: 0; transform: translateY(-3px) scale(.99); }
+    }
+    @keyframes story-typing-bubble {
+      0%, 10% { opacity: 0; transform: translateY(8px) scale(.98); }
+      14%, 27% { opacity: 1; transform: translateY(0) scale(1); }
+      34%, 100% { opacity: 0; transform: translateY(-3px) scale(.99); }
+    }
     .js .story-animation .message-demo .message,
     .js .story-animation .call-event,
     .js .story-animation .owner-alert,
@@ -138,8 +153,16 @@
     .js .story-animation.is-visible .owner-alert,
     .js .story-animation.is-visible .buyer-event,
     .js .story-animation.is-visible .garry-alert { animation-play-state: running; }
+    .iphone-typing { display: flex; gap: 4px; width: fit-content; margin: .15rem 0 0 .2rem; padding: .55rem .72rem; border-radius: 18px; background: #e5e5ea; opacity: 0; transform: translateY(8px) scale(.98); }
+    .message-demo .iphone-typing { animation-play-state: paused; }
+    .js .story-animation.is-visible .iphone-typing { animation-play-state: running; }
+    .iphone-typing i { width: 6px; height: 6px; border-radius: 50%; background: #8d8d93; animation: typing-dot 1.2s infinite; }
+    .iphone-typing i:nth-child(2) { animation-delay: .15s; }
+    .iphone-typing i:nth-child(3) { animation-delay: .3s; }
+    @keyframes typing-dot { 0%, 60%, 100% { transform: translateY(0); opacity: .55; } 30% { transform: translateY(-3px); opacity: 1; } }
+    .js .story-animation.is-visible .message-demo .message { animation-play-state: running; }
     @media (prefers-reduced-motion: reduce) {
-      .message-demo .message, .call-event, .owner-alert, .buyer-event, .garry-alert { opacity: 1; transform: none; animation: none; }
+      .message-demo .message, .call-event, .owner-alert, .buyer-event, .garry-alert, .iphone-typing { opacity: 1; transform: none; animation: none; }
     }
     .message__time { display: block; margin-top: .35rem; opacity: .68; font-size: .66rem; }
     .hero-proof__caption {
@@ -161,38 +184,42 @@
     }
     .call-demo {
       position: relative; z-index: 2; width: min(420px, calc(100% - 2rem)); margin: 2rem;
-      padding: 1rem; border-radius: 24px; background: rgba(20,21,24,.93);
-      border: 1px solid rgba(255,255,255,.16); box-shadow: 0 18px 48px rgba(0,0,0,.42);
-      backdrop-filter: blur(12px);
+      padding: .7rem .8rem 1rem; border-radius: 24px; background: #f8f8fa;
+      border: 1px solid rgba(255,255,255,.72); box-shadow: 0 18px 48px rgba(0,0,0,.42);
     }
-    .call-demo__person { display: flex; align-items: center; gap: .75rem; padding: .2rem .3rem .9rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .call-demo__person { display: flex; align-items: center; gap: .75rem; padding: .2rem .3rem .9rem; border-bottom: 1px solid #dedee3; color: #17171a; }
     .call-demo__avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--penny); }
     .call-demo__name { font-weight: 800; line-height: 1.15; }
-    .call-demo__role { color: var(--muted); font-size: .72rem; font-weight: 600; }
+    .call-demo__role { color: #77777e; font-size: .72rem; font-weight: 600; }
     .call-event, .owner-alert {
-      opacity: 0; transform: translateY(8px); animation: message-in .45s ease forwards;
-      margin-top: .85rem; padding: .8rem .9rem; border-radius: 14px;
+      opacity: 0; transform: translateY(8px) scale(.98); animation: story-item 10s ease-in-out infinite;
+      animation-play-state: paused; margin-top: .65rem; padding: .65rem .8rem; border-radius: 18px;
+      color: #17171a; box-shadow: 0 1px 1px rgba(0,0,0,.08);
     }
-    .call-event { animation-delay: .3s; background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.3); }
-    .call-event__label { color: var(--penny); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .call-event { animation-delay: .3s; background: #1685f5; color: #fff; border-bottom-right-radius: 5px; justify-self: end; margin-left: auto; }
+    .call-event__label { color: rgba(255,255,255,.78); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .call-event strong { display: block; margin-top: .2rem; }
     .call-event__detail { color: var(--muted); font-size: .78rem; }
-    .owner-alert { animation-delay: 1.35s; background: #34363a; border-left: 3px solid #22c55e; font-size: .92rem; line-height: 1.4; }
-    .owner-alert__label { display: block; color: #86efac; font-size: .7rem; font-weight: 800; margin-bottom: .3rem; text-transform: uppercase; letter-spacing: .06em; }
+    .owner-alert { animation-delay: 2.35s; background: #e5e5ea; color: #17171a; border-bottom-left-radius: 5px; font-size: .92rem; line-height: 1.4; justify-self: start; max-width: 88%; }
+    .owner-alert__label { display: block; color: #77777e; font-size: .7rem; font-weight: 800; margin-bottom: .3rem; text-transform: uppercase; letter-spacing: .06em; }
 
     /* GARRY READY-BUYER STORY */
     .garry-story { background: var(--bg); border-top: 1px solid var(--line); }
     .garry-demo .call-demo__avatar { border-color: var(--garry); }
     .buyer-event, .garry-alert {
-      opacity: 0; transform: translateY(8px); animation: message-in .45s ease forwards;
-      margin-top: .85rem; padding: .8rem .9rem; border-radius: 14px;
+      opacity: 0; transform: translateY(8px) scale(.98); animation: story-item 10s ease-in-out infinite;
+      animation-play-state: paused; margin-top: .65rem; padding: .65rem .8rem; border-radius: 18px;
+      color: #17171a; box-shadow: 0 1px 1px rgba(0,0,0,.08);
     }
-    .buyer-event { animation-delay: .3s; background: rgba(167,139,250,.12); border: 1px solid rgba(167,139,250,.35); }
-    .buyer-event__label { color: #c4b5fd; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .buyer-event { animation-delay: .3s; background: #1685f5; color: #fff; border-bottom-right-radius: 5px; justify-self: end; margin-left: auto; }
+    .buyer-event__label { color: rgba(255,255,255,.78); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .buyer-event strong { display: block; margin-top: .2rem; }
     .buyer-event__detail { color: var(--muted); font-size: .78rem; }
-    .garry-alert { animation-delay: 1.35s; background: #34363a; border-left: 3px solid #22c55e; font-size: .92rem; line-height: 1.4; }
-    .garry-alert__label { display: block; color: #86efac; font-size: .7rem; font-weight: 800; margin-bottom: .3rem; text-transform: uppercase; letter-spacing: .06em; }
+    .garry-alert { animation-delay: 2.35s; background: #e5e5ea; color: #17171a; border-bottom-left-radius: 5px; font-size: .92rem; line-height: 1.4; justify-self: start; max-width: 88%; }
+    .garry-alert__label { display: block; color: #77777e; font-size: .7rem; font-weight: 800; margin-bottom: .3rem; text-transform: uppercase; letter-spacing: .06em; }
+    .call-demo .call-event, .call-demo .owner-alert, .call-demo .buyer-event, .call-demo .garry-alert { display: block; }
+    .js .story-animation.is-visible .call-event, .js .story-animation.is-visible .owner-alert,
+    .js .story-animation.is-visible .buyer-event, .js .story-animation.is-visible .garry-alert { animation-play-state: running; }
 
     /* EMPLOYEE CATEGORY */
     .org-chart { margin: 2.5rem auto 0; max-width: 880px; text-align: center; }
@@ -557,7 +584,7 @@
       gap: 1rem; flex-wrap: wrap;
       font-size: 0.82rem; color: var(--muted);
     }
-    .httl-mark { width: 26px; opacity: 0.55; filter: invert(1); vertical-align: middle; }
+    .httl-mark { width: 26px; height: auto; max-height: 26px; object-fit: contain; opacity: 0.55; filter: invert(1); vertical-align: middle; }
 
     @media (max-width: 900px) {
       .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -692,8 +719,10 @@
     gtag('config', 'G-Y74BBJGYND');
     window.addEventListener('load', () => {
       const loadAnalytics = () => {
+        if (document.querySelector('script[data-youros-analytics]')) return;
         const script = document.createElement('script');
         script.async = true;
+        script.dataset.yourosAnalytics = 'true';
         script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y74BBJGYND';
         document.head.appendChild(script);
       };
@@ -735,18 +764,7 @@
   }
   </script>
 </head>
-<body class="has-yos-founder-bar">
-  <div class="yos-founder-bar" role="banner" aria-label="Founding Member Offer">
-    <div class="yos-founder-bar__inner">
-      <span class="yos-founder-bar__badge">FOUNDING OFFER</span>
-      <span class="yos-founder-bar__msg">Lock in YourOS at <strong>$499/mo for life</strong> — first 10 seats only.</span>
-      <div class="yos-founder-bar__actions">
-        <a class="yos-founder-bar__btn" href="mailto:peter@youros.app?subject=Founder%27s%20Seat%20Inquiry">Email Peter</a>
-        <a class="yos-founder-bar__btn yos-founder-bar__btn--outline" href="tel:+13854881520">Call Penny</a>
-      </div>
-      <button class="yos-founder-bar__close" aria-label="Dismiss offer banner">&#x2715;</button>
-    </div>
-  </div>
+<body>
   <nav class="yos-header" aria-label="Primary navigation">
     <a class="yos-header__brand" href="/">
       <img src="/assets/brand/youros-mark.webp" width="96" height="96" alt="YourOS">
@@ -762,7 +780,7 @@
           <a href="/biztechs/peter/">Peter — Website BizTech</a>
           <a href="/biztechs/penny/">Penny — Front-Desk BizTech</a>
           <a href="/biztechs/garry/">Garry — Sales Follow-Up BizTech</a>
-          <a href="/custom-biztech/">Custom BizTechs</a>
+          <a href="/biztechs/penny/?reason=custom">Custom needs? Talk to Penny</a>
         </div>
       </div>
       <a href="/how-it-works/">How It Works</a>
@@ -770,7 +788,7 @@
       <a href="/pricing/">Pricing</a>
       <a href="/about/">About</a>
       <a href="/blog/">Blog</a>
-      <a class="yos-header__cta" href="/hire-a-biztech/?source=nav">Hire a BizTech</a>
+      <a class="yos-header__cta" href="/biztechs/">Meet the BizTechs</a>
     </div>
   </nav>
 
@@ -778,25 +796,27 @@
   <main>
   <section class="hero">
     <div class="hero-inner">
-      <h1>BizTechs Grow Your Business.</h1>
-      <p class="hero-positioning">You don’t need more software. You need someone who actually runs it.</p>
-      <p class="hero-sub">BizTechs are AI agents who handle the jobs your business keeps dropping — calls, follow-up, websites — so you can focus on growth. They work through text and email — the channels you already use. No new tools to learn. Just results.</p>
+      <h1>Hand off the work that keeps piling up.</h1>
+      <p class="hero-positioning">A BizTech is an AI employee built for a specific job.</p>
+      <p class="hero-sub">A BizTech handles the calls, follow-up, website work, and other recurring jobs you keep pushing to tomorrow—so you can stay focused on customers and the business you're building.</p>
       <div class="cta-row">
-        <a class="cta" href="/hire-a-biztech/?source=home-hero">Talk to a BizTech</a>
-        <a class="cta-outline" href="#biztechs">Meet Your BizTechs</a>
+        <a class="cta" href="/biztechs/">Choose a BizTech</a>
+        <a class="cta-outline" href="#hire-your-first-employee">Tell us what needs doing</a>
       </div>
 
       <div class="hero-proof story-animation" id="see-how-easy" aria-label="Example of delegating a website update by text">
         <img class="hero-proof__image" src="/assets/marketing/delegate-by-text-review.webp" alt="A small-business owner continuing his work after delegating a website update" width="1440" height="810">
         <div class="message-demo">
           <div class="message-demo__header">
-            <span class="message-demo__avatar">P</span>
+            <img class="message-demo__avatar" src="/assets/biztech/peter-website-136.webp" alt="Peter" width="36" height="36">
             <span>Peter <span class="message-demo__status">Website Employee</span></span>
           </div>
           <div class="message-demo__thread">
-            <div class="message message--owner">Just got this review. Please add it to the website.<span class="message__time">9:14 AM</span></div>
-            <div class="message message--peter">I’m on it. I’ll let you know when it’s up.<span class="message__time">9:14 AM</span></div>
-            <div class="message message--peter message--done">Done—the review is live on the homepage and results page. Here’s the link to check it.<span class="message__time">9:31 AM</span></div>
+            <div class="message message--owner story-owner">Just got this review. Please add it to the website.<span class="message__time">9:14 AM</span></div>
+            <div class="iphone-typing story-typing--first" aria-label="Peter is typing"><i></i><i></i><i></i></div>
+            <div class="message message--peter story-action">I’m on it. I’ll let you know when it’s up.<span class="message__time">9:14 AM</span></div>
+            <div class="iphone-typing story-typing--second" aria-label="Peter is typing"><i></i><i></i><i></i></div>
+            <div class="message message--peter message--done story-done">Done—the review is live on the homepage and results page. Here’s the link to check it.<span class="message__time">9:31 AM</span></div>
           </div>
         </div>
         <p class="hero-proof__caption">You keep working. Peter keeps your website moving.</p>
@@ -808,14 +828,14 @@
   <section class="pain-section" id="sound-familiar">
     <div class="wrapper">
       <div class="kicker">Sound Familiar?</div>
-      <h2>You started a business to build something.<br>Not to drown in tools, emails, and follow-ups.</h2>
+      <h2>You started a business to build something.<br>Your day is filled with tools, emails, and follow-ups.</h2>
       <ul class="pain-bullets">
-        <li><span class="pain-redot"></span>Every AI tool you buy needs setup, training, and babysitting.</li>
-        <li><span class="pain-redot"></span>Every hire is slow, expensive, and needs managing.</li>
-        <li><span class="pain-redot"></span>Every hour you spend on operations is an hour you don't spend on growth.</li>
+        <li><span class="pain-redot"></span>Your website needs another update, another page, and another round of changes.</li>
+        <li><span class="pain-redot"></span>Your phone rings while you are already solving the next problem.</li>
+        <li><span class="pain-redot"></span>Your quotes deserve follow-up while you are out doing the work.</li>
       </ul>
       <p class="pain-gut-punch">You've got 10 hours of work and 4 hours to do it.</p>
-      <p class="lead" style="margin-top: 1.75rem;">That's not a talent problem. That's a bandwidth problem. BizTechs fix it.</p>
+      <p class="lead" style="margin-top: 1.75rem;">That workload is real. Give part of it to a BizTech and make room for the work that moves you forward.</p>
     </div>
   </section>
 
@@ -823,9 +843,9 @@
   <section class="guide-section" id="what-is-biztech">
     <div class="wrapper">
       <div class="kicker">Enter BizTech</div>
-      <h2>A BizTech is your dedicated AI operator.</h2>
-      <p class="lead">Every BizTech is an AI agent — built on a decade of real operational experience from 120+ business systems. Your BizTech learns your ops, picks the right tools, and handles the job week to week. A real person (Spencer) oversees every BizTech — keeps them sharp, improves how they work, and steps in when something needs a human call. Think of it as an ops layer that runs itself, backed by someone who makes sure it never drifts.</p>
-      <p style="color: var(--text); font-size: 1.05rem; margin-top: 1.5rem;">Your BizTech communicates through text and email — no dashboard to check, no new system to learn. You assign work the same way you'd message a teammate.</p>
+      <h2>A BizTech is an AI employee built for a specific job.</h2>
+      <p class="lead">Every BizTech is built on a decade of real operational experience from 120+ business systems. Your BizTech learns your ops, picks the right tools, and handles the job week to week. Spencer oversees every BizTech, keeps the work sharp, and steps in when a human call matters.</p>
+      <p style="color: var(--text); font-size: 1.05rem; margin-top: 1.5rem;">Your BizTech communicates through text and email. Assign work the same way you message a teammate, then watch the responsibility move forward.</p>
       <div class="guide-role-diagram" aria-label="How BizTech fits into your business">
         <span class="guide-box guide-box--you">You (Founder)</span>
         <span class="guide-arrow" aria-hidden="true">→</span>
@@ -835,7 +855,7 @@
       </div>
       <p style="color: var(--muted); font-size: .9rem; margin-top: 1.25rem;">We've designed 120+ operational systems since 2017. BizTechs are built on everything we learned about what makes businesses grow.</p>
       <div class="cta-row" style="justify-content: flex-start; margin-top: 2rem;">
-        <a class="cta" href="/hire-a-biztech/?source=home-guide">Talk to a BizTech</a>
+        <a class="cta" href="/biztechs/">Meet the BizTechs</a>
       </div>
     </div>
   </section>
@@ -846,7 +866,7 @@
       <div class="penny-story__intro">
         <div class="kicker">Penny Handles the Call</div>
         <h2>Your phone gets answered. Your calendar gets filled. You keep working.</h2>
-        <p class="lead" style="margin:0 auto;">Penny answers as your receptionist, confirms the details, books the appointment, and sends you the outcome—not another task.</p>
+        <p class="lead" style="margin:0 auto;">Penny answers as your receptionist, confirms the details, books the appointment, and sends you the outcome while you keep the day moving.</p>
       </div>
       <div class="penny-proof story-animation" aria-label="Example of Penny answering a customer call and notifying the owner">
         <img class="penny-proof__image" src="/assets/marketing/penny-call-confirmation.webp" alt="A remodeling business owner continuing to work while Penny handles an incoming call" width="1440" height="810" loading="lazy" decoding="async">
@@ -856,15 +876,17 @@
             <span><span class="call-demo__name">Penny</span><br><span class="call-demo__role">Your Front-Desk Employee</span></span>
           </div>
           <div class="call-event">
-            <span class="call-event__label">Incoming call · answered</span>
-            <strong>Ashley Miller</strong>
-            <span class="call-event__detail">Kitchen remodel estimate</span>
+            <span class="call-event__label">Owner · 10:17 AM</span>
+            <strong>I’m missing calls while I’m on jobs. Please transfer kitchen remodel calls to Cindy.</strong>
           </div>
-          <div class="owner-alert">
-            <span class="owner-alert__label">Appointment confirmed</span>
-            Ashley is booked for Thursday at 2:00 PM. I added the estimate to your calendar and sent her the confirmation.
+          <div class="iphone-typing story-typing--first" aria-label="Penny is typing"><i></i><i></i><i></i></div>
+          <div class="owner-alert story-response">
+            <span class="owner-alert__label">Penny · 10:18 AM</span>
+            I’ll answer those calls, collect the project details, and send Cindy the ones ready for an estimate.
             <span class="message__time">10:18 AM</span>
           </div>
+          <div class="iphone-typing story-typing--second" aria-label="Penny is typing"><i></i><i></i><i></i></div>
+          <div class="owner-alert story-done-call"><span class="owner-alert__label">Penny · 10:19 AM</span>Done—I’ve sent Cindy the calls ready for an estimate.<span class="message__time">10:19 AM</span></div>
         </div>
       </div>
     </div>
@@ -886,99 +908,19 @@
             <span><span class="call-demo__name">Garry</span><br><span class="call-demo__role">Your Sales Follow-Up Employee</span></span>
           </div>
           <div class="buyer-event">
-            <span class="buyer-event__label">Buyer ready</span>
-            <strong>Marcus Reed · $42,500</strong>
-            <span class="buyer-event__detail">2024 Trailcrest travel trailer</span>
+            <span class="buyer-event__label">Owner · 4:40 PM</span>
+            <strong>Marcus has the $42,500 quote. Please keep the conversation moving while I finish this delivery.</strong>
           </div>
-          <div class="garry-alert">
-            <span class="garry-alert__label">Ready for your final handoff</span>
-            Marcus confirmed he’s ready to purchase at the quoted $42,500. I sent the deposit link and told him you’ll finalize the paperwork.
+          <div class="iphone-typing story-typing--first" aria-label="Garry is typing"><i></i><i></i><i></i></div>
+          <div class="garry-alert story-response">
+            <span class="garry-alert__label">Garry · 4:42 PM</span>
+            I’ll follow up using your approved process and return Marcus to you when he is ready to finalize the purchase.
             <span class="message__time">4:42 PM</span>
           </div>
+          <div class="iphone-typing story-typing--second" aria-label="Garry is typing"><i></i><i></i><i></i></div>
+          <div class="garry-alert story-done-call"><span class="garry-alert__label">Garry · 4:45 PM</span>Done—I’ve followed up and Marcus confirmed he wants to move forward.<span class="message__time">4:45 PM</span></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- SECTION 2: MEET YOUR NEW TEAM -->
-  <section class="section band" id="biztechs">
-    <div class="wrapper">
-      <div class="kicker">Meet Your BizTechs</div>
-      <h2>Which job needs an owner?</h2>
-      <p class="lead">Choose the BizTech built for the work that keeps slipping through the cracks.</p>
-
-      <div class="org-chart" aria-label="Your company organization chart with Peter, Penny, and Garry">
-        <div class="org-company">Your Company</div>
-        <div class="org-line"></div>
-        <div class="org-team">
-          <div class="org-role"><strong>Peter</strong><span>Website Developer</span></div>
-          <div class="org-role"><strong>Penny</strong><span>Receptionist</span></div>
-          <div class="org-role"><strong>Garry</strong><span>Sales Closer</span></div>
-        </div>
-      </div>
-
-      <div class="biztechs-grid">
-
-        <article class="biztech-card peter">
-          <div class="biztech-head">
-            <div class="biztech-badge">P</div>
-            <div>
-              <div class="biztech-name">Peter</div>
-              <div class="biztech-role">Website BizTech</div>
-            </div>
-          </div>
-          <p class="biztech-desc">Starts today. Builds and maintains your website. Publishes pages, updates, reviews, and content when you assign the work.</p>
-          <div class="biztech-price">Discounted price: <strong>$499/mo</strong></div>
-          <div class="biztech-actions">
-            <a class="cta" href="#hire-your-first-employee">Hire Peter</a>
-            <a class="secondary-link" href="/biztechs/peter/">Meet Peter →</a>
-          </div>
-        </article>
-
-        <article class="biztech-card penny">
-          <div class="biztech-head">
-            <div class="biztech-badge">P</div>
-            <div>
-              <div class="biztech-name">Penny</div>
-              <div class="biztech-role">Front-Desk BizTech</div>
-            </div>
-          </div>
-          <p class="biztech-desc">Answers every call. Captures customer details, books appointments, and sends your team the confirmed outcome.</p>
-          <div class="biztech-price">Discounted price: <strong>$499/mo</strong></div>
-          <div class="biztech-actions">
-            <a class="cta" href="#hire-your-first-employee">Hire Penny</a>
-            <a class="secondary-link" href="/biztechs/penny/">Meet Penny →</a>
-          </div>
-        </article>
-
-        <article class="biztech-card garry">
-          <div class="biztech-head">
-            <div class="biztech-badge">G</div>
-            <div>
-              <div class="biztech-name">Garry</div>
-              <div class="biztech-role">Sales Follow-Up BizTech</div>
-            </div>
-          </div>
-          <p class="biztech-desc">Follows up instantly. Never forgets a lead. Works your approved sales process and returns buyers when they are ready.</p>
-          <div class="biztech-price">Discounted rate: <strong>5% of closed quoted value</strong></div>
-          <div class="biztech-actions">
-            <a class="cta" href="#hire-your-first-employee">Hire Garry</a>
-            <a class="secondary-link" href="/biztechs/garry/">Meet Garry →</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: WHY COMPANIES HIRE US -->
-  <section class="section wrapper" id="difference">
-    <div class="kicker">Solving Business Problems Since 2017</div>
-    <h2>We've built over 120 operational systems for real businesses.</h2>
-    <p class="lead">That experience is what trains your BizTech. They're built on a decade of watching what actually breaks in small and mid-sized businesses, and what actually fixes it — and they communicate through text and email, the channels you already use every day.</p>
-    <p style="color: var(--text); max-width: 780px; margin-top:1.5rem;">Peter builds the website. Penny handles the front desk. Garry follows up with leads. The question isn't "Can AI do this?" It's <strong>"Which employee should I hire first?"</strong></p>
-    <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
-      <a class="cta" href="/hire-a-biztech/?source=home-difference">Talk to a BizTech</a>
     </div>
   </section>
 
@@ -986,62 +928,14 @@
   <section class="section band" id="hire-your-first-employee">
     <div class="wrapper">
       <div class="kicker">Talk to a BizTech</div>
-      <h2>Tell us what’s not working. We’ll take it from there.</h2>
-      <p class="lead">No sales pitch. No commitment. Just a direct conversation about the job you need off your plate and which BizTech fits best.</p>
-      <form class="engagement-form" name="biztech-engagement" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/engagement-received.html">
-        <input type="hidden" name="form-name" value="biztech-engagement">
-        <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
-        <div class="engagement-form__grid">
-          <label>Name<input name="name" autocomplete="name" required></label>
-          <label>Email<input type="email" name="email" autocomplete="email" required></label>
-        </div>
-        <label>Business<input name="business" autocomplete="organization" required></label>
-        <label>Which job needs a dependable owner?<textarea name="need" required placeholder="Website work, incoming calls, lead follow-up, or another job your team does not have time for."></textarea></label>
-        <label class="engagement-form__check"><input type="checkbox" name="loop_in_garry" value="yes"> Also bring in Garry for lead or quote follow-up</label>
-        <button class="cta" type="submit">Hire your first BizTech</button>
-        <p class="engagement-form__note">Peter receives this first and will respond within one business day.</p>
-      </form>
-      <p class="trust-line">Prefer to start directly? <a href="mailto:peter@youros.app?subject=Hire%20Peter&amp;body=Here%27s%20what%20I%20want%20my%20website%20to%20do%3A%0A%0AMy%20business%20is%3A%20%0AThe%20main%20goal%20of%20the%20website%20is%3A%20%0APages%20or%20features%20I%20want%3A%20%0AWebsites%20or%20styles%20I%20like%3A%20%0AAnything%20else%20Peter%20should%20know%3A%20">Hire Peter</a>, <a href="mailto:garry@youros.app?subject=Hire%20Garry">hire Garry</a>, or call Penny at <a href="tel:+13854881520">(385) 488-1520</a>.</p>
-    </div>
-  </section>
-
-  <!-- SECTION 4: TRY BEFORE YOU HIRE -->
-  <section class="section wrapper" id="results">
-    <div class="kicker">Try Before You Hire</div>
-    <h2>Talk to a BizTech before you commit to anything.</h2>
-    <p class="lead">Call Penny, email Peter, or reach out to Garry — see how they work firsthand, on a real job, before signing anything.</p>
-    <div class="demo-grid">
-      <div class="demo-card">
-        <h3>Talk to Penny</h3>
-        <p>Call Penny and speak with her directly. She’ll try to get you booked for a conversation — because that’s what she was built to do, and it’s the fastest way to see her work.</p>
-        <a class="cta" href="tel:+13854881520">Call Penny →</a>
+      <h2>Hire the right BizTech to help with your workload.</h2>
+      <p class="lead">You have a huge load of this work already. Hand the right part of it to a BizTech and keep your attention on the work only you can do.</p>
+      <div class="demo-grid" style="margin-top:2rem;">
+        <div class="demo-card"><h3>Website work keeps waiting</h3><p>Send Peter the page, review, photo, or idea that has been sitting on your list.</p><a class="cta" href="mailto:peter@youros.app?subject=Talk%20to%20Peter">Contact Peter →</a></div>
+        <div class="demo-card"><h3>Calls keep interrupting you</h3><p>Call Penny and let her answer the next customer so you can keep doing the work in front of you.</p><a class="cta" href="tel:+13854881520">Call Penny →</a></div>
+        <div class="demo-card"><h3>Quotes keep going cold</h3><p>Tell Garry which customers need follow-up and let him work your approved process.</p><a class="cta" href="mailto:garry@youros.app?subject=Talk%20to%20Garry">Contact Garry →</a></div>
       </div>
-      <div class="demo-card">
-        <h3>Email Peter</h3>
-        <p>Send Peter a real job — a page you need built, a review you want added, a change that’s been sitting on your list. He’ll respond the same way he would if you’d hired him.</p>
-        <a class="cta" href="mailto:peter@youros.app?subject=Talk%20to%20Peter&amp;body=Here%27s%20what%20I%20want%20my%20website%20to%20do%3A%0A%0AMy%20business%20is%3A%20%0AThe%20main%20goal%20of%20the%20website%20is%3A%20%0APages%20or%20features%20I%20want%3A%20%0AWebsites%20or%20styles%20I%20like%3A%20%0AAnything%20else%20Peter%20should%20know%3A%20">Email Peter →</a>
-      </div>
-      <div class="demo-card">
-        <h3>Reach Garry</h3>
-        <p>Tell Garry how you want leads followed up with. He’ll build the plan, get your sign-off, and show you exactly how he’d run your sales follow-up before you commit to anything.</p>
-        <a class="cta" href="mailto:garry@youros.app?subject=Talk%20to%20Garry">Email Garry →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- HAVE A CONVERSATION -->
-  <section class="section band" id="meet-youros">
-    <div class="wrapper">
-      <div class="story-block">
-        <div class="kicker">We’d Love to Meet You</div>
-        <h2>Have a Conversation First</h2>
-        <p>Not ready to fill out a form? Call Penny to schedule a conversation with YourOS. We’ll talk through what’s not working and which BizTech is the right fit for your business.</p>
-        <p>Once you hire a BizTech, we meet with you regularly to sharpen how they serve your business. And if you need something custom — a job no existing BizTech covers — we can build one around your process.</p>
-        <div class="cta-row" style="justify-content:flex-start; margin-top: 1.25rem;">
-          <a class="cta" href="tel:+13854881520">Call Penny to Book</a>
-          <a class="cta-outline" href="/hire-a-biztech/?source=home-meet">Talk to a BizTech Online</a>
-        </div>
-      </div>
+      <p class="trust-line">Need something none of them owns yet? <a href="tel:+13854881520">Call Penny</a> and tell her what the business needs.</p>
     </div>
   </section>
 
@@ -1063,93 +957,42 @@
           </div>
         </div>
         <div class="cta-row" style="justify-content:flex-start; margin-top: 1.5rem;">
-          <a class="cta" href="/hire-a-biztech/?source=home-story">Talk to a BizTech</a>
+          <a class="cta" href="/biztechs/?source=home-story">Talk to a BizTech</a>
           <a class="cta-outline" href="/biztechs/peter/">See What Peter Builds →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 6: HOW IT WORKS -->
-  <section class="section wrapper" id="how-it-works">
-    <div class="kicker">Here's How It Works</div>
-    <h2>Three steps. No technical setup. No learning curve.</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>We learn your ops</h3>
-        <p>Your BizTech spends time inside your business — watching how things run, identifying the bottlenecks, and learning which jobs keep falling through the cracks.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>We take on the work</h3>
-        <p>Your BizTech owns the job. Answer calls, follow up with leads, build and update your website — using the tools you already have, or the ones that fit best.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>You focus on growth</h3>
-        <p>Your BizTech runs it week to week. You get the outcomes — not more tasks, more logins, or more systems to manage.</p>
-      </div>
-    </div>
-    <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
-      <a class="cta" href="/hire-a-biztech/?source=home-how-it-works">Talk to a BizTech</a>
-    </div>
-  </section>
-
-  <!-- SECTION 6.5: THE OUTCOME -->
-  <section class="section wrapper">
-    <div class="story-block success-block">
-      <div class="kicker">After You Hire a BizTech</div>
-      <h2>The work keeps moving, even when your day gets full.</h2>
-      <p class="lead">Calls get answered while your team is helping the customers already in front of them. Quotes get followed up instead of quietly going cold. Website changes get completed without waiting for the one evening you might have free. The important jobs still have an owner when things get busy. And fewer unfinished tasks find their way back to you at the end of the day.</p>
-    </div>
-  </section>
-
-  <!-- FOUNDING MEMBER OFFER BANNER -->
-  <section class="section founding-offer" id="founding-offer">
-    <div class="wrapper founding-offer__inner">
-      <div class="hero-eyebrow">Founding Member Offer &mdash; First 10 Seats</div>
-      <h2>Lock in YourOS at $499/month. For life.</h2>
-      <p class="founding-offer__body">The first businesses joining YourOS get more than a smarter growth system. They get the founder price &mdash; $499/month, locked for life. When the first 10 seats are gone, this price is gone with them.</p>
-      <p class="founding-offer__support">Be early. Get the advantage. Help shape the system built to give small businesses their time and control back.</p>
-      <div class="cta-row founding-offer__cta-row">
-        <a class="cta" href="mailto:peter@youros.app?subject=Founder%27s%20Seat%20Inquiry">Email Peter</a>
-        <a class="founding-offer__cta-outline" href="tel:+13854881520">Call Penny · (385) 488-1520</a>
-      </div>
-      <p class="founding-offer__microcopy">10 founder seats. One lifetime price lock. No waiting for the &ldquo;right time.&rdquo;</p>
-    </div>
-  </section>
-
-  <!-- SECTION 7: FOUNDING CUSTOMER PRICING -->
+  <!-- SECTION 4: BIZTECH PRICING -->
   <section class="section band" id="pricing">
     <div class="wrapper">
-      <div class="kicker">Founding BizTech Salaries</div>
-      <h2>Monthly salaries for your first BizTechs</h2>
-      <p class="lead">Founding Employers lock in the lowest salaries we will offer for the first BizTechs they hire.</p>
+      <div class="kicker">First 10 Employers</div>
+      <h2>Hire Your BizTech — First 10 employers lock their rate while employed.</h2>
+      <p class="lead">Founding employers get the lowest salary we will offer because they are helping shape the first BizTechs. No platform fee. No membership fee. You simply pay each BizTech’s salary.</p>
 
       <div class="pricing-grid">
         <div class="price-card peter">
           <h3>Peter</h3>
           <div class="price-role">Website BizTech</div>
-          <div class="price-amount">$499/mo salary</div>
-          <div class="price-standard">Standard salary: $1,000/mo</div>
+          <div class="price-amount">$499/mo</div>
           <p class="price-note">One website. Ongoing pages, posts, changes, and management.</p>
-          <a class="cta" href="#hire-your-first-employee" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Peter</a>
+          <a class="cta" href="/biztechs/peter/" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Peter</a>
         </div>
         <div class="price-card penny">
           <h3>Penny</h3>
           <div class="price-role">Front-Desk BizTech</div>
-          <div class="price-amount">$499/mo salary</div>
-          <p class="price-note">Inbound call handling. Higher-volume staffing is quoted separately.</p>
-          <a class="cta" href="#hire-your-first-employee" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Penny</a>
+          <div class="price-amount">$499/mo</div>
+          <p class="price-note">Up to 1,000 minutes of inbound call handling monthly. Higher-volume is quoted separately.</p>
+          <a class="cta" href="/biztechs/penny/" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Penny</a>
         </div>
         <div class="price-card garry">
           <h3>Garry</h3>
           <div class="price-role">Sales Follow-Up BizTech</div>
-          <div class="price-amount">5% performance-based salary</div>
-          <div class="price-standard">Standard salary: 10%</div>
-          <p class="price-note">Garry earns his salary when the quoted lead communicates intent to buy.</p>
-          <a class="cta" href="#hire-your-first-employee" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Garry</a>
+          <div class="price-amount">5%</div>
+          <div class="price-standard">Standard: 10%</div>
+          <p class="price-note">Garry earns his 5% commission when a warm opportunity communicates buying intent.</p>
+          <a class="cta" href="/biztechs/garry/" style="display:block;text-align:center;padding:0.75rem 1rem;font-size:0.9rem;">Hire Garry</a>
         </div>
       </div>
 
@@ -1158,106 +1001,66 @@
       </div>
 
       <div class="pricing-terms">
-        <span>Monthly employment</span>
-        <span>End employment anytime</span>
-        <span>Founding salary locked while continuously employed</span>
-        <span>Limited Founding Employer availability</span>
+        <span>Month-to-month employment</span>
+        <span>Cancel anytime</span>
+        <span>Founding rate locked while employed</span>
+        <span>Only first 10 hiring employers get founding rate</span>
       </div>
 
       <div class="cta-row" style="justify-content:flex-start; margin-top: 1.75rem;">
-        <a class="cta" href="#hire-your-first-employee">Hire your first BizTech</a>
+        <a class="cta" href="/biztechs/">Choose a BizTech</a>
+        <a class="cta-outline" href="tel:+13854881520">Call Penny</a>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 8: CUSTOM BIZTECHS -->
+  <!-- SECTION 7: CUSTOM WORK -->
   <section class="section wrapper">
     <div class="custom-block">
       <div class="kicker" style="color: #a78bfa;">Custom BizTechs</div>
-      <h2>Need a BizTech for a Different Job?</h2>
-      <p style="color: var(--muted); max-width: 720px; margin-bottom: 0.75rem;">Some of the most valuable jobs in a business do not have an official title. They are the responsibilities that live in the owner's head:</p>
+      <h2>Need a Different Job? Call or Text Penny.</h2>
+      <p style="color: var(--muted); max-width: 720px; margin-bottom: 0.75rem;">Some of the most valuable jobs in a business live in the owner's head before they ever receive an official title:</p>
       <ul class="custom-quotes">
         <li>Someone should check this every day.</li>
         <li>Someone needs to make sure every customer hears back.</li>
         <li>Someone should move this information between our systems.</li>
         <li>Someone needs to catch this before it becomes a problem.</li>
       </ul>
-      <p style="color: var(--text);">Tell us the job you wish someone else owned. YourOS can build a Custom BizTech around your process, rules, systems, and desired outcome.</p>
+      <p style="color: var(--text);">Call or text Penny with the workload you want handled. She will help you describe it and find the right next step, whether Peter, Penny, Garry, or a new BizTech owns it.</p>
       <div class="cta-row" style="justify-content:flex-start; margin-top: 1.5rem;">
-        <a class="cta" href="/custom-biztech/">Tell Us the Job</a>
+        <a class="cta" href="tel:+13854881520">Call Penny</a><a class="cta-outline" href="sms:+13854881520">Text Penny</a>
       </div>
-      <p class="custom-note">Custom BizTech salaries generally begin at $500, depending on workload, systems, and complexity.</p>
+      <p class="custom-note">Custom BizTech salaries generally begin around $499, depending on workload, systems, and complexity.</p>
     </div>
   </section>
 
-  <!-- SECTION 9: EXPERIENCE AND AUTHORITY -->
-  <section class="section band" id="about">
-    <div class="wrapper">
-      <div class="kicker">About YourOS</div>
-      <h2>We built BizTechs because we've seen what breaks growth.</h2>
-      <p class="lead">YourOS has designed business systems since 2017. After 120+ operational builds across real companies, we learned the same thing every time: the bottleneck isn't strategy. It's bandwidth. BizTechs give founders their time back.</p>
-      <div class="cta-row" style="justify-content:flex-start; margin-top: 1.5rem;">
-        <a class="cta" href="/hire-a-biztech/?source=home-about">Talk to a BizTech</a>
-        <a class="cta-outline" href="/what-does-youros-do/">See Our Results</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 10: FINAL CTA -->
-  <section class="section wrapper">
-    <div class="final-cta">
-      <h2>You don’t need to figure this out alone.</h2>
-      <p>Tell us about your business. We’ll match you with a BizTech who fits your ops, your industry, and your pace. No commitment, no sales pitch — just a conversation about what’s not working.</p>
-      <div class="cta-row">
-        <a class="cta" href="/hire-a-biztech/?source=home-final">Talk to a BizTech</a>
-      </div>
-    </div>
-  </section>
-
-    <section class="yos-page-exits" aria-label="Keep exploring YourOS">
-    <div class="yos-page-exits__inner">
-      <h2>Ready to hire your first BizTech?</h2>
-      <p>Start with Peter for website work, Garry for lead follow-up, or meet the BizTechs available from YourOS.</p>
-      <div class="yos-page-exits__links">
-        <a href="mailto:peter@youros.app?subject=Hire%20Peter">Hire Peter</a>
-        <a href="mailto:garry@youros.app?subject=Hire%20Garry">Hire Garry</a>
-        <a href="/biztechs/">Meet the BizTechs</a>
-        <a href="/blog/">Read the Blog</a>
-        <a href="/how-it-works/">How It Works</a>
-        <a href="/results/">Results</a>
-      </div>
-    </div>
-  </section>
   </main>
-  <footer><nav class="yos-footer-key-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/biztechs/">BizTechs</a><a href="/biztechs/peter/">Peter</a><a href="/biztechs/garry/">Garry</a><a href="/blog/">Blog</a><a href="/how-it-works/">How It Works</a><a href="/results/">Results</a><a href="/pricing/">Pricing</a></nav>
+  <footer><nav class="yos-footer-key-links" aria-label="Footer navigation"><a href="/">Home</a><a href="/biztechs/">BizTechs</a><a href="/biztechs/peter/">Peter</a><a href="/biztechs/garry/">Garry</a><a href="/blog/">Blog</a><a href="#pricing">Pricing</a><a href="/results/">Results</a></nav>
     <div class="footer-inner">
       <div>
         <div class="footer-brand">
           <img src="/assets/brand/youros-mark.webp" width="96" height="96" alt="YourOS" style="height:28px;width:auto;">
-          <span class="footer-brand-text"><strong style="color:var(--text);">YourOS</strong> — BizTechs<br>for your business.</span>
+          <span class="footer-brand-text"><strong style="color:var(--text);">YourOS</strong> — Hire a BizTech<br>Specialized help for your business.</span>
         </div>
       </div>
       <div class="footer-col">
-        <h4>BizTechs</h4>
-        <a href="/biztechs/peter/">Peter — Websites</a>
+        <h4>Hire a BizTech</h4>
+        <a href="/biztechs/peter/">Peter — Website</a>
         <a href="/biztechs/penny/">Penny — Phone</a>
         <a href="/biztechs/garry/">Garry — Follow-Up</a>
-        <a href="/custom-biztech/">Custom BizTechs</a>
+        <a href="/biztechs/penny/?reason=custom">Custom BizTech</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#how-it-works">How It Works</a>
+        <h4>Learn</h4>
         <a href="#pricing">Pricing</a>
         <a href="#results">Results</a>
-        <a href="#about">About YourOS</a>
+        <a href="/about/">About YourOS</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
         <a href="/what-does-youros-do/">What YourOS Does</a>
-        <a href="/appsheet-consultant/">AppSheet Consulting</a>
-        <a href="/custom-workflow-automation/">Workflow Automation</a>
         <a href="/blog/">Blog</a>
-        <a href="/security-trust.html">Security &amp; Trust</a>
+        <a href='/security-trust'>Security &amp; Trust</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1266,9 +1069,9 @@
         <img class="httl-mark" src="/img/httl-monogram.png" width="256" height="202" alt="Holiness To The Lord" title="Holiness To The Lord">
       </div>
       <div class="footer-links" style="display:flex; gap:1rem; flex-wrap:wrap;">
-        <a href="/privacy-policy.html" style="color:var(--muted); font-size:0.82rem;">Privacy Policy</a>
-        <a href="/terms.html" style="color:var(--muted); font-size:0.82rem;">Terms of Service</a>
-        <a href="/terms.html#sms" style="color:var(--muted); font-size:0.82rem;">SMS Terms</a>
+        <a href='/privacy-policy' style='color:var(--muted); font-size:0.82rem;'>Privacy Policy</a>
+        <a href='/terms' style='color:var(--muted); font-size:0.82rem;'>Terms of Service</a>
+        <a href='/terms#sms' style='color:var(--muted); font-size:0.82rem;'>SMS Terms</a>
       </div>
     </div>
   </footer>

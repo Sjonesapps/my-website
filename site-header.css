@@ -296,6 +296,32 @@ body.has-yos-action-bar { padding-bottom: 82px; }
   .yos-page-exits__links a { text-align: center; }
 }
 
+/* Tablet portrait: keep the four-action dock inside the viewport. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .yos-action-bar {
+    gap: .35rem;
+    max-width: calc(100vw - 32px);
+    padding: .4rem;
+    width: calc(100vw - 32px);
+  }
+  .yos-action-bar > a,
+  .yos-action-bar__contact {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .yos-action-bar > a,
+  .yos-action-bar__contact a {
+    font-size: .74rem;
+    min-width: 0;
+    padding: .38rem .45rem;
+  }
+  .yos-action-bar__detail {
+    font-size: .6rem;
+    overflow-wrap: anywhere;
+  }
+  .yos-action-bar__icon { flex-basis: 18px; height: 18px; width: 18px; }
+}
+
 .yos-footer-key-links {
   display: flex;
   flex-wrap: wrap;
