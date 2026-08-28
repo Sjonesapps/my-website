@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (href.includes('garry@youros.app') || label.includes('hire garry')) return { name: 'hire_garry', biztech: 'garry', action: 'hire' };
     if (href.includes('/biztechs/peter/') && label.includes('hire')) return { name: 'hire_peter', biztech: 'peter', action: 'hire' };
     if (href.includes('/biztechs/penny/') && (label.includes('hire') || label.includes('penny'))) return { name: 'hire_penny', biztech: 'penny', action: 'hire' };
-    if (href.startsWith('tel:') && href.includes('3854881520')) return { name: 'call_penny', biztech: 'penny', action: 'call' };
-    if (href.startsWith('sms:') && href.includes('3854881520')) return { name: 'text_penny', biztech: 'penny', action: 'text' };
+    if (href.startsWith('tel:') && href.includes('4352701422')) return { name: 'call_penny', biztech: 'penny', action: 'call' };
+    if (href.startsWith('sms:') && href.includes('4352701422')) return { name: 'text_penny', biztech: 'penny', action: 'text' };
     if (href.includes('reason=custom') || label.includes('custom biztech') || label.includes('different job')) return { name: 'custom_job', biztech: 'custom', action: 'describe_job' };
     if (href === '/biztechs/' || href.startsWith('/biztechs/?') || label.includes('choose a biztech') || label.includes('meet the biztech')) return { name: 'choose_biztech', biztech: 'multiple', action: 'choose' };
     if (href === '#hire-your-first-employee' || label.includes('tell us what needs doing')) return { name: 'tell_us_the_job', biztech: 'multiple', action: 'qualify' };
