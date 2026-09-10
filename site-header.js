@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', String(willOpen));
     });
     links.addEventListener('click', (event) => {
-      if (event.target.closest('a')) closeMenu();
+      if (event.target.closest('a, button')) closeMenu();
     });
     document.addEventListener('click', (event) => {
       if (!header.contains(event.target)) closeMenu();

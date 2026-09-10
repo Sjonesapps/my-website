@@ -115,14 +115,28 @@ body.has-yos-founder-bar .yos-header { top: 44px; }
 
 .yos-header * { box-sizing: border-box; }
 .yos-header a { text-decoration: none; }
+.yos-header button { font-family: inherit; }
 .yos-header__brand { align-items: center; display: flex; gap: .75rem; }
 .yos-header__brand img { height: 32px; width: 32px; }
 .yos-header__brand span { color: var(--yos-nav-black); font-size: 1rem; font-weight: 600; }
 .yos-header__links { align-items: center; display: flex; gap: 1.35rem; }
 .yos-header__links > a,
+.yos-header__links > button,
 .yos-header__dropdown > a { color: var(--yos-nav-black); font-size: .95rem; font-weight: 500; }
 .yos-header__links > a:hover,
+.yos-header__links > button:hover,
 .yos-header__dropdown > a:hover { color: var(--yos-nav-blue); }
+.yos-header__qr {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+.yos-header__qr:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid var(--yos-nav-blue);
+  outline-offset: 4px;
+}
 .yos-header__cta {
   background: var(--yos-nav-orange);
   border-radius: 6px;
@@ -262,6 +276,7 @@ body.has-yos-action-bar { padding-bottom: 82px; }
   }
   .yos-header__links.is-open { display: flex; }
   .yos-header__dropdown { width: 100%; }
+  .yos-header__links > button { text-align: left; }
   .yos-header__dropdown-menu {
     box-shadow: none;
     display: block;
