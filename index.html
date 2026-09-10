@@ -282,6 +282,60 @@
       border: 1px solid rgba(255,255,255,.2); font-weight: 700;
     }
     .cta-outline:hover { border-color: var(--action); color: var(--action); }
+    .qr-share-trigger { cursor: pointer; font: inherit; min-height: 3.55rem; }
+    .qr-share-dialog {
+      background: transparent; border: 0; color: var(--text);
+      inset: 0; margin: auto; max-width: min(420px, calc(100vw - 2rem));
+      padding: 0; width: 100%;
+    }
+    .qr-share-dialog::backdrop { background: rgba(5,6,8,.74); backdrop-filter: blur(8px); }
+    .qr-share-panel {
+      background: #f8f8fa; border: 1px solid rgba(255,255,255,.5);
+      border-radius: 18px; box-shadow: 0 24px 70px rgba(0,0,0,.48);
+      color: #17171a; padding: 1rem; position: relative; text-align: center;
+    }
+    .qr-share-close {
+      align-items: center; background: #fff; border: 1px solid #dedee3;
+      border-radius: 999px; color: #17171a; cursor: pointer; display: inline-flex;
+      font: inherit; font-size: 1.1rem; font-weight: 800; height: 2.25rem;
+      justify-content: center; line-height: 1; position: absolute; right: .85rem;
+      top: .85rem; width: 2.25rem;
+    }
+    .qr-share-close:hover, .qr-share-close:focus-visible {
+      border-color: var(--action); color: var(--action); outline: none;
+    }
+    .qr-share-kicker {
+      color: var(--action); font-size: .72rem; font-weight: 800;
+      letter-spacing: .12em; margin: .2rem 2.75rem .45rem; text-transform: uppercase;
+    }
+    .qr-share-panel h2 {
+      color: #17171a; font-size: clamp(1.35rem, 4vw, 1.8rem);
+      margin: 0 2.75rem .45rem;
+    }
+    .qr-share-panel p { color: #585d66; font-size: .95rem; margin: 0 auto; max-width: 320px; }
+    .qr-share-code {
+      background: #fff; border: 1px solid #dedee3; border-radius: 14px;
+      margin: 1rem auto; padding: .75rem; width: min(100%, 310px);
+    }
+    .qr-share-code img { display: block; height: auto; image-rendering: pixelated; width: 100%; }
+    .qr-share-url {
+      color: #17171a; display: inline-block; font-size: .92rem;
+      font-weight: 800; margin-bottom: 1rem;
+    }
+    .qr-share-actions { display: grid; gap: .65rem; grid-template-columns: 1fr 1fr; }
+    .qr-share-actions form { margin: 0; }
+    .qr-share-copy,
+    .qr-share-done {
+      border-radius: 8px; cursor: pointer; font: inherit; font-weight: 800;
+      padding: .8rem 1rem; width: 100%;
+    }
+    .qr-share-copy { background: var(--action); border: 1px solid var(--action); color: #fff; }
+    .qr-share-copy:hover { background: var(--action-hover); }
+    .qr-share-done { background: transparent; border: 1px solid #cfd4d9; color: #17171a; }
+    .qr-share-done:hover { border-color: var(--action); color: var(--action); }
+    .qr-share-status {
+      color: #585d66; font-size: .82rem; min-height: 1.35rem; padding-top: .55rem;
+    }
     .trust-line {
       max-width: 620px; margin: 1.5rem auto 0;
       color: var(--muted); font-size: 0.92rem;
@@ -600,6 +654,9 @@
       .message-demo { margin: 1rem; }
       .hero-proof__caption { left: 1.2rem; bottom: 1rem; }
       .hero .cta { font-size: .94rem; padding-left: 1rem; padding-right: 1rem; }
+      .qr-share-panel { padding: .9rem; }
+      .qr-share-actions { grid-template-columns: 1fr; }
+      .qr-share-code { width: min(100%, 300px); }
       .penny-story { padding: 3.5rem 0; }
       .penny-proof { min-height: 590px; }
       .penny-proof__image { object-position: 68% center; }
@@ -802,7 +859,30 @@
       <div class="cta-row">
         <a class="cta" href="/biztechs/">Choose a BizTech</a>
         <a class="cta-outline" href="#hire-your-first-employee">Tell us what needs doing</a>
+        <button class="cta-outline qr-share-trigger" type="button" data-qr-dialog-open aria-haspopup="dialog" aria-controls="homepage-qr-dialog">Show QR</button>
       </div>
+
+      <dialog class="qr-share-dialog" id="homepage-qr-dialog" aria-labelledby="homepage-qr-title" aria-describedby="homepage-qr-description">
+        <div class="qr-share-panel">
+          <form method="dialog">
+            <button class="qr-share-close" type="submit" aria-label="Close QR code panel">&times;</button>
+          </form>
+          <div class="qr-share-kicker">Phone-to-phone share</div>
+          <h2 id="homepage-qr-title">Scan YourOS</h2>
+          <p id="homepage-qr-description">Show this code to open the YourOS homepage on another phone.</p>
+          <div class="qr-share-code">
+            <img src="/assets/brand/youros-homepage-qr.png" alt="QR code for the YourOS homepage" width="528" height="528">
+          </div>
+          <a class="qr-share-url" href="https://www.youros.app/">youros.app</a>
+          <div class="qr-share-actions">
+            <button class="qr-share-copy" type="button" data-qr-copy>Copy link</button>
+            <form method="dialog">
+              <button class="qr-share-done" type="submit">Done</button>
+            </form>
+          </div>
+          <div class="qr-share-status" aria-live="polite" data-qr-status></div>
+        </div>
+      </dialog>
 
       <div class="hero-proof story-animation" id="see-how-easy" aria-label="Example of delegating a website update by text">
         <img class="hero-proof__image" src="/assets/marketing/delegate-by-text-review.webp" alt="A small-business owner continuing his work after delegating a website update" width="1440" height="810">
@@ -1089,6 +1169,55 @@
       storyAnimations.forEach((story) => storyObserver.observe(story));
     } else {
       storyAnimations.forEach((story) => story.classList.add('is-visible'));
+    }
+
+    const qrDialog = document.querySelector('#homepage-qr-dialog');
+    const qrOpen = document.querySelector('[data-qr-dialog-open]');
+    const qrCopy = document.querySelector('[data-qr-copy]');
+    const qrStatus = document.querySelector('[data-qr-status]');
+    const homepageUrl = 'https://www.youros.app/';
+    let qrLastFocus = null;
+
+    const closeQrDialog = () => {
+      if (!qrDialog) return;
+      if (typeof qrDialog.close === 'function' && qrDialog.open) {
+        qrDialog.close();
+      } else {
+        qrDialog.removeAttribute('open');
+      }
+    };
+
+    if (qrDialog && qrOpen) {
+      qrOpen.addEventListener('click', () => {
+        qrLastFocus = document.activeElement;
+        if (qrStatus) qrStatus.textContent = '';
+        if (typeof qrDialog.showModal === 'function') {
+          qrDialog.showModal();
+        } else {
+          qrDialog.setAttribute('open', '');
+        }
+        const closeButton = qrDialog.querySelector('.qr-share-close');
+        if (closeButton) closeButton.focus();
+      });
+
+      qrDialog.addEventListener('click', (event) => {
+        if (event.target === qrDialog) closeQrDialog();
+      });
+
+      qrDialog.addEventListener('close', () => {
+        if (qrLastFocus && typeof qrLastFocus.focus === 'function') qrLastFocus.focus();
+      });
+    }
+
+    if (qrCopy) {
+      qrCopy.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(homepageUrl);
+          if (qrStatus) qrStatus.textContent = 'Homepage link copied.';
+        } catch {
+          if (qrStatus) qrStatus.textContent = homepageUrl;
+        }
+      });
     }
 
     const engagementForm = document.querySelector('form[name="biztech-engagement"]');
