@@ -282,7 +282,7 @@
       border: 1px solid rgba(255,255,255,.2); font-weight: 700;
     }
     .cta-outline:hover { border-color: var(--action); color: var(--action); }
-    .qr-share-trigger { cursor: pointer; font: inherit; min-height: 3.55rem; }
+    .qr-share-trigger { cursor: pointer; }
     .qr-share-dialog {
       background: transparent; border: 0; color: var(--text);
       inset: 0; margin: auto; max-width: min(420px, calc(100vw - 2rem));
@@ -845,6 +845,7 @@
       <a href="/pricing/">Pricing</a>
       <a href="/about/">About</a>
       <a href="/blog/">Blog</a>
+      <button class="yos-header__qr qr-share-trigger" type="button" data-qr-dialog-open aria-haspopup="dialog" aria-controls="homepage-qr-dialog">Share QR</button>
       <a class="yos-header__cta" href="/biztechs/">Meet the BizTechs</a>
     </div>
   </nav>
@@ -859,7 +860,6 @@
       <div class="cta-row">
         <a class="cta" href="/biztechs/">Choose a BizTech</a>
         <a class="cta-outline" href="#hire-your-first-employee">Tell us what needs doing</a>
-        <button class="cta-outline qr-share-trigger" type="button" data-qr-dialog-open aria-haspopup="dialog" aria-controls="homepage-qr-dialog">Show QR</button>
       </div>
 
       <dialog class="qr-share-dialog" id="homepage-qr-dialog" aria-labelledby="homepage-qr-title" aria-describedby="homepage-qr-description">
