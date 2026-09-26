@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const header = document.querySelector('.yos-header');
   if (!header) return;
+  const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
 
   const toggle = header.querySelector('.yos-header__toggle');
   const links = header.querySelector('.yos-header__links');
@@ -53,23 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     else navLinks.insertBefore(blogLink, navLinks.querySelector('.yos-header__cta'));
   }
 
-  if (!document.querySelector('.yos-action-bar')) {
+  if (!isHomePage && !document.querySelector('.yos-action-bar')) {
     const actionBar = document.createElement('aside');
     actionBar.className = 'yos-action-bar';
     actionBar.setAttribute('aria-label', 'Start an engagement');
     actionBar.innerHTML = `
-      <div class="yos-action-bar__contact yos-action-bar__primary yos-action-bar__peter">
-        <a href="mailto:peter@youros.app?subject=Hire%20Peter">
-          <svg class="yos-action-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5h17v13h-17z"/><path d="m4 6 8 6.4L20 6"/></svg>
-          <span class="yos-action-bar__label">Hire Peter<span class="yos-action-bar__detail">peter@youros.app</span></span>
-        </a>
-      </div>
-      <div class="yos-action-bar__contact yos-action-bar__garry">
-        <a href="mailto:garry@youros.app?subject=Hire%20Garry">
-          <svg class="yos-action-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5h17v13h-17z"/><path d="m4 6 8 6.4L20 6"/></svg>
-          <span class="yos-action-bar__label">Hire Garry<span class="yos-action-bar__detail">garry@youros.app</span></span>
-        </a>
-      </div>
       <a class="yos-action-bar__penny yos-action-bar__penny-call" href="tel:+14352701422">
         <svg class="yos-action-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.1 3.8 10 7.4 8.3 9.6c1.2 2.4 3.1 4.3 5.5 5.5l2.2-1.7 3.7 2.9-.7 3.2c-.2.8-.9 1.4-1.8 1.3C9.7 20 3.8 14.1 3 6.6c-.1-.8.5-1.6 1.3-1.8z"/></svg>
         <span>Call Penny</span><span class="yos-action-bar__detail">(435) 270-1422</span>
@@ -77,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <a class="yos-action-bar__penny yos-action-bar__penny-text" href="sms:+14352701422">
         <svg class="yos-action-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span>Text Penny</span><span class="yos-action-bar__detail">(435) 270-1422</span>
+      </a>
+      <a class="yos-action-bar__hire" href="/biztechs/">
+        <span>Hire a BizTech</span>
       </a>`;
     header.insertAdjacentElement('afterend', actionBar);
     document.body.classList.add('has-yos-action-bar');
@@ -115,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   const footer = document.querySelector('footer');
-  if (footer && !document.querySelector('.yos-page-exits')) {
+  if (!isHomePage && footer && !document.querySelector('.yos-page-exits')) {
     const exits = document.createElement('section');
     exits.className = 'yos-page-exits';
     exits.setAttribute('aria-label', 'Keep exploring YourOS');
