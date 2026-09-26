@@ -62,6 +62,11 @@ try {
   if (mobile) {
     await send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
   }
+  if (process.env.REDUCED === '1') {
+    await send('Emulation.setEmulatedMedia', {
+      features: [{ name: 'prefers-reduced-motion', value: 'reduce' }],
+    });
+  }
   await send('Page.navigate', { url });
   await sleep(4000);
   // Reveal scroll-triggered animations, then return to top.

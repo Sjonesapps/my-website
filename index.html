@@ -153,11 +153,6 @@
     .iphone-typing i:nth-child(3) { animation-delay: .3s; }
     @keyframes typing-dot { 0%, 60%, 100% { transform: translateY(0); opacity: .55; } 30% { transform: translateY(-3px); opacity: 1; } }
     .js .story-animation.is-visible .message-demo .message { animation-play-state: running; }
-    @media (prefers-reduced-motion: reduce) {
-      /* Show the finished conversation — the same state the animation rests in. */
-      .message-demo .message, .call-event, .owner-alert, .buyer-event, .garry-alert { opacity: 1; transform: none; animation: none; }
-      .iphone-typing { display: none; }
-    }
     .message__time { display: block; margin-top: .35rem; opacity: .68; font-size: .66rem; }
     /* Sits below the panel: as an overlay it was covered by the chat card. */
     .hero-proof__caption {
@@ -219,6 +214,18 @@
     .call-demo .call-event, .call-demo .owner-alert, .call-demo .buyer-event, .call-demo .garry-alert { display: block; }
     .js .story-animation.is-visible .call-event, .js .story-animation.is-visible .owner-alert,
     .js .story-animation.is-visible .buyer-event, .js .story-animation.is-visible .garry-alert { animation-play-state: running; }
+
+    /* Must come after the .call-event/.owner-alert/.buyer-event/.garry-alert rules
+       above, which set opacity:0 — when this block sat earlier in the sheet those
+       later rules won and the Penny and Garry conversations rendered invisible for
+       anyone browsing with reduced motion. Shows the finished conversation, which
+       is the state the animation now rests in. */
+    @media (prefers-reduced-motion: reduce) {
+      .message-demo .message, .call-event, .owner-alert, .buyer-event, .garry-alert {
+        opacity: 1; transform: none; animation: none;
+      }
+      .iphone-typing { display: none; }
+    }
 
     .cta-row {
       display: flex; gap: 1rem; justify-content: center; align-items: center;
