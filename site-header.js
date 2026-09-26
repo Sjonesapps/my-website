@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const header = document.querySelector('.yos-header');
   if (!header) return;
+  const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
 
   const toggle = header.querySelector('.yos-header__toggle');
   const links = header.querySelector('.yos-header__links');
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else navLinks.insertBefore(blogLink, navLinks.querySelector('.yos-header__cta'));
   }
 
-  if (!document.querySelector('.yos-action-bar')) {
+  if (!isHomePage && !document.querySelector('.yos-action-bar')) {
     const actionBar = document.createElement('aside');
     actionBar.className = 'yos-action-bar';
     actionBar.setAttribute('aria-label', 'Start an engagement');
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   const footer = document.querySelector('footer');
-  if (footer && !document.querySelector('.yos-page-exits')) {
+  if (!isHomePage && footer && !document.querySelector('.yos-page-exits')) {
     const exits = document.createElement('section');
     exits.className = 'yos-page-exits';
     exits.setAttribute('aria-label', 'Keep exploring YourOS');
