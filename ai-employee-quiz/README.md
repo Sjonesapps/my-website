@@ -5,6 +5,7 @@ Static, one-question-at-a-time discovery quiz at `/ai-employee-quiz/`.
 ## Architecture
 
 - `index.html`: semantic quiz, results, and build-time discoverable Netlify form.
+- Visible teaching cards establish the manager-versus-worker lesson on the opening screen, in each of the first three questions, at the process trigger, and before trust controls.
 - `quiz.css`: responsive YourOS styling and accessible states.
 - `quiz.js`: navigation, validation, session resume, rendering, analytics, copying, and submission.
 - `result-engine.js`: pure, versioned deterministic result logic. It makes no network calls.

@@ -16,4 +16,13 @@ for(const value of ['messages','scheduling','follow-up','quotes','data','retriev
 for(const value of ['message','form','email','meeting','sale','record','time','forgotten','other'])assert.match(html,new RegExp(`name="trigger" value="${value}"`));
 for(const value of ['approval','visibility','rules','examples','questions','escalation','takeover','sample'])assert.match(html,new RegExp(`name="trustControls" value="${value}"`));
 assert.match(html,/about 3 minutes/i);
+assert.match(html,/think like a manager/i);
+assert.match(html,/Managers set direction, make judgment calls, and handle exceptions\. Workers complete repeatable tasks\./);
+assert.match(html,/Owners switch between worker and manager roles\. The problem starts when repeatable worker tasks consume time needed for decisions, relationships, and growth\./);
+assert.match(html,/If you can describe the outcome you want from a dependable employee, you have the start of an AI employee job description\./);
+assert.match(html,/Repeatable work has a trigger, steps, and an expected result\./);
+assert.match(html,/Good AI systems do not remove the manager\./);
+assert.match(html,/They complete the normal work, show what they did, and escalate exceptions to the manager\./);
+assert.ok((html.match(/class="teaching-blip"/g)||[]).length>=5,'teaching segments must remain visible throughout the quiz');
+for(const key of ['time-allocation','unwanted-task','delegate-first']){const section=html.match(new RegExp(`<section class="screen" data-screen data-question="${key}"[\\s\\S]*?<\\/section>`))?.[0]||'';assert.match(section,/teaching-blip/,`question ${key} must reinforce the educational spine`)}
 console.log('Quiz tests passed');
