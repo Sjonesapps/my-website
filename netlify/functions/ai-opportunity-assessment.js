@@ -29,11 +29,11 @@ function emailDocument(data){
  const text=[`Hi ${data.name}, here is your full AI Opportunity Assessment.`,'',...rows(r).flatMap(([k,v])=>[`${k}: ${v}`,'']),'THREE READY-TO-USE PROMPTS','',...prompts.flatMap((p,i)=>[`Prompt ${i+1}`,p,'']),'FULL AI EMPLOYEE BLUEPRINT','',...blueprint.map(([k,v])=>`${k}: ${v}`),data.marketingConsent?'':'','Your assessment delivery did not add you to marketing. You can confirm separately at https://www.youros.app/contact/?source=assessment-email-opt-in','','Privacy: https://www.youros.app/privacy-policy'].join('\n');
  return{html,text};
 }
-async function storeLead(data){
- const captureUrl=process.env.QUIZ_LEAD_CAPTURE_URL||process.env.DEPLOY_PRIME_URL||process.env.URL;
+async function storeLead(data,requestUrl){
+ const captureUrl=process.env.QUIZ_LEAD_CAPTURE_URL||requestUrl||process.env.DEPLOY_PRIME_URL||process.env.URL;
  if(!captureUrl)return{stored:false,reason:'No lead capture URL configured'};
  const body=new URLSearchParams({'form-name':'ai-employee-assessment',name:data.name,email:data.email,marketing_consent:String(data.marketingConsent),submission_id:data.submissionId,quiz_answers:JSON.stringify(data.answers),quiz_result:JSON.stringify(data.result),source:'ai-opportunity-assessment'});
- const response=await fetch(new URL('/',captureUrl),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()});
+ const response=await fetch(new URL('/ai-employee-quiz/',captureUrl),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()});
  return{stored:response.ok,reason:response.ok?'':`Lead capture returned ${response.status}`};
 }
 async function sendEmail(data){
@@ -49,11 +49,12 @@ exports.handler=async event=>{
  let data;try{data=validate(JSON.parse(event.body||'{}'))}catch(error){return{statusCode:400,headers,body:JSON.stringify({error:error.message})}}
  const seen=recent.get(data.submissionId);if(seen&&Date.now()-seen.at<10*60*1000)return{statusCode:200,headers,body:JSON.stringify({...seen.response,duplicate:true})};recent.set(data.submissionId,{at:Date.now(),response:{accepted:true,stored:false,emailSent:false,emailStatus:'processing'}});
  try{
-  const stored=await storeLead(data);
+  const requestOrigin=event.rawUrl?new URL(event.rawUrl).origin:'';
+  const stored=await storeLead(data,requestOrigin);
   if(!stored.stored){recent.delete(data.submissionId);return{statusCode:502,headers,body:JSON.stringify({error:'Assessment could not be recorded',detail:stored.reason})}}
   const email=await sendEmail(data);
   const response={accepted:true,stored:true,emailSent:email.sent,emailStatus:email.sent?'sent':'unavailable'};recent.set(data.submissionId,{at:Date.now(),response});
   return{statusCode:200,headers,body:JSON.stringify(response)};
  }catch(error){recent.delete(data.submissionId);return{statusCode:502,headers,body:JSON.stringify({error:'Assessment delivery is temporarily unavailable'})}}
 };
-exports._internals={validate,emailDocument};
+exports._internals={validate,emailDocument,storeLead};
