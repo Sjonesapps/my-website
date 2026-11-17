@@ -1,179 +1,31 @@
-export const RESULT_VERSION = '1.1.0';
-
-const clean = (value, fallback = '') => {
-  const text = typeof value === 'string' ? value.trim().replace(/\s+/g, ' ') : '';
-  return text || fallback;
+export const RESULT_VERSION = '2.0.0';
+const clean=(v,f='')=>{const t=typeof v==='string'?v.trim().replace(/\s+/g,' '):'';return t||f};
+const arr=v=>Array.isArray(v)?v:v?[v]:[];
+const L={
+ categories:{messages:'calls and messages',scheduling:'scheduling','follow-up':'customer or lead follow-up',quotes:'quotes and estimates',data:'data entry and system updates',retrieval:'information retrieval',reports:'reports and status updates',marketing:'marketing and content',onboarding:'onboarding',coordination:'team and vendor coordination',quality:'checking and quality control',other:'other recurring work'},
+ trigger:{message:'an inbound call or message arrives',form:'a form is submitted',email:'an email arrives',meeting:'a meeting ends or creates a next step',sale:'a sale or payment is recorded',record:'a record or status changes',time:'the scheduled time or day arrives',forgotten:'someone notices a forgotten item',other:'the agreed signal occurs'},
+ info:{request:'the original request or form',conversation:'the relevant email, call, or message',customer:'customer or contact history',policy:'approved pricing, rules, or policies',calendar:'the current calendar or availability',records:'current records or job status',documented:'documented procedures or examples',owner:'knowledge currently held only in your head',other:'another approved source'},
+ yellow:{plan:'a visible plan before action',approval:'manager approval before anything goes out',visibility:'a record of every action',examples:'examples of correct work',smallTest:'a small live test'},
+ green:{boundaries:'clear authority and limits',escalation:'automatic escalation for exceptions',trackRecord:'a reliable Yellow track record',audit:'regular manager audits',takeover:'an immediate manager takeover option'},
+ exceptions:{missing:'missing information',conflicting:'conflicting instructions',unusual:'unusual requests',sensitive:'sensitive or high-impact actions',customer:'an upset or unusual customer situation',other:'other edge cases'}
 };
-
-const asArray = (value) => Array.isArray(value) ? value : value ? [value] : [];
-
-const categoryLabels = {
-  messages: 'calls and messages',
-  scheduling: 'scheduling',
-  'follow-up': 'customer or lead follow-up',
-  quotes: 'quotes and estimates',
-  data: 'data entry and system updates',
-  retrieval: 'information retrieval',
-  reports: 'reports and status updates',
-  marketing: 'marketing and content',
-  onboarding: 'customer or employee onboarding',
-  coordination: 'team and vendor coordination',
-  quality: 'checking and quality control',
-  other: 'other recurring work'
-};
-
-const categoryKeywords = {
-  messages: ['call', 'message', 'inbox', 'answer', 'phone'],
-  scheduling: ['schedule', 'calendar', 'appointment', 'book'],
-  'follow-up': ['follow', 'lead', 'customer', 'prospect', 'reply'],
-  quotes: ['quote', 'estimate', 'proposal', 'bid'],
-  data: ['data', 'entry', 'record', 'system', 'update'],
-  retrieval: ['find', 'search', 'retrieve', 'information', 'lookup'],
-  reports: ['report', 'status', 'summary', 'dashboard'],
-  marketing: ['marketing', 'content', 'website', 'social', 'post'],
-  onboarding: ['onboard', 'intake', 'new customer', 'new employee'],
-  coordination: ['coordinate', 'vendor', 'team', 'handoff', 'dispatch'],
-  quality: ['check', 'correct', 'review', 'quality', 'approve']
-};
-
-const triggerLabels = {
-  message: 'an inbound call or message arrives',
-  form: 'a form is submitted',
-  email: 'an email arrives',
-  meeting: 'a meeting ends or creates a next step',
-  sale: 'a sale or payment is recorded',
-  record: 'a record or status changes',
-  time: 'the scheduled time or day arrives',
-  forgotten: 'someone notices a forgotten item',
-  other: 'the agreed trigger occurs'
-};
-
-const infoLabels = {
-  request: 'the original request or form',
-  conversation: 'the relevant email, call, or message',
-  customer: 'customer or contact history',
-  policy: 'approved pricing, rules, or policies',
-  calendar: 'the current calendar or availability',
-  records: 'current records or job status',
-  owner: 'information currently held by the owner',
-  other: 'the other approved source information'
-};
-
-const trustLabels = {
-  approval: 'manager approval before sensitive actions',
-  visibility: 'visibility into every action',
-  rules: 'clear rules and boundaries',
-  examples: 'examples of correct work',
-  questions: 'questions whenever the worker is uncertain',
-  escalation: 'escalation for exceptions',
-  takeover: 'a way for the manager to take over',
-  sample: 'a small test before wider use'
-};
-
-const profileRules = [
-  ['quality-control-trap', 'Quality-Control Trap', (a, c) => a.timeAllocation === 'checking' || c.includes('quality')],
-  ['owner-as-switchboard', 'Owner-as-Switchboard', (a, c) => a.timeAllocation === 'answering' || c.some((item) => ['messages', 'scheduling', 'coordination'].includes(item))],
-  ['follow-up-coordinator', 'Follow-Up Coordinator', (_a, c) => c.some((item) => ['follow-up', 'quotes'].includes(item))],
-  ['information-bottleneck', 'Information Bottleneck', (a, c, info) => info.includes('owner') || a.judgment === 'mostly-judgment' || c.some((item) => ['retrieval', 'reports', 'data'].includes(item))],
-  ['marketing-backlog', 'Marketing Backlog', (a, c) => a.timeAllocation === 'selling' || c.includes('marketing')],
-  ['admin-anchor', 'Admin Anchor', () => true]
-];
-
-function listText(values, labels, fallback) {
-  const items = asArray(values).map((value) => labels[value]).filter(Boolean);
-  if (!items.length) return fallback;
-  if (items.length === 1) return items[0];
-  return `${items.slice(0, -1).join(', ')}, and ${items.at(-1)}`;
-}
-
-function responsibilityScore(title, answers, categories, info) {
-  const normalized = title.toLowerCase();
-  let score = 1;
-  categories.forEach((category) => {
-    if ((categoryKeywords[category] || []).some((word) => normalized.includes(word))) score += 4;
-  });
-  const timeMatches = {
-    answering: ['messages', 'scheduling', 'coordination'],
-    selling: ['follow-up', 'quotes', 'marketing'],
-    checking: ['quality', 'reports'],
-    planning: ['reports', 'marketing', 'coordination'],
-    firefighting: ['messages', 'scheduling', 'coordination']
-  }[answers.timeAllocation] || [];
-  if (categories.some((category) => timeMatches.includes(category) && (categoryKeywords[category] || []).some((word) => normalized.includes(word)))) score += 2;
-  if (answers.trigger && !['forgotten', 'other'].includes(answers.trigger)) score += 2;
-  if (clean(answers.correctResult).length >= 12) score += 2;
-  if (info.length && !info.every((item) => ['owner', 'other'].includes(item))) score += 2;
-  if (answers.judgment === 'rules') score += 2;
-  if (answers.judgment === 'mixed') score += 1;
-  return score;
-}
-
-export function getSubmissionState(value, now = Date.now()) {
-  if (!value) return { status: 'idle', submissionId: '' };
-  try {
-    const parsed = typeof value === 'string' ? JSON.parse(value) : value;
-    if (parsed.status === 'submitting' && Number(parsed.startedAt) && now - Number(parsed.startedAt) > 120000) {
-      return { status: 'idle', submissionId: '' };
-    }
-    return ['submitting', 'submitted'].includes(parsed.status)
-      ? { status: parsed.status, submissionId: String(parsed.submissionId || '') }
-      : { status: 'idle', submissionId: '' };
-  } catch {
-    return { status: 'idle', submissionId: '' };
-  }
-}
-
-export const canSubmit = (state) => !state || state.status === 'idle';
-
-export function deriveResult(answers = {}) {
-  const categories = asArray(answers.categories);
-  const info = asArray(answers.requiredInfo);
-  const controls = asArray(answers.trustControls);
-  const responsibilities = asArray(answers.delegateFirst).map((item) => clean(item)).filter(Boolean);
-  if (!responsibilities.length) responsibilities.push(clean(answers.unwantedTask, 'the recurring work that keeps returning to you'));
-
-  const ranked = responsibilities
-    .map((title, index) => ({ title, index, score: responsibilityScore(title, answers, categories, info) }))
-    .sort((a, b) => b.score - a.score || a.index - b.index);
-  const best = ranked[0];
-  const profile = profileRules.find(([, , matches]) => matches(answers, categories, info));
-  const trigger = triggerLabels[answers.trigger] || triggerLabels.other;
-  const expectedResult = clean(answers.correctResult, 'the work is completed accurately and recorded');
-  const requiredInfo = listText(info, infoLabels, 'the approved source information');
-  const recurringWork = listText(categories, categoryLabels, 'this repeatable responsibility');
-  const judgment = {
-    rules: 'Complete the standard work using the approved rules',
-    mixed: 'Complete standard work and ask the manager for judgment calls',
-    'mostly-judgment': 'Prepare the work, then route judgment calls to the manager'
-  }[answers.judgment] || 'Follow the documented rules and escalate exceptions';
-  const approvalPoints = listText(controls, trustLabels, 'manager review of actions and exceptions');
-  const returnedTime = clean(answers.returnedTime, 'direction, customers, and improvement');
-
-  return {
-    version: RESULT_VERSION,
-    profile: { id: profile[0], label: profile[1] },
-    bestResponsibility: {
-      title: best.title,
-      score: best.score,
-      rationale: `This responsibility ranked highest because your answers connect it to ${recurringWork}. It has a recognizable trigger, a defined outcome, identified inputs, and a clear boundary between worker rules and manager judgment.`
-    },
-    prompts: [
-      `Process-mapping prompt:
-Help me map the process for ${best.title}. The work starts when ${trigger}. A correct result is: ${expectedResult}. The required information is ${requiredInfo}. Ask me one question at a time until we have documented the standard steps, decision points, approval points, and exceptions. Finish with a checklist a dependable worker could follow.`,
-      `Daily-assistance prompt:
-Act as my daily assistant for ${best.title}. Use ${requiredInfo}. Start when ${trigger}. Your goal is: ${expectedResult}. ${judgment}. Show me what you completed, what information is missing, what needs my approval, and every exception that needs my decision. Never invent missing facts.`,
-      `Delegation and job-description prompt:
-Write a practical job description for a worker responsible for ${best.title}. Include the trigger (${trigger}), required information (${requiredInfo}), standard actions, expected result (${expectedResult}), manager approval points (${approvalPoints}), and exception rules. Separate repeatable worker tasks from manager direction and judgment. Include a small-test plan and a definition of done.`
-    ],
-    blueprint: {
-      jobTitle: `AI Employee for ${best.title}`,
-      trigger,
-      requiredInfo,
-      standardActions: `Review the required information, complete the repeatable steps for ${best.title}, record each action, show the work performed, and flag missing information.`,
-      expectedResult,
-      managerApprovalPoints: approvalPoints,
-      exceptionRules: `${judgment}. Escalate missing information, conflicting instructions, uncertainty, unusual requests, and any action outside the approved rules.`,
-      returnedTime
-    }
-  };
+const keywords={messages:['call','message','inbox','answer','phone'],scheduling:['schedule','calendar','appointment','book'],'follow-up':['follow','lead','customer','prospect','reply'],quotes:['quote','estimate','proposal','bid'],data:['data','entry','record','system','update'],retrieval:['find','search','retrieve','information','lookup'],reports:['report','status','summary','dashboard'],marketing:['marketing','content','website','social','post'],onboarding:['onboard','intake'],coordination:['coordinate','vendor','team','handoff','dispatch'],quality:['check','correct','review','quality','approve']};
+function list(values,map,fallback){const x=arr(values).map(v=>map[v]).filter(Boolean);return !x.length?fallback:x.length===1?x[0]:`${x.slice(0,-1).join(', ')}, and ${x.at(-1)}`}
+function rank(title,index,a,categories,info){let score=0;const evidence=[];const n=title.toLowerCase();const matches=categories.filter(c=>(keywords[c]||[]).some(w=>n.includes(w)));if(matches.length){score+=4;evidence.push(`matches your recurring ${list(matches,L.categories,'work')}`)}const detailWords=clean(a.recurringWorkDetail).toLowerCase().split(/\W+/).filter(w=>w.length>4);if(detailWords.some(w=>n.includes(w))){score+=3;evidence.push('appears in the recurring-work detail you supplied')}if(a.trigger&&!['forgotten','other'].includes(a.trigger)){score+=2;evidence.push('has a recognizable starting signal')}if(clean(a.correctResult).length>=20){score+=2;evidence.push('has a defined correct outcome')}if(info.some(i=>!['owner','other'].includes(i))){score+=2;evidence.push('can use identified source information')}if(a.judgment==='straightforward'){score+=2;evidence.push('mostly follows repeatable rules')}else if(a.judgment==='mixed'){score+=1;evidence.push('has a standard case with exceptions')}return{title,index,score,evidence}}
+function getReadiness(a){const info=arr(a.requiredInfo),y=arr(a.yellowTrust),g=arr(a.greenReadiness),documented=info.some(i=>!['owner','other'].includes(i)),standard=['straightforward','mixed'].includes(a.judgment);let band='Red';if(y.length>=2)band='Yellow-ready';if(y.length>=2&&g.length>=2&&(documented||standard))band='Yellow-ready with Green in reach';if(y.length>=2&&g.length>=3&&documented&&standard)band='Green-ready for the standard case';const explanation={Red:'Start with examples and simulation before this work touches live operations.','Yellow-ready':'The controls you chose support supervised live work while the AI employee builds a track record.','Yellow-ready with Green in reach':'Supervised work can begin, and your safeguards create a credible path to bounded automatic action.','Green-ready for the standard case':'The standard case has usable inputs, bounded judgment, and safeguards. Exceptions should still go to the manager.'}[band];return{band,explanation,yellowEvidence:list(y,L.yellow,'no Yellow controls selected'),greenEvidence:list(g,L.green,'no Green safeguards selected')}}
+export function getSubmissionState(value,now=Date.now()){if(!value)return{status:'idle',submissionId:''};try{const p=typeof value==='string'?JSON.parse(value):value;if(p.status==='submitting'&&Number(p.startedAt)&&now-Number(p.startedAt)>120000)return{status:'idle',submissionId:''};return['submitting','submitted'].includes(p.status)?{status:p.status,submissionId:String(p.submissionId||'')}:{status:'idle',submissionId:''}}catch{return{status:'idle',submissionId:''}}}
+export const canSubmit=state=>!state||state.status==='idle';
+export function deriveResult(a={}){
+ const categories=arr(a.categories),info=arr(a.requiredInfo),responsibilities=arr(a.delegateFirst).map(v=>clean(v)).filter(Boolean);if(!responsibilities.length)responsibilities.push(clean(a.unwantedTask,'the recurring work that keeps returning to you'));
+ const best=responsibilities.map((t,i)=>rank(t,i,a,categories,info)).sort((x,y)=>y.score-x.score||x.index-y.index)[0];
+ const trigger=L.trigger[a.trigger]||L.trigger.other,expected=clean(a.correctResult,'the work is completed accurately and recorded'),required=list(info,L.info,'approved source information'),exceptions=list(a.exceptionTypes,L.exceptions,'anything outside the standard case'),ready=getReadiness(a);
+ const placeLabels={'mostly-manager':'Mostly Manager','manager-leaning':'Manager-leaning',balanced:'Manager and Employee mix','employee-leaning':'Employee-leaning','mostly-employee':'Mostly Employee'},placeLabel=placeLabels[a.managerEmployeeMix]||placeLabels.balanced;
+ const targetLabels={same:'Go deeper in this role',adjacent:'Add an adjacent AI employee',unsure:'Prove the first role, then decide'},targetLines={same:`Your next win is more coverage for ${best.title} after the first workflow proves itself.`,adjacent:'This first role can become the foundation for an adjacent AI employee once it is stable.',unsure:'Use this first role to create evidence, then choose whether to deepen it or add another AI employee.'};
+ const judgment=a.judgment==='straightforward'?'Handle the standard case using the approved rules.':a.judgment==='mixed'?'Handle the standard case and route exceptions to the manager.':'Prepare the work and route judgment calls to the manager.',returned=clean(a.returnedTime,'direction, customers, and improvement'),approval=list(a.yellowTrust,L.yellow,'manager approval before live action');
+ const rationale=`This ranked highest because it ${best.evidence.length?best.evidence.join(', '):'is first on your handoff list'}. The ranking uses recurrence, trigger clarity, outcome clarity, available information, and judgment level.`;
+ return{version:RESULT_VERSION,placement:{value:a.managerEmployeeMix||'balanced',label:placeLabel,evidence:`Self-report: you placed yourself at “${placeLabel}.” Your last-week example was ${clean(a.unwantedTask,'recurring operator work')}.`},bestResponsibility:{title:best.title,rationale},readiness:ready,targetRichness:{value:a.targetRichness||'unsure',label:targetLabels[a.targetRichness]||targetLabels.unsure,line:targetLines[a.targetRichness]||targetLines.unsure},prompts:[
+  `Help me turn ${best.title} into a repeatable process. It starts when ${trigger}. A correct result is: ${expected}. Use ${required}. Ask me one question at a time until the standard steps, decision points, approval points, and exceptions are clear. Finish with a checklist a dependable worker could follow.`,
+  `Act as my supervised assistant for ${best.title}. Begin when ${trigger}. Use ${required}. Produce this result: ${expected}. ${judgment} Before anything goes out, explain your planned action and wait for the approval I have defined. Never invent missing facts, and surface ${exceptions}.`,
+  `Draft an operating brief for an AI employee responsible for ${best.title}. Include its starting signal, approved information, standard actions, definition of done, limits, manager approval points, and escalation behavior. The owner wants the returned time for ${returned}. Include a safe Yellow test and the evidence required before Green operation.`
+ ],blueprint:{jobTitle:`AI Employee for ${best.title}`,responsibility:best.title,trigger,requiredInfo:required,standardActions:`Review the approved information, complete the repeatable steps for ${best.title}, record each action, and flag anything missing.`,expectedResult:expected,managerApprovalPoints:approval,exceptionRules:`${judgment} Escalate ${exceptions}.`,yellowMode:ready.yellowEvidence,greenGate:ready.greenEvidence,returnedTime:returned}};
 }
