@@ -8,15 +8,15 @@ const asArray=value=>Array.isArray(value)?value:[];
 function validate(payload){
  const submissionId=clean(payload.submissionId,100),name=clean(payload.contact?.name,120),email=clean(payload.contact?.email,254);
  if(!submissionId||!name||!/^\S+@\S+\.\S+$/.test(email))throw new Error('Valid submission, name, and email are required');
- if(!payload.answers||!payload.result||payload.result.version!=='2.0.0')throw new Error('Assessment answers and current result are required');
+ if(!payload.answers||!payload.result||payload.result.version!=='2.1.0')throw new Error('Assessment answers and current result are required');
  return{submissionId,name,email,marketingConsent:payload.contact?.marketingConsent===true,answers:payload.answers,result:payload.result};
 }
 function rows(result){
  return [
-  ['Placement',result.placement?.label],['Placement evidence',result.placement?.evidence],
-  ['Strongest automation',result.bestResponsibility?.title],['Why it ranked highest',result.bestResponsibility?.rationale],
+  ['How much you manage vs. how much you do',result.placement?.label],['What you told us',result.placement?.evidence],
+  ['Best first job to hand off',result.bestResponsibility?.title],['Why it ranked highest',result.bestResponsibility?.rationale],
   ['Readiness',result.readiness?.band],['Readiness evidence',`${result.readiness?.explanation||''} Yellow: ${result.readiness?.yellowEvidence||''} Green: ${result.readiness?.greenEvidence||''}`],
-  ['Target richness',`${result.targetRichness?.label||''}. ${result.targetRichness?.line||''}`]
+  ['Room to grow',`${result.targetRichness?.label||''}. ${result.targetRichness?.line||''}`]
  ];
 }
 function emailDocument(data){
@@ -24,9 +24,9 @@ function emailDocument(data){
  const htmlRows=rows(r).map(([label,value])=>`<h2 style="margin:24px 0 6px">${escapeHtml(label)}</h2><p style="margin:0;color:#3f4650">${escapeHtml(value)}</p>`).join('');
  const promptHtml=prompts.map((p,i)=>`<h3>Prompt ${i+1}</h3><div style="padding:16px;background:#f3f5f7;border-radius:8px;white-space:pre-wrap">${escapeHtml(p)}</div>`).join('');
  const blueprintHtml=blueprint.map(([key,value])=>`<tr><th align="left" style="padding:10px;border-bottom:1px solid #ddd">${escapeHtml(key.replace(/([A-Z])/g,' $1'))}</th><td style="padding:10px;border-bottom:1px solid #ddd">${escapeHtml(value)}</td></tr>`).join('');
- const separateOptIn=data.marketingConsent?'':`<p style="margin-top:28px">Your assessment delivery did not add you to marketing. If you want YourOS Articles and AI Advice later, <a href="https://www.youros.app/contact/?source=assessment-email-opt-in">confirm that separately here</a>.</p>`;
+ const separateOptIn=data.marketingConsent?'':`<p style="margin-top:28px">Getting this assessment did not sign you up for marketing. If you want YourOS articles and practical AI tips later, <a href="https://www.youros.app/contact/?source=assessment-email-opt-in">you can sign up separately here</a>.</p>`;
  const html=`<!doctype html><html><body style="font-family:Arial,sans-serif;color:#202126;line-height:1.5;max-width:720px;margin:auto;padding:24px"><p style="color:#f97316;font-weight:bold">YOUR AI OPPORTUNITY ASSESSMENT</p><h1>Hi ${escapeHtml(data.name)}, here is your full assessment.</h1>${htmlRows}<h2 style="margin-top:32px">Three ready-to-use prompts</h2>${promptHtml}<h2 style="margin-top:32px">Full AI Employee Blueprint</h2><table style="border-collapse:collapse;width:100%">${blueprintHtml}</table>${separateOptIn}<hr style="margin-top:32px"><p style="font-size:13px;color:#68707c">YourOS stored your answers and contact details to deliver this assessment. <a href="https://www.youros.app/privacy-policy">Privacy Policy</a> · <a href="https://www.youros.app/contact/">Contact YourOS</a></p></body></html>`;
- const text=[`Hi ${data.name}, here is your full AI Opportunity Assessment.`,'',...rows(r).flatMap(([k,v])=>[`${k}: ${v}`,'']),'THREE READY-TO-USE PROMPTS','',...prompts.flatMap((p,i)=>[`Prompt ${i+1}`,p,'']),'FULL AI EMPLOYEE BLUEPRINT','',...blueprint.map(([k,v])=>`${k}: ${v}`),data.marketingConsent?'':'','Your assessment delivery did not add you to marketing. You can confirm separately at https://www.youros.app/contact/?source=assessment-email-opt-in','','Privacy: https://www.youros.app/privacy-policy'].join('\n');
+ const text=[`Hi ${data.name}, here is your full AI Opportunity Assessment.`,'',...rows(r).flatMap(([k,v])=>[`${k}: ${v}`,'']),'THREE READY-TO-USE PROMPTS','',...prompts.flatMap((p,i)=>[`Prompt ${i+1}`,p,'']),'FULL AI EMPLOYEE BLUEPRINT','',...blueprint.map(([k,v])=>`${k}: ${v}`),data.marketingConsent?'':'','Getting this assessment did not sign you up for marketing. You can sign up separately at https://www.youros.app/contact/?source=assessment-email-opt-in','','Privacy: https://www.youros.app/privacy-policy'].join('\n');
  return{html,text};
 }
 async function storeLead(data,requestUrl){
